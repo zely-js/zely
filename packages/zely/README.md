@@ -1,8 +1,8 @@
-[![img](https://github.com/zely-js/core/blob/3.0-next/.github/assets/icon-v3-white.svg)](https://github.com/do4ng/zely)
+[![img](https://github.com/zely-js/core/blob/main/.github/assets/icon-v3.svg)](https://github.com/zely-js/core)
 
-# Prext
+# Zely
 
-Prext is a backend framework for Node.js
+Zely is a backend framework for Node.js
 
 [**github**](https://github.com/zely-js/core) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://zely.netlify.app/)
 
