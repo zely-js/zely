@@ -10,8 +10,8 @@ export function snatcher(req: IncomingMessage, res: ServerResponse, config?: Con
         resolve({ body: chunk, status: res.statusCode, response: res });
       };
 
-      const customRequest = req;
-      const customResponse = res;
+      const customRequest: any = req;
+      const customResponse: any = res;
 
       customRequest.url = path;
       customRequest.method = method.toUpperCase();
