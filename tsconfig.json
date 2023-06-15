@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "esnext",
+    "target": "es2015",
+
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": true,
+    "lib": ["ESNext", "DOM"],
+
+    "outDir": "types",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+
+    "types": ["jest", "node"],
+
+    "baseUrl": ".",
+
+    "paths": {
+      "$*": ["./packages/*"]
+    }
+  },
+  "exclude": ["**/node_modules/**", "**/dist/**"]
+}

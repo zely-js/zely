@@ -1,0 +1,65 @@
+{
+  "name": "zely",
+  "version": "0.0.1",
+  "types": "./types/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "homepage": "https://zely.netlify.app/",
+  "repository": "https://github.com/zely-js/core",
+  "description": "a Backend Framework for Node.js",
+  "bin": {
+    "zely": "./dist/bin.js"
+  },
+  "files": [
+    "dist",
+    "types",
+    "assets"
+  ],
+  "keywords": [
+    "node",
+    "backend",
+    "back-end",
+    "server",
+    "routing"
+  ],
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.esm.js",
+      "types": "./types/index.d.ts"
+    },
+    "./config": {
+      "require": "./dist/config.js",
+      "import": "./dist/config.esm.js",
+      "types": "./types/export-config.d.ts"
+    },
+    "./server": {
+      "require": "./dist/server.js",
+      "import": "./dist/server.esm.js",
+      "types": "./types/export-server.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "config": [
+        "types/export-config.d.ts"
+      ],
+      "server": [
+        "types/export-server.d.ts"
+      ]
+    }
+  },
+  "dependencies": {
+    "@osik/path-regexp": "^0.0.1",
+    "animaux": "^0.0.4",
+    "chokidar": "^3.5.3",
+    "esbuild": "^0.17.6",
+    "esbuild-node-externals": "^1.6.0",
+    "osik": "^0.0.5"
+  },
+  "devDependencies": {
+    "@zely/plugin-cors": "*",
+    "prext-analyst": "latest",
+    "teeti": "^0.0.1"
+  }
+}

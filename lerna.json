@@ -1,0 +1,74 @@
+{
+  "packages": ["packages/*"],
+  "useWorkspaces": true,
+  "version": "independent",
+  "ignoreChanges": [
+    "**/CHANGELOG.md",
+    "**/node_modules/**",
+    "**/package.json",
+    "./docs",
+    "./playground/**",
+    "./playground",
+    "./packages/plugin-cors",
+    "./packages/plugin-kit",
+    "./packages/prext-analyst",
+    "./packages/prexty",
+    "./packages/sard"
+  ],
+  "command": {
+    "publish": {
+      "tempTag": true
+    },
+
+    "version": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish",
+      "exact": true,
+      "changelogPreset": {
+        "name": "conventional-changelog-conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": "New Features",
+            "hidden": false
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fix",
+            "hidden": false
+          },
+          {
+            "type": "docs",
+            "section": "Documentation",
+            "hidden": false
+          },
+          {
+            "type": "style",
+            "section": "Styling",
+            "hidden": false
+          },
+          {
+            "type": "refactor",
+            "section": "Code Refactoring",
+            "hidden": false
+          },
+          {
+            "type": "build",
+            "section": "Build System",
+            "hidden": false
+          },
+          {
+            "type": "chore",
+            "section": "Others",
+            "hidden": false
+          }
+        ],
+        "issuePrefixes": ["#"],
+        "issueUrlFormat": "{{host}}/{{owner}}/{{repository}}/issues/{{id}}",
+        "commitUrlFormat": "{{host}}/{{owner}}/{{repository}}/commit/{{hash}}",
+        "compareUrlFormat": "{{host}}/{{owner}}/{{repository}}/compare/{{previousTag}}...{{currentTag}}",
+        "userUrlFormat": "{{host}}/{{user}}"
+      }
+    }
+  }
+}

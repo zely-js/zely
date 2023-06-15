@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabSize": 2,
+  "files.associations": {
+    "*.css": "css",
+    "css": "css"
+  },
+  "json.validate.enable": false
+}

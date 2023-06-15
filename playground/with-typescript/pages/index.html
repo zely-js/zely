@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zely app</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <span id="title" class="loading">loading...</span>
+      </h1>
+      <span id="message" class="loading">loading...</span>
+
+      <div class="users">
+        <div id="user-1" class="user">
+          <h3><span id="user-id" class="loading">loading...</span></h3>
+          <span id="user-about" class="loading">loading...</span>
+        </div>
+        <div id="user-2" class="user">
+          <h3><span id="user-id" class="loading">loading...</span></h3>
+          <span id="user-about" class="loading">loading...</span>
+        </div>
+        <div id="user-3" class="user">
+          <h3><span id="user-id" class="loading">loading...</span></h3>
+          <span id="user-about" class="loading">loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      async function getMessage() {
+        const element = document.getElementById('message');
+        const { message } = await (await fetch('/message')).json();
+
+        element.innerText = message;
+        element.classList.remove('loading');
+      }
+
+      async function getTitle() {
+        const element = document.getElementById('title');
+        const { title } = await (await fetch('/title')).json();
+
+        element.innerText = title;
+        element.classList.remove('loading');
+      }
+
+      async function getUser(id) {
+        const element = document.getElementById(`user-${id}`);
+        const data = await (await fetch(`/user/${id}`)).json();
+
+        const nameElement = element.querySelector('#user-id');
+        const aboutElement = element.querySelector('#user-about');
+
+        nameElement.innerText = data.name;
+        nameElement.classList.remove('loading');
+
+        aboutElement.innerText = data.about;
+        aboutElement.classList.remove('loading');
+      }
+
+      getMessage();
+      getTitle();
+
+      getUser(1);
+      getUser(2);
+      getUser(3);
+    </script>
+
+    <style>
+      html,
+      body {
+        color: #353a55;
+      }
+
+      h3 {
+        margin: 5px 0;
+      }
+
+      .container {
+        margin-top: 50px;
+
+        text-align: center;
+      }
+
+      .users {
+        width: 320px;
+        margin: 70px auto;
+      }
+
+      .user {
+        width: 320px;
+
+        text-align: left;
+
+        margin: 10px 0;
+        padding: 10px 20px;
+
+        border-radius: 10px;
+
+        background-color: #f5f5f5;
+      }
+
+      .loading {
+        padding: 1px 25px;
+
+        border-radius: 8px;
+
+        color: #ffffff00;
+        background-color: #f1f1f1;
+
+        animation: loading 0.5s linear infinite alternate;
+      }
+
+      @keyframes loading {
+        0% {
+          background-color: hsl(200, 20%, 80%);
+        }
+        100% {
+          background-color: hsl(200, 20%, 95%);
+        }
+      }
+    </style>
+  </body>
+</html>
