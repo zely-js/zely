@@ -52,10 +52,3 @@ $ node dist/index.js
 ```txt
 $ zely export -h
 ```
-
-## Warning
-
-~~This feature doesn't support html and middlewares.~~
-::: info
-Middlewares and html have been supported since `^0.0.10`! 🎉🎉
-:::

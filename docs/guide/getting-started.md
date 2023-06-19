@@ -12,10 +12,18 @@ You can create zely application easily with [create-zely](https://npmjs.com/pack
 
 ```bash [npx]
 $ npx create-zely
+
+? Project name: my-app
+? Directory: my-app
+? Template: javascript
 ```
 
 ```bash [yarn]
 $ yarn create zely
+
+? Project name: my-app
+? Directory: my-app
+? Template: javascript
 ```
 
 :::
@@ -43,7 +51,7 @@ $ npm dev # start app
 ```
 
 ```bash [yarn]
-$ npm dev # start app
+$ yarn dev # start app
 ```
 
 :::
@@ -77,5 +85,11 @@ export default defineConfig({
   // options
 });
 ```
+
+:::
+
+::: tip
+
+reference: [config references](/apis/config)
 
 :::

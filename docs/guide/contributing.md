@@ -9,7 +9,7 @@ Zely is a recently created package and is unstable.
 
 | [zely](https://npmjs.com/package/zely) | [create-prext-app](https://npmjs.com/package/create-prext-app) | [prexty](https://npmjs.com/package/prexty) |
 | -------------------------------------- | -------------------------------------------------------------- | ------------------------------------------ |
-| `/packages/prext`                      | `/packages/create-prext`                                       | `/packages/prexty`                         |
+| `/packages/zely`                       | `/packages/create-prext`                                       | `/packages/prexty`                         |
 
 - [`/docs/`](https://github.com/zely-js/core/tree/main/docs): Documentation
 - [`/playground/`](https://github.com/zely-js/core/tree/main/playground): Examples

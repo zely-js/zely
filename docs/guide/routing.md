@@ -21,12 +21,23 @@ will be
 
 More examples:
 
-```txt
-/pages/index.ts => /
-/pages/dashboard.ts => /dashboard
-/pages/foo/bar.ts => /foo/bar
-/pages/user/$user.ts => /user/:user
+::: code-group
+
+```json [files]
+[
+  "/pages/index.ts",
+  "/pages/about.ts",
+  "/pages/dashboard.ts",
+  "/pages/foo/bar.ts",
+  "/pages/user/$user.ts"
+]
 ```
+
+```json [routes]
+["/", "/about", "/dashboard", "/foo/bar", "/user/:user"]
+```
+
+:::
 
 ## Custom Path
 
@@ -53,6 +64,19 @@ export function get(req: ZelyRequest, res: ZelyResponse) {
 ```
 
 :::
+
+## 404 page
+
+You can set 404 page with `config.error`.
+
+```ts
+export default defineConfig({
+  error(req, res) {
+    // ...
+    res.status(404).end('page not found');
+  },
+});
+```
 
 ## Method
 
@@ -136,28 +160,8 @@ Set header
 
 Set status
 
-- added: [1.0.0-beta.1](https://github.com/zely-js/core/blob/main/packages/zely/CHANGELOG.md#100-beta1-2023-02-27)
-
 ```js
 export function get(req, res) {
   res.status(200).end('Hello World!');
 }
 ```
-
-## 404 page
-
-> This Feature has been supported since `v0.1.0`.
-
-You can set 404 page with `config.error`.
-
-```ts
-export default defineConfig({
-  error(req, res) {
-    // ...
-  },
-});
-```
-
-## Parameters in HTML
-
-You cannot access the current page parameters. - ([#1](https://github.com/do4ng/zely/issues/1))
