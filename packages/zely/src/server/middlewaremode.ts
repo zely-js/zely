@@ -66,5 +66,9 @@ export async function middleware(config: Config): Promise<pureMiddleware[]> {
     Handler(req as any, res as any, config);
   });
 
+  if (config.prebuild) {
+    warn('config.prebuild is ignored (reason: config.server.middlewareMode enabled)');
+  }
+
   return middlewares;
 }

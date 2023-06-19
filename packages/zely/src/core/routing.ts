@@ -83,8 +83,6 @@ export async function getPages(config: Config): Promise<FileData | null> {
                 readFileSync(target).toString()
               );
               r = result;
-
-              return;
             }
           } catch (e) {
             error(`[${plugin.name}] ${e}`);

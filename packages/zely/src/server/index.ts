@@ -2,7 +2,7 @@ import { rmSync } from 'fs';
 import { OsikServer, osik } from 'osik';
 import { Config } from '../config';
 import { CACHE_DIRECTORY } from '../constants';
-import { Handler } from '../core';
+import { Handler, getPages } from '../core';
 import { loadMiddlewares } from './load-middlewares';
 import { applyPlugins } from '../apply-plugins';
 
@@ -27,6 +27,10 @@ export async function Zely(config: Config): Promise<OsikServer> {
     middlewares.forEach((middleware) => {
       app.use(middleware.default || middleware);
     });
+  }
+
+  if (config.prebuild) {
+    await getPages(config);
   }
 
   // handle

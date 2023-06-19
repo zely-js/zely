@@ -38,6 +38,7 @@ export interface Config {
     enable: boolean;
     options?: WatchOptions;
   };
+  prebuild?: boolean;
   build?: {};
   // https://github.com/do4ng/zely/issues/7
   // error handling
