@@ -46,18 +46,11 @@ export default defineConfig({
     sidebar: {
       '/guide/': sidebarGuide(),
       '/apis/': sidebarApis(),
-      '/blog/': sidebarBlog(),
     },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/zely-js/core' }],
   },
 });
-
-function sidebarBlog() {
-  return [
-    { text: 'Intro', items: [{ text: 'Introduction', link: '/blog/introduction' }] },
-  ];
-}
 
 function sidebarApis() {
   return [
