@@ -1,3 +1,5 @@
+import { error } from './logger';
+
 // config
 export * from './config';
 export * from './define-config';
@@ -23,3 +25,10 @@ export * from './snatcher';
 
 export * from './apply-plugins';
 export * from './prewrite';
+
+// no esm
+
+if (__ESM__) {
+  error('use cjs.');
+  process.exit(1);
+}
