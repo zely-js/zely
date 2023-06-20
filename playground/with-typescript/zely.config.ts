@@ -13,6 +13,8 @@ export default defineConfig({
 
   middlewares: [Message],
 
+  prebuild: true,
+
   // 404 page
   // https://zely.netlify.app/guide/routing#404-page
 
