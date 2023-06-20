@@ -5,6 +5,7 @@ import { CACHE_DIRECTORY } from '../constants';
 import { Handler, getPages } from '../core';
 import { loadMiddlewares } from './load-middlewares';
 import { applyPlugins } from '../apply-plugins';
+import { info } from '../logger';
 
 export async function Zely(config: Config): Promise<OsikServer> {
   rmSync(CACHE_DIRECTORY, { recursive: true, force: true });
@@ -30,7 +31,9 @@ export async function Zely(config: Config): Promise<OsikServer> {
   }
 
   if (config.prebuild) {
+    info('config.prebuild enabled.');
     await getPages(config);
+    console.log();
   }
 
   // handle

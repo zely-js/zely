@@ -6,11 +6,10 @@ export function showListen(port: number | string) {
   console.log(`${'$'.gray} ${'zely'.yellow}${`v${pkg.version}`.yellow.dim}`);
 
   console.log();
-  console.log();
   const result = box(
     (
       [
-        'Server is Running on '.green + port.toString().gray + '.'.green,
+        'Server is Running on '.green + port.toString().gray.bold + '.'.green,
         '',
         `http://localhost:${String(port).cyan}`.bold,
         `http://127.0.0.1:${String(port).cyan}`.bold,
@@ -21,7 +20,7 @@ export function showListen(port: number | string) {
       paddingTopBottom: 1,
       marginLeft: 2,
       textAlign: 'center',
-      title: 'core'.cyan,
+      title: 'server'.cyan,
       titleAlign: 'left',
       titlePadding: 2,
       style: {
@@ -39,7 +38,5 @@ export function showListen(port: number | string) {
 
   console.log(result);
 
-  console.log();
-  console.log();
   console.log();
 }
