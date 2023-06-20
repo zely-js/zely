@@ -18,6 +18,10 @@ See the [Getting Started](https://zely.netlify.app/guide/getting-started) to sta
 
 Read [Contributing Guide](https://zely.netlify.app/guide/contributing).
 
+## Benchmark
+
+[/zely-js/benchmark](https://github.com/zely-js/benchmark)
+
 ## License
 
 MIT
