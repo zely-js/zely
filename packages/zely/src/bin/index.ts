@@ -2,7 +2,7 @@
 
 import program from 'animaux';
 import { readFileSync, writeFileSync } from 'fs';
-import { join } from 'path';
+import { join, normalize } from 'path';
 
 import { performance } from 'perf_hooks';
 
@@ -91,16 +91,23 @@ app
 app
   .command('preview')
   .describe('generate Preview Server')
-  .action(async () => {
+  .option('--output, -o', 'Provide output file', 'zely.preview.js')
+  .action(async (options) => {
     try {
+      let outfile = 'zely.preview.js';
+
+      if (options.output) {
+        outfile = options.output;
+      }
+
       const file = readFileSync(join(__dirname, '../assets/preview.js'));
-      writeFileSync('zely.preview.js', file);
+      writeFileSync(outfile, file);
 
       console.log();
       console.log('Preview executable file has been created.'.green);
       console.log();
       console.log('Please enter the command below'.gray);
-      console.log(`${'$'.gray} node ./zely.preview.js`);
+      console.log(`${'$'.gray} node ${normalize(outfile).bold}`);
       console.log();
     } catch (e) {
       error(e);
