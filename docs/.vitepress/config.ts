@@ -87,6 +87,8 @@ function sidebarGuide() {
         { text: 'Page Data', link: '/guide/page' },
         { text: 'Plugin', link: '/guide/plugin' },
         { text: 'Data Fetching', link: '/guide/fetch' },
+        { text: 'with Frameworks', link: '/guide/framework' },
+        { text: 'Prewrite', link: '/guide/prewrite' },
       ],
     },
     {
