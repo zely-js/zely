@@ -56,10 +56,10 @@
     "esbuild": "^0.17.6",
     "esbuild-node-externals": "^1.6.0",
     "mime-types": "^2.1.35",
-    "osik": "^0.0.5"
+    "osik": "^0.0.5",
+    "teeti": "^0.0.1"
   },
   "devDependencies": {
-    "@zely/plugin-cors": "*",
-    "teeti": "^0.0.1"
+    "@zely/plugin-cors": "*"
   }
 }

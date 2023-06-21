@@ -4,21 +4,21 @@ import { spinner } from '../../spinner';
 import { installDependencies, installEngine } from './install';
 import { usingLanguage } from './lang';
 
-export async function add(command) {
+export async function add(command, engineRequested?: 'npm' | 'yarn') {
   switch (command) {
     case 'cors':
       console.log();
       console.log(`Installing ${'cors'.cyan}`);
       console.log();
 
-      const engine = installEngine();
+      const engine = engineRequested || installEngine();
       const download = spinner({});
 
       download.edit(`installing dependencies. ${`(using ${engine})`.gray}`);
 
       download.start();
 
-      await installDependencies(['cors', '@zely/plugin-cors']);
+      await installDependencies(['cors', '@zely/plugin-cors'], engine);
 
       download.stop(`${'✓'.green} installed dependencies.\n`);
 

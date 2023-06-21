@@ -80,9 +80,14 @@ app
 app
   .command('add')
   .describe('Add Plugin')
-  .action(async (command) => {
+  .option('--engine, -e', 'which package manager you want to use. (npm, yarn)')
+  .action(async (command, options) => {
     try {
-      add(command);
+      if (typeof command === 'string') {
+        add(command, options.engine);
+      } else {
+        error('args must be provided');
+      }
     } catch (e) {
       error(e);
     }

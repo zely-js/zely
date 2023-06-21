@@ -8,9 +8,14 @@ export function installEngine() {
   return 'npm';
 }
 
-export function installDependencies(devDependencies: string[] = []): Promise<void> {
+export function installDependencies(
+  // eslint-disable-next-line default-param-last
+  devDependencies: string[] = [],
+  engineRequested?: 'yarn' | 'npm'
+): Promise<void> {
+  const engine = engineRequested || installEngine();
   return new Promise((resolve) => {
-    if (installEngine() === 'yarn') {
+    if (engine === 'yarn') {
       const pro = spawn(
         `${/^win/.test(process.platform) ? 'yarn.cmd' : 'yarn'}`,
         ['add', '-D', ...devDependencies],
