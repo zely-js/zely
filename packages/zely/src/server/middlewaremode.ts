@@ -27,7 +27,7 @@ export async function middleware(config: Config): Promise<pureMiddleware[]> {
     // console.log(plugin);
     if (plugin.server) {
       warn(
-        `[${plugin.name}] plugin.server is ignored (reason: config.server.middlewareMode enabled)`
+        `[${plugin.name}] plugin.server was ignored (reason: config.server.middlewareMode enabled)`
       );
     }
   });
@@ -61,8 +61,10 @@ export async function middleware(config: Config): Promise<pureMiddleware[]> {
   // handle
 
   middlewares.push((req, res, next) => {
-    config.error = next;
-
+    // eslint-disable-next-line no-unused-vars
+    config.error = (req, res) => {
+      next();
+    };
     Handler(req as any, res as any, config);
   });
 
