@@ -1,0 +1,13 @@
+{
+  "name": "@playground/with-vite",
+  "version": "1.0.0",
+  "dependencies": {
+    "vite": "*",
+    "vite-plugin-zely": "*",
+    "zely": "*"
+  },
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build"
+  }
+}

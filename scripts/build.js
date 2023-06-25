@@ -65,3 +65,5 @@ build('zely', 'src/export-config.ts', {
   cjs: 'dist/config.js',
   esm: 'dist/config.esm.js',
 });
+
+build('vite-plugin-zely');
