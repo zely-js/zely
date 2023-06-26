@@ -25,6 +25,7 @@ export * from './snatcher';
 
 export * from './apply-plugins';
 export * from './prewrite';
+export * from './support';
 
 // no esm
 
