@@ -15,6 +15,7 @@ export interface ZelyResponse extends Response {
   html: (code: string) => this;
   send: (chunk: string | Array<any> | object | number, status?: number) => this;
   status: (code: number) => this;
+  sendFile: (filePath: string) => this;
 }
 
 export type requestHandler = (req: ZelyRequest, res: ZelyResponse) => void;

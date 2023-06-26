@@ -1,6 +1,8 @@
 import url from 'url';
 import http from 'http';
+import { lookup } from 'mime-types';
 
+import { createReadStream } from 'fs';
 import { Plugin } from '../config';
 import { snatcher } from '../snatcher';
 
@@ -35,6 +37,21 @@ export function apply(req: Req, res: Res) {
   // res.status(404).send("not found")
   (res as any).status = (code: number) => {
     res.statusCode = code;
+    return res;
+  };
+
+  // res.sendFile
+
+  (res as any).sendFile = (filePath: string) => {
+    const mime = lookup(filePath) || 'text/plain';
+
+    res.writeHead(200, {
+      'Content-Type': mime,
+      'Content-Disposition': `attachment; filename=${filePath}`,
+    });
+
+    createReadStream(filePath).pipe(res);
+
     return res;
   };
 
