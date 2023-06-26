@@ -3,6 +3,7 @@ import { BuildOptions } from 'esbuild';
 import { Request, Response, OsikServer, ServerOptions } from 'osik';
 import { FileData, Page } from './core';
 import { IncomingMessage, ServerResponse } from 'http';
+import { ZelyRequest, ZelyResponse } from './method';
 
 export type Middleware = (req: Request, res: Response, next: any) => void;
 
@@ -127,6 +128,11 @@ export function usePrewrite<T>(
   res: ServerResponse,
   cb: (chunk: T) => T | Promise<T>
 ): void;
+
+export function support(
+  request: Request,
+  response: Response
+): { request: ZelyRequest; response: ZelyResponse };
 
 export * from './config';
 export * from './constants';
