@@ -1,5 +1,5 @@
 {
-  "name": "@playground/dependencies",
+  "name": "@playground/v0.1",
   "version": "1.0.0",
   "dependencies": {
     "zely": "*"

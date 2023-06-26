@@ -4,5 +4,6 @@
 
 ---
 
+- [Introduce v0.1](/blog/2023-06-26) <Badge type="info" text="core" />
 - [Prebuilding](/blog/2023-06-20) <Badge type="tip" text="news" />
 - [New Repository](/blog/2023-06-18) <Badge type="tip" text="news" />
