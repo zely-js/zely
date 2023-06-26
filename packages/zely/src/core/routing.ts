@@ -226,6 +226,13 @@ export async function Handler(req: ZelyRequest, res: ZelyResponse, config: Confi
     if (!globalCache) {
       const pages = await getPages(config);
       globalCache = filenameToRoute(pages as any);
+
+      await Promise.all(
+        // eslint-disable-next-line array-callback-return
+        config.plugins?.map(async (plugin) => {
+          if (plugin.pages) await plugin.pages(globalCache);
+        })
+      );
     }
     // console.log(routes);
 

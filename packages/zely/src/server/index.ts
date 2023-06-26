@@ -36,6 +36,13 @@ export async function Zely(config: Config): Promise<OsikServer> {
     console.log();
   }
 
+  await Promise.all(
+    // eslint-disable-next-line array-callback-return
+    config.plugins?.map(async (plugin) => {
+      if (plugin.config) await plugin.config(config || {});
+    })
+  );
+
   // handle
 
   app.use((req, res) => {

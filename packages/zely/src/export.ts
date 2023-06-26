@@ -6,7 +6,7 @@ import { nodeExternalsPlugin } from 'esbuild-node-externals';
 import { Config, configDev } from './config';
 import { CACHE_DIRECTORY, DEFAULT_CONFIG } from './constants';
 import { filenameToRoute, getPages } from './core';
-import { success } from './logger';
+import { info, success } from './logger';
 
 export function exportsCode(config: Config) {
   return {
@@ -46,6 +46,27 @@ export async function exportServer(
     );
   }
 
+  const ignoredDependencies: string[] = [];
+
+  await Promise.all(
+    // eslint-disable-next-line array-callback-return
+    config.plugins?.map(async (plugin) => {
+      if (plugin.build) {
+        const buildoutput = await plugin.build();
+
+        if (buildoutput && buildoutput.conflict?.dependencies) {
+          const requestedDeps = buildoutput.conflict?.dependencies || [];
+          ignoredDependencies.push(...requestedDeps);
+          info(
+            `[${plugin.name}] excluded ${
+              String(requestedDeps.length).red
+            } dependencies from bundling - ${requestedDeps.join(', ').cyan}`
+          );
+        }
+      }
+    })
+  );
+
   // import pages
   pages.forEach((page, index) => {
     if (page.type === 'html') {
@@ -64,11 +85,21 @@ export async function exportServer(
 
   writeFileSync(
     out,
-    `const __userconfig = require("./${relative(CACHE_DIRECTORY, configData).replace(
+    `/*  */
+
+const __userconfig = require("./${relative(CACHE_DIRECTORY, configData).replace(
       /\\/g,
       '/'
     )}");
 ${code.import}
+
+const ignoredDependencies = ${JSON.stringify(ignoredDependencies)};
+
+ignoredDependencies.forEach((dependency) => {
+  try { require.resolve(dependency) } catch (e) { console.log(\`\${"[warning]".yellow} error occured while loading module \"\${dependency}\" - \${e}\n\`) }
+})
+
+
 ${code.init}
 const _pages = [${pagesJSONCode.join(',')}];
 applyPlugins(app, __userconfig);
@@ -86,6 +117,7 @@ ${code.listen}`
     logLevel: 'error',
     platform: 'node',
     minify: true,
+    external: ignoredDependencies,
     ...(!bundleModules ? { plugins: [nodeExternalsPlugin() as any] } : {}),
   });
 
