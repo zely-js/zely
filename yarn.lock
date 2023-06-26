@@ -2128,10 +2128,10 @@ esbuild-netbsd-64@0.15.18:
   resolved "https://registry.yarnpkg.com/esbuild-netbsd-64/-/esbuild-netbsd-64-0.15.18.tgz#ae75682f60d08560b1fe9482bfe0173e5110b998"
   integrity sha512-98ukeCdvdX7wr1vUYQzKo4kQ0N2p27H7I11maINv73fVEXt2kyh4K4m9f35U1K43Xc2QGXlzAw0K9yoU7JUjOg==
 
-esbuild-node-externals@^1.5.0, esbuild-node-externals@^1.6.0:
-  version "1.7.0"
-  resolved "https://registry.npmjs.org/esbuild-node-externals/-/esbuild-node-externals-1.7.0.tgz"
-  integrity sha512-nfY3hxtO2anCTZ87LgfzCTfBuyG6de+NyiCNMF1mgrBufS0NgoYlBwF77HHuOInsJLxsAJf0BfLeV6ekZ3hRuA==
+esbuild-node-externals@^1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/esbuild-node-externals/-/esbuild-node-externals-1.8.0.tgz#878fbe458d4e58337753c2eacfd7200dc1077bd1"
+  integrity sha512-pYslmT8Bl383UnfxzHQQRpCgBNIOwAzDaYheuIeI4CODxelsN/eQroVn5STDow5QOpRalMgWUR+R8LfSgUROcw==
   dependencies:
     find-up "^5.0.0"
     tslib "^2.4.1"
