@@ -1,4 +1,4 @@
-[![img](.github/assets/icon-v3-white.svg)](https://github.com/do4ng/prext)
+
 
 # Zely
 
