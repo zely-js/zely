@@ -1,6 +1,6 @@
 {
   "name": "zely",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "types": "./types/index.d.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
