@@ -2,7 +2,7 @@ import url from 'url';
 import http from 'http';
 import { lookup } from 'mime-types';
 
-import { createReadStream } from 'fs';
+import { createReadStream, existsSync } from 'fs';
 import { Plugin } from '../config';
 import { snatcher } from '../snatcher';
 
@@ -45,12 +45,16 @@ export function apply(req: Req, res: Res) {
   (res as any).sendFile = (filePath: string) => {
     const mime = lookup(filePath) || 'text/plain';
 
-    res.writeHead(200, {
-      'Content-Type': mime,
-      'Content-Disposition': `attachment; filename=${filePath}`,
-    });
+    if (existsSync(filePath)) {
+      res.writeHead(200, {
+        'Content-Type': mime,
+        'Content-Disposition': `attachment; filename=${filePath}`,
+      });
 
-    createReadStream(filePath).pipe(res);
+      createReadStream(filePath).pipe(res);
+    } else {
+      throw new Error(`no such file or directory. ${filePath}`);
+    }
 
     return res;
   };
