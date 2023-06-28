@@ -8,6 +8,22 @@ import { CACHE_DIRECTORY } from '../constants';
 import { Static } from '../plugins/public';
 
 export async function middleware(config: Config): Promise<pureMiddleware[]> {
+  await Promise.all(
+    // eslint-disable-next-line array-callback-return
+    config.plugins?.map(async (plugin) => {
+      if (plugin.config) {
+        const output = await plugin.config(config || {});
+
+        if (output) {
+          config = {
+            ...config,
+            ...output,
+          };
+        }
+      }
+    })
+  );
+
   if (!config.server?.middlewareMode) {
     error(
       'This function is not available when config.server.middlewareMode is disabled.'
