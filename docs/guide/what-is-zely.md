@@ -14,7 +14,7 @@
 
 ## Introduction
 
-Zely (previous + next) is a node.js backend framework inspired by [next](https://nextjs.org/). This project aims to be the lightest Nodejs backend framework.
+Zely is a node.js backend framework inspired by [next](https://nextjs.org/). This project aims to be the lightest Nodejs backend framework.
 
 Zely is running on [osik](https://npmjs.com/package/osik) which was made for speed and weight. It also uses [esbuild](https://esbuild.github.io/) to reduce compile time.
 
