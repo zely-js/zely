@@ -24,7 +24,9 @@ export async function Zely(config: Config): Promise<OsikServer> {
     })
   );
 
-  rmSync(CACHE_DIRECTORY, { recursive: true, force: true });
+  if (!config.server?.keepCache) {
+    rmSync(CACHE_DIRECTORY, { recursive: true, force: true });
+  }
 
   const app = osik(config.server?.osik);
 

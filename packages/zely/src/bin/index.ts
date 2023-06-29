@@ -1,19 +1,20 @@
 #!/usr/bin/env node
 
 import program from 'animaux';
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, rmSync, writeFileSync } from 'fs';
 import { join, normalize } from 'path';
 
 import { performance } from 'perf_hooks';
 
 import pkg from '../../package.json';
-import { getConfig } from '../config';
+import { Config, getConfig } from '../config';
 import { add } from '../core/add';
 import { Watch } from '../core/watch';
 import { exportServer } from '../export';
 import { error, info, warn } from '../logger';
 import { Zely } from '../server/index';
 import { showListen } from '../show-listen';
+import { CACHE_DIRECTORY } from '../constants';
 
 const app = program('zely');
 
@@ -24,7 +25,12 @@ app
   .describe('Start Server (development mode)')
   .option('--config, -c', 'Provide config file path.')
   .action(async (options) => {
-    const config = await getConfig(options.config || null);
+    rmSync(CACHE_DIRECTORY, { recursive: true, force: true });
+
+    const config: Config = {
+      ...(await getConfig(options.config || null)),
+      server: { keepCache: true },
+    };
     const port = config.port || 5050;
     const startTime = performance.now();
 

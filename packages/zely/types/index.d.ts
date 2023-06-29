@@ -106,6 +106,11 @@ export interface Config {
 
     // osik options
     osik?: ServerOptions;
+
+    /**
+     * don't remove cache dir when server start.
+     */
+    keepCache?: boolean;
   };
 
   // public directory

@@ -30,8 +30,9 @@ export async function middleware(config: Config): Promise<pureMiddleware[]> {
     );
     return;
   }
-
-  rmSync(CACHE_DIRECTORY, { recursive: true, force: true });
+  if (!config.server?.keepCache) {
+    rmSync(CACHE_DIRECTORY, { recursive: true, force: true });
+  }
 
   const middlewares: pureMiddleware[] = [];
 
