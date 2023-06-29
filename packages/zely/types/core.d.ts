@@ -11,9 +11,11 @@ export type FileType = 'html' | 'module';
 
 export type FileData = {
   file: string;
-  m: {
-    [key: string]: (req: ZelyRequest, res: ZelyResponse) => void | Promise<void>;
-  };
+  m:
+    | {
+        [key: string]: (req: ZelyRequest, res: ZelyResponse) => void | Promise<void>;
+      }
+    | string;
   type: FileType;
   modulePath: string;
   origin?: string;
