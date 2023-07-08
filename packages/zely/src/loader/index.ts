@@ -6,6 +6,7 @@ import { CACHE_DIRECTORY } from '../constants';
 import { Config } from '../config';
 import { error } from '../logger';
 import pkg from '../../package.json';
+import { filenamePlugin } from './plugins/filename';
 
 export function typescriptLoader(
   target: string,
@@ -25,7 +26,7 @@ export function typescriptLoader(
 
       platform: 'node',
       format: __ESM__ ? 'esm' : 'cjs',
-      plugins: [nodeExternalsPlugin() as any],
+      plugins: [nodeExternalsPlugin() as any, filenamePlugin],
       banner: {
         js: `/*** ${target}=>${dist} ***/\n/***  version: ${pkg.version}  ***/\n`,
       },
