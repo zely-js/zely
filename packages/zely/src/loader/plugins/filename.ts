@@ -17,8 +17,8 @@ export const filenamePlugin = {
         const loader = path.extname(filePath).substring(1);
         const dirname = path.dirname(filePath);
         contents = contents
-          .replace('__dirname', `"${dirname}"`)
-          .replace('__filename', `"${filePath}"`);
+          .replace('__dirname', `"${dirname.replace(/\\/g, '\\\\')}"`)
+          .replace('__filename', `"${filePath.replace(/\\/g, '\\\\')}"`);
         return {
           contents,
           loader,
