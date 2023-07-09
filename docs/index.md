@@ -17,7 +17,7 @@ hero:
 features:
   - icon: 🛠️
     title: File Based Routing
-    details: Prext.js creates routes automatically with filenames.
+    details: zely creates routes automatically with filenames.
   - icon: 🚀
     title: Server Reload
     details: You don't have to restart server to apply changes.
@@ -25,3 +25,5 @@ features:
     title: Lightning Fast
     details: faster compared to other frameworks.
 ---
+
+<div class=""></div>
