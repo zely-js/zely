@@ -33,6 +33,11 @@ export interface Plugin {
   build?: () => PluginBuildOutput | void | Promise<PluginBuildOutput | void>;
   config?: (config: Config) => Promise<Config | void> | Config | void;
   pages?: (pages: FileData[]) => Promise<void> | void;
+  /**
+   * run before server starting
+   * @returns void
+   */
+  setup?: () => void | Promise<void>;
 }
 
 export type pureMiddleware = (

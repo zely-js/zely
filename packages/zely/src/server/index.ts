@@ -8,6 +8,7 @@ import { applyPlugins } from '../apply-plugins';
 import { info } from '../logger';
 
 export async function Zely(config: Config): Promise<OsikServer> {
+  // plugin.config
   await Promise.all(
     // eslint-disable-next-line array-callback-return
     config.plugins?.map(async (plugin) => {
@@ -24,9 +25,21 @@ export async function Zely(config: Config): Promise<OsikServer> {
     })
   );
 
+  // plugin.setup
+  await Promise.all(
+    // eslint-disable-next-line array-callback-return
+    config.plugins?.map(async (plugin) => {
+      if (plugin.setup) {
+        await plugin.setup();
+      }
+    })
+  );
+
   if (!config.server?.keepCache) {
     rmSync(CACHE_DIRECTORY, { recursive: true, force: true });
   }
+
+  // create osik server
 
   const app = osik(config.server?.osik);
 

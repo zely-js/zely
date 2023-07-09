@@ -8,6 +8,7 @@ import { CACHE_DIRECTORY } from '../constants';
 import { Static } from '../plugins/public';
 
 export async function middleware(config: Config): Promise<pureMiddleware[]> {
+  // plugin.config
   await Promise.all(
     // eslint-disable-next-line array-callback-return
     config.plugins?.map(async (plugin) => {
@@ -20,6 +21,16 @@ export async function middleware(config: Config): Promise<pureMiddleware[]> {
             ...output,
           };
         }
+      }
+    })
+  );
+
+  // plugin.setup
+  await Promise.all(
+    // eslint-disable-next-line array-callback-return
+    config.plugins?.map(async (plugin) => {
+      if (plugin.setup) {
+        await plugin.setup();
       }
     })
   );
