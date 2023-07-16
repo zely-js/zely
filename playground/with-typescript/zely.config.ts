@@ -19,4 +19,6 @@ export default defineConfig({
 
     res.end('404 page not found');
   },
+
+  useBrackets: true,
 });
