@@ -70,7 +70,9 @@ export async function exportServer(
   // import pages
   pages.forEach((page, index) => {
     if (page.type === 'html') {
-      pagesCode[index] = `\`${page.m.replace(/`/g, '\\`').replace(/\$/g, '\\$')}\``;
+      pagesCode[index] = `\`${(page.m as string)
+        .replace(/`/g, '\\`')
+        .replace(/\$/g, '\\$')}\``;
     } else {
       pagesCode[index] = `require("./${join(
         '',
