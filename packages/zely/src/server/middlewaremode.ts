@@ -8,6 +8,8 @@ import { CACHE_DIRECTORY } from '../constants';
 import { Static } from '../plugins/public';
 
 export async function middleware(config: Config): Promise<pureMiddleware[]> {
+  if (!config.plugins) config.plugins = [];
+
   // plugin.config
   await Promise.all(
     // eslint-disable-next-line array-callback-return

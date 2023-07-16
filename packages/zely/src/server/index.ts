@@ -8,6 +8,8 @@ import { applyPlugins } from '../apply-plugins';
 import { info } from '../logger';
 
 export async function Zely(config: Config): Promise<OsikServer> {
+  if (!config.plugins) config.plugins = [];
+
   // plugin.config
   await Promise.all(
     // eslint-disable-next-line array-callback-return
