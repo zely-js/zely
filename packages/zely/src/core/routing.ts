@@ -138,7 +138,7 @@ export async function getPages(config: Config): Promise<FileData | null> {
   return files as any;
 }
 
-export function filenameToRoute(map: Array<FileData>) {
+export function filenameToRoute(map: Array<FileData>, useBrackets: boolean = false) {
   const rawfiles = map.map((page) => {
     if (page) {
       let { file } = page;
@@ -151,7 +151,7 @@ export function filenameToRoute(map: Array<FileData>) {
 
       file = join(dir, name);
       file = file.replace(/\\/g, '/');
-      file = transformFilename(file);
+      file = transformFilename(file, useBrackets);
       file = prettyURL(file);
 
       return {
@@ -225,7 +225,7 @@ export async function Handler(req: ZelyRequest, res: ZelyResponse, config: Confi
   try {
     if (!globalCache) {
       const pages = await getPages(config);
-      globalCache = filenameToRoute(pages as any);
+      globalCache = filenameToRoute(pages as any, config.useBrackets);
 
       await Promise.all(
         // eslint-disable-next-line array-callback-return

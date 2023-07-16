@@ -122,6 +122,8 @@ export interface Config {
 
   public?: string;
   publicOptions?: StaticOptions;
+
+  useBrackets?: boolean;
 }
 
 export function showListen(port: string | number): void;
