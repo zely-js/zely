@@ -56,6 +56,7 @@ app
   .command('export', ['build'])
   .describe('Export Zely Server')
   .option('--bundle, -b', 'Bundle with node_modules', true)
+  .option('--module, -m', 'Export server instead of starting server.', false)
   .action(async (options) => {
     const config = await getConfig(options.config || null);
 
@@ -64,7 +65,7 @@ app
       info('--bundle option enabled.\n');
     }
 
-    exportServer(config, options.bundle);
+    exportServer(config, options.bundle, options.module);
   });
 
 app

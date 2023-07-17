@@ -7,6 +7,8 @@ import { Config, configDev } from './config';
 import { CACHE_DIRECTORY, DEFAULT_CONFIG } from './constants';
 import { filenameToRoute, getPages } from './core';
 import { info, success } from './logger';
+import { transformFilename } from '$zely/lib/transform-filename';
+import { loadMiddlewaresModluePath } from './server/load-middlewares';
 
 export function exportsCode(config: Config) {
   return {
@@ -14,12 +16,14 @@ export function exportsCode(config: Config) {
       'var { handles, applyPlugins } = require("zely/server");var { osik } = require("osik");',
     init: 'var app = osik();',
     listen: `app.listen(${config.port}, () => {console.log("Server is running.".grey + " - " + "http://localhost:${config.port}".cyan)});`,
+    export: 'module.exports=app;',
   };
 }
 
 export async function exportServer(
   config: Config,
-  bundleModules: boolean = true
+  bundleModules: boolean = true,
+  isModule: boolean = false
 ): Promise<void> {
   rmSync(CACHE_DIRECTORY, { recursive: true, force: true });
   console.log(`${'$'.gray} Exporting App.\n`.cyan);
@@ -48,6 +52,8 @@ export async function exportServer(
 
   const ignoredDependencies: string[] = [];
 
+  if (!config.plugins) config.plugins = [];
+
   await Promise.all(
     // eslint-disable-next-line array-callback-return
     config.plugins?.map(async (plugin) => {
@@ -68,6 +74,7 @@ export async function exportServer(
   );
 
   // import pages
+
   pages.forEach((page, index) => {
     if (page.type === 'html') {
       pagesCode[index] = `\`${(page.m as string)
@@ -82,8 +89,27 @@ export async function exportServer(
   });
 
   pages.forEach((page, index) => {
-    pagesJSONCode.push(`{file:"${page.file}",m:${pagesCode[index]},type:"${page.type}"}`);
+    pagesJSONCode.push(
+      `{file:"${transformFilename(page.file, config.useBrackets)}",m:${
+        pagesCode[index]
+      },type:"${page.type}"}`
+    );
   });
+
+  // import middlewares
+
+  const middlewares = await loadMiddlewaresModluePath(config);
+  const middlewaresLoadMap = [];
+
+  middlewares.forEach((middleware) => {
+    middlewaresLoadMap.push(
+      `require("./${relative(CACHE_DIRECTORY, middleware).replace(/\\/g, '/')}")`
+    );
+  });
+
+  // console.log(middlewaresLoadMap);
+
+  // output
 
   writeFileSync(
     out,
@@ -97,17 +123,26 @@ ${code.import}
 
 const ignoredDependencies = ${JSON.stringify(ignoredDependencies)};
 
+const autoMiddlewares = [\n  ${middlewaresLoadMap.join(',\n  ')}\n];
+
 ignoredDependencies.forEach((dependency) => {
   try { require.resolve(dependency) } catch (e) { console.log(\`\${"[warning]".yellow} error occured while loading module \"\${dependency}\" - \${e}\n\`) }
 })
 
-
 ${code.init}
 const _pages = [${pagesJSONCode.join(',')}];
+
+// apply plugins
 applyPlugins(app, __userconfig);
-(__userconfig.default.middlewares || []).forEach((middleware) => app.use(middleware));
-app.use((req,res) => {handles(req,res, _pages)});
-${code.listen}`
+
+// apply middlewares
+autoMiddlewares.forEach((middleware) => {app.use(middleware.default || middleware)});
+(__userconfig.default?.middlewares || __userconfig.middlewares || []).forEach((middleware) => app.use(middleware));
+
+// handle requests
+app.use((req,res) => {handles(req,res, _pages, __userconfig)});
+
+${!isModule ? code.listen : code.export}`
   );
 
   success('success to create build file.');

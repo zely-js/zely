@@ -23,3 +23,22 @@ export async function loadMiddlewares(config: Config) {
 
   return [];
 }
+
+export async function loadMiddlewaresModluePath(config: Config) {
+  if (config.middlewareDirectory) {
+    const base = config.middlewareDirectory;
+    const files = readDirectory(base);
+
+    const modules = [];
+
+    for await (const file of files) {
+      const m = await typescriptLoader(join(file), config, 'middlewares');
+
+      modules.push(m.filename);
+    }
+
+    return modules;
+  }
+
+  return [];
+}
