@@ -87,7 +87,7 @@ Port
 Custom Server Handler
 
 ```ts
-Zely({
+await Zely({
   handler: (req, res, routes) => {
     // ...
   },
@@ -112,7 +112,7 @@ reference: [plugin](/apis/plugin)
 
 ### watch
 
-- Type: `chokidar.WatchOptions`
+- Type: `{enable: boolean; options: chokidar.WatchOptions;}`
 
 ### error
 
@@ -131,3 +131,22 @@ reference: [auto middleware](/guide/middlewares#auto-mode)
 ### middlewareDirectory
 
 - Type: `string`
+
+### server
+
+```ts
+interface Config {
+  // ...
+  server?: {
+    middlewareMode?: boolean;
+    // osik server options
+    osik?: ServerOptions;
+    // if you enable `keepCache`, zely will not remove cache directory when server starts.
+    keepCache?: boolean;
+  };
+}
+```
+
+## useBrackets
+
+If you enable `useBrackets`, you can set routes using brackets like `/[id]/index.ts`.
