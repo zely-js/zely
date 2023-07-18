@@ -5,7 +5,6 @@ import randomFilename from '../../lib/random-filename';
 import { CACHE_DIRECTORY } from '../constants';
 import { Config } from '../config';
 import { error } from '../logger';
-import pkg from '../../package.json';
 import { filenamePlugin } from './plugins/filename';
 
 export function typescriptLoader(
@@ -27,9 +26,6 @@ export function typescriptLoader(
       platform: 'node',
       format: __ESM__ ? 'esm' : 'cjs',
       plugins: [nodeExternalsPlugin() as any, filenamePlugin],
-      banner: {
-        js: `/*** ${target}=>${dist} ***/\n/***  version: ${pkg.version}  ***/\n`,
-      },
       ...(config.esbuild || {}),
     })
       .then(() => {
