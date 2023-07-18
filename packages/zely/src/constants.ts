@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { Config } from './config';
 
-export const CACHE_DIRECTORY = join(__dirname, '../../', '.zely');
+export const CACHE_DIRECTORY = join(process.cwd(), '.zely');
 export const DEFAULT_CONFIG: Config = {
   port: 3000,
   routes: './pages',
