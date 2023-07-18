@@ -30,6 +30,15 @@ $ zely export
 
 will create `dist/index.js`. And check if it works well.
 
+::: tip
+Add the `--bundle=false` option if you want to reduce the size of the output. node_modules will not be bundled.
+
+```
+$ zely export --bundle=false
+```
+
+:::
+
 ```bash
 $ node dist/index.js
 ```
@@ -45,6 +54,18 @@ Check again if it works.
 
 ```bash
 $ node dist/index.js
+```
+
+## Module Mode
+
+If you don't want the built app to start the server, add the `--module` option.
+
+```
+$ zely export --module --bundle=false
+```
+
+```js
+require('./dist/index.js').listen(3000);
 ```
 
 ## CLI
