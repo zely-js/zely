@@ -22,6 +22,7 @@ export function exportsCode(config: Config) {
 
 export async function exportServer(
   config: Config,
+  output?: string,
   bundleModules: boolean = true,
   isModule: boolean = false
 ): Promise<void> {
@@ -32,8 +33,10 @@ export async function exportServer(
 
   const out = join(CACHE_DIRECTORY, 'core.__build.js');
   const outDir = join(process.cwd(), config.base || '.', 'dist');
-  const outFile = join(outDir, 'index.js');
+  const outFile = output || join(outDir, 'index.js');
   const pages = filenameToRoute((await getPages(config)) as any);
+
+  // console.log(outFile);
 
   const code = exportsCode(config);
   const pagesCode = {};
