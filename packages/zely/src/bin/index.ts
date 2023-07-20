@@ -104,7 +104,7 @@ app
 app
   .command('preview')
   .describe('generate Preview Server')
-  .option('--output, -o', 'Provide output file', 'zely.preview.js')
+  .option('--output, -o', 'Provide output file')
   .action(async (options) => {
     try {
       let outfile = 'zely.preview.js';
