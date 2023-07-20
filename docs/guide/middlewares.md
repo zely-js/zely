@@ -44,11 +44,7 @@ export default defineConfig({
 
 :::
 
-## Auto Mode
-
-::: warning
-`autoMiddlewareMode` is a experimental feature.
-:::
+## Auto Mode <span><Badge  style="margin-top:6px" text="experimental" /></span>
 
 To use auto middleware mode, edit config value.
 

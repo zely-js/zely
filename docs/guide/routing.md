@@ -2,51 +2,30 @@
 
 zely.js automatically generates routes based on your file tree of pages.
 
-```txt
-.
-├─ pages
-│  ├─ user
-│  │  └─ $id.ts
-│  ├─ users.ts
-│  └─ index.ts
-├─ zely.config.ts
-└─ package.json
-```
+| filename             | result(path)      |
+| -------------------- | ----------------- |
+| `/index.ts`          | `/`               |
+| `/hello.ts`          | `/hello`          |
+| `/foo/bar.ts`        | `/foo/bar`        |
+| `/user/$id.ts`       | `/user/:id`       |
+| `/user/$id/about.ts` | `/user/:id/about` |
 
-will be
+::: info
 
-```json
-["/", "/users", "/users/:id"]
-```
-
-More examples:
-
-::: code-group
-
-```json [files]
-[
-  "/pages/index.ts",
-  "/pages/about.ts",
-  "/pages/dashboard.ts",
-  "/pages/foo/bar.ts",
-  "/pages/user/$user.ts"
-]
-```
-
-```json [routes]
-["/", "/about", "/dashboard", "/foo/bar", "/user/:user"]
-```
+You can also use [nextjs style routes](#routes-using-brackets).
 
 :::
 
-## Custom Path
+## Method
 
-If you don't like routes based on filename, just export `$page`!
+Exports functions corresponding `get`, `post`, `delete` etc (http verbs)
 
 ```ts
-export const $page = {
-  path: '/foo/bar',
-};
+// get
+export function get(req, res) {}
+// post
+export function post(req, res) {}
+// etc...
 ```
 
 ## Route Parameters
@@ -65,6 +44,43 @@ export function get(req: ZelyRequest, res: ZelyResponse) {
 
 :::
 
+## Routes using Brackets <span><Badge  style="margin-top:6px" text="experimental" /></span>
+
+If you don't like zely routes style you can use nextjs routes style.
+
+::: code-group
+
+```ts [zely.config.ts] {4}
+import { defineConfig } from 'zely';
+
+export default defineConfig({
+  useBrackets: true,
+});
+```
+
+:::
+
+Examples:
+
+| filename              | result(path)      |
+| --------------------- | ----------------- |
+| `/index.ts`           | `/`               |
+| `/hello.ts`           | `/hello`          |
+| `/foo/bar.ts`         | `/foo/bar`        |
+| `/user/[id].ts`       | `/user/:id`       |
+| `/user/[id]/about.ts` | `/user/:id/about` |
+| `/foo/[...bar]`       | `/foo/:bar*`      |
+
+## Custom Path
+
+If you don't like routes based on filename, just export `$page`!
+
+```ts
+export const $page = {
+  path: '/foo/bar',
+};
+```
+
 ## 404 page
 
 You can set 404 page with `config.error`.
@@ -78,90 +94,14 @@ export default defineConfig({
 });
 ```
 
-## Method
+## request and response
 
-Exports functions corresponding `get`, `post`, `delete` etc (http verbs)
-
-```ts
-// get
-export function get(req, res) {}
-// post
-export function post(req, res) {}
-// etc...
-```
+Zely Server is based on `node:http` module.
 
 ### request
 
-Zely Server is based on `node:http` module.
-
 > reference: [http.req](https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/#request-body)
-
-### req.params
-
-Page Parameters.
-
-- type: `any`
-- example: `/item/$id` => `req.params.id`
-
-```js
-export function get(req, res) {
-  res.end(`item: ${req.params.id}!`);
-}
-```
-
-### req.query
-
-Page Querystring.
-
-- type: `object`
-- example: `/abc?foo=bar` => `req.query.foo`
 
 ### response
 
-Zely Server is based on `node:http` module.
-
 > reference: [http.res](https://nodejs.org/en/docs/guides/anatomy-of-an-http-transaction/#http-status-code)
-
-### res.json
-
-Send json data.
-
-```js
-export function get(req, res) {
-  res.json({ id: 1 });
-}
-```
-
-### res.end
-
-Send data
-
-```js
-export function get(req, res) {
-  res.end('Hello World!');
-}
-```
-
-### res.send
-
-Send data
-
-::: info
-
-same as "req.end"
-
-:::
-
-### res.setHeader
-
-Set header
-
-### res.status
-
-Set status
-
-```js
-export function get(req, res) {
-  res.status(200).end('Hello World!');
-}
-```

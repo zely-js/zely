@@ -59,6 +59,7 @@ function sidebarApis() {
       collapsed: false,
       items: [
         { text: 'Introduction', link: '/apis/introduction' },
+        { text: 'Apis', link: '/apis/apis' },
         { text: 'Server', link: '/apis/server' },
         { text: 'Plugin', link: '/apis/plugin' },
         { text: 'Osik', link: '/apis/osik' },
