@@ -52,7 +52,7 @@
   "dependencies": {
     "animaux": "^0.0.4",
     "chokidar": "^3.5.3",
-    "esbuild": "^0.18.14",
+    "esbuild": "^0.18.15",
     "esbuild-node-externals": "^1.8.0",
     "mime-types": "^2.1.35",
     "osik": "^0.0.5",
