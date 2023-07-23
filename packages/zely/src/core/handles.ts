@@ -114,6 +114,7 @@ export async function handles(
               pattern
             );
             const pageModule = page.m.default;
+            const $page = page.m.$page || {};
 
             // assign parameters.
 
@@ -162,6 +163,8 @@ export async function handles(
               }
             };
 
+            if ($page.before) await $page.before(req, res);
+
             if (typeof pageModule === 'object') {
               // array
               if (Array.isArray(pageModule)) {
@@ -174,6 +177,8 @@ export async function handles(
             } else {
               await processHandler(pageModule);
             }
+
+            if ($page.after) await $page.after(req, res);
           }
 
           // page functions
