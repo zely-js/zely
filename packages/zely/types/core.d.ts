@@ -47,3 +47,37 @@ export interface Page {
 }
 
 export function middleware(config: Config): Promise<pureMiddleware[]>;
+
+export interface ServerDataHandlerResponse {
+  __typeof?: symbol;
+  __method?: symbol;
+  headers?: Record<string, string>;
+  body?: any;
+}
+
+export type ServerDataHandlerFunc = (
+  req: ZelyRequest,
+  res: ZelyResponse
+) => Promise<ServerDataHandlerResponse | null> | ServerDataHandlerResponse | null;
+
+export type ServerDataHandler = Record<any, any> | ServerDataHandlerFunc;
+
+export interface METHODS {
+  all: symbol;
+  get: symbol;
+  post: symbol;
+  delete: symbol;
+  put: symbol;
+}
+
+export const methods: {
+  all(body: any, headers?: Record<string, string>): ServerDataHandlerResponse;
+
+  get(body: any, headers?: Record<string, string>): ServerDataHandlerResponse;
+
+  post(body: any, headers?: Record<string, string>): ServerDataHandlerResponse;
+
+  delete(body: any, headers?: Record<string, string>): ServerDataHandlerResponse;
+
+  put(body: any, headers?: Record<string, string>): ServerDataHandlerResponse;
+};

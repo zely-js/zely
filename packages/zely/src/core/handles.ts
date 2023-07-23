@@ -1,3 +1,4 @@
+/* eslint-disable no-loop-func */
 import url from 'url';
 import { IncomingMessage, ServerResponse } from 'http';
 import { existsSync, readFileSync } from 'fs';
@@ -10,40 +11,41 @@ import { pathToRegexp } from '$zely/lib/pathToRegexp';
 import { CACHE_DIRECTORY } from '../constants';
 import { error, errorWithStacks, parseError } from '../logger';
 import { Config } from '../config';
-import { ZelyResponse } from '$zely/types';
+import { ServerDataHandler, ZelyRequest, ZelyResponse } from '$zely/types';
 
-export function send(value: any, res: ZelyResponse) {
+export async function send(value: any, res: ZelyResponse) {
   switch (typeof value) {
     case 'string':
-      res.send(value);
+      await res.send(value);
       break;
 
     case 'number':
-      res.send((value as number).toString());
+      await res.send((value as number).toString());
       break;
 
     case 'bigint':
-      res.send((value as bigint).toString());
+      await res.send((value as bigint).toString());
       break;
 
     case 'boolean':
-      res.send(String(value));
+      await res.send(String(value));
       break;
 
     case 'undefined':
-      res.send('undefined');
+      await res.send('undefined');
       break;
 
     case 'object':
-      res.send(JSON.stringify(value));
+      await res.send(JSON.stringify(value));
       break;
 
     default:
+      error(`unsupported type: ${typeof value}`);
       break;
   }
 }
 
-export function handles(
+export async function handles(
   req: IncomingMessage,
   res: ServerResponse,
   routes: {
@@ -77,7 +79,7 @@ export function handles(
   // is sended
   let isSended = false;
 
-  routes.forEach((page) => {
+  for await (const page of routes) {
     // debug
     // console.log(page.file, isSended);
 
@@ -104,12 +106,91 @@ export function handles(
 
         page.m = ObjectkeysMap(page.m, (key) => key.toLowerCase());
 
-        // check method
+        for await (const pageHandler of Object.keys(page.m)) {
+          // export default [];
 
-        Object.keys(page.m).forEach(async (pageHandler) => {
-          // "all"
+          if (page.m.default) {
+            const execd = new URL(req.url, `http://${req.headers.host}`).pathname.match(
+              pattern
+            );
+            const pageModule = page.m.default;
 
-          if (pageHandler === req.method.toLowerCase() || pageHandler === 'all') {
+            // assign parameters.
+
+            if (!req.params) req.params = {};
+
+            params.forEach((param, index) => {
+              req.params[param] = execd[index + 1] || null;
+            });
+
+            // send
+
+            const processHandler = async (m: ServerDataHandler | object) => {
+              if (typeof m === 'function') {
+                // function handler
+
+                const output = await m(req as ZelyRequest, res as ZelyResponse);
+
+                // console.log(output);
+
+                if (output?.__typeof === Symbol.for('zely:handler')) {
+                  if (
+                    output.__method.description.toLowerCase() ===
+                      req.method.toLowerCase() ||
+                    output.__method.description.toLowerCase() === 'all'
+                  ) {
+                    // function => handler object
+
+                    isSended = true;
+                    Object.keys(output.headers || {}).forEach((header) => {
+                      res.setHeader(header, output.headers.header);
+                    });
+                    await send(output.body, res as ZelyResponse);
+                  }
+                } else {
+                  // function => object
+
+                  isSended = true;
+                  await send(output, res as ZelyResponse);
+                }
+              } else {
+                // just object
+
+                isSended = true;
+                await send(m, res as ZelyResponse);
+                // console.log(isSended, req.url);
+              }
+            };
+
+            if (typeof pageModule === 'object') {
+              // array
+              if (Array.isArray(pageModule)) {
+                for await (const m of pageModule) {
+                  await processHandler(m);
+                }
+              } else {
+                const modules = [];
+
+                Object.values(pageModule).forEach((value) => {
+                  modules.push(value);
+                });
+
+                for await (const m of modules) {
+                  await processHandler(m);
+                }
+              }
+            } else {
+              await processHandler(pageModule);
+            }
+          }
+
+          // page functions
+          // function get() {}
+
+          if (
+            (!isSended && pageHandler === req.method.toLowerCase()) ||
+            pageHandler === 'all'
+          ) {
             isSended = true;
 
             const execd = new URL(req.url, `http://${req.headers.host}`).pathname.match(
@@ -140,7 +221,7 @@ export function handles(
                 const output = await target[pageHandler](req, res);
 
                 if (!res.writableEnded && output) {
-                  send(output, res as ZelyResponse);
+                  await send(output, res as ZelyResponse);
                 }
 
                 // $page.after
@@ -180,13 +261,15 @@ export function handles(
               }
             }
           }
-        });
+        }
       }
     }
-  });
+  }
 
   // 404
-  if (!isSended && res.writable) {
+
+  // console.log(req.url, isSended);
+  if (!isSended && !res.writableEnded) {
     if (config.error) config.error(req, res);
     else res.statusCode = 404;
   }

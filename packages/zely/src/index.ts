@@ -1,5 +1,7 @@
 import { error } from './logger';
 
+Symbol('zely:handler');
+
 // config
 export * from './config';
 export * from './define-config';
@@ -26,6 +28,8 @@ export * from './snatcher';
 export * from './apply-plugins';
 export * from './prewrite';
 export * from './support';
+
+export * from './core/methods';
 
 // no esm
 
