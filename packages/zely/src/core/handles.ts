@@ -11,6 +11,37 @@ import { CACHE_DIRECTORY } from '../constants';
 import { error, errorWithStacks, parseError } from '../logger';
 import { Config } from '../config';
 
+export function send(value: any, res: ServerResponse) {
+  switch (typeof value) {
+    case 'string':
+      res.end(value);
+      break;
+
+    case 'number':
+      res.end((value as number).toString());
+      break;
+
+    case 'bigint':
+      res.end((value as bigint).toString());
+      break;
+
+    case 'boolean':
+      res.end(String(value));
+      break;
+
+    case 'undefined':
+      res.end('undefined');
+      break;
+
+    case 'object':
+      res.end(JSON.stringify(value));
+      break;
+
+    default:
+      break;
+  }
+}
+
 export function handles(
   req: IncomingMessage,
   res: ServerResponse,
@@ -105,7 +136,11 @@ export function handles(
 
                 if ($page.before) await $page.before(req, res);
 
-                await target[pageHandler](req, res);
+                const output = await target[pageHandler](req, res);
+
+                if (!res.writableEnded && output) {
+                  send(output, res);
+                }
 
                 // $page.after
 
@@ -128,6 +163,8 @@ export function handles(
                 process.cwd(),
                 stacks[0].loc.slice(1, -1).split(':').slice(0, 2).join(':')
               );
+
+              console.log(stacks);
 
               // console.log(relative(process.cwd(), page.modulePath));
 
