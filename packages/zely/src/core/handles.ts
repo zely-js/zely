@@ -10,31 +10,32 @@ import { pathToRegexp } from '$zely/lib/pathToRegexp';
 import { CACHE_DIRECTORY } from '../constants';
 import { error, errorWithStacks, parseError } from '../logger';
 import { Config } from '../config';
+import { ZelyResponse } from '$zely/types';
 
-export function send(value: any, res: ServerResponse) {
+export function send(value: any, res: ZelyResponse) {
   switch (typeof value) {
     case 'string':
-      res.end(value);
+      res.send(value);
       break;
 
     case 'number':
-      res.end((value as number).toString());
+      res.send((value as number).toString());
       break;
 
     case 'bigint':
-      res.end((value as bigint).toString());
+      res.send((value as bigint).toString());
       break;
 
     case 'boolean':
-      res.end(String(value));
+      res.send(String(value));
       break;
 
     case 'undefined':
-      res.end('undefined');
+      res.send('undefined');
       break;
 
     case 'object':
-      res.end(JSON.stringify(value));
+      res.send(JSON.stringify(value));
       break;
 
     default:
@@ -139,7 +140,7 @@ export function handles(
                 const output = await target[pageHandler](req, res);
 
                 if (!res.writableEnded && output) {
-                  send(output, res);
+                  send(output, res as ZelyResponse);
                 }
 
                 // $page.after
