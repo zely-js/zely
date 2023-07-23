@@ -1,6 +1,6 @@
-import { ZelyRequest, ZelyResponse } from 'zely';
+import { ZelyRequest } from 'zely';
 
-export function get(req: ZelyRequest, res: ZelyResponse) {
+export function get(req: ZelyRequest) {
   // edit "/middlewares/message.ts".
-  res.json({ message: (req as any).message });
+  return { message: (req as any).message };
 }

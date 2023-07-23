@@ -1,4 +1,4 @@
-import { ZelyRequest, ZelyResponse } from 'zely';
+import { ZelyRequest } from 'zely';
 
 type Users = Record<number, { name: string; about: string }>;
 
@@ -8,6 +8,6 @@ const users: Users = {
   3: { name: 'anonymous #3', about: 'Awesome.' },
 };
 
-export function get(req: ZelyRequest, res: ZelyResponse) {
-  res.json(users[req.params.id]);
+export function get(req: ZelyRequest) {
+  return users[req.params.id];
 }
