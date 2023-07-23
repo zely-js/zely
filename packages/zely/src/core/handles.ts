@@ -169,15 +169,7 @@ export async function handles(
                   await processHandler(m);
                 }
               } else {
-                const modules = [];
-
-                Object.values(pageModule).forEach((value) => {
-                  modules.push(value);
-                });
-
-                for await (const m of modules) {
-                  await processHandler(m);
-                }
+                await processHandler(pageModule);
               }
             } else {
               await processHandler(pageModule);
