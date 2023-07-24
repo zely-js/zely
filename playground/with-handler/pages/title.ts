@@ -1,4 +1,4 @@
 import type { ServerDataHandler } from 'zely';
-import { get } from 'zely/methods';
+import { GET } from 'zely/methods';
 
-export default [get({ title: 'Zely App' })] as ServerDataHandler[];
+export default [GET({ title: 'Zely App' })] as ServerDataHandler[];
