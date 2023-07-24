@@ -1,7 +1,7 @@
-import { OsikServer } from 'osik';
+import type { OsikServer } from 'osik';
 import { kit } from './plugins/kit';
 import { Static } from './plugins/public';
-import { Config } from './config';
+import type { Config } from './config';
 
 export function applyPlugins(app: OsikServer, config: Config) {
   // @zely/plugin-kit

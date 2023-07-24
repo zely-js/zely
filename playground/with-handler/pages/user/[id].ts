@@ -1,4 +1,5 @@
-import { ServerDataHandler, methods } from 'zely';
+import type { ServerDataHandler } from 'zely';
+import { get } from 'zely/methods';
 
 type Users = Record<number, { name: string; about: string }>;
 
@@ -8,4 +9,4 @@ const users: Users = {
   3: { name: 'anonymous #3', about: 'Awesome.' },
 };
 
-export default [(req) => methods.get(users[req.params.id])] as ServerDataHandler[];
+export default [(req) => get(users[req.params.id])] as ServerDataHandler[];

@@ -1,5 +1,4 @@
-import { ServerDataHandler, methods } from 'zely';
+import type { ServerDataHandler } from 'zely';
+import { get } from 'zely/methods';
 
-export default [
-  (req) => methods.get({ message: (req as any).message }),
-] as ServerDataHandler[];
+export default [(req) => get({ message: (req as any).message })] as ServerDataHandler[];

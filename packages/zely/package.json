@@ -37,6 +37,11 @@
       "require": "./dist/server.js",
       "import": "./dist/server.esm.js",
       "types": "./types/export-server.d.ts"
+    },
+    "./methods": {
+      "require": "./dist/methods.js",
+      "import": "./dist/methods.esm.js",
+      "types": "./types/export-methods.d.ts"
     }
   },
   "typesVersions": {
@@ -46,6 +51,9 @@
       ],
       "server": [
         "types/export-server.d.ts"
+      ],
+      "methods": [
+        "types/export-methods.d.ts"
       ]
     }
   },

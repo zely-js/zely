@@ -127,6 +127,29 @@ export async function handles(
             // send
 
             const processHandler = async (m: ServerDataHandler | object) => {
+              const sendData = async (data) => {
+                if (data?.__typeof === Symbol.for('zely:handler')) {
+                  if (
+                    data.__method.description.toLowerCase() ===
+                      req.method.toLowerCase() ||
+                    data.__method.description.toLowerCase() === 'all'
+                  ) {
+                    // function => handler object
+
+                    isSended = true;
+                    Object.keys(data.headers || {}).forEach((header) => {
+                      res.setHeader(header, data.headers.header);
+                    });
+                    await send(data.body, res as ZelyResponse);
+                  }
+                } else {
+                  // function => object
+
+                  isSended = true;
+                  await send(data, res as ZelyResponse);
+                }
+              };
+
               if (typeof m === 'function') {
                 // function handler
 
@@ -134,31 +157,10 @@ export async function handles(
 
                 // console.log(output);
 
-                if (output?.__typeof === Symbol.for('zely:handler')) {
-                  if (
-                    output.__method.description.toLowerCase() ===
-                      req.method.toLowerCase() ||
-                    output.__method.description.toLowerCase() === 'all'
-                  ) {
-                    // function => handler object
-
-                    isSended = true;
-                    Object.keys(output.headers || {}).forEach((header) => {
-                      res.setHeader(header, output.headers.header);
-                    });
-                    await send(output.body, res as ZelyResponse);
-                  }
-                } else {
-                  // function => object
-
-                  isSended = true;
-                  await send(output, res as ZelyResponse);
-                }
+                sendData(output);
               } else {
                 // just object
-
-                isSended = true;
-                await send(m, res as ZelyResponse);
+                sendData(m);
                 // console.log(isSended, req.url);
               }
             };
