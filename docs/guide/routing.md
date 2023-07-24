@@ -36,13 +36,13 @@ You can write simpler code that outputs the same result since [`v1.0`](/blog/202
 
 ```ts [export default]
 import { ServerDataHandler } from 'zely';
-import { get, post } from 'zely/methods';
+import { GET, POST } from 'zely/methods';
 
 export default [
   // simple usage
-  get({ foo: 'bar' }),
+  GET({ foo: 'bar' }),
   // access to req and res
-  (req, res) => post({ id: req.params.id }),
+  (req, res) => POST({ id: req.params.id }),
 ] as ServerDataHandler[];
 ```
 
