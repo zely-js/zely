@@ -28,6 +28,38 @@ export function post(req, res) {}
 // etc...
 ```
 
+## Export default <span><Badge  style="margin-top:6px" text="experimental" /></span>
+
+You can write simpler code that outputs the same result since [`v1.0`](/blog/2023-07-23).
+
+::: code-group
+
+```ts [export default]
+import { ServerDataHandler } from 'zely';
+import { get, post } from 'zely/methods';
+
+export default [
+  // simple usage
+  get({ foo: 'bar' }),
+  // access to req and res
+  (req, res) => post({ id: req.params.id }),
+] as ServerDataHandler[];
+```
+
+```ts [export]
+import { ZelyRequest, ZelyResponse } from 'zely';
+
+export function get(req: ZelyRequest, res: ZelyResponse) {
+  res.json({ foo: 'bar' });
+}
+
+export function post(req: ZelyRequest, res: ZelyResponse) {
+  res.json({ id: req.params.id });
+}
+```
+
+:::
+
 ## Route Parameters
 
 You can access the current page parameters by `req.params`.
