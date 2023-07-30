@@ -1,4 +1,5 @@
 import { box } from 'teeti';
+import 'colors';
 
 import pkg from '../package.json';
 

@@ -1938,7 +1938,7 @@ color-name@~1.1.4:
 
 colors@^1.4.0:
   version "1.4.0"
-  resolved "https://registry.npmjs.org/colors/-/colors-1.4.0.tgz"
+  resolved "https://registry.yarnpkg.com/colors/-/colors-1.4.0.tgz#c50491479d4c1bdaed2c9ced32cf7c7dc2360f78"
   integrity sha512-a+UqTh4kgZg/SlGvfbzDHpgRu7AAQOmmqRHJnxhRZICKFUT91brVhNNt58CMWU9PsBbv3PDCZUHbVxuDiH2mtA==
 
 concat-map@0.0.1:
@@ -4684,3 +4684,16 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zely@*:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/zely/-/zely-0.2.2.tgz#1f73e0e356bb5f79f75be35858724d3192c5f6e4"
+  integrity sha512-EVowXpZWPDJCUcuxaS7ldASWd91DwOa7yQNeL4uhWrT2hAJcvpr3O3UlNpw248MuPoBdbocLqiPZCYmT9U4XPg==
+  dependencies:
+    animaux "^0.0.4"
+    chokidar "^3.5.3"
+    esbuild "^0.18.14"
+    esbuild-node-externals "^1.8.0"
+    mime-types "^2.1.35"
+    osik "^0.0.5"
+    teeti "^0.0.1"

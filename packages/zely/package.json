@@ -60,6 +60,7 @@
   "dependencies": {
     "animaux": "^0.0.4",
     "chokidar": "^3.5.3",
+    "colors": "^1.4.0",
     "esbuild": "^0.18.14",
     "esbuild-node-externals": "^1.8.0",
     "mime-types": "^2.1.35",
