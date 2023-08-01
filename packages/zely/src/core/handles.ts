@@ -140,7 +140,12 @@ export async function handles(
                     Object.keys(data.headers || {}).forEach((header) => {
                       res.setHeader(header, data.headers.header);
                     });
-                    await send(data.body, res as ZelyResponse);
+
+                    if (typeof data.body === 'function') {
+                      await send(await data.body(req, res), res as ZelyResponse);
+                    } else {
+                      await send(data.body, res as ZelyResponse);
+                    }
                   }
                 } else {
                   // function => object

@@ -70,14 +70,16 @@ export interface METHODS {
   put: symbol;
 }
 
+export type MethodBody = ServerDataHandler;
+
 export const methods: {
-  all(body: any, headers?: Record<string, string>): ServerDataHandlerResponse;
+  all(body: MethodBody, headers?: Record<string, string>): ServerDataHandlerResponse;
 
-  get(body: any, headers?: Record<string, string>): ServerDataHandlerResponse;
+  get(body: MethodBody, headers?: Record<string, string>): ServerDataHandlerResponse;
 
-  post(body: any, headers?: Record<string, string>): ServerDataHandlerResponse;
+  post(body: MethodBody, headers?: Record<string, string>): ServerDataHandlerResponse;
 
-  delete(body: any, headers?: Record<string, string>): ServerDataHandlerResponse;
+  delete(body: MethodBody, headers?: Record<string, string>): ServerDataHandlerResponse;
 
-  put(body: any, headers?: Record<string, string>): ServerDataHandlerResponse;
+  put(body: MethodBody, headers?: Record<string, string>): ServerDataHandlerResponse;
 };

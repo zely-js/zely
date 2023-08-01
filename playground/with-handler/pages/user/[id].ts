@@ -9,4 +9,4 @@ const users: Users = {
   3: { name: 'anonymous #3', about: 'Awesome.' },
 };
 
-export default [(req) => GET(users[req.params.id])] as ServerDataHandler[];
+export default [GET((req) => users[req.params.id])] as ServerDataHandler[];
