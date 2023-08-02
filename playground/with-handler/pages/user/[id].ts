@@ -1,5 +1,4 @@
 import type { ServerDataHandler } from 'zely';
-import { GET } from 'zely/methods';
 
 type Users = Record<number, { name: string; about: string }>;
 

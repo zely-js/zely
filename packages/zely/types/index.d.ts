@@ -4,6 +4,15 @@ import { Request, Response, OsikServer, ServerOptions } from 'osik';
 import { FileData, Page } from './core';
 import { IncomingMessage, ServerResponse } from 'http';
 import { ZelyRequest, ZelyResponse } from './method';
+import methods from './export-methods';
+
+declare global {
+  var GET: typeof methods.GET;
+  var POST: typeof methods.POST;
+  var DELETE: typeof methods.DELETE;
+  var PUT: typeof methods.PUT;
+  var ALL: typeof methods.ALL;
+}
 
 export type Middleware = (req: Request, res: Response, next: any) => void;
 
