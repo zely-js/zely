@@ -18,6 +18,8 @@
 
   --vp-code-tab-bg: #252836;
   --vp-code-block-bg: #292d3e;
+
+  --vp-code-line-height: 1.5;
 }
 
 /**
@@ -36,14 +38,18 @@
   --vp-button-brand-active-bg: var(--vp-button-brand-bg);
 }
 
-.vp-doc [class*='language-'] pre {
-  padding: 15px 0;
-}
-
 .vp-doc [class*='language-'] pre code {
   padding: 0 20px;
 }
-
+.vp-doc div[class*='language-'] {
+  border-radius: 5px;
+}
+.vp-doc [class*='language-'] pre {
+  padding: 18px 0;
+}
+.vp-doc [class*='language-'] .line-numbers-wrapper {
+  padding: 18px 0 0 5px;
+}
 /**
  * Component: Home
  * -------------------------------------------------------------------------- */

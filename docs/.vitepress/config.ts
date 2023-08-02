@@ -14,16 +14,17 @@ export default defineConfig({
 
   markdown: {
     theme: 'material-theme-palenight',
+    lineNumbers: true,
   },
 
   themeConfig: {
     editLink: { pattern: 'https://github.com/zely-js/core/edit/main/docs/:path' },
 
     nav: [
-      { text: 'Guide', link: '/guide/what-is-zely' },
-      { text: 'APIs', link: '/apis/introduction' },
-      { text: 'Config', link: '/apis/config' },
-      { text: 'Blog', link: '/blog/introduction' },
+      { text: 'guide', link: '/guide/what-is-zely' },
+      { text: 'apis', link: '/apis/introduction' },
+      { text: 'config', link: '/apis/config' },
+      { text: 'blog', link: '/blog/introduction' },
       {
         text: `v${pkg.version}`,
         items: [
@@ -80,16 +81,27 @@ function sidebarGuide() {
       collapsed: false,
       items: [
         { text: 'What is Zely?', link: '/guide/what-is-zely' },
-        { text: 'Getting Started', link: '/guide/getting-started' },
-        { text: 'Routing', link: '/guide/routing' },
+        {
+          text: 'Getting Started',
+          link: '/guide/getting-started',
+          items: [{ text: 'Typescript', link: '/guide/typescript' }],
+          collapsed: true,
+        },
+        {
+          text: 'Routing',
+          link: '/guide/routing',
+          items: [
+            { text: 'Methods', link: '/guide/methods' },
+            { text: 'Page Data', link: '/guide/page' },
+            { text: 'Customizing Response', link: '/guide/prewrite' },
+            { text: 'Data Fetching', link: '/guide/fetch' },
+          ],
+          collapsed: true,
+        },
         { text: 'Middlewares', link: '/guide/middlewares' },
-        { text: 'Typescript', link: '/guide/typescript' },
         { text: 'Build', link: '/guide/build' },
-        { text: 'Page Data', link: '/guide/page' },
         { text: 'Plugin', link: '/guide/plugin' },
-        { text: 'Data Fetching', link: '/guide/fetch' },
         { text: 'with Frameworks', link: '/guide/framework' },
-        { text: 'Prewrite', link: '/guide/prewrite' },
       ],
     },
     {

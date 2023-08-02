@@ -7,9 +7,9 @@ Zely is a recently created package and is unstable.
 
 - [`/packages/`](https://github.com/zely-js/core/tree/main/packages): Core Packages Directory
 
-| [zely](https://npmjs.com/package/zely) | [create-prext-app](https://npmjs.com/package/create-prext-app) | [prexty](https://npmjs.com/package/prexty) |
-| -------------------------------------- | -------------------------------------------------------------- | ------------------------------------------ |
-| `/packages/zely`                       | `/packages/create-prext`                                       | `/packages/prexty`                         |
+| [zely](https://npmjs.com/package/zely) | [@zely/plugin-cors](https://www.npmjs.com/package/@zely/plugin-cors) | [vite-plugin-zely](https://www.npmjs.com/package/vite-plugin-zely) |
+| -------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| `/packages/zely`                       | `/packages/plugin-cors`                                              | `/packages/vite-plugin-zely`                                       |
 
 - [`/docs/`](https://github.com/zely-js/core/tree/main/docs): Documentation
 - [`/playground/`](https://github.com/zely-js/core/tree/main/playground): Examples
@@ -47,13 +47,12 @@ $ yarn
 ::: code-group
 
 ```sh [npm]
-$ cd ./playground/default
+$ cd ./playground/with-typescript
 $ npm run dev
 ```
 
 ```sh [yarn]
-$ cd ./playground/default
-$ yarn dev
+$ yarn workspace @playground/with-typescript dev
 ```
 
 :::
