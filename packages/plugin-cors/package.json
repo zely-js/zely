@@ -1,8 +1,10 @@
 {
   "name": "@zely/plugin-cors",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "./index.js",
   "types": "./index.d.ts",
+  "homepage": "https://zely.netlify.app/",
+  "repository": "https://github.com/zely-js/core",
   "files": [
     "index.js",
     "index.d.ts",
