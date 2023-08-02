@@ -14,6 +14,8 @@ import { Config } from '../config';
 import { ServerDataHandler, ZelyRequest, ZelyResponse } from '$zely/types';
 
 export async function send(value: any, res: ZelyResponse) {
+  if (res.writableEnded) return;
+
   switch (typeof value) {
     case 'string':
       await res.send(value);
