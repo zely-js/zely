@@ -18,3 +18,15 @@ module.exports.clone = (template, outfile) => {
     console.log(`[@prext/plugin-cors] cannot find template "${template}"`);
   }
 };
+
+/**
+ *
+ * @param {*} options
+ * @returns {import("zely").Plugin}
+ */
+module.exports.cors = (options) => ({
+  name: '@zely/plugin-cors',
+  server(server) {
+    server.use(require('cors')(options));
+  },
+});
