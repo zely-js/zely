@@ -2,32 +2,32 @@
 # yarn lockfile v1
 
 
-"@algolia/autocomplete-core@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npmjs.org/@algolia/autocomplete-core/-/autocomplete-core-1.9.2.tgz"
-  integrity sha512-hkG80c9kx9ClVAEcUJbTd2ziVC713x9Bji9Ty4XJfKXlxlsx3iXsoNhAwfeR4ulzIUg7OE5gez0UU1zVDdG7kg==
+"@algolia/autocomplete-core@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-core/-/autocomplete-core-1.9.3.tgz#1d56482a768c33aae0868c8533049e02e8961be7"
+  integrity sha512-009HdfugtGCdC4JdXUbVJClA0q0zh24yyePn+KUGk3rP7j8FEe/m5Yo/z65gn6nP/cM39PxpzqKrL7A6fP6PPw==
   dependencies:
-    "@algolia/autocomplete-plugin-algolia-insights" "1.9.2"
-    "@algolia/autocomplete-shared" "1.9.2"
+    "@algolia/autocomplete-plugin-algolia-insights" "1.9.3"
+    "@algolia/autocomplete-shared" "1.9.3"
 
-"@algolia/autocomplete-plugin-algolia-insights@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npmjs.org/@algolia/autocomplete-plugin-algolia-insights/-/autocomplete-plugin-algolia-insights-1.9.2.tgz"
-  integrity sha512-2LVsf4W66hVHQ3Ua/8k15oPlxjELCztbAkQm/hP42Sw+GLkHAdY1vaVRYziaWq64+Oljfg6FKkZHCdgXH+CGIA==
+"@algolia/autocomplete-plugin-algolia-insights@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-plugin-algolia-insights/-/autocomplete-plugin-algolia-insights-1.9.3.tgz#9b7f8641052c8ead6d66c1623d444cbe19dde587"
+  integrity sha512-a/yTUkcO/Vyy+JffmAnTWbr4/90cLzw+CC3bRbhnULr/EM0fGNvM13oQQ14f2moLMcVDyAx/leczLlAOovhSZg==
   dependencies:
-    "@algolia/autocomplete-shared" "1.9.2"
+    "@algolia/autocomplete-shared" "1.9.3"
 
-"@algolia/autocomplete-preset-algolia@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npmjs.org/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.9.2.tgz"
-  integrity sha512-pqgIm2GNqtCT59Y1ICctIPrYTi34+wNPiNWEclD/yDzp5uDUUsyGe5XrUjCNyQRTKonAlmYxoaEHOn8FWgmBHA==
+"@algolia/autocomplete-preset-algolia@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.9.3.tgz#64cca4a4304cfcad2cf730e83067e0c1b2f485da"
+  integrity sha512-d4qlt6YmrLMYy95n5TB52wtNDr6EgAIPH81dvvvW8UmuWRgxEtY0NJiPwl/h95JtG2vmRM804M0DSwMCNZlzRA==
   dependencies:
-    "@algolia/autocomplete-shared" "1.9.2"
+    "@algolia/autocomplete-shared" "1.9.3"
 
-"@algolia/autocomplete-shared@1.9.2":
-  version "1.9.2"
-  resolved "https://registry.npmjs.org/@algolia/autocomplete-shared/-/autocomplete-shared-1.9.2.tgz"
-  integrity sha512-XxX6YDn+7LG+SmdpXEOnj7fc3TjiVpQ0CbGhjLwrd2tYr6LVY2D4Iiu/iuYJ4shvVDWWnpwArSk0uIWC/8OPUA==
+"@algolia/autocomplete-shared@1.9.3":
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.9.3.tgz#2e22e830d36f0a9cf2c0ccd3c7f6d59435b77dfa"
+  integrity sha512-Wnm9E4Ye6Rl6sTTqjoymD+l8DjSTHsHboVRYrKgEt8Q7UHm9nYbqhN/i0fhUYA3OAEH7WA8x3jfpnmJm3rKvaQ==
 
 "@algolia/cache-browser-local-storage@4.17.2":
   version "4.17.2"
@@ -430,27 +430,27 @@
   resolved "https://registry.npmjs.org/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@docsearch/css@3.5.0", "@docsearch/css@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.npmjs.org/@docsearch/css/-/css-3.5.0.tgz"
-  integrity sha512-Ob5FQLubplcBNihAVtriR59FRBeP8u69F6mu4L4yIr60KfsPc10bOV0DoPErJw0zF9IBN2cNLW9qdmt8zWPxyg==
+"@docsearch/css@3.5.1", "@docsearch/css@^3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-3.5.1.tgz#4adf9884735bbfea621c3716e80ea97baa419b73"
+  integrity sha512-2Pu9HDg/uP/IT10rbQ+4OrTQuxIWdKVUEdcw9/w7kZJv9NeHS6skJx1xuRiFyoGKwAzcHXnLp7csE99sj+O1YA==
 
-"@docsearch/js@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.npmjs.org/@docsearch/js/-/js-3.5.0.tgz"
-  integrity sha512-WqB+z+zVKSXDkGq028nClT9RvMzfFlemZuIulX5ZwWkdUtl4k7M9cmZA/c6kuZf7FG24XQsMHWuBjeUo9hLRyA==
+"@docsearch/js@^3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@docsearch/js/-/js-3.5.1.tgz#6d8de3b4fcf7de94462c0e592e333efa9ebbbabd"
+  integrity sha512-EXi8de5njxgP6TV3N9ytnGRLG9zmBNTEZjR4VzwPcpPLbZxxTLG2gaFyJyKiFVQxHW/DPlMrDJA3qoRRGEkgZw==
   dependencies:
-    "@docsearch/react" "3.5.0"
+    "@docsearch/react" "3.5.1"
     preact "^10.0.0"
 
-"@docsearch/react@3.5.0":
-  version "3.5.0"
-  resolved "https://registry.npmjs.org/@docsearch/react/-/react-3.5.0.tgz"
-  integrity sha512-3IG8mmSMzSHNGy2S1VuPyYU9tFCxFpj5Ov8SYwsSHM4yMvFsaO9oFxXocA5lSenliIELhuOuS5+BdxHa/Qlf2A==
+"@docsearch/react@3.5.1":
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/@docsearch/react/-/react-3.5.1.tgz#35f4a75f948211d8bb6830d2147c575f96a85274"
+  integrity sha512-t5mEODdLzZq4PTFAm/dvqcvZFdPDMdfPE5rJS5SC8OUq9mPzxEy6b+9THIqNM9P0ocCb4UC5jqBrxKclnuIbzQ==
   dependencies:
-    "@algolia/autocomplete-core" "1.9.2"
-    "@algolia/autocomplete-preset-algolia" "1.9.2"
-    "@docsearch/css" "3.5.0"
+    "@algolia/autocomplete-core" "1.9.3"
+    "@algolia/autocomplete-preset-algolia" "1.9.3"
+    "@docsearch/css" "3.5.1"
     algoliasearch "^4.0.0"
 
 "@esbuild/android-arm64@0.17.19":
@@ -1133,10 +1133,10 @@
   resolved "https://registry.npmjs.org/@types/linkify-it/-/linkify-it-3.0.2.tgz"
   integrity sha512-HZQYqbiFVWufzCwexrvh694SOim8z2d+xJl5UNamcvQFejLY/2YUtzXHYi3cHdI7PMlS8ejH2slRAOJQ32aNbA==
 
-"@types/markdown-it-container@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.npmjs.org/@types/markdown-it-container/-/markdown-it-container-2.0.5.tgz"
-  integrity sha512-8v5jIC5gcCUv+JcD0DExwNBkoKC0kLB4acensF0NoNlTIcXmQxF3RDjzAdIW82sXSoR+n772ePguxIWlq2ELvA==
+"@types/markdown-it-container@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@types/markdown-it-container/-/markdown-it-container-2.0.6.tgz#acf0a02dff2add8df9d68e7b033b7165ebe37ca3"
+  integrity sha512-euUVSCx2+tGV8BlI7yA7AXmNsLzYCoUbg/O2jJ0wzV/0oxKbmd5RJZI2map8cuEKgmjNy13ndFWRZZO+6rl0GA==
   dependencies:
     "@types/markdown-it" "*"
 
@@ -1480,36 +1480,41 @@
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.3.4.tgz"
   integrity sha512-7OjdcV8vQ74eiz1TZLzZP4JwqM5fA94K6yntPS5Z25r9HDuGNzaGdgvwKYq6S+MxwF0TFRwe50fIR/MYnakdkQ==
 
-"@vueuse/core@10.1.2", "@vueuse/core@^10.1.2":
-  version "10.1.2"
-  resolved "https://registry.npmjs.org/@vueuse/core/-/core-10.1.2.tgz"
-  integrity sha512-roNn8WuerI56A5uiTyF/TEYX0Y+VKlhZAF94unUfdhbDUI+NfwQMn4FUnUscIRUhv3344qvAghopU4bzLPNFlA==
+"@vueuse/core@10.3.0", "@vueuse/core@^10.2.1":
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-10.3.0.tgz#b2dab7821ef206811b925fc935163c38056fd82b"
+  integrity sha512-BEM5yxcFKb5btFjTSAFjTu5jmwoW66fyV9uJIP4wUXXU8aR5Hl44gndaaXp7dC5HSObmgbnR2RN+Un1p68Mf5Q==
   dependencies:
     "@types/web-bluetooth" "^0.0.17"
-    "@vueuse/metadata" "10.1.2"
-    "@vueuse/shared" "10.1.2"
-    vue-demi ">=0.14.0"
+    "@vueuse/metadata" "10.3.0"
+    "@vueuse/shared" "10.3.0"
+    vue-demi ">=0.14.5"
 
-"@vueuse/integrations@^10.1.2":
-  version "10.1.2"
-  resolved "https://registry.npmjs.org/@vueuse/integrations/-/integrations-10.1.2.tgz"
-  integrity sha512-wUpG3Wv6LiWerOwCzOAM0iGhNQ4vfFUTkhj/xQy7TLXduh2M3D8N08aS0KqlxsejY6R8NLxydDIM+68QfHZZ8Q==
+"@vueuse/integrations@^10.2.1":
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/integrations/-/integrations-10.3.0.tgz#765e9505358590f21531998194c6e60a8b23655c"
+  integrity sha512-Jgiv7oFyIgC6BxmDtiyG/fxyGysIds00YaY7sefwbhCZ2/tjEx1W/1WcsISSJPNI30in28+HC2J4uuU8184ekg==
   dependencies:
-    "@vueuse/core" "10.1.2"
-    "@vueuse/shared" "10.1.2"
-    vue-demi ">=0.14.0"
+    "@vueuse/core" "10.3.0"
+    "@vueuse/shared" "10.3.0"
+    vue-demi ">=0.14.5"
 
-"@vueuse/metadata@10.1.2":
-  version "10.1.2"
-  resolved "https://registry.npmjs.org/@vueuse/metadata/-/metadata-10.1.2.tgz"
-  integrity sha512-3mc5BqN9aU2SqBeBuWE7ne4OtXHoHKggNgxZR2K+zIW4YLsy6xoZ4/9vErQs6tvoKDX6QAqm3lvsrv0mczAwIQ==
+"@vueuse/metadata@10.3.0":
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-10.3.0.tgz#14fe6cc909573785f73a56e4d9351edf3830b796"
+  integrity sha512-Ema3YhNOa4swDsV0V7CEY5JXvK19JI/o1szFO1iWxdFg3vhdFtCtSTP26PCvbUpnUtNHBY2wx5y3WDXND5Pvnw==
 
-"@vueuse/shared@10.1.2":
-  version "10.1.2"
-  resolved "https://registry.npmjs.org/@vueuse/shared/-/shared-10.1.2.tgz"
-  integrity sha512-1uoUTPBlgyscK9v6ScGeVYDDzlPSFXBlxuK7SfrDGyUTBiznb3mNceqhwvZHjtDRELZEN79V5uWPTF1VDV8svA==
+"@vueuse/shared@10.3.0":
+  version "10.3.0"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-10.3.0.tgz#ce6b4b6860e14aaa293025dcf0cbe1036a25869f"
+  integrity sha512-kGqCTEuFPMK4+fNWy6dUOiYmxGcUbtznMwBZLC1PubidF4VZY05B+Oht7Jh7/6x4VOWGpvu3R37WHi81cKpiqg==
   dependencies:
-    vue-demi ">=0.14.0"
+    vue-demi ">=0.14.5"
+
+"@zely/plugin-cors@^0.0.0":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@zely/plugin-cors/-/plugin-cors-0.0.0.tgz#4b9e72fe4fd91d9ef7d64becc1fbf71a96b81548"
+  integrity sha512-Xm27w2TNmE4TG9WH9rukIIh0SXGwR0mkh/3xB5ZBIkVCkcoyD69H22LosgD6QdtjZqSHrfVpEWS1wk41azccPw==
 
 accepts@~1.3.8:
   version "1.3.8"
@@ -2223,7 +2228,7 @@ esbuild@^0.17.5:
     "@esbuild/win32-ia32" "0.17.19"
     "@esbuild/win32-x64" "0.17.19"
 
-esbuild@^0.18.14, esbuild@^0.18.17:
+esbuild@^0.18.10, esbuild@^0.18.17:
   version "0.18.17"
   resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.18.17.tgz#2aaf6bc6759b0c605777fdc435fea3969e091cad"
   integrity sha512-1GJtYnUxsJreHYA0Y+iQz2UEykonY66HNWOb0yXYZi9/kNrORUEHVg87eQsCtqh59PEJ5YVZJO98JHznMJSWjg==
@@ -2606,12 +2611,12 @@ flatted@^3.1.0:
   resolved "https://registry.npmjs.org/flatted/-/flatted-3.2.7.tgz"
   integrity sha512-5nqDSxl8nn5BSNxyR3n4I6eDmbolI6WT+QqR547RwxQapgjQBmtktdP+HTBb/a/zLsbzERTONyUB5pefh5TtjQ==
 
-focus-trap@^7.4.3:
-  version "7.4.3"
-  resolved "https://registry.npmjs.org/focus-trap/-/focus-trap-7.4.3.tgz"
-  integrity sha512-BgSSbK4GPnS2VbtZ50VtOv1Sti6DIkj3+LkVjiWMNjLeAp1SH1UlLx3ULu/DCu4vq5R4/uvTm+zrvsMsuYmGLg==
+focus-trap@^7.5.2:
+  version "7.5.2"
+  resolved "https://registry.yarnpkg.com/focus-trap/-/focus-trap-7.5.2.tgz#e5ee678d10a18651f2591ffb66c949fb098d57cf"
+  integrity sha512-p6vGNNWLDGwJCiEjkSK6oERj/hEyI9ITsSwIUICBoKLlWiTWXJRfQibCwcoi50rTZdbi87qDtUlMCmQwsGSgPw==
   dependencies:
-    tabbable "^6.1.2"
+    tabbable "^6.2.0"
 
 for-each@^0.3.3:
   version "0.3.3"
@@ -3940,6 +3945,15 @@ postcss@^8.1.10, postcss@^8.4.23:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
+postcss@^8.4.26:
+  version "8.4.27"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.27.tgz#234d7e4b72e34ba5a92c29636734349e0d9c3057"
+  integrity sha512-gY/ACJtJPSmUFPDCHtX78+01fHa64FaU4zaaWfuh1MhGJISufJAH4cun6k/8fwsHYeK4UQmENQK+tRLCFJE8JQ==
+  dependencies:
+    nanoid "^3.3.6"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.2"
+
 preact@^10.0.0:
   version "10.15.1"
   resolved "https://registry.npmjs.org/preact/-/preact-10.15.1.tgz"
@@ -4095,6 +4109,13 @@ rollup@^3.21.0:
   optionalDependencies:
     fsevents "~2.3.2"
 
+rollup@^3.25.2:
+  version "3.27.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-3.27.1.tgz#e6c7340889f33042b4c3247a2acb38ebcfc3a98c"
+  integrity sha512-tXNDFwOkN6C2w5Blj1g6ForKeFw6c1mDu5jxoeDO3/pmYjgt+8yvIFjKzH5FQUq70OKZBkOt0zzv0THXL7vwzQ==
+  optionalDependencies:
+    fsevents "~2.3.2"
+
 run-parallel@^1.1.9:
   version "1.2.0"
   resolved "https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz"
@@ -4179,10 +4200,10 @@ shebang-regex@^3.0.0:
   resolved "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shiki@^0.14.2:
-  version "0.14.2"
-  resolved "https://registry.npmjs.org/shiki/-/shiki-0.14.2.tgz"
-  integrity sha512-ltSZlSLOuSY0M0Y75KA+ieRaZ0Trf5Wl3gutE7jzLuIcWxLp5i/uEnLoQWNvgKXQ5OMpGkJnVMRLAuzjc0LJ2A==
+shiki@^0.14.3:
+  version "0.14.3"
+  resolved "https://registry.yarnpkg.com/shiki/-/shiki-0.14.3.tgz#d1a93c463942bdafb9866d74d619a4347d0bbf64"
+  integrity sha512-U3S/a+b0KS+UkTyMjoNojvTgrBHjgp7L6ovhFVZsXmBGnVdQ4K4U9oK0z63w538S91ATngv1vXigHCSWOwnr+g==
   dependencies:
     ansi-sequence-parser "^1.1.0"
     jsonc-parser "^3.2.0"
@@ -4345,10 +4366,10 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tabbable@^6.1.2:
-  version "6.1.2"
-  resolved "https://registry.npmjs.org/tabbable/-/tabbable-6.1.2.tgz"
-  integrity sha512-qCN98uP7i9z0fIS4amQ5zbGBOq+OSigYeGvPy7NDk8Y9yncqDZ9pRPgfsc2PJIVM9RrJj7GIfuRgmjoUU9zTHQ==
+tabbable@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/tabbable/-/tabbable-6.2.0.tgz#732fb62bc0175cfcec257330be187dcfba1f3b97"
+  integrity sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==
 
 teeti@^0.0.1:
   version "0.0.1"
@@ -4527,7 +4548,7 @@ vary@^1, vary@~1.1.2:
   resolved "https://registry.npmjs.org/vary/-/vary-1.1.2.tgz"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
-vite@*, vite@^4.3.9:
+vite@*:
   version "4.3.9"
   resolved "https://registry.npmjs.org/vite/-/vite-4.3.9.tgz"
   integrity sha512-qsTNZjO9NoJNW7KnOrgYwczm0WctJ8m/yqYAMAK9Lxt4SoySUfS5S8ia9K7JHpa3KEeMfyF8LoJ3c5NeBJy6pg==
@@ -4538,23 +4559,34 @@ vite@*, vite@^4.3.9:
   optionalDependencies:
     fsevents "~2.3.2"
 
-vitepress@^1.0.0-beta.3:
-  version "1.0.0-beta.3"
-  resolved "https://registry.yarnpkg.com/vitepress/-/vitepress-1.0.0-beta.3.tgz#1c03bd3cff5193b888d202258d1dd0a60cfe52eb"
-  integrity sha512-GR5Pvr/o343NN1M4Na1shhDYZRrQbjmLq7WE0lla0H8iDPAsHE8agTHLWfu3FWx+3q2KA29sv16+0O9RQKGjlA==
+vite@^4.4.7:
+  version "4.4.8"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-4.4.8.tgz#31e4a438f8748695c68bd57ffd262ba93540fdf7"
+  integrity sha512-LONawOUUjxQridNWGQlNizfKH89qPigK36XhMI7COMGztz8KNY0JHim7/xDd71CZwGT4HtSRgI7Hy+RlhG0Gvg==
   dependencies:
-    "@docsearch/css" "^3.5.0"
-    "@docsearch/js" "^3.5.0"
+    esbuild "^0.18.10"
+    postcss "^8.4.26"
+    rollup "^3.25.2"
+  optionalDependencies:
+    fsevents "~2.3.2"
+
+vitepress@^1.0.0-beta.7:
+  version "1.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/vitepress/-/vitepress-1.0.0-beta.7.tgz#edf7f0806e700ed9b08d84e48131d78e453d3a19"
+  integrity sha512-P9Rw+FXatKIU4fVdtKxqwHl6fby8E/8zE3FIfep6meNgN4BxbWqoKJ6yfuuQQR9IrpQqwnyaBh4LSabyll6tWg==
+  dependencies:
+    "@docsearch/css" "^3.5.1"
+    "@docsearch/js" "^3.5.1"
     "@vitejs/plugin-vue" "^4.2.3"
     "@vue/devtools-api" "^6.5.0"
-    "@vueuse/core" "^10.1.2"
-    "@vueuse/integrations" "^10.1.2"
+    "@vueuse/core" "^10.2.1"
+    "@vueuse/integrations" "^10.2.1"
     body-scroll-lock "4.0.0-beta.0"
-    focus-trap "^7.4.3"
+    focus-trap "^7.5.2"
     mark.js "8.11.1"
     minisearch "^6.1.0"
-    shiki "^0.14.2"
-    vite "^4.3.9"
+    shiki "^0.14.3"
+    vite "^4.4.7"
     vue "^3.3.4"
 
 vscode-oniguruma@^1.7.0:
@@ -4567,9 +4599,9 @@ vscode-textmate@^8.0.0:
   resolved "https://registry.npmjs.org/vscode-textmate/-/vscode-textmate-8.0.0.tgz"
   integrity sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==
 
-vue-demi@>=0.14.0:
+vue-demi@>=0.14.5:
   version "0.14.5"
-  resolved "https://registry.npmjs.org/vue-demi/-/vue-demi-0.14.5.tgz"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.5.tgz#676d0463d1a1266d5ab5cba932e043d8f5f2fbd9"
   integrity sha512-o9NUVpl/YlsGJ7t+xuqJKx8EBGf1quRhCiT6D/J0pfwmk9zUwYkC7yrF4SZCe6fETvSM3UNL2edcbYrSyc4QHA==
 
 vue@^3.3.4:
@@ -4684,16 +4716,3 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
-
-zely@*:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/zely/-/zely-0.2.2.tgz#1f73e0e356bb5f79f75be35858724d3192c5f6e4"
-  integrity sha512-EVowXpZWPDJCUcuxaS7ldASWd91DwOa7yQNeL4uhWrT2hAJcvpr3O3UlNpw248MuPoBdbocLqiPZCYmT9U4XPg==
-  dependencies:
-    animaux "^0.0.4"
-    chokidar "^3.5.3"
-    esbuild "^0.18.14"
-    esbuild-node-externals "^1.8.0"
-    mime-types "^2.1.35"
-    osik "^0.0.5"
-    teeti "^0.0.1"
