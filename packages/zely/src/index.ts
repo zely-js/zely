@@ -1,5 +1,3 @@
-import { error } from './logger';
-
 Symbol('zely:handler');
 
 // config
@@ -32,8 +30,9 @@ export * from './support';
 export * from './core/methods';
 
 // no esm
-
+/*
 if (__ESM__) {
   error('use cjs.');
   process.exit(1);
 }
+*/
