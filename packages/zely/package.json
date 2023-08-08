@@ -3,7 +3,6 @@
   "version": "1.0.2",
   "types": "./types/index.d.ts",
   "main": "./dist/index.js",
-  "module": "./dist/index.esm.js",
   "homepage": "https://zely.netlify.app/",
   "repository": "https://github.com/zely-js/core",
   "description": "a Backend Framework for Node.js",
@@ -25,22 +24,18 @@
   "exports": {
     ".": {
       "require": "./dist/index.js",
-      "import": "./dist/index.esm.js",
       "types": "./types/index.d.ts"
     },
     "./config": {
       "require": "./dist/config.js",
-      "import": "./dist/config.esm.js",
       "types": "./types/export-config.d.ts"
     },
     "./server": {
       "require": "./dist/server.js",
-      "import": "./dist/server.esm.js",
       "types": "./types/export-server.d.ts"
     },
     "./methods": {
       "require": "./dist/methods.js",
-      "import": "./dist/methods.esm.js",
       "types": "./types/export-methods.d.ts"
     }
   },
