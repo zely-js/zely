@@ -1,73 +1,37 @@
-const esbuild = require('esbuild');
-const { nodeExternalsPlugin } = require('esbuild-node-externals');
-const { join } = require('path');
+const { asto, esbuildLoader } = require('asto');
+const { default: nodeExternalsPlugin } = require('esbuild-node-externals');
 
-/** @type {import("esbuild").BuildOptions } */
-const base = {
-  target: 'esnext',
-  bundle: true,
-  platform: 'node',
-};
-
-const build = (
-  pkg,
-  entryPoint = 'src/index.ts',
-  out = { cjs: 'dist/index.js', esm: 'dist/index.esm.js' },
-  cfg = {}
-) => {
-  console.log(join(process.cwd(), 'packages', pkg, 'package.json'));
-  /** @type {import("esbuild").BuildOptions } */
-  const pkgBase = {
-    entryPoints: [join(process.cwd(), 'packages', pkg, entryPoint)],
+const repo = (name) => (input, output) => ({
+  input: `packages/${name}/src/${input}`,
+  output: `packages/${name}/dist/${output}`,
+  options: {
     plugins: [
-      // @ts-ignore
       nodeExternalsPlugin({
-        packagePath: join(process.cwd(), 'packages', pkg, 'package.json'),
+        packagePath: `packages/${name}/package.json`,
         devDependencies: true,
       }),
     ],
-    external: ['esbuild'],
-  };
-  if (out.cjs) {
-    // @ts-ignore
-    esbuild.build({
-      outfile: join(process.cwd(), 'packages', pkg, out.cjs),
-      ...pkgBase,
-      ...base,
-      ...cfg,
-      format: 'cjs',
-      define: {
-        __ESM__: 'false',
-      },
-    });
-  }
+  },
+});
 
-  if (out.esm) {
-    // @ts-ignore
-    esbuild.build({
-      outfile: join(process.cwd(), 'packages', pkg, out.esm),
-      ...pkgBase,
-      ...base,
-      ...cfg,
-      format: 'esm',
-      define: {
-        __ESM__: 'true',
-      },
-    });
-  }
+const repos = {
+  zely: repo('zely'),
+  vitePlugin: repo('vite-plugin-zely'),
 };
 
-build('zely');
-// cli
-build('zely', 'src/bin/index.ts', { cjs: 'dist/bin.js', esm: 'dist/bin.esm.js' });
-build('zely', 'src/server.ts', { cjs: 'dist/server.js', esm: 'dist/server.esm.js' });
-build('zely', 'src/export-config.ts', {
-  cjs: 'dist/config.js',
-  esm: 'dist/config.esm.js',
-});
-build('zely', 'src/export-methods.ts', {
-  cjs: 'dist/methods.js',
-  esm: 'dist/methods.esm.js',
-});
+asto({
+  loader: esbuildLoader({
+    define: {
+      __ESM__: 'false',
+    },
+  }),
+  entryPoints: [
+    repos.zely('index', 'index.js'),
+    repos.zely('bin/index.ts', 'bin.js'),
+    repos.zely('server.ts', 'server.js'),
+    repos.zely('export-config.ts', 'config.js'),
+    repos.zely('export-methods.ts', 'methods.js'),
 
-build('vite-plugin-zely');
+    repos.vitePlugin('index.ts', 'index.js'),
+  ],
+});
