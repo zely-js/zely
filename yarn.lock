@@ -1562,6 +1562,13 @@ arraybuffer.prototype.slice@^1.0.1:
     is-array-buffer "^3.0.2"
     is-shared-array-buffer "^1.0.2"
 
+asto@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/asto/-/asto-0.0.0.tgz#3fc0cf3b9cd76bda64a13cd0ed53955dd69c922d"
+  integrity sha512-7KLoyfZe7MLaAHu2+S2WfK3ktQsxB2QWKMnUwzOxViVgrjYCby9ROa9DFnvDBMx9A56qW6nhhNpBXUY4hcvaPg==
+  dependencies:
+    colors "^1.4.0"
+
 available-typed-arrays@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/available-typed-arrays/-/available-typed-arrays-1.0.5.tgz#92f95616501069d07d10edb2fc37d3e1c65123b7"
