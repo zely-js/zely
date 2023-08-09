@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-import program from 'animaux';
 import { readFileSync, rmSync, writeFileSync } from 'fs';
 import { join, normalize } from 'path';
 
 import { performance } from 'perf_hooks';
+import program from 'animaux';
 
 import pkg from '../../package.json';
 import { Config, getConfig } from '../config';

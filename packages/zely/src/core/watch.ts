@@ -1,6 +1,6 @@
-import chokidar from 'chokidar';
 import { existsSync, readFileSync, rmSync, writeFileSync } from 'fs';
 import { join, parse } from 'path';
+import chokidar from 'chokidar';
 import { Config } from '../config';
 import { CACHE_DIRECTORY, CACHE_FILE } from '../constants';
 import { typescriptLoader } from '../loader';

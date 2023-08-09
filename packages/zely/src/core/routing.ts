@@ -40,7 +40,7 @@ export async function getPages(config: Config): Promise<FileData | null> {
       if (cache.has(target)) {
         // load module
         const pageModule = require(relative(
-          join(__dirname, '../'),
+          __dirname,
           join(CACHE_DIRECTORY, 'pages', cache.get(target))
         ));
 
