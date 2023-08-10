@@ -8,14 +8,6 @@
  * -------------------------------------------------------------------------- */
 
 :root {
-  --vp-c-brand: #b964ff;
-  --vp-c-brand-light: #d374ff;
-  --vp-c-brand-lighter: #f694ff;
-  --vp-c-brand-lightest: #fdbcff;
-  --vp-c-brand-dark: #f253dd;
-  --vp-c-brand-darker: #e145d4;
-  --vp-c-brand-dimm: rgba(255, 100, 242, 0.08);
-
   --vp-code-tab-bg: #252836;
   --vp-code-block-bg: #292d3e;
 
@@ -54,9 +46,13 @@
  * Component: Home
  * -------------------------------------------------------------------------- */
 
+.VPHomeHero {
+  color: -webkit-linear-gradient(120deg, #302957 30%, #bbb5b5) !important;
+}
+
 :root {
   --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #bd34fe 30%, #ff4141);
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #302d41 30%, #bbb5b5);
 
   --vp-home-hero-image-background-image: linear-gradient(
     -45deg,
