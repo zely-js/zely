@@ -1740,10 +1740,10 @@ arraybuffer.prototype.slice@^1.0.1:
     is-array-buffer "^3.0.2"
     is-shared-array-buffer "^1.0.2"
 
-asto@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/asto/-/asto-0.0.3.tgz#decfd8140a9c673c538684ab8a0f61bc2ec77d10"
-  integrity sha512-SY8pIxao6cjVklshpJju/HKtHtLMV//a4RqM5L/OkEwQABge2mTcbdZeTYjodVlX0SxGGwgJn3FyCXOa4g21oA==
+asto@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/asto/-/asto-0.0.4.tgz#fe813d4bbf65cbae3c92e2df1cf6cea4f91d9602"
+  integrity sha512-MzkTAR5BqK8TG9+FpPA5ll6DwbN1cvzDZeIQS7y1Qph4ogniG+RlrBWWoQZydcxRPzRy3WYxzOM1PLlaSQCgSQ==
   dependencies:
     chokidar "^3.5.3"
     colors "^1.4.0"

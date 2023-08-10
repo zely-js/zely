@@ -48,21 +48,25 @@ const loader = (cli = false) =>
     }
   );
 
-asto({
-  loader: loader(),
+asto([
+  {
+    // core packages
+    loader: loader(),
 
-  entryPoints: [
-    repos.zely('index.ts', 'index.js'),
-    // repos.zely('bin/index.ts', 'bin.js'),
-    repos.zely('server.ts', 'server.js'),
-    repos.zely('export-config.ts', 'config.js'),
-    repos.zely('export-methods.ts', 'methods.js'),
+    entryPoints: [
+      // zely
+      repos.zely('index.ts', 'index.js'),
+      repos.zely('server.ts', 'server.js'),
+      repos.zely('export-config.ts', 'config.js'),
+      repos.zely('export-methods.ts', 'methods.js'),
 
-    repos.vitePlugin('index.ts', 'index.js'),
-  ],
-}).then(() =>
-  asto({
+      // vite plugin zely
+      repos.vitePlugin('index.ts', 'index.js'),
+    ],
+  },
+  {
+    // cli
     loader: loader(true),
     entryPoints: [repos.zely('bin/index.ts', 'bin.js')],
-  })
-);
+  },
+]);
