@@ -1,6 +1,6 @@
 const { nodeExternalsPlugin } = require('esbuild-node-externals');
-const esbuild = require('./loaders/esbuild');
-const { loader } = require('./loaders/webpack');
+const esbuild = require('./asto.esbuild');
+const { loader } = require('./asto.webpack');
 
 const repo = (name) => (input, output) => ({
   input: `packages/${name}/src/${input}`,

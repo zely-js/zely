@@ -1681,11 +1681,12 @@ arraybuffer.prototype.slice@^1.0.1:
     is-array-buffer "^3.0.2"
     is-shared-array-buffer "^1.0.2"
 
-asto@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/asto/-/asto-0.0.6.tgz#968fc9bb28c6a0ce52eb00c4b97a4d768e9faf69"
-  integrity sha512-w4FHy8Xa5s6ZJi686RWuyMgZcbex8N71xEZJAy/5fC3yy/XtKKjiIex7juEyzXiBrMYk/IkkV1CAZmj8mFUcbw==
+asto@^0.0.9:
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/asto/-/asto-0.0.9.tgz#85ec695cdea53128f20dfd9db317fa63da9e70a1"
+  integrity sha512-wUmthSfWymW/QM9FrcjdpkTFwe2ckgH4Od7k88TmQk97DLvCUk27nTXKFpI0WnQLiw+DphpucNSGJ4veX6vbfw==
   dependencies:
+    animaux "^0.0.4"
     chokidar "^3.5.3"
     colors "^1.4.0"
 

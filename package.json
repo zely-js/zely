@@ -14,7 +14,7 @@
     "@types/node": "^18.11.10",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.36.1",
-    "asto": "^0.0.6",
+    "asto": "^0.0.9",
     "cross-env": "^7.0.3",
     "esbuild-node-externals": "^1.8.0",
     "eslint": "^8.43.0",
@@ -28,9 +28,9 @@
     "webpack": "^5.88.2"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development node scripts/watch.js",
-    "build:dev": "cross-env NODE_ENV=development node scripts/build.js",
-    "build": "cross-env NODE_ENV=production node scripts/build.js",
+    "dev": "cross-env NODE_ENV=development asto --watch",
+    "build:dev": "cross-env NODE_ENV=development asto",
+    "build": "cross-env NODE_ENV=production asto",
     "test": "jest",
     "lint-fix": "eslint --fix --ext .js,.ts .",
     "publish": "node scripts/publish.js",
