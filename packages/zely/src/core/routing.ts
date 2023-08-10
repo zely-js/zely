@@ -11,6 +11,7 @@ import { readDirectory } from '../../lib/readDirectory';
 import { transformFilename } from '../../lib/transform-filename';
 import { prettyURL } from '../../lib/pretty-url';
 import { ZelyRequest, ZelyResponse } from '$zely/types';
+import loadModule from '$zely/lib/webpack';
 
 let globalCache: any = null;
 
@@ -39,10 +40,12 @@ export async function getPages(config: Config): Promise<FileData | null> {
       // already compiled
       if (cache.has(target)) {
         // load module
-        const pageModule = require(relative(
-          __dirname,
-          join(CACHE_DIRECTORY, 'pages', cache.get(target))
-        ));
+        const pageModule = loadModule(
+          relative(__dirname, join(CACHE_DIRECTORY, 'pages', cache.get(target))).replace(
+            /\\/g,
+            '/'
+          )
+        );
 
         // custom path
         const pagePath = pageModule?.$page?.path;
