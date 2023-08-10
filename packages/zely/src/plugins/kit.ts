@@ -1,8 +1,8 @@
 import url from 'url';
 import http from 'http';
+import { createReadStream, existsSync } from 'fs';
 import { lookup } from 'mime-types';
 
-import { createReadStream, existsSync } from 'fs';
 import { Plugin } from '../config';
 import { snatcher } from '../snatcher';
 

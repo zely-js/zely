@@ -1,8 +1,8 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-unused-vars */
-import { build } from 'esbuild';
 import { existsSync } from 'fs';
 import { join, relative } from 'path';
+import { build } from 'esbuild';
 import { CACHE_DIRECTORY, DEFAULT_CONFIG } from './constants';
 import { typescriptLoader } from './loader';
 
