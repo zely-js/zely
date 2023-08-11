@@ -1,10 +1,11 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="announcement">
-    <a href="/blog/2023-08-01">🎉 zely@1 has been published!</a>
-  </div>
   <section id="hero">
+    <span class="announcement">
+      <span class="blue-circle"></span>
+      <a href="/blog/2023-08-01">zely^1 has been published</a>
+    </span>
     <h1 class="title">
       The
       <span class="hl">Backend Framework</span>
@@ -98,20 +99,38 @@
 :global(.VPDoc:has(#sitemap) .VPDocFooter) {
   margin: 0 !important;
 }
+.blue-circle {
+  height: 6px;
+  width: 6px;
+  margin: 2px 8px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: #f09390;
+}
 .announcement {
+  width: auto;
   height: 36px;
-  background-color: #99c0f370;
-  padding-top: 6px;
+  padding: 6px 10px;
+  margin-bottom: 55px;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 0.775rem;
+  border: 1px solid var(--gray-lighter);
+  border-radius: 5px;
+}
+
+.dark .announcement {
+  border: 1px solid var(--gray-darkest);
 }
 .announcement a {
   color: var(--vp-c-text-code);
 }
+.announcement a:hover {
+  color: var(--vp-c-text-code) !important;
+}
 #sitemap {
   height: auto;
   margin-top: 150px;
-  height: 500px;
+  height: 450px;
   border-top: 1px solid var(--gray);
   background-color: var(--gray-lightest);
 }
@@ -123,7 +142,7 @@
 #sitemap h4 {
   color: var(--vp-c-text-code);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 #sitemap ul {
   padding: 0;
@@ -155,13 +174,16 @@
   margin-left: auto;
   font-size: 0.75rem;
 }
+.install {
+  margin-top: 25px;
+}
 .install code {
-  padding: 5px 50px;
-  background-color: inherit;
+  padding: 7px 50px;
+  background-color: var(--vp-c-bg);
 }
 .sitemap-container {
   display: flex;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 64px 64px;
 }
@@ -173,6 +195,7 @@
 }
 
 h1.title {
+  margin-top: 20px;
   font-weight: 800;
   font-size: 2.85rem;
 }
@@ -198,23 +221,37 @@ h1.title {
   color: var(--vp-c-text-code);
   transition: all 0.25s;
 }
+.actions a:hover {
+  color: var(--vp-c-text-code) !important;
+  background-color: var(--gray-light);
+}
 
 .dark .actions a {
-  background-color: var(--gray-darkest);
+  background-color: var(--gray-darkest-1);
   color: var(--vp-c-text-code);
 }
 
-.actions a:hover {
-  background-color: var(--gray-light);
+.dark .actions a:hover {
+  background-color: var(--gray-darkest);
   transition: all 0.25s;
 }
 #features {
-  width: 968px;
-
   margin: 50px auto;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 968px;
+}
+@media (max-width: 900px) {
+  #features {
+    width: 368px;
+  }
+  .feature {
+    width: 100% !important;
+  }
 }
 .feature {
+  width: calc(100% / 3);
   padding: 28px 36px;
 }
 .feature h2 {
