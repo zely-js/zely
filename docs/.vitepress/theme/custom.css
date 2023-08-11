@@ -8,10 +8,29 @@
  * -------------------------------------------------------------------------- */
 
 :root {
+  --gray-lightest: #ebebeb52;
+  --gray-lighter: #ebebeb;
+  --gray-light: #e2e2e2;
+  --gray: #d8d8d8;
+  --gray-dark: #cacaca;
+  --gray-darker: #838383;
+  --gray-darkest: #4d4d4d;
+}
+:root {
   --vp-code-tab-bg: #252836;
   --vp-code-block-bg: #292d3e;
 
   --vp-code-line-height: 1.6;
+}
+
+.vp-doc a {
+  color: var(--vp-c-brand-light);
+  transition: color 0.25s, opacity 0.25s;
+}
+.vp-doc a:hover {
+  text-decoration: none !important;
+  color: var(--vp-c-brand-dark);
+  transition: color 0.25s, opacity 0.25s;
 }
 
 /**
@@ -42,6 +61,7 @@
 .vp-doc [class*='language-'] .line-numbers-wrapper {
   padding: 18px 0 0 5px;
 }
+
 /**
  * Component: Home
  * -------------------------------------------------------------------------- */
