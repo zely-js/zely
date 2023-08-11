@@ -15,6 +15,8 @@
   --gray-dark: #cacaca;
   --gray-darker: #838383;
   --gray-darkest: #4d4d4d;
+  --gray-darkest-1: #3a3a3a;
+  --gray-darkest-2: #272727;
 }
 :root {
   --vp-code-tab-bg: #252836;
@@ -23,16 +25,30 @@
   --vp-code-line-height: 1.6;
 }
 
-.vp-doc a {
-  color: var(--vp-c-brand-light);
-  transition: color 0.25s, opacity 0.25s;
-}
-.vp-doc a:hover {
+.vp-doc p a:hover {
   text-decoration: none !important;
-  color: var(--vp-c-brand-dark);
-  transition: color 0.25s, opacity 0.25s;
+}
+.VPNav .curtain {
+  border-top: 1px solid var(--gray-light);
+}
+.dark .VPNav .curtain {
+  border-top: 1px solid var(--gray-darkest);
+}
+.VPNav .curtain::before {
+  background: none !important;
 }
 
+.VPNav {
+  z-index: 999;
+}
+.VPNavBar .title {
+  border-right: none;
+}
+.VPSidebar .curtain {
+  z-index: 999;
+  position: absolute;
+  width: 120%;
+}
 /**
  * Component: Button
  * -------------------------------------------------------------------------- */
@@ -104,6 +120,10 @@
   --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
 }
 
+:root {
+  --vp-sidebar-width: 272px;
+}
+
 .dark {
   --vp-custom-block-tip-border: var(--vp-c-brand);
   --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
@@ -116,4 +136,17 @@
 
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand) !important;
+}
+
+.VPSidebar {
+  background-color: var(--vp-c-bg) !important;
+  border-right: 1px solid var(--gray-lighter);
+}
+
+.VPSidebar .curtain {
+  font-size: 13px;
+  background-color: var(--vp-c-bg) !important;
+}
+.dark .VPSidebar {
+  border-right: 1px solid var(--gray-darkest-1);
 }
