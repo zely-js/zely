@@ -19,7 +19,7 @@
     "esbuild-node-externals": "^1.8.0",
     "eslint": "^8.43.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-import": "^2.28.1",
     "jest": "^29.3.1",
     "ts-jest": "^29.0.3",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
