@@ -15,6 +15,8 @@ Zely is a backend framework for Node.js
 
 ## Installation
 
+> [Try it!](https://codesandbox.io/p/github/zely-js/zely-next-starter)
+
 - use create-prext
 
 ```sh

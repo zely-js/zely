@@ -1,5 +1,3 @@
-
-
 # Zely
 
 a Next-Generation backend framework for nodejs
@@ -7,6 +5,8 @@ a Next-Generation backend framework for nodejs
 [**github**](https://github.com/zely-js/core) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://prext.netlify.app/)
 
 ---
+
+> [Try it!](https://codesandbox.io/p/github/zely-js/zely-next-starter)
 
 ## Documentation
 

@@ -1,5 +1,7 @@
 # Getting Started
 
+> [Try it!](https://codesandbox.io/p/github/zely-js/zely-next-starter)
+
 ## Using tool
 
 You can create zely application easily with [create-zely](https://npmjs.com/package/create-zely).
