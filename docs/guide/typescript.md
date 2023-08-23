@@ -20,7 +20,7 @@ $ npx create-zely
 
 ```ts [page/index.ts]
 
-import { ZelyRequest, ZelyResponse } from 'zely'; // [!code ++]
+import { Server } from 'zely'; // [!code ++]
 
 module.exports.get = function(req, res) {  // [!code --]
 export function get(req: ZelyRequest, res: ZelyResponse) { // [!code ++]

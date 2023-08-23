@@ -25,7 +25,7 @@
   --vp-code-line-height: 1.6;
 }
 
-.vp-doc p a:hover {
+a:hover {
   text-decoration: none !important;
 }
 .VPNav .curtain {
@@ -149,4 +149,8 @@
 }
 .dark .VPSidebar {
   border-right: 1px solid var(--gray-darkest-1);
+}
+
+.VPSidebar .VPSidebarItem .text {
+  font-size: 13px;
 }

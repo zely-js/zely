@@ -34,4 +34,4 @@ Taking express as an example again, I want to create an sns backend system, but 
 
 ### Solution
 
-Zely solves these problems. It has many features such as file based routing, fastest server, etc,
+Zely solves these problems. It has many features such as file based routing, fastest server, etc.

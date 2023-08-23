@@ -21,7 +21,7 @@ Zely is a recently created package and is unstable.
 
 ```sh
 $ git clone https://github.com/zely-js/core.git
-$ cd prext
+$ cd core
 ```
 
 2. Install dependencies

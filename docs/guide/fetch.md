@@ -16,6 +16,7 @@ export async function get(req, res) {
 ```
 
 ::: tip
+You can also use it directly through `req.snatch` without calling snatcher.
 
 ```ts
 export async function get(req, res) {
