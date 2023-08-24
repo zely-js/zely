@@ -1,10 +1,11 @@
+/* eslint-disable no-unexpected-multiline */
 /* eslint-disable no-loop-func */
 import url from 'url';
 import { IncomingMessage, ServerResponse } from 'http';
 import { existsSync, readFileSync } from 'fs';
-import { join, relative } from 'path';
+import { dirname, join, relative } from 'path';
+import { SourceMapConsumer } from 'source-map';
 
-import { prettyURL } from '$zely/lib/pretty-url';
 import { ObjectkeysMap } from '$zely/lib/chageKeys';
 import { pathToRegexp } from '$zely/lib/pathToRegexp';
 
@@ -12,6 +13,55 @@ import { CACHE_DIRECTORY } from '../constants';
 import { error, errorWithStacks, parseError } from '../logger';
 import { Config } from '../config';
 import { ServerDataHandler, ZelyRequest, ZelyResponse } from '$zely/types';
+
+const errorHandler = async (e) => {
+  if (!e) return;
+  const stacks = parseError(e);
+  const occured = stacks[0].loc.slice(1, -1);
+  const sliced = occured.split(':');
+
+  const column = sliced.pop();
+  const line = sliced.pop();
+
+  const trace = {
+    filename: occured,
+    line: Number(line),
+    column: Number(column),
+  };
+
+  const sourcemap = new SourceMapConsumer(
+    JSON.parse(readFileSync(`${sliced.join(':')}.map`, 'utf-8'))
+  );
+
+  const result = (await sourcemap).originalPositionFor(trace);
+  const target = join(dirname(sliced.join(':')), result.source);
+
+  stacks.unshift({
+    at: '',
+    loc: `${target}:${result.line}:${result.column}`,
+  });
+
+  errorWithStacks(e.message, stacks);
+
+  const errorFile = readFileSync(target, 'utf-8').split('\n');
+  const errorLine = errorFile[result.line - 1];
+
+  console.log(
+    `${relative(process.cwd(), target)}:${result.line}:${result.column}`.yellow.dim
+  );
+
+  if (result.line - 1 > 0) {
+    console.log(`${`${result.line - 1} | `.gray}${errorFile[result.line - 2]}`);
+  }
+  console.log(
+    `${`${result.line} | `.gray}${errorLine.slice(0, result.column - 2)}${
+      errorLine.slice(result.column - 2, result.column + 2).underline.red
+    }${errorLine.slice(result.column + +2)}`
+  );
+  if (errorFile[result.line]) {
+    console.log(`${`${result.line + 1} | `.gray}${errorFile[result.line]}`);
+  }
+};
 
 export async function send(value: any, res: ZelyResponse) {
   if (res.writableEnded) return;
@@ -130,30 +180,36 @@ export async function handles(
 
             const processHandler = async (m: ServerDataHandler | object) => {
               const sendData = async (data) => {
-                if (data?.__typeof === Symbol.for('zely:handler')) {
-                  if (
-                    data.__method.description.toLowerCase() ===
-                      req.method.toLowerCase() ||
-                    data.__method.description.toLowerCase() === 'all'
-                  ) {
-                    // function => handler object
+                try {
+                  if (data?.__typeof === Symbol.for('zely:handler')) {
+                    if (
+                      data.__method.description.toLowerCase() ===
+                        req.method.toLowerCase() ||
+                      data.__method.description.toLowerCase() === 'all'
+                    ) {
+                      // function => handler object
+
+                      isSended = true;
+                      Object.keys(data.headers || {}).forEach((header) => {
+                        res.setHeader(header, data.headers.header);
+                      });
+
+                      if (typeof data.body === 'function') {
+                        await send(await data.body(req, res), res as ZelyResponse);
+                      } else {
+                        await send(data.body, res as ZelyResponse);
+                      }
+                    }
+                  } else {
+                    // function => object
 
                     isSended = true;
-                    Object.keys(data.headers || {}).forEach((header) => {
-                      res.setHeader(header, data.headers.header);
-                    });
-
-                    if (typeof data.body === 'function') {
-                      await send(await data.body(req, res), res as ZelyResponse);
-                    } else {
-                      await send(data.body, res as ZelyResponse);
-                    }
+                    await send(data, res as ZelyResponse);
                   }
-                } else {
-                  // function => object
 
-                  isSended = true;
-                  await send(data, res as ZelyResponse);
+                  return null;
+                } catch (e) {
+                  return e;
                 }
               };
 
@@ -164,12 +220,11 @@ export async function handles(
 
                 // console.log(output);
 
-                sendData(output);
-              } else {
-                // just object
-                sendData(m);
-                // console.log(isSended, req.url);
+                return sendData(output);
               }
+              // just object
+              return sendData(m);
+              // console.log(isSended, req.url);
             };
 
             if ($page.before) await $page.before(req, res);
@@ -178,13 +233,13 @@ export async function handles(
               // array
               if (Array.isArray(pageModule)) {
                 for await (const m of pageModule) {
-                  await processHandler(m);
+                  await errorHandler(await processHandler(m));
                 }
               } else {
-                await processHandler(pageModule);
+                await errorHandler(await processHandler(pageModule));
               }
             } else {
-              await processHandler(pageModule);
+              await errorHandler(await processHandler(pageModule));
             }
 
             if ($page.after) await $page.after(req, res);
@@ -243,28 +298,7 @@ export async function handles(
                 await next();
               }
             } catch (e) {
-              const stacks = parseError(e);
-
-              errorWithStacks(e.message, stacks);
-
-              const stackedFile = relative(
-                process.cwd(),
-                stacks[0].loc.slice(1, -1).split(':').slice(0, 2).join(':')
-              );
-
-              console.log(stacks);
-
-              // console.log(relative(process.cwd(), page.modulePath));
-
-              if (stackedFile === relative(process.cwd(), page.modulePath)) {
-                error(
-                  `[tracer] Error occurred in ${
-                    prettyURL(
-                      join(config.routes || 'pages', page.origin).replace(/\\/g, '/')
-                    ).cyan
-                  }`
-                );
-              }
+              errorHandler(e);
             }
           }
         }

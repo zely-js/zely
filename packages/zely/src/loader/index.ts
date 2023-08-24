@@ -27,6 +27,9 @@ export function typescriptLoader(
 
       platform: 'node',
       format: 'cjs',
+
+      sourcemap: true,
+
       plugins: [nodeExternalsPlugin() as any, filenamePlugin],
       ...(config.esbuild || {}),
     })
