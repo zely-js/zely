@@ -27,11 +27,8 @@ export default defineConfig({
       { text: 'blog', link: '/blog/introduction' },
       {
         text: `v${pkg.version}`,
+        link: `https://github.com/zely-js/core/releases/tag/zely%40${pkg.version}`,
         items: [
-          {
-            text: 'CHANGELOG',
-            link: 'https://github.com/zely-js/core/blob/main/packages/zely/CHANGELOG.md',
-          },
           {
             items: [
               {
@@ -107,7 +104,10 @@ function sidebarGuide() {
     {
       text: 'Community',
       collapsed: false,
-      items: [{ text: 'Contributing', link: '/guide/contributing' }],
+      items: [
+        { text: 'Contributing', link: '/guide/contributing' },
+        { text: 'Playground', link: '/guide/playground' },
+      ],
     },
   ];
 }
