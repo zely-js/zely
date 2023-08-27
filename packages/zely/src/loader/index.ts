@@ -1,14 +1,15 @@
-import { join, parse, relative } from 'path';
+import { join, parse, relative } from 'node:path';
 
 import { build } from 'esbuild';
 import { nodeExternalsPlugin } from 'esbuild-node-externals';
 
-import randomFilename from '../../lib/random-filename';
+import loadModule from '$zely/lib/webpack';
+import randomFilename from '$zely/lib/random-filename';
+
 import { CACHE_DIRECTORY } from '../constants';
 import { Config } from '../config';
 import { error } from '../logger';
 import { filenamePlugin } from './plugins/filename';
-import loadModule from '$zely/lib/webpack';
 
 export function typescriptLoader(
   target: string,

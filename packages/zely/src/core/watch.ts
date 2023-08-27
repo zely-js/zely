@@ -1,6 +1,8 @@
-import { existsSync, readFileSync, rmSync, writeFileSync } from 'fs';
-import { join, parse } from 'path';
+import { existsSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { join, parse } from 'node:path';
+
 import chokidar from 'chokidar';
+
 import { Config } from '../config';
 import { CACHE_DIRECTORY, CACHE_FILE } from '../constants';
 import { typescriptLoader } from '../loader';
@@ -9,7 +11,7 @@ import { resetCache } from './routing';
 export function Watch(config: Config) {
   const watcher = chokidar.watch([config.routes], {
     cwd: join(process.cwd(), config.base || '.'),
-    ignored: ['node_modules', '.prexty', '.prext'],
+    ignored: ['node_modules', '.prexty', '.zely'],
     ...(config.watch?.options || {}),
   });
 

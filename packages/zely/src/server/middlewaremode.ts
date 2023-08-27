@@ -1,4 +1,5 @@
-import { rmSync } from 'fs';
+import { rmSync } from 'node:fs';
+
 import { Config, pureMiddleware } from '../config';
 import { Handler, getPages } from '../core';
 import { error, warn } from '../logger';

@@ -1,18 +1,19 @@
 /* eslint-disable no-unexpected-multiline */
 /* eslint-disable no-loop-func */
-import url from 'url';
-import { IncomingMessage, ServerResponse } from 'http';
-import { existsSync, readFileSync } from 'fs';
-import { dirname, join, relative } from 'path';
+import url from 'node:url';
+import { IncomingMessage, ServerResponse } from 'node:http';
+import { existsSync, readFileSync } from 'node:fs';
+import { dirname, join, relative } from 'node:path';
+
 import { SourceMapConsumer } from 'source-map';
 
 import { ObjectkeysMap } from '$zely/lib/chageKeys';
 import { pathToRegexp } from '$zely/lib/pathToRegexp';
+import { ServerDataHandler, ZelyRequest, ZelyResponse } from '$zely/types';
 
 import { CACHE_DIRECTORY } from '../constants';
 import { error, errorWithStacks, parseError } from '../logger';
 import { Config } from '../config';
-import { ServerDataHandler, ZelyRequest, ZelyResponse } from '$zely/types';
 
 const errorHandler = async (e) => {
   if (!e) return;

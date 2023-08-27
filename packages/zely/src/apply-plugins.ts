@@ -1,4 +1,5 @@
 import type { OsikServer } from 'osik';
+
 import { kit } from './plugins/kit';
 import { Static } from './plugins/public';
 import type { Config } from './config';

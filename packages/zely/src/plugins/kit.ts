@@ -1,6 +1,6 @@
-import url from 'url';
-import http from 'http';
-import { createReadStream, existsSync } from 'fs';
+import url from 'node:url';
+import http from 'node:http';
+import { createReadStream, existsSync } from 'node:fs';
 import { lookup } from 'mime-types';
 
 import { Plugin } from '../config';

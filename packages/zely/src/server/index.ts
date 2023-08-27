@@ -1,5 +1,7 @@
-import { rmSync } from 'fs';
+import { rmSync } from 'node:fs';
+
 import { OsikServer, osik } from 'osik';
+
 import { Config } from '../config';
 import { CACHE_DIRECTORY } from '../constants';
 import { Handler, getPages } from '../core';

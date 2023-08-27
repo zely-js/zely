@@ -1,4 +1,4 @@
-import { relative } from 'path';
+import { relative } from 'node:path';
 import { typescriptLoader } from '.';
 
 export async function load(target: string) {

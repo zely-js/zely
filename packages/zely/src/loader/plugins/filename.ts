@@ -2,8 +2,8 @@
 
 // https://github.com/evanw/esbuild/issues/859#issuecomment-829154955
 
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const nodeModules = new RegExp(/^(?:.*[\\\/])?node_modules(?:[\\\/].*)?$/);
 

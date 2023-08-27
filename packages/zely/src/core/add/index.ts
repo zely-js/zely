@@ -1,5 +1,6 @@
 /* eslint-disable no-case-declarations */
-import { existsSync, mkdirSync } from 'fs';
+import { existsSync, mkdirSync } from 'node:fs';
+
 import { spinner } from '../../spinner';
 import { installDependencies, installEngine } from './install';
 import { usingLanguage } from './lang';

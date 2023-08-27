@@ -1,5 +1,5 @@
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
-import { join, parse, relative } from 'path';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { join, parse, relative } from 'node:path';
 
 import { Config, FileData } from '../config';
 import { CACHE_DIRECTORY, CACHE_FILE, CACHE_VERSION } from '../constants';
@@ -7,11 +7,11 @@ import { typescriptLoader } from '../loader';
 import { error, success } from '../logger';
 import { handles } from './handles';
 
-import { readDirectory } from '../../lib/readDirectory';
-import { transformFilename } from '../../lib/transform-filename';
-import { prettyURL } from '../../lib/pretty-url';
-import { ZelyRequest, ZelyResponse } from '$zely/types';
+import { readDirectory } from '$zely/lib/readDirectory';
+import { transformFilename } from '$zely/lib/transform-filename';
+import { prettyURL } from '$zely/lib/pretty-url';
 import loadModule from '$zely/lib/webpack';
+import { ZelyRequest, ZelyResponse } from '$zely/types';
 
 let globalCache: any = null;
 

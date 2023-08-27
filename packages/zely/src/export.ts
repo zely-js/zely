@@ -1,13 +1,16 @@
-import { rmSync, writeFileSync } from 'fs';
-import { join, relative } from 'path';
-import { performance } from 'perf_hooks';
+import { rmSync, writeFileSync } from 'node:fs';
+import { join, relative } from 'node:path';
+import { performance } from 'node:perf_hooks';
+
 import { build } from 'esbuild';
 import { nodeExternalsPlugin } from 'esbuild-node-externals';
+
+import { transformFilename } from '$zely/lib/transform-filename';
+
 import { Config, configDev } from './config';
 import { CACHE_DIRECTORY, DEFAULT_CONFIG } from './constants';
 import { filenameToRoute, getPages } from './core';
 import { info, success } from './logger';
-import { transformFilename } from '$zely/lib/transform-filename';
 import { loadMiddlewaresModluePath } from './server/load-middlewares';
 
 export function exportsCode(config: Config) {
