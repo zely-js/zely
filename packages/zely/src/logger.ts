@@ -5,7 +5,7 @@
 //
 
 import 'colors';
-import { getTime } from '../lib/getTime';
+import { getTime } from '$zely/lib/getTime';
 
 const tab = '  ';
 
