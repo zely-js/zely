@@ -14,5 +14,6 @@ Zely is built on several packages, some of which are optimized for zely.
 ## Plugins
 
 | name                | repo                                             | guide                            |
-| ------------------- | ------------------------------------------------ | -------------------------------- | --- | ------------------ | ------------------------------------------------ | --------- |
-| `@zely/plugin-cors` | [/zely-js/core](https://github.com/zely-js/core) | [/packages/cors](/packages/cors) |     | `vite-plugin-zely` | [/zely-js/core](https://github.com/zely-js/core) | [none](#) |
+| ------------------- | ------------------------------------------------ | -------------------------------- |
+| `@zely/plugin-cors` | [/zely-js/core](https://github.com/zely-js/core) | [/packages/cors](/packages/cors) |
+| `vite-plugin-zely`  | [/zely-js/core](https://github.com/zely-js/core) | [none](#)                        |
