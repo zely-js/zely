@@ -4,7 +4,7 @@
   <section id="hero">
     <span class="announcement">
       <span class="blue-circle"></span>
-      <a href="/blog/2023-08-01">zely^1 has been published</a>
+      <a href="/blog/2023-09-03">check out the new engine!</a>
     </span>
     <h1 class="title">
       The

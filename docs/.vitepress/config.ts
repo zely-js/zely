@@ -23,7 +23,7 @@ export default defineConfig({
     nav: [
       { text: 'guide', link: '/guide/what-is-zely' },
       { text: 'apis', link: '/apis/introduction' },
-      { text: 'config', link: '/apis/config' },
+      { text: 'packages', link: '/packages/packages' },
       { text: 'blog', link: '/blog/introduction' },
       {
         text: `v${pkg.version}`,
@@ -44,6 +44,7 @@ export default defineConfig({
     sidebar: {
       '/guide/': sidebarGuide(),
       '/apis/': sidebarApis(),
+      '/packages/': sidebarPackages(),
     },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/zely-js/core' }],
@@ -60,13 +61,41 @@ function sidebarApis() {
         { text: 'Apis', link: '/apis/apis' },
         { text: 'Server', link: '/apis/server' },
         { text: 'Plugin', link: '/apis/plugin' },
-        { text: 'Osik', link: '/apis/osik' },
+        {
+          text: 'Libraries',
+          collapsed: true,
+          items: [
+            { text: 'Zept', link: '/packages/zept' },
+            { text: 'Osik', link: '/packages/osik' },
+          ],
+        },
       ],
     },
     {
       text: 'Config References',
       collapsed: false,
       items: [{ text: 'Config', link: '/apis/config' }],
+    },
+  ];
+}
+function sidebarPackages() {
+  return [
+    {
+      text: 'Packages',
+      collapsed: false,
+      items: [
+        { text: 'Introduction', link: '/packages/packages' },
+        { text: 'osik', link: '/packages/osik' },
+        { text: '@zely/plugin-cors', link: '/packages/cors' },
+      ],
+    },
+    {
+      text: 'Zept',
+      collapsed: false,
+      items: [
+        { text: 'zept', link: '/packages/zept' },
+        { text: '@zept/http', link: '/packages/zept-http' },
+      ],
     },
   ];
 }
