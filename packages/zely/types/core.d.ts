@@ -1,4 +1,4 @@
-import { Request, Response } from 'osik';
+import { ZeptRequest, ZeptResponse } from 'zept';
 import { Config, ZelyRequest, ZelyResponse, pureMiddleware } from '.';
 
 /*
@@ -25,11 +25,15 @@ export function getPages(config: Config): Promise<FileData[]>;
 
 export function filenameToRoute(map: FileData[]): FileData[];
 
-export function Handler(req: Request, res: Response, config: Config): Promise<void>;
+export function Handler(
+  req: ZeptRequest,
+  res: ZeptResponse,
+  config: Config
+): Promise<void>;
 
 export function handles(
-  req: Request,
-  res: Response,
+  req: ZeptRequest,
+  res: ZeptResponse,
   routes: FileData[],
   config: Config
 ): void;

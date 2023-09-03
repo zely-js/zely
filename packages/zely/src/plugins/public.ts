@@ -1,7 +1,7 @@
 import { readdirSync, readFileSync, statSync } from 'fs';
 import { join } from 'path';
 import { lookup } from 'mime-types';
-import { Middleware } from 'osik';
+import { Middleware } from '@zept/http';
 
 import { StaticOptions } from '..';
 

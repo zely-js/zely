@@ -1,6 +1,7 @@
 import { WatchOptions } from 'chokidar';
 import { BuildOptions } from 'esbuild';
-import { Request, Response, OsikServer, ServerOptions } from 'osik';
+import { ZeptRequest, ZeptResponse, Server } from 'zept';
+import { ServerOptions } from '@zept/http';
 import { FileData, Page } from './core';
 import { IncomingMessage, ServerResponse } from 'http';
 import { ZelyRequest, ZelyResponse } from './method';
@@ -14,7 +15,7 @@ declare global {
   var ALL: typeof methods.ALL;
 }
 
-export type Middleware = (req: Request, res: Response, next: any) => void;
+export type Middleware = (req: ZeptRequest, res: ZeptResponse, next: any) => void;
 
 export type HandlerType = (
   req: IncomingMessage,
@@ -38,7 +39,7 @@ export interface PluginBuildOutput {
 export interface Plugin {
   name: string;
   transform?: (id: string, code: string) => PluginOutput | Promise<PluginOutput>;
-  server?: (server: OsikServer) => void;
+  server?: (server: Server) => void;
   build?: () => PluginBuildOutput | void | Promise<PluginBuildOutput | void>;
   config?: (config: Config) => Promise<Config | void> | Config | void;
   pages?: (pages: FileData[]) => Promise<void> | void;
@@ -151,8 +152,8 @@ export function usePrewrite<T>(
 ): void;
 
 export function support(
-  request: Request,
-  response: Response
+  request: ZeptRequest,
+  response: ZeptResponse
 ): { request: ZelyRequest; response: ZelyResponse };
 
 export * from './config';

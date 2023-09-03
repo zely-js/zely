@@ -1488,6 +1488,16 @@
   resolved "https://registry.yarnpkg.com/@zely/plugin-cors/-/plugin-cors-0.0.0.tgz#4b9e72fe4fd91d9ef7d64becc1fbf71a96b81548"
   integrity sha512-Xm27w2TNmE4TG9WH9rukIIh0SXGwR0mkh/3xB5ZBIkVCkcoyD69H22LosgD6QdtjZqSHrfVpEWS1wk41azccPw==
 
+"@zept/http@*":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@zept/http/-/http-0.0.0.tgz#32721bed673b3ad92ebcde1e78e3c5a13ca210de"
+  integrity sha512-01rZxee339PjOwGPFGUfbO5xkLueIY2cYCKdiZkG6tSQ3Ge71YWxTZUwM2oxdvQdam3QrrMpemfMVNz4Uez2Aw==
+
+"@zept/path-regexp@*":
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/@zept/path-regexp/-/path-regexp-0.0.0.tgz#f01caaa93560dc576efddc4e359d430eccc621ef"
+  integrity sha512-a8x3EvESZg2d6bblo/xcXVR6o5D6zDc6i8tOMUk8Kzr6O3PjvXw19vQ25ZVOcswRZvePNtYRNjx8Ly1VI7t5jw==
+
 accepts@~1.3.8:
   version "1.3.8"
   resolved "https://registry.yarnpkg.com/accepts/-/accepts-1.3.8.tgz#0bf0be125b67014adcb0b0921e62db7bffe16b2e"
@@ -3886,11 +3896,6 @@ optionator@^0.9.3:
     prelude-ls "^1.2.1"
     type-check "^0.4.0"
 
-osik@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/osik/-/osik-0.0.5.tgz#e156d259bec908ce7aa3c30f19c11c27c6fa3faa"
-  integrity sha512-OKTM9qonZyhiXWqffLGRCgTZKovDk++Icq9if2mnhVxbePIxu6iacdmQBw+ejK/MyVmOH+/dMcy/jYoEO7q03w==
-
 p-limit@^2.2.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-2.3.0.tgz#3dd33c647a214fdfffd835933eb086da0dc21db1"
@@ -4916,3 +4921,11 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zept@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/zept/-/zept-0.0.1.tgz#213f3c6e458ff427e41241044ee454dc30ed1246"
+  integrity sha512-Pswu5Moz5VtyxDt2wtjrDQIFMsn0t2M3zwOGg6u8azsvI2DMSBBOEBTEnMZw6MxBAlh2waIoqkGD0flcEOs8bQ==
+  dependencies:
+    "@zept/http" "*"
+    "@zept/path-regexp" "*"

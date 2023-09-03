@@ -1,7 +1,7 @@
-import { Request, Response } from 'osik';
+import { ZeptRequest, ZeptResponse } from 'zept';
 import { apply } from './plugins/kit';
 
-export function support(request: Request, response: Response) {
+export function support(request: ZeptRequest, response: ZeptResponse) {
   apply(request, response);
 
   return { request, response };

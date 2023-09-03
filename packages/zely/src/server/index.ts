@@ -1,5 +1,5 @@
 import { rmSync } from 'fs';
-import { OsikServer, osik } from 'osik';
+import { Server, zept } from 'zept';
 import { Config } from '../config';
 import { CACHE_DIRECTORY } from '../constants';
 import { Handler, getPages } from '../core';
@@ -7,7 +7,7 @@ import { loadMiddlewares } from './load-middlewares';
 import { applyPlugins } from '../apply-plugins';
 import { info } from '../logger';
 
-export async function Zely(config: Config): Promise<OsikServer> {
+export async function Zely(config: Config): Promise<Server> {
   if (!config.plugins) config.plugins = [];
 
   // plugin.config
@@ -43,7 +43,9 @@ export async function Zely(config: Config): Promise<OsikServer> {
 
   // create osik server
 
-  const app = osik(config.server?.osik);
+  const app = zept([]);
+
+  app.options = config.server?.osik;
 
   // plugins
 

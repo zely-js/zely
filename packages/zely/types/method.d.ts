@@ -1,15 +1,15 @@
-import { Request, Response } from 'osik';
+import { ZeptRequest, ZeptResponse } from 'zept';
 import './';
 import { snatch } from './';
 
-export interface ZelyRequest extends Request {
+export interface ZelyRequest extends ZeptRequest {
   query: object;
   snatch: typeof snatch;
 }
 
 // https://github.com/do4ng/prext/issues/11
 
-export interface ZelyResponse extends Response {
+export interface ZelyResponse extends ZeptResponse {
   // default supported
   // json: (data: any) => void;
   html: (code: string) => this;
