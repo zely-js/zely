@@ -29,7 +29,7 @@ export function Watch(config: Config) {
     // console.log(ext);
 
     if (ext === '.ts' || ext === '.js') {
-      if (name === 'prext.config') {
+      if (name === 'zely.config') {
         console.log(`${'•'.cyan} Config file changed. Please restart app.`);
       } else {
         const { dir, base } = parse(path.replace(/\\/g, '/'));
