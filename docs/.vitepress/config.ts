@@ -10,10 +10,18 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
 
-  head: [['meta', { name: 'theme-color', content: '#944cc2' }]],
+  head: [
+    ['meta', { name: 'theme-color', content: '#944cc2' }],
+    [
+      'link',
+      {
+        href: 'https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css',
+        rel: 'stylesheet',
+      },
+    ],
+  ],
 
   markdown: {
-    theme: 'material-theme-palenight',
     lineNumbers: true,
   },
 
@@ -28,16 +36,6 @@ export default defineConfig({
       {
         text: `v${pkg.version}`,
         link: `https://github.com/zely-js/core/releases/tag/zely%40${pkg.version}`,
-        items: [
-          {
-            items: [
-              {
-                text: 'prext docs',
-                link: 'https://prext.netlify.app',
-              },
-            ],
-          },
-        ],
       },
     ],
 

@@ -13,8 +13,12 @@
     </h1>
     <p class="description">A tiny, flexible framework for backend development.</p>
     <p class="actions">
-      <a class="get-started" href="/guide/what-is-zely">Get Started</a>
-      <a class="setup" href="/guide/getting-started.html">Install</a>
+      <a class="get-started" href="/guide/what-is-zely"
+        ><i class="ri-book-open-line icon"></i>Get Started</a
+      >
+      <a class="setup" href="/guide/getting-started.html"
+        ><i class="ri-download-line icon"></i>Install</a
+      >
     </p>
 
     <p class="install">
@@ -24,15 +28,15 @@
 
   <section id="features">
     <div class="feature">
-      <h2>File Based Routing</h2>
+      <h2><i class="ri-route-line icon"></i>File Based Routing</h2>
       <p>zely creates routes automatically with filenames.</p>
     </div>
     <div class="feature">
-      <h2>Server Reload</h2>
+      <h2><i class="ri-restart-line icon"></i>Server Reload</h2>
       <p>You don't have to restart server to apply changes.</p>
     </div>
     <div class="feature">
-      <h2>Lightning Fast</h2>
+      <h2><i class="ri-speed-line icon"></i>Lightning Fast</h2>
       <p>faster compared to other frameworks.</p>
     </div>
   </section>
@@ -84,6 +88,9 @@
 </template>
 
 <style scoped>
+:global(.icon) {
+  padding-right: 5px;
+}
 :global(.VPDoc:has(#sitemap)) {
   padding: 0 !important;
 }
@@ -160,12 +167,17 @@
   color: var(--gray-darker);
 }
 #hero {
-  margin-top: 55px;
+  margin-top: 105px;
 
   padding: 50px;
+  padding-bottom: 155px;
   text-align: center;
 
   border-bottom: 1px solid var(--gray-light);
+
+  background-image: url('/assets/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .dark #hero {
   border-bottom: 1px solid var(--gray-darkest);
@@ -179,7 +191,7 @@
 }
 .install code {
   padding: 7px 50px;
-  background-color: var(--vp-c-bg);
+  background: none;
 }
 .sitemap-container {
   display: flex;
@@ -217,13 +229,13 @@ h1.title {
   font-size: 0.95rem;
   font-weight: 550;
 
-  background-color: var(--gray-lighter);
+  background-color: var(--gray-light);
   color: var(--vp-c-text-code);
   transition: all 0.25s;
 }
 .actions a:hover {
   color: var(--vp-c-text-code) !important;
-  background-color: var(--gray-light);
+  background-color: var(--gray);
 }
 
 .dark .actions a {

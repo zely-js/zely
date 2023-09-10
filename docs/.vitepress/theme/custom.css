@@ -19,15 +19,14 @@
   --gray-darkest-2: #272727;
 }
 :root {
+  --vp-code-tab-bg: #f3f3f3;
+  --vp-code-block-bg: #fafafa;
+}
+.dark {
   --vp-code-tab-bg: #252836;
   --vp-code-block-bg: #292d3e;
-
-  --vp-code-line-height: 1.6;
 }
 
-a:hover {
-  text-decoration: none !important;
-}
 .VPNav .curtain {
   border-top: 1px solid var(--gray-light);
 }
@@ -74,10 +73,10 @@ a:hover {
 .vp-doc [class*='language-'] pre {
   padding: 18px 0;
 }
-.vp-doc [class*='language-'] .line-numbers-wrapper {
-  padding: 18px 0 0 5px;
-}
 
+a {
+  text-decoration: none !important;
+}
 /**
  * Component: Home
  * -------------------------------------------------------------------------- */
@@ -153,4 +152,7 @@ a:hover {
 
 .VPSidebar .VPSidebarItem .text {
   font-size: 13px;
+}
+.VPNavBar:not(.top) {
+  border-bottom: none !important;
 }
