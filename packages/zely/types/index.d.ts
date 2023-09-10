@@ -2,7 +2,7 @@ import { WatchOptions } from 'chokidar';
 import { BuildOptions } from 'esbuild';
 import { ZeptRequest, ZeptResponse, Server } from 'zept';
 import { ServerOptions } from '@zept/http';
-import { FileData, Page } from './core';
+import { FileData, Page, typescriptLoader } from './core';
 import { IncomingMessage, ServerResponse } from 'http';
 import { ZelyRequest, ZelyResponse } from './method';
 import methods from './export-methods';
@@ -43,6 +43,7 @@ export interface Plugin {
   build?: () => PluginBuildOutput | void | Promise<PluginBuildOutput | void>;
   config?: (config: Config) => Promise<Config | void> | Config | void;
   pages?: (pages: FileData[]) => Promise<void> | void;
+  loader?: (loader: typeof typescriptLoader) => void;
   /**
    * run before server starting
    * @returns void

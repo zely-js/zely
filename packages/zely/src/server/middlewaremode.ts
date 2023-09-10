@@ -6,6 +6,7 @@ import { kitMiddleware } from '../plugins/kit';
 import { loadMiddlewares } from './load-middlewares';
 import { CACHE_DIRECTORY } from '../constants';
 import { Static } from '../plugins/public';
+import { typescriptLoader } from '../loader';
 
 export async function middleware(config: Config): Promise<pureMiddleware[]> {
   if (!config.plugins) config.plugins = [];
@@ -33,6 +34,9 @@ export async function middleware(config: Config): Promise<pureMiddleware[]> {
     config.plugins?.map(async (plugin) => {
       if (plugin.setup) {
         await plugin.setup();
+      }
+      if (plugin.loader) {
+        await plugin.loader(typescriptLoader);
       }
     })
   );

@@ -42,7 +42,11 @@ export function handles(
  * load typescript file
  * @param target
  */
-export function typescriptLoader(target: string): Promise<{ filename: string; m: any }>;
+export function typescriptLoader(
+  target: string,
+  config?: Config,
+  type?: 'cache' | 'core' | 'pages' | 'middlewares'
+): Promise<{ filename: string; m: any }>;
 
 export interface Page {
   before?(req: ZelyRequest, res: ZelyResponse): void | Promise<void>;

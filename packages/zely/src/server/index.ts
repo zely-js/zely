@@ -6,6 +6,7 @@ import { Handler, getPages } from '../core';
 import { loadMiddlewares } from './load-middlewares';
 import { applyPlugins } from '../apply-plugins';
 import { info } from '../logger';
+import { typescriptLoader } from '../loader';
 
 export async function Zely(config: Config): Promise<Server> {
   if (!config.plugins) config.plugins = [];
@@ -33,6 +34,9 @@ export async function Zely(config: Config): Promise<Server> {
     config.plugins?.map(async (plugin) => {
       if (plugin.setup) {
         await plugin.setup();
+      }
+      if (plugin.loader) {
+        await plugin.loader(typescriptLoader);
       }
     })
   );
