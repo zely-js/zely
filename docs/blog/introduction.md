@@ -1,7 +1,5 @@
 # Blog
 
-[Update](/blog/introduction) • [Dev Blog](https://do4ng.vercel.app) • [Github](https://github.com/do4ng/)
-
 ## zely 1
 
 - [Introduce new core package](/blog/2023-09-03) <Badge type="info" text="core" />
