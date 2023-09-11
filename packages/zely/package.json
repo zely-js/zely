@@ -1,6 +1,6 @@
 {
   "name": "zely",
-  "version": "1.2.0-alpha.0",
+  "version": "1.2.0-alpha.1",
   "types": "./types/index.d.ts",
   "main": "./dist/index.js",
   "homepage": "https://zely.netlify.app/",

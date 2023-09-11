@@ -1,13 +1,9 @@
 import { box } from 'teeti';
-import loadModule from '$zely/lib/webpack';
 import 'colors';
 
 import pkg from '../package.json';
 
 export function showListen(port: number | string) {
-  console.log(
-    `${'-'.gray} ${`zept@${loadModule('zept/package.json').version}`.yellow.dim}`
-  );
   console.log(`${'$'.gray} ${`zely@${pkg.version}`.yellow}`);
 
   console.log();
