@@ -19,6 +19,13 @@ export default defineConfig({
         rel: 'stylesheet',
       },
     ],
+    [
+      'link',
+      {
+        rel: 'prefetch',
+        href: '/assets/background.png',
+      },
+    ],
   ],
 
   markdown: {
