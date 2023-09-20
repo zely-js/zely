@@ -16,8 +16,8 @@ import { loadMiddlewaresModluePath } from './server/load-middlewares';
 export function exportsCode(config: Config) {
   return {
     import:
-      'var { handles, applyPlugins } = require("zely/server");var { osik } = require("osik");',
-    init: 'var app = osik();',
+      'var { handles, applyPlugins } = require("zely/server");var { zept } = require("zept");',
+    init: 'var app = zept();',
     listen: `app.listen(${config.port}, () => {console.log("Server is running.".grey + " - " + "http://localhost:${config.port}".cyan)});`,
     export: 'module.exports=app;',
   };

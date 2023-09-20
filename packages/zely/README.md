@@ -17,7 +17,7 @@ Zely is a backend framework for Node.js
 
 > [Try it!](https://codesandbox.io/p/github/zely-js/zely-next-starter)
 
-- use create-prext
+- use create-zely
 
 ```sh
 > npx create-zely
@@ -30,7 +30,7 @@ Zely is a backend framework for Node.js
 ```
 
 ```ts
-// prext.config.ts
+// zely.config.ts
 import { defineConfig } from 'zely';
 
 export default defineConfig({

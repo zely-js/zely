@@ -10,10 +10,18 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
 
-  head: [['meta', { name: 'theme-color', content: '#944cc2' }]],
+  head: [
+    ['meta', { name: 'theme-color', content: '#944cc2' }],
+    [
+      'link',
+      {
+        href: 'https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css',
+        rel: 'stylesheet',
+      },
+    ],
+  ],
 
   markdown: {
-    theme: 'material-theme-palenight',
     lineNumbers: true,
   },
 
@@ -23,27 +31,18 @@ export default defineConfig({
     nav: [
       { text: 'guide', link: '/guide/what-is-zely' },
       { text: 'apis', link: '/apis/introduction' },
-      { text: 'config', link: '/apis/config' },
+      { text: 'packages', link: '/packages/packages' },
       { text: 'blog', link: '/blog/introduction' },
       {
         text: `v${pkg.version}`,
         link: `https://github.com/zely-js/core/releases/tag/zely%40${pkg.version}`,
-        items: [
-          {
-            items: [
-              {
-                text: 'prext docs',
-                link: 'https://prext.netlify.app',
-              },
-            ],
-          },
-        ],
       },
     ],
 
     sidebar: {
       '/guide/': sidebarGuide(),
       '/apis/': sidebarApis(),
+      '/packages/': sidebarPackages(),
     },
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/zely-js/core' }],
@@ -60,13 +59,41 @@ function sidebarApis() {
         { text: 'Apis', link: '/apis/apis' },
         { text: 'Server', link: '/apis/server' },
         { text: 'Plugin', link: '/apis/plugin' },
-        { text: 'Osik', link: '/apis/osik' },
+        {
+          text: 'Libraries',
+          collapsed: true,
+          items: [
+            { text: 'Zept', link: '/packages/zept' },
+            { text: 'Osik', link: '/packages/osik' },
+          ],
+        },
       ],
     },
     {
       text: 'Config References',
       collapsed: false,
       items: [{ text: 'Config', link: '/apis/config' }],
+    },
+  ];
+}
+function sidebarPackages() {
+  return [
+    {
+      text: 'Packages',
+      collapsed: false,
+      items: [
+        { text: 'Introduction', link: '/packages/packages' },
+        { text: 'osik', link: '/packages/osik' },
+        { text: '@zely/plugin-cors', link: '/packages/cors' },
+      ],
+    },
+    {
+      text: 'Zept',
+      collapsed: false,
+      items: [
+        { text: 'zept', link: '/packages/zept' },
+        { text: '@zept/http', link: '/packages/zept-http' },
+      ],
     },
   ];
 }

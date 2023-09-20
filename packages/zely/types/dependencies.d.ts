@@ -1,11 +1,13 @@
-import 'osik';
+import 'zept';
 import 'http';
 
-declare module 'osik' {
-  export interface Request {
+/*
+declare module 'zept' {
+  export interface Zept {
     params: any;
   }
 }
+*/
 declare module 'http' {
   export interface IncomingMessage {
     params: any;

@@ -29,7 +29,10 @@ const errorHandler = async (e) => {
     line: Number(line),
     column: Number(column),
   };
-
+  if (!existsSync(`${sliced.join(':')}.map`)) {
+    errorWithStacks(e.message, stacks);
+    return;
+  }
   const sourcemap = new SourceMapConsumer(
     JSON.parse(readFileSync(`${sliced.join(':')}.map`, 'utf-8'))
   );

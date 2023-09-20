@@ -42,7 +42,9 @@ export default [
   // simple usage
   GET({ foo: 'bar' }),
   // access to req and res
-  (req, res) => POST({ id: req.params.id }),
+  POST((req, res) => ({
+    id: req.params.id;
+  })),
 ] as ServerDataHandler[];
 ```
 

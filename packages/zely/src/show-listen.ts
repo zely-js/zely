@@ -4,7 +4,7 @@ import 'colors';
 import pkg from '../package.json';
 
 export function showListen(port: number | string) {
-  console.log(`${'$'.gray} ${'zely'.yellow}${`v${pkg.version}`.yellow.dim}`);
+  console.log(`${'$'.gray} ${`zely@${pkg.version}`.yellow}`);
 
   console.log();
   const result = box(

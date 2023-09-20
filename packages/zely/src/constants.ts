@@ -16,7 +16,6 @@ export const DEFAULT_CONFIG: Config = {
 
   server: {
     middlewareMode: false,
-    osik: { useApi: true },
   },
 };
 

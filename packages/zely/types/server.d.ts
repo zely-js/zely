@@ -1,5 +1,5 @@
-import { OsikServer } from 'osik';
+import { Server } from 'zept';
 
 import { Config } from '.';
 
-export function Zely(config: Config): Promise<OsikServer>;
+export function Zely(config: Config): Promise<Server>;

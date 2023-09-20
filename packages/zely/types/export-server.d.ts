@@ -1,8 +1,8 @@
-import { Request, Response } from 'osik';
+import { ZeptRequest, ZeptResponse } from 'zept';
 
 export function handles(
-  req: Request,
-  res: Response,
+  req: ZeptRequest,
+  res: ZeptResponse,
   routes: {
     file: string;
     m: any;

@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 import { lookup } from 'mime-types';
-import { Middleware } from 'osik';
+import { Middleware } from '@zept/http';
 
 import { StaticOptions } from '..';
 
