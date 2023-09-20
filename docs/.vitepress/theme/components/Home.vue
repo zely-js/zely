@@ -28,15 +28,15 @@
 
   <section id="features">
     <div class="feature">
-      <h2><i class="ri-route-line icon"></i>File Based Routing</h2>
+      <h2>File Based Routing</h2>
       <p>zely creates routes automatically with filenames.</p>
     </div>
     <div class="feature">
-      <h2><i class="ri-restart-line icon"></i>Server Reload</h2>
+      <h2>Server Reload</h2>
       <p>You don't have to restart server to apply changes.</p>
     </div>
     <div class="feature">
-      <h2><i class="ri-speed-line icon"></i>Lightning Fast</h2>
+      <h2>Lightning Fast</h2>
       <p>faster compared to other frameworks.</p>
     </div>
   </section>
