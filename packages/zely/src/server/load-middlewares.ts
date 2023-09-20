@@ -1,8 +1,10 @@
 // middlewares
 
-import { join } from 'path';
+import { join } from 'node:path';
+
+import { readDirectory } from '$zely/lib/readDirectory';
+
 import { Config } from '../config';
-import { readDirectory } from '../../lib/readDirectory';
 import { typescriptLoader } from '../loader';
 
 export async function loadMiddlewares(config: Config) {

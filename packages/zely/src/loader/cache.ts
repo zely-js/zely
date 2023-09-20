@@ -1,5 +1,5 @@
-import { existsSync, readdirSync, rmSync, statSync } from 'fs';
-import { join } from 'path';
+import { existsSync, readdirSync, rmSync, statSync } from 'node:fs';
+import { join } from 'node:path';
 import { CACHE_DIRECTORY } from '../constants';
 
 export async function getDirectorySize(dir) {

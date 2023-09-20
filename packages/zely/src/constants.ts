@@ -1,4 +1,5 @@
-import { join } from 'path';
+import { join } from 'node:path';
+
 import { Config } from './config';
 
 export const CACHE_DIRECTORY = join(process.cwd(), '.zely');

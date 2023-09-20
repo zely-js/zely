@@ -1,4 +1,4 @@
-import { rmSync } from 'fs';
+import { rmSync } from 'node:fs';
 import { Server, zept } from 'zept';
 import { Config } from '../config';
 import { CACHE_DIRECTORY } from '../constants';

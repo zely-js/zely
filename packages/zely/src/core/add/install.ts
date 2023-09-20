@@ -1,5 +1,6 @@
+import { existsSync } from 'node:fs';
+
 import { spawn } from 'child_process';
-import { existsSync } from 'fs';
 
 export function installEngine() {
   if (existsSync('yarn.lock')) {

@@ -1,4 +1,4 @@
-import readline from 'readline';
+import readline from 'node:readline';
 import 'colors';
 
 const stream = process.stdout;
