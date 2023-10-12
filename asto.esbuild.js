@@ -2,6 +2,6 @@ const { esbuildLoader } = require('asto');
 
 module.exports = esbuildLoader({
   define: {
-    __ESM: 'false',
+    __ESM__: 'false',
   },
 });
