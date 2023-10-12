@@ -29,12 +29,15 @@ const errorHandler = async (e) => {
     line: Number(line),
     column: Number(column),
   };
-  if (!existsSync(`${sliced.join(':')}.map`)) {
+  const tracer = JSON.parse(readFileSync(join(CACHE_DIRECTORY, 'tracer'), 'utf-8'));
+
+  if (!tracer[`${sliced.join(':').replace(/\\/g, '/')}.map`]) {
     errorWithStacks(e.message, stacks);
     return;
   }
+
   const sourcemap = new SourceMapConsumer(
-    JSON.parse(readFileSync(`${sliced.join(':')}.map`, 'utf-8'))
+    JSON.parse(tracer[`${sliced.join(':').replace(/\\/g, '/')}.map`])
   );
 
   const result = (await sourcemap).originalPositionFor(trace);
