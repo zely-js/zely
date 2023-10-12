@@ -69,6 +69,7 @@ export type ServerDataHandlerFunc = (
 ) => Promise<ServerDataHandlerResponse | null> | ServerDataHandlerResponse | null;
 
 export type ServerDataHandler = Record<any, any> | ServerDataHandlerFunc;
+export type PageHandler = ServerDataHandler; // alias
 
 export interface METHODS {
   all: symbol;
