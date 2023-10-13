@@ -2,7 +2,8 @@
 
 ## zely 1
 
-- [Introduce new core package](/blog/2023-09-03) <Badge type="info" text="core" />
+- [Announcing 1.2](/blog/2023-10-13) <Badge type="info" text="core" />
+- [Introduce new core package](/blog/2023-09-03) <Badge type="tip" text="news" />
 - [Announcing 1.1](/blog/2023-08-24) <Badge type="info" text="core" />
 - [Announcing 1.0](/blog/2023-08-01) <Badge type="info" text="core" />
 - [v1.0 is in development](/blog/2023-07-23) <Badge type="tip" text="news" />
