@@ -73,16 +73,9 @@ app
   .command('analyze')
   .describe('Analyze Application')
   .action(async () => {
-    try {
-      const { core } = require('prext-analyst');
-      core();
-    } catch (e) {
-      error(
-        `Cannot find module "prext-analyst"\n\nRun:\n${
-          '$'.grey
-        } npm i --save-dev prext-analyst\n`
-      );
-    }
+    const analyzer = await import('$zely/analyzer');
+
+    analyzer.core();
   });
 
 app
