@@ -17,6 +17,10 @@ import { Config } from '../config';
 
 const errorHandler = async (e) => {
   if (!e) return;
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error(e);
+  }
+
   const stacks = parseError(e);
   const occured = stacks[0].loc.slice(1, -1);
   const sliced = occured.split(':');
@@ -114,9 +118,12 @@ export async function handles(
     type: string;
     origin: string;
   }[],
-  config: Config
+  config: Config,
+  props?: any
 ) {
   const parsed = url.parse(req.url);
+  const staticProps =
+    props || JSON.parse(readFileSync(join(CACHE_DIRECTORY, 'static')).toString());
 
   // @ts-ignore
   res.json = function (data: any) {
@@ -164,6 +171,8 @@ export async function handles(
         // module
 
         page.m = ObjectkeysMap(page.m, (key) => key.toLowerCase());
+
+        (req as any).props = staticProps[page.origin];
 
         for await (const pageHandler of Object.keys(page.m)) {
           // export default [];

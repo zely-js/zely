@@ -12,10 +12,14 @@ import { transformFilename } from '$zely/lib/transform-filename';
 import { prettyURL } from '$zely/lib/pretty-url';
 import loadModule from '$zely/lib/webpack';
 import { ZelyRequest, ZelyResponse } from '$zely/types';
+import { createStatic } from '../create-static';
 
 let globalCache: any = null;
 
-export async function getPages(config: Config): Promise<FileData | null> {
+export async function getPages(
+  config: Config,
+  loadStaticProps: boolean = true
+): Promise<FileData | null> {
   let __cache: Record<string, string> = {};
 
   if (existsSync(CACHE_FILE)) {
@@ -138,6 +142,8 @@ export async function getPages(config: Config): Promise<FileData | null> {
     })
   );
 
+  if (loadStaticProps) await createStatic(files);
+
   return files as any;
 }
 
@@ -237,6 +243,7 @@ export async function Handler(req: ZelyRequest, res: ZelyResponse, config: Confi
         })
       );
     }
+
     // console.log(routes);
 
     if (config.handler) config.handler(req, res, globalCache as any);

@@ -66,7 +66,9 @@ app
       info('--bundle option enabled.\n');
     }
 
-    exportServer(config, options.output, options.bundle, options.module);
+    await exportServer(config, options.output, options.bundle, options.module);
+
+    process.exit(0);
   });
 
 app
