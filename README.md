@@ -1,4 +1,4 @@
-# `2.0-dev`
+# Zely
 
 Zely is a lightning-fast backend framework.
 
