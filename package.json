@@ -24,8 +24,8 @@
     "ts-jest": "^29.0.3",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.2.2",
-    "vitepress": "^1.0.0-rc.21",
-    "webpack": "^5.89.0"
+    "vitepress": "^1.0.0-rc.24",
+    "webpack": "^5.88.2"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development asto --watch",
