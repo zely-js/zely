@@ -48,7 +48,7 @@ class Spinner {
 
   stop(message: string = ''): this {
     if (this.processor) {
-      clearInterval(this.processor);
+      clearInterval(this.processor as any);
       this.clearLine();
       stream.write(message);
     }

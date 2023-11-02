@@ -71,7 +71,7 @@ export async function Zely(config: Config): Promise<Server> {
 
   if (config.prebuild) {
     info('config.prebuild enabled.');
-    await getPages(config);
+    await getPages(config, false);
     console.log();
   }
 
