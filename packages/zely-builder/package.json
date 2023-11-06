@@ -1,0 +1,20 @@
+{
+  "name": "@zely/builder",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
+  "files": [
+    "dist",
+    "types",
+    "assets"
+  ],
+  "homepage": "https://zely.netlify.app",
+  "repository": "https://github.com/zely-js/zely",
+  "description": "Builder for zely.js",
+  "devDependencies": {
+    "zely": "workspace:*"
+  },
+  "dependencies": {
+    "esbuild": "^0.19.5"
+  }
+}
