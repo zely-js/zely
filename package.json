@@ -24,7 +24,7 @@
     "ts-jest": "^29.0.3",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.2.2",
-    "vitepress": "^1.0.0-rc.24",
+    "vitepress": "^1.0.0-rc.25",
     "webpack": "^5.88.2"
   },
   "scripts": {
