@@ -4,7 +4,7 @@
   <section id="hero">
     <span class="announcement">
       <span class="blue-circle"></span>
-      <a href="/blog/2023-09-03">check out the new engine!</a>
+      <a href="/blog/2023-09-03">v2.0 is coming!</a>
     </span>
     <h1 class="title">
       The
@@ -200,7 +200,7 @@
   padding: 64px 64px;
 }
 .hl {
-  background: -webkit-linear-gradient(315deg, #427cd3 25%, #ff6464);
+  background: -webkit-linear-gradient(315deg, #427cd3 25%, #b964ff);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -229,13 +229,13 @@ h1.title {
   font-size: 0.95rem;
   font-weight: 550;
 
-  background-color: var(--gray-light);
+  background-color: var(--gray-lighter);
   color: var(--vp-c-text-code);
   transition: all 0.25s;
 }
 .actions a:hover {
   color: var(--vp-c-text-code) !important;
-  background-color: var(--gray);
+  background-color: var(--gray-light);
 }
 
 .dark .actions a {

@@ -3,9 +3,15 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   extends: ['airbnb-base', 'plugin:@typescript-eslint/eslint-recommended'],
   rules: {
+    // vue
+    'vue/no-multiple-template-root': 'off',
+
+    // import
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'import/prefer-default-export': 'off',
+    'import/no-duplicates': 'off',
+
     'no-empty': 'warn',
     'no-unreachable': 'warn',
     'use-isnan': 'warn',
@@ -45,7 +51,6 @@ module.exports = {
     'no-new-func': 'off',
     'no-restricted-syntax': 'off',
     'no-extra-boolean-cast': 'off',
-    'import/no-duplicates': 'off',
     'implicit-arrow-linebreak': 'off',
   },
 };

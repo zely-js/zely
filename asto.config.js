@@ -21,7 +21,21 @@ const repo = (name) => (input, output) => ({
 const repos = {
   zely: repo('zely'),
   vitePlugin: repo('vite-plugin-zely'),
+  builder: repo('zely-builder'),
 };
+
+const entryPoints = [
+  // zely
+  repos.zely('index.ts', 'index.js'),
+  repos.zely('server.ts', 'server.js'),
+  repos.zely('export-config.ts', 'config.js'),
+  repos.zely('export-methods.ts', 'methods.js'),
+
+  // vite plugin zely
+  repos.vitePlugin('index.ts', 'index.js'),
+
+  repos.builder('index.ts', 'index.js'),
+];
 
 module.exports =
   process.env.NODE_ENV === 'production'
@@ -30,16 +44,7 @@ module.exports =
           // core packages
           loader: loader(),
 
-          entryPoints: [
-            // zely
-            repos.zely('index.ts', 'index.js'),
-            repos.zely('server.ts', 'server.js'),
-            repos.zely('export-config.ts', 'config.js'),
-            repos.zely('export-methods.ts', 'methods.js'),
-
-            // vite plugin zely
-            repos.vitePlugin('index.ts', 'index.js'),
-          ],
+          entryPoints,
         },
         {
           // cli
@@ -52,16 +57,7 @@ module.exports =
           // core packages
           loader: esbuild,
 
-          entryPoints: [
-            // zely
-            repos.zely('index.ts', 'index.js'),
-            repos.zely('server.ts', 'server.js'),
-            repos.zely('export-config.ts', 'config.js'),
-            repos.zely('export-methods.ts', 'methods.js'),
-
-            // vite plugin zely
-            repos.vitePlugin('index.ts', 'index.js'),
-          ],
+          entryPoints,
         },
         {
           // cli

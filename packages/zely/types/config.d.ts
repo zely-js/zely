@@ -20,3 +20,5 @@ export function getConfig(target?: string): Promise<Config>;
  * @param config user-config
  */
 export function defineConfig(config: Config);
+
+export function configDev(base: string, format?: 'esm' | 'cjs'): Promise<string | null>;
