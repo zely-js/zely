@@ -9,7 +9,7 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "vitepress": "^1.0.0-rc.24",
+    "vitepress": "^1.0.0-rc.25",
     "vue": "^3.3.7"
   }
 }

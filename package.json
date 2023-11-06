@@ -27,6 +27,7 @@
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.2.2",
     "vitepress": "^1.0.0-rc.25",
+    "vue": "^3.3.8",
     "webpack": "^5.88.2"
   },
   "scripts": {
@@ -42,10 +43,10 @@
   "version": "0.0.0",
   "packageManager": "yarn@4.0.1",
   "dependenciesMeta": {
-    "vitepress@1.0.0-rc.24": {
+    "vitepress@1.0.0-rc.25": {
       "unplugged": true
     },
-    "vue@3.3.7": {
+    "vue@3.3.8": {
       "unplugged": true
     }
   }

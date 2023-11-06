@@ -3261,7 +3261,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:docs"
   dependencies:
-    vitepress: "npm:^1.0.0-rc.24"
+    vitepress: "npm:^1.0.0-rc.25"
     vue: "npm:^3.3.7"
   languageName: unknown
   linkType: soft
@@ -6486,11 +6486,12 @@ __metadata:
     tsconfig-paths-webpack-plugin: "npm:^4.1.0"
     typescript: "npm:^5.2.2"
     vitepress: "npm:^1.0.0-rc.25"
+    vue: "npm:^3.3.8"
     webpack: "npm:^5.88.2"
   dependenciesMeta:
-    vitepress@1.0.0-rc.24:
+    vitepress@1.0.0-rc.25:
       unplugged: true
-    vue@3.3.7:
+    vue@3.3.8:
       unplugged: true
   languageName: unknown
   linkType: soft
@@ -7434,7 +7435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress@npm:^1.0.0-rc.24, vitepress@npm:^1.0.0-rc.25":
+"vitepress@npm:^1.0.0-rc.25":
   version: 1.0.0-rc.25
   resolution: "vitepress@npm:1.0.0-rc.25"
   dependencies:
@@ -7495,7 +7496,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue@npm:^3.3.6, vue@npm:^3.3.7":
+"vue@npm:^3.3.6, vue@npm:^3.3.7, vue@npm:^3.3.8":
   version: 3.3.8
   resolution: "vue@npm:3.3.8"
   dependencies:
