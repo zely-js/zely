@@ -29,6 +29,9 @@ export async function exportServer(
   bundleModules: boolean = true,
   isModule: boolean = false
 ): Promise<void> {
+  info('more better builder published!');
+  info(`${'$'.yellow} npm i ${'--save-dev'.gray} @zely/builder`);
+  info('more information: https://zely.netlify.app/packages/builder\n');
   rmSync(CACHE_DIRECTORY, { recursive: true, force: true });
   console.log(`${'$'.gray} Exporting App.\n`.cyan);
 

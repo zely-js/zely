@@ -6,7 +6,7 @@
   },
   "scripts": {
     "dev": "zely dev",
-    "build": "node build.js"
+    "build": "zely build"
   },
   "devDependencies": {
     "@zely/plugin-cors": "^0.0.0",
