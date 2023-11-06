@@ -20,42 +20,25 @@ Zely is a recently created package and is unstable.
 1. Fork and clone [repository](https://github.com/zely-js/core)
 
 ```sh
-$ git clone https://github.com/zely-js/core.git
-$ cd core
+git clone https://github.com/zely-js/core.git
+cd core
 ```
 
 2. Install dependencies
 
 ::: info
-[yarn](https://yarnpkg.com/) must be installed.
+This repository uses yarn berry. [yarn](https://yarnpkg.com/) must be installed.
 :::
 
-::: code-group
-
-```sh [npm]
-$ npm install
+```sh
+yarn install
 ```
-
-```sh [yarn]
-$ yarn
-```
-
-:::
 
 3. Run examples
 
-::: code-group
-
-```sh [npm]
-$ cd ./playground/with-typescript
-$ npm run dev
+```sh
+yarn workspace @playground/with-typescript dev
 ```
-
-```sh [yarn]
-$ yarn workspace @playground/with-typescript dev
-```
-
-:::
 
 4. Make changes
 5. Open a [Pull Request](https://github.com/zely-js/core/pulls)

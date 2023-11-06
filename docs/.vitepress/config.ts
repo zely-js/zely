@@ -36,10 +36,10 @@ export default defineConfig({
     editLink: { pattern: 'https://github.com/zely-js/core/edit/main/docs/:path' },
 
     nav: [
-      { text: 'guide', link: '/guide/what-is-zely' },
-      { text: 'apis', link: '/apis/introduction' },
-      { text: 'packages', link: '/packages/packages' },
-      { text: 'blog', link: '/blog/introduction' },
+      { text: 'Docs', link: '/guide/what-is-zely' },
+      { text: 'Apis', link: '/apis/introduction' },
+      { text: 'Packages', link: '/packages/packages' },
+      { text: 'Blog', link: '/blog/introduction' },
       {
         text: `v${pkg.version}`,
         link: `https://github.com/zely-js/core/releases/tag/zely%40${pkg.version}`,
