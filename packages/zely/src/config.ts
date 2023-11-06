@@ -49,20 +49,30 @@ export async function getConfig(target?: string): Promise<Config> {
   return DEFAULT_CONFIG;
 }
 
-export async function configDev(): Promise<string> {
+export async function configDev(
+  base: string = CACHE_DIRECTORY,
+  format: string = 'cjs'
+): Promise<string> {
   if (existsSync('zely.config.js')) {
     await build({
       entryPoints: ['zely.config.js'],
-      outfile: join(CACHE_DIRECTORY, 'core.config.js'),
+      outfile: join(base, 'core.config.js'),
       bundle: true,
       minify: true,
     });
 
-    return join(CACHE_DIRECTORY, 'core.config.js');
+    return join(base, 'core.config.js');
   }
 
   if (existsSync('zely.config.ts')) {
-    const built = await typescriptLoader(join(process.cwd(), 'zely.config.ts'));
+    const built = await typescriptLoader(
+      join(process.cwd(), 'zely.config.ts'),
+      undefined,
+      'cache',
+      base,
+      format as 'cjs' | 'esm',
+      false
+    );
 
     return built.filename;
   }

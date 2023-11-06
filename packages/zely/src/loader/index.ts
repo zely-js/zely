@@ -17,7 +17,10 @@ const tracer = join(CACHE_DIRECTORY, 'tracer');
 export function typescriptLoader(
   target: string,
   config: Config = {},
-  type: 'cache' | 'core' | 'pages' | 'middlewares' = 'cache'
+  type: 'cache' | 'core' | 'pages' | 'middlewares' = 'cache',
+  base: string = CACHE_DIRECTORY,
+  format: 'cjs' | 'esm' = 'cjs',
+  load: boolean = true
 ): Promise<{ filename: string; m: any }> {
   if (!existsSync(CACHE_DIRECTORY)) {
     mkdirSync(CACHE_DIRECTORY);
@@ -35,7 +38,7 @@ export function typescriptLoader(
     mkdirSync(join(CACHE_DIRECTORY, 'core'));
   }
 
-  const dist = join(join(CACHE_DIRECTORY, type), parse(randomFilename(target)).base);
+  const dist = join(join(base, type), parse(randomFilename(target)).base);
   return new Promise((resolve) => {
     build({
       entryPoints: [target],
@@ -46,7 +49,7 @@ export function typescriptLoader(
       minify: true,
 
       platform: 'node',
-      format: 'cjs',
+      format,
       write: false,
 
       sourcemap: 'external',
@@ -70,10 +73,17 @@ export function typescriptLoader(
           }
         }
 
-        resolve({
-          filename: dist,
-          m: loadModule(relative(__dirname, dist).replace(/\\/g, '/')),
-        });
+        if (load) {
+          resolve({
+            filename: dist,
+            m: loadModule(relative(__dirname, dist).replace(/\\/g, '/')),
+          });
+        } else {
+          // @ts-expect-error
+          resolve({
+            filename: dist,
+          });
+        }
       })
       .catch((e) => {
         error(e);
