@@ -48,6 +48,34 @@ export function typescriptLoader(
   type?: 'cache' | 'core' | 'pages' | 'middlewares'
 ): Promise<{ filename: string; m: any }>;
 
+export interface Context {
+  request: ZelyRequest;
+
+  response: ZelyResponse;
+
+  status: number;
+
+  headers: Record<string, any>;
+
+  body: any;
+
+  params: Record<string, any>;
+
+  query: object;
+
+  // @zely/plugin-kit
+
+  send(data: any): Promise<this>;
+
+  header(headers: Record<string, any>): this;
+
+  html(data: string): Promise<this>;
+
+  json(data: any): Promise<this>;
+
+  text(data: string): Promise<this>;
+}
+
 export interface Page {
   before?(req: ZelyRequest, res: ZelyResponse): void | Promise<void>;
   after?(req: ZelyRequest, res: ZelyResponse): void | Promise<void>;
@@ -63,12 +91,18 @@ export interface ServerDataHandlerResponse {
   body?: any;
 }
 
-export type ServerDataHandlerFunc = (
-  req: ZelyRequest,
-  res: ZelyResponse
-) => Promise<ServerDataHandlerResponse | null> | ServerDataHandlerResponse | null;
+export type ServerDataHandlerContextFunc = (
+  context: Context
+) =>
+  | Promise<Record<any, any> | ServerDataHandlerResponse | null>
+  | Record<any, any>
+  | ServerDataHandlerResponse
+  | null;
 
-export type ServerDataHandler = Record<any, any> | ServerDataHandlerFunc;
+// alias
+export type ContextHandler = ServerDataHandlerContextFunc;
+
+export type ServerDataHandler = Record<any, any> | ServerDataHandlerContextFunc;
 export type PageHandler = ServerDataHandler; // alias
 
 export interface METHODS {
@@ -79,7 +113,7 @@ export interface METHODS {
   put: symbol;
 }
 
-export type MethodBody = ServerDataHandler;
+export type MethodBody = ContextHandler;
 
 export const methods: {
   all(body: MethodBody, headers?: Record<string, string>): ServerDataHandlerResponse;

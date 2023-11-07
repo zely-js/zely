@@ -14,6 +14,7 @@ import { ServerDataHandler, ZelyRequest, ZelyResponse } from '$zely/types';
 import { CACHE_DIRECTORY } from '../constants';
 import { error, errorWithStacks, parseError } from '../logger';
 import { Config } from '../config';
+import { Context } from '../server/context';
 
 const errorHandler = async (e) => {
   if (!e) return;
@@ -184,6 +185,8 @@ export async function handles(
             const pageModule = page.m.default;
             const $page = page.m.$page || {};
 
+            const context: Context = new Context(req as ZelyRequest, res as ZelyResponse);
+
             // assign parameters.
 
             if (!req.params) req.params = {};
@@ -211,7 +214,7 @@ export async function handles(
                       });
 
                       if (typeof data.body === 'function') {
-                        await send(await data.body(req, res), res as ZelyResponse);
+                        await send(await data.body(context), res as ZelyResponse);
                       } else {
                         await send(data.body, res as ZelyResponse);
                       }
@@ -232,9 +235,7 @@ export async function handles(
               if (typeof m === 'function') {
                 // function handler
 
-                const output = await m(req as ZelyRequest, res as ZelyResponse);
-
-                // console.log(output);
+                const output = await m(context);
 
                 return sendData(output);
               }
