@@ -1396,7 +1396,7 @@ __metadata:
   dependencies:
     "@zely/plugin-cors": "npm:^0.0.0"
     cors: "npm:^2.8.5"
-    zely: "npm:*"
+    zely: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -1406,7 +1406,7 @@ __metadata:
   dependencies:
     "@zely/plugin-cors": "npm:^0.0.0"
     cors: "npm:^2.8.5"
-    zely: "npm:*"
+    zely: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -1415,7 +1415,7 @@ __metadata:
   resolution: "@playground/with-express@workspace:playground/with-express"
   dependencies:
     express: "npm:^4.18.2"
-    zely: "npm:*"
+    zely: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -1444,8 +1444,8 @@ __metadata:
   resolution: "@playground/with-vite@workspace:playground/with-vite"
   dependencies:
     vite: "npm:*"
-    vite-plugin-zely: "npm:*"
-    zely: "npm:*"
+    vite-plugin-zely: "workspace:*"
+    zely: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -7380,7 +7380,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-zely@npm:*, vite-plugin-zely@workspace:packages/vite-plugin-zely":
+"vite-plugin-zely@workspace:*, vite-plugin-zely@workspace:packages/vite-plugin-zely":
   version: 0.0.0-use.local
   resolution: "vite-plugin-zely@workspace:packages/vite-plugin-zely"
   dependencies:
