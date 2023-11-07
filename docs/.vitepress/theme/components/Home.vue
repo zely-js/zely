@@ -4,7 +4,7 @@
   <section id="hero">
     <span class="announcement">
       <span class="blue-circle"></span>
-      <a href="/blog/2023-09-03">v2.0 is coming!</a>
+      <a href="/blog/2023-11-05">v2.0 is coming!</a>
     </span>
     <h1 class="title">
       The
