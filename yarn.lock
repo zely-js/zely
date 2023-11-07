@@ -1425,7 +1425,7 @@ __metadata:
   dependencies:
     "@zely/plugin-cors": "npm:^0.0.0"
     cors: "npm:^2.8.5"
-    zely: "npm:*"
+    zely: "workspace:*"
   languageName: unknown
   linkType: soft
 
