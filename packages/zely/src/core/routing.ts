@@ -6,6 +6,7 @@ import { CACHE_DIRECTORY, CACHE_FILE, CACHE_VERSION } from '../constants';
 import { typescriptLoader } from '../loader';
 import { error, success } from '../logger';
 import { handles } from './handles';
+import { sender } from './sender';
 
 import { readDirectory } from '$zely/lib/readDirectory';
 import { transformFilename } from '$zely/lib/transform-filename';
@@ -201,34 +202,9 @@ export async function Handler(req: ZelyRequest, res: ZelyResponse, config: Confi
   // custom res.end
 
   // @ts-ignore
-  res.send = async (chunk: string | number | object | any[], status?: number) => {
-    // console.log(chunk, res.prewrite);
-
-    if (status) res.status(status);
-
-    if (Array.isArray(chunk)) {
-      chunk = JSON.stringify(chunk as Array<any>);
-    }
-
-    switch (typeof chunk) {
-      case 'string':
-        break;
-      case 'number':
-        chunk = (chunk as number).toString();
-        break;
-      case 'object':
-        chunk = JSON.stringify(chunk);
-        break;
-      default:
-        break;
-    }
-
-    if (res.prewrite) {
-      for await (const prewite of res.prewrite) {
-        chunk = prewite(chunk);
-      }
-    }
-    res.end(chunk);
+  res.send = async (chunk, status) => {
+    await sender(req, res, chunk, status);
+    return res;
   };
 
   try {
