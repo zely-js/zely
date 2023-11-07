@@ -14,6 +14,8 @@ export class Context {
 
   query: object;
 
+  props: object;
+
   params: Record<string, any>;
 
   constructor(req: ZelyRequest, res: ZelyResponse) {
@@ -22,6 +24,7 @@ export class Context {
     this.body = req.body;
     this.query = req.query;
     this.params = req.params;
+    this.props = req.props;
   }
 
   // @zely/plugin-kit

@@ -63,6 +63,8 @@ export interface Context {
 
   query: object;
 
+  props: object;
+
   // @zely/plugin-kit
 
   send(data: any): Promise<this>;

@@ -5,6 +5,7 @@ import { snatch } from './';
 export interface ZelyRequest extends ZeptRequest {
   query: object;
   snatch: typeof snatch;
+  props: object;
 }
 
 // https://github.com/do4ng/prext/issues/11
