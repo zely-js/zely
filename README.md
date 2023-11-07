@@ -6,9 +6,7 @@
 
 </section>
 
-Zely is a lightning-fast backend framework.
-
-## Features
+---
 
 - File-based routing. zely creates routes automatically with filenames.
 - Server Reload. You don't have to restart server to apply changes.
