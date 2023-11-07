@@ -1,8 +1,12 @@
-# Zely
+<section align="center">
+  <h1>Zely</h1>
+  Zely is a lightning-fast backend framework.
 
-Zely is a lightning-fast backend framework.
+[**github**](https://github.com/zely-js/zely) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://zely.netlify.app/)
 
-## Features
+</section>
+
+---
 
 - File-based routing. zely creates routes automatically with filenames.
 - Server Reload. You don't have to restart server to apply changes.
