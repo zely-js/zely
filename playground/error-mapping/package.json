@@ -2,7 +2,7 @@
   "name": "@playground/with-error",
   "version": "1.0.0",
   "dependencies": {
-    "zely": "*"
+    "zely": "workspace:*"
   },
   "scripts": {
     "dev": "zely dev",

@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "dependencies": {
     "express": "^4.18.2",
-    "zely": "*"
+    "zely": "workspace:*"
   }
 }

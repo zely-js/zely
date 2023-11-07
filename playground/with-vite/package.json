@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "dependencies": {
     "vite": "*",
-    "vite-plugin-zely": "*",
-    "zely": "*"
+    "vite-plugin-zely": "workspace:*",
+    "zely": "workspace:*"
   },
   "scripts": {
     "dev": "vite dev",
