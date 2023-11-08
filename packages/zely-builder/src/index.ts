@@ -32,7 +32,7 @@ export class Builder {
       ...(this.options?.esbuild || {}),
 
       entryPoints: typescriptfiles,
-      outdir: out || 'dist/pages',
+      outdir: join(out || 'dist', 'pages'),
 
       minify: true,
       bundle: true,
@@ -40,7 +40,6 @@ export class Builder {
       platform: 'node',
       format: 'esm',
 
-      entryNames: '[dir]/[name].[hash].js',
       chunkNames: '../chunks/[name].[hash]',
     };
 
