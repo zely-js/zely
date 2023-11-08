@@ -1,6 +1,6 @@
 {
   "name": "@zely/builder",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
   "types": "./types/index.d.ts",
