@@ -96,10 +96,10 @@ export interface ServerDataHandlerResponse {
 export type ServerDataHandlerContextFunc = (
   context: Context
 ) =>
-  | Promise<Record<any, any> | ServerDataHandlerResponse | null>
+  | Promise<Record<any, any> | ServerDataHandlerResponse | void>
   | Record<any, any>
   | ServerDataHandlerResponse
-  | null;
+  | void;
 
 // alias
 export type ContextHandler = ServerDataHandlerContextFunc;
