@@ -1,8 +1,9 @@
+import * as url from 'node:url';
 import { Zely } from 'zely';
-import config from './config.js';
+import * as config from './config.js';
 
 async function start() {
-  process.chdir(__dirname); // set cwd
+  process.chdir(url.fileURLToPath(new URL('.', import.meta.url)));
   Zely(config);
 }
 
