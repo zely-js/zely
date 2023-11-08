@@ -115,7 +115,7 @@ export interface METHODS {
   put: symbol;
 }
 
-export type MethodBody = ContextHandler;
+export type MethodBody = Record<any, any> | ContextHandler;
 
 export const methods: {
   all(body: MethodBody, headers?: Record<string, string>): ServerDataHandlerResponse;
