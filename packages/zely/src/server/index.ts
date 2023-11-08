@@ -25,7 +25,7 @@ export async function Zely(config: Config): Promise<Server> {
           };
         }
       }
-    })
+    }) || []
   );
 
   // plugin.setup
@@ -38,7 +38,7 @@ export async function Zely(config: Config): Promise<Server> {
       if (plugin.loader) {
         await plugin.loader(typescriptLoader);
       }
-    })
+    }) || []
   );
 
   if (!config.server?.keepCache) {
