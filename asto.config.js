@@ -13,6 +13,9 @@ const repo =
          * @type {import("esbuild").BuildOptions}
          */
         options: {
+          banner: {
+            js: '/*/dist/cjs/=>/dist/*/__dirname=require("path").join(__dirname, "../");',
+          },
           logLevel: 'error',
           plugins:
             process.env.NODE_ENV === 'production'
