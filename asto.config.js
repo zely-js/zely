@@ -16,6 +16,9 @@ const repo =
           banner: {
             js: '/*/dist/cjs/=>/dist/*/__dirname=require("path").join(__dirname, "../");',
           },
+          define: {
+            __ESM__: 'false',
+          },
           logLevel: 'error',
           plugins:
             process.env.NODE_ENV === 'production'
@@ -39,7 +42,14 @@ const repo =
          */
         options: {
           banner: {
-            js: "import * as url from 'url'; const __filename = url.fileURLToPath(import.meta.url);const __dirname = url.fileURLToPath(new URL('.', import.meta.url));",
+            js: [
+              "import * as url from 'node:url';import {createRequire} from 'node:module';",
+              " const __filename = url.fileURLToPath(import.meta.url);const __dirname = url.fileURLToPath(new URL('.', import.meta.url));",
+              'const require=createRequire(import.meta.url);',
+            ].join(''),
+          },
+          define: {
+            __ESM__: 'true',
           },
           format: 'esm',
           logLevel: 'error',

@@ -19,7 +19,7 @@ export function typescriptLoader(
   config: Config = {},
   type: 'cache' | 'core' | 'pages' | 'middlewares' = 'cache',
   base: string = CACHE_DIRECTORY,
-  format: 'cjs' | 'esm' = 'cjs',
+  format: 'cjs' | 'esm' = __ESM__ ? 'esm' : 'cjs',
   load: boolean = true
 ): Promise<{ filename: string; m: any }> {
   if (!existsSync(CACHE_DIRECTORY)) {
