@@ -197,6 +197,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@asto/esm@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "@asto/esm@npm:0.0.0"
+  dependencies:
+    c2es: "npm:^0.1.0"
+  checksum: 43d1f7b25dde9874e170810cb6ada2a15511cd138eb6fdde776edfcf7fc4c785329e4b24d86b5b6f28b9628d8e2f93641333a0976d2a0c3ccbc2ffc2378e9dbb
+  languageName: node
+  linkType: hard
+
 "@asto/webpack@npm:^0.0.3":
   version: 0.0.3
   resolution: "@asto/webpack@npm:0.0.3"
@@ -2355,7 +2364,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.7.1, acorn@npm:^8.8.2, acorn@npm:^8.9.0":
+"acorn@npm:^8.11.2, acorn@npm:^8.7.1, acorn@npm:^8.8.2, acorn@npm:^8.9.0":
   version: 8.11.2
   resolution: "acorn@npm:8.11.2"
   bin:
@@ -2813,6 +2822,20 @@ __metadata:
   version: 3.1.2
   resolution: "bytes@npm:3.1.2"
   checksum: 76d1c43cbd602794ad8ad2ae94095cddeb1de78c5dddaa7005c51af10b0176c69971a6d88e805a90c2b6550d76636e43c40d8427a808b8645ede885de4a0358e
+  languageName: node
+  linkType: hard
+
+"c2es@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "c2es@npm:0.1.0"
+  dependencies:
+    acorn: "npm:^8.11.2"
+    animaux: "npm:^0.0.4"
+    estraverse: "npm:^5.3.0"
+    magic-string: "npm:^0.30.5"
+  bin:
+    c2es: bin.js
+  checksum: 487978595a829b80e843fd75a440fdd7b55639442f6849edef76659b2e02dd8c1c32be60935001ffec984b532a8103f9623ff5d959bb71e9772bd337a66ccab8
   languageName: node
   linkType: hard
 
@@ -3841,7 +3864,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"estraverse@npm:^5.1.0, estraverse@npm:^5.2.0":
+"estraverse@npm:^5.1.0, estraverse@npm:^5.2.0, estraverse@npm:^5.3.0":
   version: 5.3.0
   resolution: "estraverse@npm:5.3.0"
   checksum: 1ff9447b96263dec95d6d67431c5e0771eb9776427421260a3e2f0fdd5d6bd4f8e37a7338f5ad2880c9f143450c9b1e4fc2069060724570a49cf9cf0312bd107
@@ -6459,6 +6482,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@asto/esm": "npm:^0.0.0"
     "@asto/webpack": "npm:^0.0.3"
     "@types/cors": "npm:^2.8.14"
     "@types/express": "npm:^4.17.19"
@@ -7750,7 +7774,7 @@ __metadata:
     teeti: "npm:^0.0.1"
     zept: "npm:^0.0.3"
   bin:
-    zely: ./dist/bin.js
+    zely: ./dist/cjs/bin.js
   languageName: unknown
   linkType: soft
 

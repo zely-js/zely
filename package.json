@@ -6,6 +6,7 @@
     "docs"
   ],
   "devDependencies": {
+    "@asto/esm": "^0.0.0",
     "@asto/webpack": "^0.0.3",
     "@types/cors": "^2.8.14",
     "@types/express": "^4.17.19",
