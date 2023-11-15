@@ -1,70 +1,34 @@
+const { esmLoader } = require('@asto/esm');
 const { nodeExternalsPlugin } = require('esbuild-node-externals');
 const esbuild = require('./asto.esbuild');
-const { loader } = require('./asto.webpack');
 
 const repo =
   (name) =>
   (input, output, esm = false) => {
+    /**
+     * @type {import("asto").EntryPointOptions[]}
+     */
     const out = [
       {
-        input: `packages/${name}/src/${input}`,
-        output: `packages/${name}/dist/cjs/${output}`,
-        /**
-         * @type {import("esbuild").BuildOptions}
-         */
-        options: {
-          banner: {
-            js: '/*/dist/cjs/=>/dist/*/__dirname=require("path").join(__dirname, "../");',
-          },
-          define: {
-            __ESM__: 'false',
-          },
-          logLevel: 'error',
-          plugins:
-            process.env.NODE_ENV === 'production'
-              ? []
-              : [
-                  nodeExternalsPlugin({
-                    packagePath: `packages/${name}/package.json`,
-                    devDependencies: true,
-                  }),
-                ],
-        },
-      },
-    ];
-
-    if (esm) {
-      out.push({
         input: `packages/${name}/src/${input}`,
         output: `packages/${name}/dist/${output}`,
         /**
          * @type {import("esbuild").BuildOptions}
          */
         options: {
-          banner: {
-            js: [
-              "import * as url from 'node:url';import {createRequire} from 'node:module';",
-              " const __filename = url.fileURLToPath(import.meta.url);const __dirname = url.fileURLToPath(new URL('.', import.meta.url));",
-              'const require=createRequire(import.meta.url);',
-            ].join(''),
-          },
           define: {
-            __ESM__: 'true',
+            __ESM__: 'false',
           },
-          format: 'esm',
           logLevel: 'error',
-          plugins:
-            process.env.NODE_ENV === 'production'
-              ? []
-              : [
-                  nodeExternalsPlugin({
-                    packagePath: `packages/${name}/package.json`,
-                    devDependencies: true,
-                  }),
-                ],
+          plugins: [
+            nodeExternalsPlugin({
+              packagePath: `packages/${name}/package.json`,
+              devDependencies: true,
+            }),
+          ],
         },
-      });
-    }
+      },
+    ];
 
     return out;
   };
@@ -77,42 +41,49 @@ const repos = {
 
 const entryPoints = [
   // zely
-  ...repos.zely('index.ts', 'index.js', true),
-  ...repos.zely('server.ts', 'server.js', true),
-  ...repos.zely('export-config.ts', 'config.js', true),
-  ...repos.zely('export-methods.ts', 'methods.js', true),
+  ...repos.zely('index.ts', 'index.js'),
+  ...repos.zely('server.ts', 'server.js'),
+  ...repos.zely('export-config.ts', 'config.js'),
+  ...repos.zely('export-methods.ts', 'methods.js'),
 
   // vite plugin zely
   ...repos.vitePlugin('index.ts', 'index.js'),
 
-  ...repos.builder('index.ts', 'index.js', true),
+  ...repos.builder('index.ts', 'index.js'),
 ];
 
-module.exports =
-  process.env.NODE_ENV === 'production'
-    ? [
-        {
-          // core packages
-          loader: loader(),
+module.exports = [
+  {
+    // core packages
+    loader: esbuild,
 
-          entryPoints,
-        },
-        {
-          // cli
-          loader: loader(true),
-          entryPoints: [...repos.zely('bin/index.ts', 'bin.js')],
-        },
-      ]
-    : [
-        {
-          // core packages
-          loader: esbuild,
-
-          entryPoints,
-        },
-        {
-          // cli
-          loader: esbuild,
-          entryPoints: [...repos.zely('bin/index.ts', 'bin.js')],
-        },
-      ];
+    entryPoints,
+  },
+  {
+    // cli
+    loader: esbuild,
+    entryPoints: [...repos.zely('bin/index.ts', 'bin.js')],
+  },
+  {
+    loader: esmLoader(),
+    entryPoints: [
+      // zely
+      {
+        input: './packages/zely/dist/config.js',
+      },
+      {
+        input: './packages/zely/dist/index.js',
+      },
+      {
+        input: './packages/zely/dist/methods.js',
+      },
+      {
+        input: './packages/zely/dist/server.js',
+      },
+      // @zely/builder
+      {
+        input: './packages/zely-builder/dist/index.js',
+      },
+    ],
+  },
+];
