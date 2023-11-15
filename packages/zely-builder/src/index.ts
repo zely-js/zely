@@ -1,3 +1,4 @@
+/* eslint-disable import/named */
 /* eslint-disable no-continue */
 import { BuildOptions, build } from 'esbuild';
 import { configDev } from 'zely';
