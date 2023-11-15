@@ -4,7 +4,6 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { build } from 'esbuild';
 import { nodeExternalsPlugin } from 'esbuild-node-externals';
 
-import loadModule from '$zely/lib/webpack';
 import randomFilename from '$zely/lib/random-filename';
 
 import { CACHE_DIRECTORY } from '../constants';
@@ -76,7 +75,7 @@ export function typescriptLoader(
         if (load) {
           resolve({
             filename: dist,
-            m: loadModule(relative(__dirname, dist).replace(/\\/g, '/')),
+            m: require(relative(__dirname, dist).replace(/\\/g, '/')),
           });
         } else {
           // @ts-expect-error
