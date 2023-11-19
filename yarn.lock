@@ -3489,16 +3489,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"asto@npm:^0.0.11":
-  version: 0.0.11
-  resolution: "asto@npm:0.0.11"
+"asto@npm:^0.0.12":
+  version: 0.0.12
+  resolution: "asto@npm:0.0.12"
   dependencies:
     animaux: "npm:^0.0.4"
     chokidar: "npm:^3.5.3"
     colors: "npm:^1.4.0"
+    esbuild: "npm:^0.19.4"
   bin:
     asto: dist/bin.js
-  checksum: 895dd9a8786f0b430e27a6db002a14703be98568fc4a335b6b5a9c68941f812f0504aaf390cd26f3b49aea04f717bc01a3aa51b3146127609d4f30527800fb58
+  checksum: 114345717ae89d4057a5de84feb1576da412d4f967db5c16cf164ab17ab64465eeaf608a26f6f0da3d37af4e68d345155d2ea0f4615aa66e8c03727e1c658e26
   languageName: node
   linkType: hard
 
@@ -5026,7 +5027,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.19.5":
+"esbuild@npm:^0.19.4, esbuild@npm:^0.19.5":
   version: 0.19.5
   resolution: "esbuild@npm:0.19.5"
   dependencies:
@@ -9824,7 +9825,7 @@ __metadata:
     "@types/node": "npm:^20.8.10"
     "@typescript-eslint/eslint-plugin": "npm:^5.62.0"
     "@typescript-eslint/parser": "npm:^5.36.1"
-    asto: "npm:^0.0.11"
+    asto: "npm:^0.0.12"
     cross-env: "npm:^7.0.3"
     esbuild: "npm:^0.19.5"
     esbuild-node-externals: "npm:^1.9.0"
