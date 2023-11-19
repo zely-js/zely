@@ -23,7 +23,7 @@ const repo =
           plugins: [
             nodeExternalsPlugin({
               packagePath: `packages/${name}/package.json`,
-              devDependencies: true,
+              devDependencies: false,
             }),
           ],
         },
