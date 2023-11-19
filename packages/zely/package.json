@@ -56,18 +56,18 @@
     }
   },
   "dependencies": {
-    "animaux": "^0.0.4",
     "chokidar": "^3.5.3",
     "colors": "^1.4.0",
     "esbuild": "^0.19.5",
     "esbuild-node-externals": "^1.9.0",
     "mime-types": "^2.1.35",
-    "source-map": "^0.7.4",
-    "teeti": "^0.0.1",
-    "zept": "^0.0.3"
+    "source-map": "^0.7.4"
   },
   "devDependencies": {
     "@zely/plugin-cors": "*",
-    "@zept/http": "^0.0.0"
+    "@zept/http": "^0.0.0",
+    "animaux": "^0.0.4",
+    "teeti": "^0.0.1",
+    "zept": "^0.0.3"
   }
 }
