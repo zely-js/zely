@@ -7,7 +7,7 @@ import { typescriptLoader } from '../loader';
 import { error, success } from '../logger';
 import { handles } from './handles';
 import { sender } from './sender';
-
+import { load } from '$zely/require';
 import { readDirectory } from '$zely/lib/readDirectory';
 import { transformFilename } from '$zely/lib/transform-filename';
 import { prettyURL } from '$zely/lib/pretty-url';
@@ -44,10 +44,12 @@ export async function getPages(
       // already compiled
       if (cache.has(target)) {
         // load module
-        const pageModule = require(relative(
-          __dirname,
-          join(CACHE_DIRECTORY, 'pages', cache.get(target))
-        ).replace(/\\/g, '/'));
+        const pageModule = await load(
+          relative(__dirname, join(CACHE_DIRECTORY, 'pages', cache.get(target))).replace(
+            /\\/g,
+            '/'
+          )
+        );
 
         // custom path
         const pagePath = pageModule?.$page?.path;

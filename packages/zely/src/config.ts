@@ -5,6 +5,8 @@ import { join, relative } from 'node:path';
 
 import { build } from 'esbuild';
 
+import { load } from '$zely/require';
+
 import { CACHE_DIRECTORY, DEFAULT_CONFIG } from './constants';
 import { typescriptLoader } from './loader';
 
@@ -27,11 +29,11 @@ export function assign(c: Config): Config {
 
 export async function getConfig(target?: string): Promise<Config> {
   if (target) {
-    return assign(require(relative(__dirname, target)));
+    return assign(await load(relative(__dirname, target)));
   }
 
   if (existsSync('zely.config.js')) {
-    return assign(require(relative(__dirname, join(process.cwd(), 'zely.config.js'))));
+    return assign(await load(relative(__dirname, join(process.cwd(), 'zely.config.js'))));
   }
 
   if (existsSync('zely.config.ts')) {

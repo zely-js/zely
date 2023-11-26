@@ -1,6 +1,7 @@
 const { esmLoader } = require('@asto/esm');
 const { nodeExternalsPlugin } = require('esbuild-node-externals');
 const esbuild = require('./asto.esbuild');
+const { parse, join } = require('path');
 
 const repo =
   (name) =>
@@ -20,15 +21,40 @@ const repo =
             __ESM__: 'false',
           },
           logLevel: 'error',
+
           plugins: [
             nodeExternalsPlugin({
               packagePath: `packages/${name}/package.json`,
-              devDependencies: false,
             }),
           ],
         },
       },
     ];
+
+    if (esm) {
+      const parsed = parse(`packages/${name}/dist/${output}`);
+
+      out.push({
+        ...out[0],
+        output: join(parsed.dir, `${parsed.name}.mjs`),
+        options: {
+          ...out[0].options,
+          format: 'esm',
+          define: {
+            __ESM__: 'true',
+          },
+          banner: {
+            js: [
+              'import{createRequire}from"node:module";',
+              'import{fileURLToPath}from"node:url";',
+              'var __filename=fileURLToPath(import.meta.url);',
+              'var __dirname=fileURLToPath(new URL(".", import.meta.url));',
+              'var require=createRequire(import.meta.url);',
+            ].join(''),
+          },
+        },
+      });
+    }
 
     return out;
   };
@@ -41,15 +67,15 @@ const repos = {
 
 const entryPoints = [
   // zely
-  ...repos.zely('index.ts', 'index.js'),
-  ...repos.zely('server.ts', 'server.js'),
-  ...repos.zely('export-config.ts', 'config.js'),
-  ...repos.zely('export-methods.ts', 'methods.js'),
+  ...repos.zely('index.ts', 'index.js', true),
+  ...repos.zely('server.ts', 'server.js', true),
+  ...repos.zely('export-config.ts', 'config.js', true),
+  ...repos.zely('export-methods.ts', 'methods.js', true),
 
   // vite plugin zely
   ...repos.vitePlugin('index.ts', 'index.js'),
 
-  ...repos.builder('index.ts', 'index.js'),
+  ...repos.builder('index.ts', 'index.js', true),
 ];
 
 module.exports = [
@@ -62,28 +88,6 @@ module.exports = [
   {
     // cli
     loader: esbuild,
-    entryPoints: [...repos.zely('bin/index.ts', 'bin.js')],
-  },
-  {
-    loader: esmLoader(),
-    entryPoints: [
-      // zely
-      {
-        input: './packages/zely/dist/config.js',
-      },
-      {
-        input: './packages/zely/dist/index.js',
-      },
-      {
-        input: './packages/zely/dist/methods.js',
-      },
-      {
-        input: './packages/zely/dist/server.js',
-      },
-      // @zely/builder
-      {
-        input: './packages/zely-builder/dist/index.js',
-      },
-    ],
+    entryPoints: [...repos.zely('bin/index.ts', 'bin.js', true)],
   },
 ];

@@ -1,6 +1,8 @@
 /* eslint-disable no-case-declarations */
 import { existsSync, mkdirSync } from 'node:fs';
 
+import { load } from '$zely/require';
+
 import { spinner } from '../../spinner';
 import { installDependencies, installEngine } from './install';
 import { usingLanguage } from './lang';
@@ -27,7 +29,7 @@ export async function add(command, engineRequested?: 'npm' | 'yarn') {
         message: 'cloning template',
       }).start();
 
-      const plugin: typeof import('@zely/plugin-cors') = require('@zely/plugin-cors');
+      const plugin: typeof import('@zely/plugin-cors') = await load('@zely/plugin-cors');
 
       if (!existsSync('middlewares')) mkdirSync('middlewares');
 

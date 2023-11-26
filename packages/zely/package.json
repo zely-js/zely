@@ -1,17 +1,18 @@
 {
   "name": "zely",
-  "version": "2.0.0-next.9",
+  "version": "2.0.0-next.13",
   "types": "./types/index.d.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "homepage": "https://zely.netlify.app",
   "repository": "https://github.com/zely-js/zely",
   "description": "a Backend Framework for Node.js",
-  "bin": "./dist/cjs/bin.js",
+  "bin": "./cli.js",
   "files": [
     "dist",
     "types",
-    "assets"
+    "assets",
+    "cli.js"
   ],
   "keywords": [
     "node",
@@ -56,17 +57,15 @@
     }
   },
   "dependencies": {
+    "@zely/plugin-cors": "^1.0.0",
+    "@zept/http": "^0.0.0",
+    "animaux": "^0.0.4",
     "chokidar": "^3.5.3",
     "colors": "^1.4.0",
     "esbuild": "^0.19.5",
     "esbuild-node-externals": "^1.9.0",
     "mime-types": "^2.1.35",
-    "source-map": "^0.7.4"
-  },
-  "devDependencies": {
-    "@zely/plugin-cors": "^1.0.0",
-    "@zept/http": "^0.0.0",
-    "animaux": "^0.0.4",
+    "source-map": "^0.7.4",
     "teeti": "^0.0.1",
     "zept": "^0.0.3"
   }

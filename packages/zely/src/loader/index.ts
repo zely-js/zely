@@ -5,6 +5,7 @@ import { build } from 'esbuild';
 import { nodeExternalsPlugin } from 'esbuild-node-externals';
 
 import randomFilename from '$zely/lib/random-filename';
+import { load as loader } from '$zely/require';
 
 import { CACHE_DIRECTORY } from '../constants';
 import { Config } from '../config';
@@ -35,6 +36,14 @@ export function typescriptLoader(
   }
   if (!existsSync(join(CACHE_DIRECTORY, 'core'))) {
     mkdirSync(join(CACHE_DIRECTORY, 'core'));
+  }
+
+  if (!existsSync(join(CACHE_DIRECTORY, 'package.json'))) {
+    if (__ESM__) {
+      writeFileSync(join(CACHE_DIRECTORY, 'package.json'), '{"type":"module"}');
+    } else {
+      writeFileSync(join(CACHE_DIRECTORY, 'package.json'), '{"type":"commonjs"}');
+    }
   }
 
   const dist = join(join(base, type), parse(randomFilename(target)).base);
@@ -73,9 +82,11 @@ export function typescriptLoader(
         }
 
         if (load) {
-          resolve({
-            filename: dist,
-            m: require(relative(__dirname, dist).replace(/\\/g, '/')),
+          loader(relative(__dirname, dist).replace(/\\/g, '/')).then((m) => {
+            resolve({
+              filename: dist,
+              m,
+            });
           });
         } else {
           // @ts-expect-error
