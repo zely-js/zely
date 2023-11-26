@@ -1,6 +1,3 @@
 {
-  "type": "module",
-  "scripts": {
-    "start": "zely start"
-  }
+  "type": "module"
 }
