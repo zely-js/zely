@@ -4,7 +4,7 @@
   "types": "./types/index.d.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
-  "homepage": "https://zely.netlify.app",
+  "homepage": "https://zely2.netlify.app",
   "repository": "https://github.com/zely-js/zely",
   "description": "Build Productive, Convenient, Fast Backend",
   "bin": "./cli.js",
