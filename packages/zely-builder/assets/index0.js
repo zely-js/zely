@@ -1,12 +1,17 @@
 import * as url from 'node:url';
-import { Zely } from 'zely';
-import * as config from './config.js';
+import { Zely, showListen } from 'zely';
+import config from './config.js';
 
-async function start() {
-  process.chdir(url.fileURLToPath(new URL('.', import.meta.url)));
-  Zely({
-    ...config,
+process.chdir(url.fileURLToPath(new URL('.', import.meta.url)));
+
+const port = config.port || 3000;
+
+const app = Zely({
+  ...config,
+});
+
+app.then((server) => {
+  server.listen(port, () => {
+    showListen(port);
   });
-}
-
-start();
+});

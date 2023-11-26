@@ -80,7 +80,10 @@ export class Builder {
 
     writeFileSync(
       join(out, 'config.js'),
-      `export * from "./${relative(out, config).replace(/\\/g, '/')}";`
+      `import config from"./${relative(out, config).replace(
+        /\\/g,
+        '/'
+      )}";export{config as default};`
     );
   }
 }
