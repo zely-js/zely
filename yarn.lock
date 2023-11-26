@@ -11708,7 +11708,7 @@ __metadata:
     teeti: "npm:^0.0.1"
     zept: "npm:^0.0.3"
   bin:
-    zely: ./dist/cjs/bin.js
+    zely: ./cli.js
   languageName: unknown
   linkType: soft
 
