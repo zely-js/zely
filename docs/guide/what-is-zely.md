@@ -5,6 +5,8 @@
 
 🛰️ Zely is a backend framework for Node.js.
 
+> [documentation moved!](https://zely2.netlify.app)
+
 ## Features
 
 - **File-based routing.** zely creates routes automatically with filenames.

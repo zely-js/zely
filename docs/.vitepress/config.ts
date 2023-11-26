@@ -4,7 +4,7 @@ import pkg from '../../packages/zely/package.json';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'Zely',
+  title: 'Zely1',
   description: 'a Backend Framework for Node.js',
 
   cleanUrls: true,
@@ -36,6 +36,7 @@ export default defineConfig({
     editLink: { pattern: 'https://github.com/zely-js/core/edit/main/docs/:path' },
 
     nav: [
+      { text: 'Zely2', link: 'https://zely2.netlify.app' },
       { text: 'Docs', link: '/guide/what-is-zely' },
       { text: 'Apis', link: '/apis/introduction' },
       { text: 'Packages', link: '/packages/packages' },
