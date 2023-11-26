@@ -6,7 +6,7 @@
   "module": "./dist/index.mjs",
   "homepage": "https://zely.netlify.app",
   "repository": "https://github.com/zely-js/zely",
-  "description": "a Backend Framework for Node.js",
+  "description": "Build Productive, Convenient, Fast Backend",
   "bin": "./cli.js",
   "files": [
     "dist",
