@@ -22,6 +22,19 @@ export function typescriptLoader(
   format: 'cjs' | 'esm' = __ESM__ ? 'esm' : 'cjs',
   load: boolean = true
 ): Promise<{ filename: string; m: any }> {
+  if (target.endsWith('.js')) {
+    // js
+
+    return new Promise((resolve) => {
+      loader(relative(__dirname, target).replace(/\\/g, '/')).then((m) => {
+        resolve({
+          filename: target,
+          m,
+        });
+      });
+    });
+  }
+
   if (!existsSync(CACHE_DIRECTORY)) {
     mkdirSync(CACHE_DIRECTORY);
   }
