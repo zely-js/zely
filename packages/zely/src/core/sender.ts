@@ -6,6 +6,8 @@ export async function sender(
   chunk: string | number | object | any[],
   status?: number
 ) {
+  if (res.writableEnded) return;
+
   // console.log(chunk, res.prewrite);
 
   if (status) res.status(status);
