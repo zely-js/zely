@@ -51,9 +51,9 @@ export async function createStatic(files: FileData[]) {
   writeFileSync(join(CACHE_DIRECTORY, 'static'), JSON.stringify(props));
 
   spinner.stop(
-    `${'✓'.green} static props generated ${'('.gray}${`${staticPropsFuncs.length}`.red} ${
-      'pages)\n'.gray
-    }`
+    `${'✓'.green} static props generated ${'('.gray}${
+      `${staticPropsFuncs.length}`.cyan
+    } ${'pages)\n'.gray}`
   );
 
   console.log();
