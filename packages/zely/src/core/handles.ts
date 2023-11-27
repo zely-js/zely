@@ -178,11 +178,11 @@ export async function handles(
         for await (const pageHandler of Object.keys(page.m)) {
           // export default [];
 
-          if (page.m.default) {
+          if (page.m.default || page.m[0]?.__typeof === Symbol.for('zely:handler')) {
             const execd = new URL(req.url, `http://${req.headers.host}`).pathname.match(
               pattern
             );
-            const pageModule = page.m.default;
+            const pageModule = page.m.default || Object.values(page.m);
             const $page = page.m.$page || {};
 
             const context: Context = new Context(req as ZelyRequest, res as ZelyResponse);
