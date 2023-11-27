@@ -15,7 +15,7 @@ module.exports.clone = (template, outfile) => {
 
     writeFileSync(outfile, ts);
   } else {
-    console.log(`[@prext/plugin-cors] cannot find template "${template}"`);
+    console.log(`[@zely/plugin-cors] cannot find template "${template}"`);
   }
 };
 
