@@ -1,0 +1,11 @@
+{
+  "name": "@playground/with-javascript",
+  "version": "1.0.0",
+  "dependencies": {
+    "zely": "workspace:*"
+  },
+  "scripts": {
+    "dev": "zely dev",
+    "build": "zely build"
+  }
+}

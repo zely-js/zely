@@ -2079,6 +2079,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@playground/with-javascript@workspace:playground/with-javascript":
+  version: 0.0.0-use.local
+  resolution: "@playground/with-javascript@workspace:playground/with-javascript"
+  dependencies:
+    zely: "workspace:*"
+  languageName: unknown
+  linkType: soft
+
 "@playground/with-typescript@workspace:playground/with-typescript":
   version: 0.0.0-use.local
   resolution: "@playground/with-typescript@workspace:playground/with-typescript"
