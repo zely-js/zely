@@ -1,4 +1,5 @@
-import { ZeptRequest, ZeptResponse } from 'zept';
+import { Server, ZeptRequest, ZeptResponse } from 'zept';
+import { Config } from '.';
 
 export function handles(
   req: ZeptRequest,
@@ -10,3 +11,5 @@ export function handles(
     type: string;
   }[]
 );
+
+export function applyPlugins(app: Server, config: Config);
