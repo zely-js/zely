@@ -1,0 +1,15 @@
+{
+  "name": "@playground/with-esm",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@zely/builder": "workspace:*",
+    "zely": "workspace:*",
+    "zept": "^0.0.4"
+  },
+  "scripts": {
+    "dev": "zely dev",
+    "start": "node dist/main.js",
+    "build": "node build.cjs"
+  }
+}
