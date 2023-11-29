@@ -9834,6 +9834,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^5.62.0"
     "@typescript-eslint/parser": "npm:^5.36.1"
     asto: "npm:^0.0.12"
+    conventional-changelog-conventionalcommits: "npm:^7.0.2"
     cross-env: "npm:^7.0.3"
     esbuild: "npm:^0.19.5"
     esbuild-node-externals: "npm:^1.9.0"
