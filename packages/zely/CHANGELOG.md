@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-next.20](https://github.com/zely-js/zely/compare/zely@2.0.0-next.19...zely@2.0.0-next.20) (2023-11-29)
+
+
+### Code Refactoring
+
+* split code ([b64f5e6](https://github.com/zely-js/zely/commit/b64f5e6c96a178c3f31c624bf00769a400321b1c))
+
+
+
 ## [2.0.0-next.19](https://github.com/zely-js/zely/compare/zely@2.0.0-next.9...zely@2.0.0-next.19) (2023-11-29)
 
 
