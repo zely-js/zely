@@ -3059,18 +3059,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zely/plugin-cors@npm:1.0.1, @zely/plugin-cors@workspace:packages/plugin-cors":
+  version: 0.0.0-use.local
+  resolution: "@zely/plugin-cors@workspace:packages/plugin-cors"
+  languageName: unknown
+  linkType: soft
+
 "@zely/plugin-cors@npm:^0.0.0":
   version: 0.0.0
   resolution: "@zely/plugin-cors@npm:0.0.0"
   checksum: cfed7dd1438e3cde8713dd874bf967abfa187b4486aeffa161a01b8fea1aa6e8d809a6afbd9489f3aca4f6e9708faad5c2f91c3bd1bc3078db8f4e66418bfd57
   languageName: node
   linkType: hard
-
-"@zely/plugin-cors@npm:^1.0.0, @zely/plugin-cors@workspace:packages/plugin-cors":
-  version: 0.0.0-use.local
-  resolution: "@zely/plugin-cors@workspace:packages/plugin-cors"
-  languageName: unknown
-  linkType: soft
 
 "@zept/http@npm:*, @zept/http@npm:^0.0.0":
   version: 0.0.0
@@ -11706,7 +11706,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "zely@workspace:packages/zely"
   dependencies:
-    "@zely/plugin-cors": "npm:^1.0.0"
+    "@zely/plugin-cors": "npm:1.0.1"
     "@zept/http": "npm:^0.0.0"
     animaux: "npm:^0.0.4"
     chokidar: "npm:^3.5.3"

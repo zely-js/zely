@@ -1,6 +1,6 @@
 {
   "name": "zely",
-  "version": "2.0.0-next.18",
+  "version": "2.0.0-next.19",
   "types": "./types/index.d.ts",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -57,7 +57,7 @@
     }
   },
   "dependencies": {
-    "@zely/plugin-cors": "^1.0.0",
+    "@zely/plugin-cors": "1.0.1",
     "@zept/http": "^0.0.0",
     "animaux": "^0.0.4",
     "chokidar": "^3.5.3",

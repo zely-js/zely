@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.0.1](https://github.com/zely-js/core/compare/@zely/plugin-cors@1.0.0...@zely/plugin-cors@1.0.1) (2023-11-29)
+
+
+### Others
+
+* rename pkg name ([465e746](https://github.com/zely-js/core/commit/465e746cccdf803e8f0554fdec4daddc03a09322))
+
+
+
+
 ## [0.1.1](https://github.com/do4ng/prext/compare/@prext/plugin-cors@0.1.0...@prext/plugin-cors@0.1.1) (2023-05-22)
 
 
