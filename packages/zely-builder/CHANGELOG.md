@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.0](https://github.com/zely-js/zely/compare/@zely/builder@0.1.1...@zely/builder@0.2.0) (2023-11-29)
+
+
+### New Features
+
+* optimizing ([760295d](https://github.com/zely-js/zely/commit/760295da6d1395942d82f139d0caf5aefd67681c))
+
+
+### Others
+
+* **deps:** zept ([8224026](https://github.com/zely-js/zely/commit/8224026caaf8b67032323f3d0b4d03de08761f67))
+
+
+
 ## [0.1.1](https://github.com/zely-js/zely/compare/@zely/builder@0.1.0...@zely/builder@0.1.1) (2023-11-29)
 
 **Note:** Version bump only for package @zely/builder

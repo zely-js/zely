@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-next.21](https://github.com/zely-js/zely/compare/zely@2.0.0-next.20...zely@2.0.0-next.21) (2023-11-29)
+
+
+### New Features
+
+* export `createStatic()` ([f80ea44](https://github.com/zely-js/zely/commit/f80ea44c2211f85b62335335fa7ee545f643e177))
+
+
+### Others
+
+* **typescript:** declare type `applyPlugins` ([b3ee03e](https://github.com/zely-js/zely/commit/b3ee03e54098f7bd0f212f551a43c5bd04b34e6b))
+* update link ([bd9b290](https://github.com/zely-js/zely/commit/bd9b290bba55dcbedc14049ced9d37571ca79ce5))
+
+
+
 ## [2.0.0-next.20](https://github.com/zely-js/zely/compare/zely@2.0.0-next.19...zely@2.0.0-next.20) (2023-11-29)
 
 
