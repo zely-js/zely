@@ -34,7 +34,8 @@
     "typescript": "^5.2.2",
     "vitepress": "^1.0.0-rc.25",
     "vue": "^3.3.8",
-    "webpack": "^5.88.2"
+    "webpack": "^5.88.2",
+    "zept": "^0.0.4"
   },
   "scripts": {
     "version": "lerna version",

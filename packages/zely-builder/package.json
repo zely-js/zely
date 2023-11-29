@@ -13,7 +13,8 @@
   "repository": "https://github.com/zely-js/zely",
   "description": "Builder for zely.js",
   "devDependencies": {
-    "zely": "workspace:*"
+    "zely": "workspace:*",
+    "zept": "^0.0.4"
   },
   "dependencies": {
     "esbuild": "^0.19.5"

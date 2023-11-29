@@ -3056,6 +3056,7 @@ __metadata:
   dependencies:
     esbuild: "npm:^0.19.5"
     zely: "workspace:*"
+    zept: "npm:^0.0.4"
   languageName: unknown
   linkType: soft
 
@@ -9851,6 +9852,7 @@ __metadata:
     vitepress: "npm:^1.0.0-rc.25"
     vue: "npm:^3.3.8"
     webpack: "npm:^5.88.2"
+    zept: "npm:^0.0.4"
   dependenciesMeta:
     vitepress@1.0.0-rc.25:
       unplugged: true
@@ -11729,5 +11731,15 @@ __metadata:
     "@zept/http": "npm:*"
     "@zept/path-regexp": "npm:*"
   checksum: 261d99899adc9b50a4c2f073a97f9992466961be17632afd6ee04549f78073eae65712adf234e8aab49ab100850e1f3666b72a1bf6be45659be88b5d2dfa00a1
+  languageName: node
+  linkType: hard
+
+"zept@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "zept@npm:0.0.4"
+  dependencies:
+    "@zept/http": "npm:*"
+    "@zept/path-regexp": "npm:*"
+  checksum: 205e30a6d262c720496b6f50306fc681b8f81eb8adf9c9ffda7836f1de31bc3463a796260324a9e59d7b85c054a8bb0c5ce47e5fa696f1eff130881042b1ff16
   languageName: node
   linkType: hard
