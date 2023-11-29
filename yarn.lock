@@ -2060,6 +2060,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@playground/with-esm@workspace:playground/with-esm":
+  version: 0.0.0-use.local
+  resolution: "@playground/with-esm@workspace:playground/with-esm"
+  dependencies:
+    "@zely/builder": "workspace:*"
+    zely: "workspace:*"
+    zept: "npm:^0.0.4"
+  languageName: unknown
+  linkType: soft
+
 "@playground/with-express@workspace:playground/with-express":
   version: 0.0.0-use.local
   resolution: "@playground/with-express@workspace:playground/with-express"
@@ -3096,7 +3106,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zely/builder@workspace:packages/zely-builder":
+"@zely/builder@workspace:*, @zely/builder@workspace:packages/zely-builder":
   version: 0.0.0-use.local
   resolution: "@zely/builder@workspace:packages/zely-builder"
   dependencies:
