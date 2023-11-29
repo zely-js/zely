@@ -128,3 +128,5 @@ export const methods: {
 
   put(body: MethodBody, headers?: Record<string, string>): ServerDataHandlerResponse;
 };
+
+export function createStatic(files: FileData[]): Promise<Record<string, object>>;

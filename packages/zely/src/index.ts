@@ -29,6 +29,8 @@ export * from './support';
 
 export * from './core/methods';
 
+export * from './create-static';
+
 // no esm
 /*
 if (__ESM__) {
