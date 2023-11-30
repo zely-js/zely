@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.1](https://github.com/zely-js/zely/compare/@zely/builder@0.2.0...@zely/builder@0.2.1) (2023-11-30)
+
+
+### Others
+
+* remove unused code ([f82a8e4](https://github.com/zely-js/zely/commit/f82a8e42731f9026a9e4b335f7375f26533895ef))
+
+
+
 ## [0.2.0](https://github.com/zely-js/zely/compare/@zely/builder@0.1.1...@zely/builder@0.2.0) (2023-11-29)
 
 

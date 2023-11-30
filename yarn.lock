@@ -3116,7 +3116,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely/plugin-cors@npm:1.0.1, @zely/plugin-cors@workspace:packages/plugin-cors":
+"@zely/plugin-cors@npm:*, @zely/plugin-cors@workspace:packages/plugin-cors":
   version: 0.0.0-use.local
   resolution: "@zely/plugin-cors@workspace:packages/plugin-cors"
   languageName: unknown
@@ -11779,7 +11779,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "zely@workspace:packages/zely"
   dependencies:
-    "@zely/plugin-cors": "npm:1.0.1"
+    "@zely/plugin-cors": "npm:*"
     "@zept/http": "npm:^0.0.0"
     animaux: "npm:^0.0.4"
     chokidar: "npm:^3.5.3"

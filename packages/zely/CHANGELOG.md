@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-next.22](https://github.com/zely-js/zely/compare/zely@2.0.0-next.21...zely@2.0.0-next.22) (2023-11-30)
+
+
+### Bug Fix
+
+* fixed deps error ([f066356](https://github.com/zely-js/zely/commit/f066356d67a8b7e116cf7d60f6c6523d97f05685))
+
+
+
 ## [2.0.0-next.21](https://github.com/zely-js/zely/compare/zely@2.0.0-next.20...zely@2.0.0-next.21) (2023-11-29)
 
 
