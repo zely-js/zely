@@ -56,8 +56,10 @@
       ]
     }
   },
+  "devDependencies": {
+    "@zely/plugin-cors": "*"
+  },
   "dependencies": {
-    "@zely/plugin-cors": "1.0.1",
     "@zept/http": "^0.0.0",
     "animaux": "^0.0.4",
     "chokidar": "^3.5.3",
