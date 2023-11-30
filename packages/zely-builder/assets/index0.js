@@ -1,6 +1,5 @@
 import * as url from 'node:url';
 import * as server from 'zely/server';
-import { createStatic } from 'zely';
 import { zept } from 'zept';
 
 import _config from './config.js';
