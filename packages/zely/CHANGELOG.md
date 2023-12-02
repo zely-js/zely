@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-next.23](https://github.com/zely-js/zely/compare/zely@2.0.0-next.22...zely@2.0.0-next.23) (2023-12-02)
+
+
+### Others
+
+* log only static props exist ([e17f31c](https://github.com/zely-js/zely/commit/e17f31c9316bbf7a38a21ff9e0577283321e2d3e))
+
+
+
 ## [2.0.0-next.22](https://github.com/zely-js/zely/compare/zely@2.0.0-next.21...zely@2.0.0-next.22) (2023-11-30)
 
 
