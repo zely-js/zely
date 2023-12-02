@@ -6,12 +6,9 @@ import { Spinner } from './spinner';
 import { CACHE_DIRECTORY } from './constants';
 
 export async function createStatic(files: FileData[]) {
-  const spinner = new Spinner({});
   const props: Record<string, object> = {};
 
   console.log();
-
-  spinner.edit('generating static props...');
 
   const staticPropsFuncs = files.filter((file) => {
     if (file.type === 'html') {
@@ -32,7 +29,13 @@ export async function createStatic(files: FileData[]) {
     return true;
   });
 
+  if (staticPropsFuncs.length === 0) {
+    return;
+  }
+
+  const spinner = new Spinner({});
   spinner.edit('generating static props... 0%');
+
   spinner.start();
 
   for await (const [index, file] of staticPropsFuncs.entries()) {
