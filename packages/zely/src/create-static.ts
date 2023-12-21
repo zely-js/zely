@@ -30,7 +30,7 @@ export async function createStatic(files: FileData[]) {
   });
 
   if (staticPropsFuncs.length === 0) {
-    return;
+    return {};
   }
 
   const spinner = new Spinner({});

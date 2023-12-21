@@ -33,9 +33,10 @@ export async function handles(
   config: Config,
   props?: any
 ) {
+  const staticPath = join(CACHE_DIRECTORY, 'static');
   const parsed = url.parse(req.url);
   const staticProps =
-    props || JSON.parse(readFileSync(join(CACHE_DIRECTORY, 'static')).toString());
+    props || (existsSync(staticPath) && JSON.parse(readFileSync(staticPath).toString()));
 
   // @ts-ignore
   res.json = function (data: any) {
