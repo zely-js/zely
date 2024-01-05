@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.0-next.24](https://github.com/zely-js/zely/compare/zely@2.0.0-next.23...zely@2.0.0-next.24) (2024-01-05)
+
+
+### Bug Fix
+
+* fixed logger ([6b4cc6b](https://github.com/zely-js/zely/commit/6b4cc6bfb4dd3210c24ff373ab086998bcfa55fc))
+
+
+### Others
+
+* **deps:** bump zept from 0.0.3 to 0.0.4 ([82e5f9a](https://github.com/zely-js/zely/commit/82e5f9a73afb0aff8eeb8d964d2327abf9e249bd))
+
+
+
 ## [2.0.0-next.23](https://github.com/zely-js/zely/compare/zely@2.0.0-next.22...zely@2.0.0-next.23) (2023-12-02)
 
 
