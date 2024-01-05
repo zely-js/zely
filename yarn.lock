@@ -4732,6 +4732,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dist-979736@workspace:playground/with-esm/dist":
+  version: 0.0.0-use.local
+  resolution: "dist-979736@workspace:playground/with-esm/dist"
+  languageName: unknown
+  linkType: soft
+
 "docs@workspace:docs":
   version: 0.0.0-use.local
   resolution: "docs@workspace:docs"
