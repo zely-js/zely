@@ -4,7 +4,7 @@
 
 Build Productive, Convenient, Fast Backend
 
-[**github**](https://github.com/zely-js/core) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://zely.netlify.app/)
+[**github**](https://github.com/zely-js/core) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://zely.vercel.app/)
 
 ## Features
 
