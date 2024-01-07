@@ -3129,10 +3129,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zept/http@npm:*, @zept/http@npm:^0.0.0":
+"@zept/http@npm:*":
   version: 0.0.0
   resolution: "@zept/http@npm:0.0.0"
   checksum: e8dd704246ccf6f4463f761a7a62a183d898978159d056ba0286ca577ba54ee97848669ea6f6b41c8f5d76b9a6c60171f1cb7889ccdd55eb56f2fb7975796a2b
+  languageName: node
+  linkType: hard
+
+"@zept/http@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "@zept/http@npm:0.0.1"
+  checksum: e9ed69aba47a1e073e111e701cba32120bb15fe4f39475e0d39d075e102414ee0c25899f396add1eb0f466dc5b7e72694955bf86bd381d6fbbe8990bf804dc8c
   languageName: node
   linkType: hard
 
@@ -4731,12 +4738,6 @@ __metadata:
   checksum: dcac00920a4d503e38bb64001acb19df4efc14536ada475725e12f52c16777afdee4db827f55f13a908ee7efc0cb282e2e3dbaeeb98c0993dd93d1802d3bf00c
   languageName: node
   linkType: hard
-
-"dist-979736@workspace:playground/with-esm/dist":
-  version: 0.0.0-use.local
-  resolution: "dist-979736@workspace:playground/with-esm/dist"
-  languageName: unknown
-  linkType: soft
 
 "docs@workspace:docs":
   version: 0.0.0-use.local
@@ -11780,7 +11781,7 @@ __metadata:
   resolution: "zely@workspace:packages/zely"
   dependencies:
     "@zely/plugin-cors": "npm:*"
-    "@zept/http": "npm:^0.0.0"
+    "@zept/http": "npm:^0.0.1"
     animaux: "npm:^0.0.4"
     chokidar: "npm:^3.5.3"
     colors: "npm:^1.4.0"
