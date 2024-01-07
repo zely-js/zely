@@ -630,11 +630,11 @@ __metadata:
   linkType: hard
 
 "@commitlint/config-conventional@npm:^18.4.2":
-  version: 18.4.2
-  resolution: "@commitlint/config-conventional@npm:18.4.2"
+  version: 18.4.4
+  resolution: "@commitlint/config-conventional@npm:18.4.4"
   dependencies:
     conventional-changelog-conventionalcommits: "npm:^7.0.2"
-  checksum: 50a85d4f08956fdb47ed5523958e746d03fa44886cfe3189d8f2199720092607dc1fbf31c71163b9c340e7263dbc080128887ba032f2285246eefd537fc11a96
+  checksum: d8eaf10632799e092eccf3bd7c0d294bf9ad5fd1e4a9d7932043a03623c5495db31083410279199b2f480436bebe34a311f5710e842800ff600b1e2cfdd3808e
   languageName: node
   linkType: hard
 
@@ -4731,12 +4731,6 @@ __metadata:
   checksum: dcac00920a4d503e38bb64001acb19df4efc14536ada475725e12f52c16777afdee4db827f55f13a908ee7efc0cb282e2e3dbaeeb98c0993dd93d1802d3bf00c
   languageName: node
   linkType: hard
-
-"dist-979736@workspace:playground/with-esm/dist":
-  version: 0.0.0-use.local
-  resolution: "dist-979736@workspace:playground/with-esm/dist"
-  languageName: unknown
-  linkType: soft
 
 "docs@workspace:docs":
   version: 0.0.0-use.local
