@@ -60,7 +60,7 @@
     "@zely/plugin-cors": "*"
   },
   "dependencies": {
-    "@zept/http": "^0.0.0",
+    "@zept/http": "^0.0.1",
     "animaux": "^0.0.4",
     "chokidar": "^3.5.3",
     "colors": "^1.4.0",
