@@ -30,6 +30,7 @@
     "lerna": "^7.4.2",
     "ts-jest": "^29.0.3",
     "ts-loader": "^9.5.0",
+    "tsconfig-paths-jest": "^0.0.1",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "^5.2.2",
     "vitepress": "^1.0.0-rc.25",
