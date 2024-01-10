@@ -1,0 +1,11 @@
+{
+  "name": "@zely-js/loader-esbuild",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "esbuild": "^0.19.11",
+    "esbuild-node-externals": "^1.12.0"
+  }
+}
