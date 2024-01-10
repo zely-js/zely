@@ -21,6 +21,7 @@ const repo =
             __ESM__: 'false',
           },
           logLevel: 'error',
+          minify: false,
 
           plugins: [
             nodeExternalsPlugin({
@@ -43,6 +44,7 @@ const repo =
           define: {
             __ESM__: 'true',
           },
+          minify: false,
           banner: {
             js: [
               'import{createRequire}from"node:module";',
@@ -60,22 +62,20 @@ const repo =
   };
 
 const repos = {
-  zely: repo('zely'),
-  vitePlugin: repo('vite-plugin-zely'),
-  builder: repo('zely-builder'),
+  zely: repo('zely-js'),
+  core: repo('zely-js-core'),
+  loader: repo('zely-js-loader'),
+  loaderesbuild: repo('zely-js-loader-esbuild'),
+  logger: repo('zely-js-logger'),
 };
 
 const entryPoints = [
   // zely
   ...repos.zely('index.ts', 'index.js', true),
-  ...repos.zely('server.ts', 'server.js', true),
-  ...repos.zely('export-config.ts', 'config.js', true),
-  ...repos.zely('export-methods.ts', 'methods.js', true),
-
-  // vite plugin zely
-  ...repos.vitePlugin('index.ts', 'index.js'),
-
-  ...repos.builder('index.ts', 'index.js', true),
+  ...repos.core('index.ts', 'index.js', true),
+  ...repos.loader('index.ts', 'index.js', true),
+  ...repos.loaderesbuild('index.ts', 'index.js', true),
+  ...repos.logger('index.ts', 'index.js', true),
 ];
 
 module.exports = [
@@ -84,10 +84,5 @@ module.exports = [
     loader: esbuild,
 
     entryPoints,
-  },
-  {
-    // cli
-    loader: esbuild,
-    entryPoints: [...repos.zely('bin/index.ts', 'bin.js', true)],
   },
 ];
