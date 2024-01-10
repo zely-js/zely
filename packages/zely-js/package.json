@@ -1,0 +1,10 @@
+{
+  "name": "@zely-js/zely",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
+  "files": [
+    "./types",
+    "./dist"
+  ]
+}
