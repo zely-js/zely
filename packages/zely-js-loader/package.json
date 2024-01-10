@@ -1,0 +1,13 @@
+{
+  "name": "@zely-js/loader",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "@zely-js/loader-esbuild": "workspace:*"
+  },
+  "devDependencies": {
+    "@zely-js/core": "workspace:*"
+  }
+}
