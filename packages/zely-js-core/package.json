@@ -1,0 +1,17 @@
+{
+  "name": "@zely-js/core",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./types/index.d.ts",
+  "dependencies": {
+    "@zely-js/loader": "workspace:*",
+    "@zely-js/logger": "workspace:*",
+    "@zept/http": "^0.0.1",
+    "@zept/path-regexp": "^0.0.1",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@types/mime-types": "^2"
+  }
+}
