@@ -83,7 +83,7 @@ export function filenameToRoute(map: Array<Page>, useBrackets: boolean = false):
   return filesResult;
 }
 
-export async function createZely(options: UserConfig) {
+export async function createZelyServer(options: UserConfig) {
   // exit early if no options provided
   if (!options) {
     error(new Error('config must be provided'));
