@@ -6,5 +6,9 @@
   "files": [
     "./types",
     "./dist"
-  ]
+  ],
+  "dependencies": {
+    "@zely-js/core": "workspace:*",
+    "@zely-js/logger": "workspace:*"
+  }
 }
