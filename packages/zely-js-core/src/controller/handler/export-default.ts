@@ -11,7 +11,7 @@ function getHandlerType(handler: any): 'function' | 'method' | 'raw' {
     return 'function';
   }
 
-  if (handler.__typeof === Symbol.for('zely:handler')) {
+  if (handler?.__typeof === Symbol.for('zely:handler')) {
     return 'method';
   }
   return 'raw';
