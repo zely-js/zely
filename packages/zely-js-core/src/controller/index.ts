@@ -1,7 +1,7 @@
 import { createLoader } from '@zely-js/loader';
 import { success } from '@zely-js/logger';
 
-import { existsSync, mkdirSync, readFileSync, rmdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { join, relative } from 'node:path';
 
@@ -111,7 +111,7 @@ export class PageCache {
     const loader = createLoader(config);
 
     if (existsSync(join(config.cwd || process.cwd(), config.dist || '.zely'))) {
-      rmdirSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
+      rmSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
         recursive: true,
       });
     }
@@ -172,7 +172,7 @@ export class PageCache {
 
       this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
 
-      success(`${page.path} compiled successfully`, 'compiled');
+      success(`${`${page.path}/`} compiled successfully`, 'compiled');
     } else if (page.id !== id[page.filename]) {
       // when page was modified
 
@@ -193,7 +193,7 @@ export class PageCache {
 
       this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
 
-      success(`${page.path} compiled successfully`, 'compiled');
+      success(`${`${page.path}/`} compiled successfully`, 'compiled');
     }
 
     return page;
