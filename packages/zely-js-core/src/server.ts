@@ -106,7 +106,7 @@ export async function createZelyServer(options: UserConfig) {
         const path = transformFilename(removeExtension(relativePath), true);
 
         return {
-          filename: relativePath,
+          filename: relativePath.replace(/\\/g, '/'),
           regex: null,
           params: null,
           path,

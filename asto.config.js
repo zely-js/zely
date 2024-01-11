@@ -68,6 +68,7 @@ const repos = {
   loaderesbuild: repo('zely-js-loader-esbuild'),
   logger: repo('zely-js-logger'),
   cli: repo('zely-js-cli'),
+  watch: repo('zely-js-watch'),
 };
 
 const entryPoints = [
@@ -78,6 +79,7 @@ const entryPoints = [
   ...repos.loaderesbuild('index.ts', 'index.js', true),
   ...repos.logger('index.ts', 'index.js', true),
   ...repos.cli('index.ts', 'index.js', true),
+  ...repos.watch('index.ts', 'index.js', true),
 ];
 
 module.exports = [
