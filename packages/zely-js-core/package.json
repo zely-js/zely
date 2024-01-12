@@ -1,12 +1,12 @@
 {
   "name": "@zely-js/core",
-  "version": "3.0.0-alpha.2",
+  "version": "3.0.0-alpha.3",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@zely-js/loader": "3.0.0-alpha.2",
-    "@zely-js/logger": "3.0.0-alpha.2",
+    "@zely-js/loader": "3.0.0-alpha.3",
+    "@zely-js/logger": "3.0.0-alpha.3",
     "@zept/http": "^0.0.1",
     "@zept/path-regexp": "^0.0.1",
     "mime-types": "^2.1.35"
