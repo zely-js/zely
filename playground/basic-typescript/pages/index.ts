@@ -1,7 +1,3 @@
-import { methods } from '~/zely-js-core/src/controller/methods';
+import { ALL } from '@zely-js/core';
 
-export default [
-  methods.all(() => 'response all'),
-  methods.post(() => 'response post'),
-  methods.get(() => 'response get'),
-];
+export default [ALL({ hello: 'world' })];
