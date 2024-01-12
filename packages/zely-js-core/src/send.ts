@@ -44,5 +44,9 @@ export async function sender(
       break;
   }
 
+  if (res.prewrite) {
+    chunk = await res.prewrite(chunk);
+  }
+
   res.end(chunk);
 }
