@@ -18,7 +18,7 @@ export async function handleExport(ctx: Context, page: Page, next: () => void) {
   if (!handler) return next();
 
   // apply params to request
-  ctx.request = applyParams(ctx.request, page.regex, page.params);
+  ctx.params = applyParams(ctx.request, page.regex, page.params).params;
 
   if (pageData?.path) {
     // deprecated feature
