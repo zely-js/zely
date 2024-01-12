@@ -2206,6 +2206,7 @@ __metadata:
   resolution: "@playground/basic-typescript@workspace:playground/basic-typescript"
   dependencies:
     "@zely-js/core": "workspace:*"
+    zely-cli: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -3237,9 +3238,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zely-js/watch@workspace:*, @zely-js/watch@workspace:packages/zely-js-watch":
+  version: 0.0.0-use.local
+  resolution: "@zely-js/watch@workspace:packages/zely-js-watch"
+  dependencies:
+    "@zely-js/logger": "workspace:*"
+    chokidar: "npm:^3.5.3"
+  languageName: unknown
+  linkType: soft
+
 "@zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
   version: 0.0.0-use.local
   resolution: "@zely-js/zely@workspace:packages/zely-js"
+  dependencies:
+    "@zely-js/core": "workspace:*"
+    "@zely-js/logger": "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -11559,6 +11572,15 @@ __metadata:
 "zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
   version: 0.0.0-use.local
   resolution: "zely-cli@workspace:packages/zely-js-cli"
+  dependencies:
+    "@zely-js/core": "workspace:*"
+    "@zely-js/loader": "workspace:*"
+    "@zely-js/logger": "workspace:*"
+    "@zely-js/watch": "workspace:*"
+    "@zely-js/zely": "workspace:*"
+    animaux: "npm:^0.0.4"
+  bin:
+    zely-cli: ./dist/index.js
   languageName: unknown
   linkType: soft
 
