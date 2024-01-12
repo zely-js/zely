@@ -40,12 +40,12 @@
   },
   "scripts": {
     "version": "lerna version",
+    "publish": "yarn lerna publish from-package --dist-tag=alpha --no-private",
     "dev": "cross-env NODE_ENV=development asto --watch",
     "build:dev": "cross-env NODE_ENV=development asto",
     "build": "cross-env NODE_ENV=production asto",
     "test": "jest",
     "lint-fix": "eslint --fix --ext .js,.ts .",
-    "publish": "node scripts/publish.js",
     "docs:dev": "cd docs && yarn dev",
     "docs:build": "cd docs && yarn build"
   },
