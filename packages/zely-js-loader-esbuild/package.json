@@ -8,5 +8,9 @@
     "esbuild": "^0.19.11",
     "esbuild-node-externals": "^1.12.0"
   },
-  "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6"
+  "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
+  "description": "esbuild loader for zely-js",
+  "repository": "https://github.com/zely-js/zely",
+  "bugs": "https://github.com/zely-js/zely/issues",
+  "homepage": "https://zely.vercel.app"
 }

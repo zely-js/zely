@@ -7,5 +7,9 @@
   "dependencies": {
     "colors": "^1.4.0"
   },
-  "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6"
+  "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
+  "description": "logger for zely-js",
+  "repository": "https://github.com/zely-js/zely",
+  "bugs": "https://github.com/zely-js/zely/issues",
+  "homepage": "https://zely.vercel.app"
 }

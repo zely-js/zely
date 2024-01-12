@@ -10,5 +10,9 @@
     "@zely-js/zely": "3.0.0-alpha.1",
     "animaux": "^0.0.4"
   },
-  "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6"
+  "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
+  "description": "cli for zely-js",
+  "repository": "https://github.com/zely-js/zely",
+  "bugs": "https://github.com/zely-js/zely/issues",
+  "homepage": "https://zely.vercel.app"
 }

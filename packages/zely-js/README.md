@@ -1,1 +1,24 @@
 # @zely-js/zely
+
+Build Productive, Convenient, Fast Backend
+
+[**github**](https://github.com/zely-js/zely) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://zely.vercel.app/)
+
+---
+
+> This package is a zely@3 core module.
+
+- File-based routing. zely creates routes automatically with filenames.
+- Server Reload. You don't have to restart server to apply changes.
+- Typescript Supported.
+- Lightning fast. zely uses esbuild as javascript loader.
+
+✨ [**Zely Documentation ➞**](https://zely.vercel.app)
+
+```bash
+npm install --save-dev @zely-js/zely
+```
+
+## License
+
+[MIT](/LICENSE)
