@@ -65,10 +65,14 @@ function findPage(path: string, pages: Page[]) {
 
 async function load(id: string) {
   const relativePath = relative(__dirname, id).replace(/\\/g, '/');
-  if (__ESM__) {
-    return await import(relativePath);
+  try {
+    if (__ESM__) {
+      return await import(relativePath);
+    }
+    return require(relativePath);
+  } catch (e) {
+    throw new Error(`Error occurred while importing ${id}, ${e.message}`);
   }
-  return require(relativePath);
 }
 
 export function getValue(m: any) {
@@ -150,7 +154,7 @@ export class PageCache {
 
     // in production mode all pages are compiled
     if (process.env.NODE_ENV !== 'development') {
-      return await load(page.filename);
+      return await load(join(base, page.filename));
     }
 
     // compile code
@@ -184,10 +188,7 @@ export class PageCache {
       page.module.data = getValue(output.module);
       page.module.builtPath = output.filename;
       page.module.builtMapPath = output.map;
-      page.module.type =
-        output.module.default || output.module[0]?.__typeof === Symbol.for('zely:handler')
-          ? 'export-default'
-          : 'export';
+      page.module.type = isExportDefault(output.module) ? 'export-default' : 'export';
 
       page.id = id[page.filename];
 
@@ -222,6 +223,7 @@ export async function controll(
   }
 
   const ctx = new Context(req, res);
+  console.log(m);
 
   if (m.module.type === 'export-default') {
     await handleExportDefault(ctx, m, next);
