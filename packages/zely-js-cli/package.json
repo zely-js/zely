@@ -4,10 +4,11 @@
   "bin": "./dist/index.js",
   "main": "./dist/index.js",
   "dependencies": {
-    "@zely-js/loader": "workspace:*",
-    "@zely-js/logger": "workspace:*",
-    "@zely-js/watch": "workspace:*",
-    "@zely-js/zely": "workspace:*",
+    "@zely-js/loader": "3.0.0-alpha.1",
+    "@zely-js/logger": "3.0.0-alpha.1",
+    "@zely-js/watch": "3.0.0-alpha.1",
+    "@zely-js/zely": "3.0.0-alpha.1",
     "animaux": "^0.0.4"
-  }
+  },
+  "gitHead": "273c10bbbf98dd23ed5a15bb177f9e45e3621888"
 }

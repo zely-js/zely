@@ -8,7 +8,8 @@
     "./dist"
   ],
   "dependencies": {
-    "@zely-js/core": "workspace:*",
-    "@zely-js/logger": "workspace:*"
-  }
+    "@zely-js/core": "3.0.0-alpha.1",
+    "@zely-js/logger": "3.0.0-alpha.1"
+  },
+  "gitHead": "273c10bbbf98dd23ed5a15bb177f9e45e3621888"
 }

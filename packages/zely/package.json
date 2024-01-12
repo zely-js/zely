@@ -22,7 +22,8 @@
     "routing"
   ],
   "dependencies": {
-    "@zely-js/zely": "workspace:*",
-    "zely-cli": "workspace:*"
-  }
+    "@zely-js/zely": "3.0.0-alpha.1",
+    "zely-cli": "3.0.0-alpha.1"
+  },
+  "gitHead": "273c10bbbf98dd23ed5a15bb177f9e45e3621888"
 }

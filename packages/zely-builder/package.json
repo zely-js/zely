@@ -13,10 +13,11 @@
   "repository": "https://github.com/zely-js/zely",
   "description": "Builder for zely.js",
   "devDependencies": {
-    "zely": "workspace:*",
+    "zely": "3.0.0-alpha.1",
     "zept": "^0.0.4"
   },
   "dependencies": {
     "esbuild": "^0.19.5"
-  }
+  },
+  "gitHead": "273c10bbbf98dd23ed5a15bb177f9e45e3621888"
 }

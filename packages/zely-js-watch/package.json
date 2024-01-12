@@ -5,7 +5,8 @@
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@zely-js/logger": "workspace:*",
+    "@zely-js/logger": "3.0.0-alpha.1",
     "chokidar": "^3.5.3"
-  }
+  },
+  "gitHead": "273c10bbbf98dd23ed5a15bb177f9e45e3621888"
 }
