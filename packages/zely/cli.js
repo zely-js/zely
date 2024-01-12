@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
-// support esm (cli)
+// cli for zely@3
+
+// if you want to use zely@2 cli, you need to install zely@2.
+// npm install zely@2
 
 try {
-  require('./dist/bin.js');
+  require('zely-cli');
 } catch (e) {
-  import('./dist/bin.mjs');
+  await import('zely-cli');
 }

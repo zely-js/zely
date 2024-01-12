@@ -1,17 +1,17 @@
 {
   "name": "zely",
-  "version": "2.0.0-next.24",
+  "version": "3.0.0-alpha.0",
   "types": "./types/index.d.ts",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "homepage": "https://zely2.netlify.app",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "homepage": "https://zely.vercel.app",
   "repository": "https://github.com/zely-js/zely",
   "description": "Build Productive, Convenient, Fast Backend",
   "bin": "./cli.js",
   "files": [
-    "dist",
-    "types",
-    "assets",
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
     "cli.js"
   ],
   "keywords": [
@@ -21,54 +21,8 @@
     "server",
     "routing"
   ],
-  "exports": {
-    ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./types/index.d.ts"
-    },
-    "./config": {
-      "require": "./dist/config.js",
-      "import": "./dist/config.mjs",
-      "types": "./types/export-config.d.ts"
-    },
-    "./server": {
-      "require": "./dist/server.js",
-      "import": "./dist/server.mjs",
-      "types": "./types/export-server.d.ts"
-    },
-    "./methods": {
-      "require": "./dist/methods.js",
-      "import": "./dist/methods.mjs",
-      "types": "./types/export-methods.d.ts"
-    }
-  },
-  "typesVersions": {
-    "*": {
-      "config": [
-        "types/export-config.d.ts"
-      ],
-      "server": [
-        "types/export-server.d.ts"
-      ],
-      "methods": [
-        "types/export-methods.d.ts"
-      ]
-    }
-  },
-  "devDependencies": {
-    "@zely/plugin-cors": "*"
-  },
   "dependencies": {
-    "@zept/http": "^0.0.0",
-    "animaux": "^0.0.4",
-    "chokidar": "^3.5.3",
-    "colors": "^1.4.0",
-    "esbuild": "^0.19.5",
-    "esbuild-node-externals": "^1.9.0",
-    "mime-types": "^2.1.35",
-    "source-map": "^0.7.4",
-    "teeti": "^0.0.1",
-    "zept": "^0.0.4"
+    "@zely-js/zely": "workspace:*",
+    "zely-cli": "workspace:*"
   }
 }
