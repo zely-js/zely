@@ -1,6 +1,8 @@
 {
-  "version": "3.0.0-alpha.0",
-  "packages": ["packages/*"],
+  "version": "3.0.0-alpha.1",
+  "packages": [
+    "packages/*"
+  ],
   "npmClient": "yarn",
   "command": {
     "version": {
@@ -46,7 +48,9 @@
             "hidden": false
           }
         ],
-        "issuePrefixes": ["#"],
+        "issuePrefixes": [
+          "#"
+        ],
         "issueUrlFormat": "{{host}}/{{owner}}/{{repository}}/issues/{{id}}",
         "commitUrlFormat": "{{host}}/{{owner}}/{{repository}}/commit/{{hash}}",
         "compareUrlFormat": "{{host}}/{{owner}}/{{repository}}/compare/{{previousTag}}...{{currentTag}}",
