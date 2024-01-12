@@ -4,10 +4,10 @@
   "bin": "./dist/index.js",
   "main": "./dist/index.js",
   "dependencies": {
-    "@zely-js/core": "workspace:*",
     "@zely-js/loader": "workspace:*",
     "@zely-js/logger": "workspace:*",
     "@zely-js/watch": "workspace:*",
+    "@zely-js/zely": "workspace:*",
     "animaux": "^0.0.4"
   }
 }

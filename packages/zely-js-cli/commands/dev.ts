@@ -1,4 +1,4 @@
-import { createZelyServer } from '@zely-js/core';
+import { zely } from '@zely-js/zely';
 import { watch } from '@zely-js/watch';
 import { error, info } from '@zely-js/logger';
 import { getConfig } from '../lib/config';
@@ -10,7 +10,7 @@ export async function dev() {
 
     port = config?.server?.port || port;
 
-    const server = await createZelyServer(config);
+    const server = await zely(config);
 
     watch({}, config);
 
