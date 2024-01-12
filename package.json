@@ -40,7 +40,8 @@
   },
   "scripts": {
     "version": "lerna version",
-    "publish": "yarn lerna publish from-package --dist-tag=alpha --no-private",
+    "publish:alpha": "yarn lerna publish from-package --dist-tag=alpha --no-private",
+    "publish": "yarn lerna publish from-package --no-private",
     "dev": "cross-env NODE_ENV=development asto --watch",
     "build:dev": "cross-env NODE_ENV=development asto",
     "build": "cross-env NODE_ENV=production asto",
