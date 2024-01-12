@@ -39,7 +39,7 @@ export function esbuildLoader(options: UserConfig): Loader<esbuild.BuildOptions>
         platform: 'node',
         format: __ESM__ ? 'esm' : 'cjs',
 
-        plugins: [nodeExternalsPlugin() as any, filenamePlugin],
+        plugins: [nodeExternalsPlugin(), filenamePlugin],
       });
 
       const $ = {
