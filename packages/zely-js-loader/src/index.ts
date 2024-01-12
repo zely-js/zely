@@ -9,10 +9,14 @@ import type { TransformOptions, TransformOutput } from '~/zely-js-loader';
 
 async function load(id: string) {
   const relativePath = relative(__dirname, id).replace(/\\/g, '/');
-  if (__ESM__) {
-    return await import(relativePath);
+  try {
+    if (__ESM__) {
+      return await import(relativePath);
+    }
+    return require(relativePath);
+  } catch (e) {
+    throw new Error(`Error occurred while importing ${relativePath}`);
   }
-  return require(relativePath);
 }
 
 export function createLoader<T>(
