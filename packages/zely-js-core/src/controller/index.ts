@@ -223,7 +223,6 @@ export async function controll(
   }
 
   const ctx = new Context(req, res);
-  console.log(m);
 
   if (m.module.type === 'export-default') {
     await handleExportDefault(ctx, m, next);
