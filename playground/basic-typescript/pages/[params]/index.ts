@@ -1,8 +1,9 @@
 export default {
   all(ctx) {
-    ctx.send('Hello World');
+    // console.log(ctx.params);
+    ctx.send('Hello World!');
   },
   post(ctx) {
-    ctx.send('Hello World-post');
+    ctx.send('Hello World! (post)');
   },
 };

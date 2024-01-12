@@ -1,0 +1,12 @@
+{
+  "name": "@playground/basic-typescript",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@zely-js/core": "workspace:*",
+    "zely-cli": "workspace:*"
+  },
+  "scripts": {
+    "dev": "zely-cli dev"
+  }
+}
