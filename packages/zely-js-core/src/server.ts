@@ -1,5 +1,5 @@
 import { ZeptServer } from '@zept/http';
-import { error } from '@zely-js/logger';
+import { error, warn } from '@zely-js/logger';
 import { pathToRegexp } from '@zept/path-regexp';
 
 import { performance } from 'node:perf_hooks';
@@ -88,6 +88,16 @@ export async function createZelyServer(options: UserConfig) {
   if (!options) {
     error(new Error('config must be provided'));
     process.exit(1);
+  }
+
+  if (!process.env.ZELY_WORKING_FRAMEWORK) {
+    warn('Running app with @zely-js/zely is recommended.');
+
+    if ((options as any).plugins) {
+      warn(
+        '"options.plugins" is not an available option in @zely-js/core. Please use @zely-js/zely to use plugins.'
+      );
+    }
   }
 
   const middlewares = (await createMiddlewares(options)).map(
