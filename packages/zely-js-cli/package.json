@@ -1,13 +1,13 @@
 {
   "name": "zely-cli",
-  "version": "3.0.0-alpha.1",
+  "version": "3.0.0-alpha.2",
   "bin": "./dist/index.js",
   "main": "./dist/index.js",
   "dependencies": {
-    "@zely-js/loader": "3.0.0-alpha.1",
-    "@zely-js/logger": "3.0.0-alpha.1",
-    "@zely-js/watch": "3.0.0-alpha.1",
-    "@zely-js/zely": "3.0.0-alpha.1",
+    "@zely-js/loader": "3.0.0-alpha.2",
+    "@zely-js/logger": "3.0.0-alpha.2",
+    "@zely-js/watch": "3.0.0-alpha.2",
+    "@zely-js/zely": "3.0.0-alpha.2",
     "animaux": "^0.0.4"
   },
   "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
