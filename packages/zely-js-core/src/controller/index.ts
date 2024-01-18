@@ -10,6 +10,7 @@ import { Context } from '../context';
 import { isFunction, isObject } from '~/zely-js-core/lib/is';
 import { handleExportDefault } from './handler/export-default';
 import { handleExport } from './handler/export';
+import { removeExtension } from '~/zely-js-core/lib/ext';
 
 const HASH_DIRECTORY = (config: any) =>
   join(config.cwd || process.cwd(), config.dist || '.zely', 'pages.hash.json');
@@ -57,6 +58,15 @@ export interface Page {
 function findPage(path: string, pages: Page[]) {
   for (const page of pages) {
     if (page.regex.test(path)) {
+      return page;
+    }
+  }
+  return null;
+}
+
+function findPageByFilename(filename: string, pages: Page[]) {
+  for (const page of pages) {
+    if (removeExtension(page.filename).replace(/\\/g, '/').endsWith(filename)) {
       return page;
     }
   }
@@ -123,10 +133,11 @@ export class PageCache {
     mkdirSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
       recursive: true,
     });
+    mkdirSync(join(config.cwd || process.cwd(), config.dist || '.zely', '_pages'), {
+      recursive: true,
+    });
 
-    if (!existsSync(HASH_DIRECTORY(config))) {
-      writeFileSync(HASH_DIRECTORY(config), '{}');
-    }
+    writeFileSync(HASH_DIRECTORY(config), '{}');
 
     this.#modules = page;
     this.loader = loader;
@@ -144,12 +155,29 @@ export class PageCache {
 
   // find module by path
   async getModule(path: string) {
-    const page = findPage(path, this.#modules);
     const id = this.readIdMap();
     const base = join(this.config.cwd || process.cwd(), 'pages');
 
+    let page = findPage(path, this.#modules);
+
     if (!page) {
-      return null;
+      const page404 = findPageByFilename('/_404', this.#modules);
+
+      page = {} as any;
+
+      // console.log(page404);
+
+      if (page404) {
+        page = page404;
+        page.params = [];
+        page.regex = null;
+      } else {
+        return;
+      }
+
+      page.module = {} as any;
+
+      this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
     }
 
     // in production mode all pages are compiled

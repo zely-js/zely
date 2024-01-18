@@ -1,6 +1,8 @@
 import { ZelyRequest } from '~/zely-js-core/types';
 
 export function applyParams(req: ZelyRequest, pattern: RegExp, params: string[]) {
+  if (!pattern) return req;
+
   const execd = new URL(req.url, `http://${req.headers.host}`).pathname.match(pattern);
 
   // assign parameters.
