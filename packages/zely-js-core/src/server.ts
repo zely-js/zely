@@ -106,7 +106,7 @@ export async function createZelyServer(options: UserConfig) {
     }
   );
 
-  const server = new ZeptServer(options.server?.options || {});
+  const server = options.server?.zept || new ZeptServer(options.server?.options || {});
 
   const files = readDirectory(join(options.cwd || process.cwd(), 'pages'));
   const pages = new PageCache(

@@ -9,7 +9,8 @@
   ],
   "dependencies": {
     "@zely-js/core": "3.0.0-alpha.3",
-    "@zely-js/logger": "3.0.0-alpha.3"
+    "@zely-js/logger": "3.0.0-alpha.3",
+    "@zept/http": "^0.0.1"
   },
   "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
   "description": "main module for zely-js",

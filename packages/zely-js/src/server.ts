@@ -1,10 +1,19 @@
+import { ZeptServer } from '@zept/http';
 import { warn } from '@zely-js/logger';
 import { createZelyServer } from '@zely-js/core';
 import { applyPlugin } from './plugin';
 import { Config } from '../types/config';
 
 export async function zely(options: Config) {
-  const server = await createZelyServer(options);
+  const zept = new ZeptServer(options.server?.options);
+
+  if (options.server) options.server = {};
+
+  options.server.zept = zept;
+
+  const server = await createZelyServer({
+    ...options,
+  });
 
   if (!process.env.ZELY_WORKING_FRAMEWORK) {
     process.env.ZELY_WORKING_FRAMEWORK = '@zely-js/zely';

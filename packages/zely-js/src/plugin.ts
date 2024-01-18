@@ -17,10 +17,10 @@ export async function applyPlugin(server: Server, config: Config) {
             ...config,
             ...pluginConfig,
           };
+        }
 
-          if (plugin.server) {
-            await plugin.server(server);
-          }
+        if (plugin.server) {
+          await plugin.server(server);
         }
       } catch (e) {
         error(`[${plugin.name}] error occured while running plugin: ${e.message}`);
