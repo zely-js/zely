@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@zely-js/core": "workspace:*",
+    "@zely-js/zely": "workspace:*",
     "zely-cli": "workspace:*"
   },
   "scripts": {
