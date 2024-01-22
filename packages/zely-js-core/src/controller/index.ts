@@ -160,24 +160,21 @@ export class PageCache {
 
     let page = findPage(path, this.#modules);
 
+    // error handling (404)
+
     if (!page) {
-      const page404 = findPageByFilename('/_404', this.#modules);
+      const page404 = findPageByFilename('_404', this.#modules);
 
       page = {} as any;
 
-      // console.log(page404);
-
       if (page404) {
+        // set page
+
         page = page404;
         page.params = [];
-        page.regex = null;
       } else {
         return;
       }
-
-      page.module = {} as any;
-
-      this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
     }
 
     // in production mode all pages are compiled
