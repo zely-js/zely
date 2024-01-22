@@ -6,8 +6,6 @@ export class Context {
 
   response: ZelyResponse;
 
-  status: number;
-
   headers: Record<string, any>;
 
   body: any;
@@ -27,10 +25,16 @@ export class Context {
     this.props = req.props;
   }
 
+  status(code: number): this {
+    this.response.statusCode = code;
+
+    return this;
+  }
+
   // @zely/plugin-kit
 
   async send(data: any): Promise<this> {
-    await sender(this.request, this.response, data, this.status);
+    await sender(this.request, this.response, data, this.response.statusCode);
 
     return this;
   }

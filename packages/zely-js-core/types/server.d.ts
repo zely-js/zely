@@ -18,7 +18,7 @@ export interface Context {
 
   response: ZelyResponse;
 
-  status: number;
+  status: (code: number) => this;
 
   headers: Record<string, any>;
 
