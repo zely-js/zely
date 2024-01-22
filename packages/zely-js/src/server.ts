@@ -31,7 +31,7 @@ export async function zely(options: Config) {
 
     // eslint-disable-next-line no-unused-vars
     (req as any).snatch = (..._params) => {
-      warn('snatcher will be implemented in the future');
+      warn('snatcher has been deprecated until 3.0');
     };
 
     next();
