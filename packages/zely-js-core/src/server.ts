@@ -139,17 +139,19 @@ export async function createZelyServer(options: UserConfig) {
     options
   );
 
-  // Request/Response => ZelyRequest/Response
-  server.use(kitMiddleware);
+  const applyZelyMiddlewares = (serverInstance: ZeptServer) => {
+    // Request/Response => ZelyRequest/Response
+    serverInstance.use(kitMiddleware);
 
-  // user middlewares
-  server.use(...middlewares);
+    // user middlewares
+    serverInstance.use(...middlewares);
 
-  // core handler
-  server.use(async (req, res, next) => {
-    // @ts-expect-error
-    await controll(req, res, next, options, pages);
-  });
+    // core handler
+    serverInstance.use(async (req, res, next) => {
+      // @ts-expect-error
+      await controll(req, res, next, options, pages);
+    });
+  };
 
-  return server;
+  return { server, applyZelyMiddlewares };
 }

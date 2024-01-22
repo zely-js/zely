@@ -11,9 +11,10 @@ export async function zely(options: Config) {
 
   options.server.zept = zept;
 
-  const server = await createZelyServer({
+  const zely = await createZelyServer({
     ...options,
   });
+  const { server, applyZelyMiddlewares } = zely;
 
   if (!process.env.ZELY_WORKING_FRAMEWORK) {
     process.env.ZELY_WORKING_FRAMEWORK = '@zely-js/zely';
@@ -35,6 +36,10 @@ export async function zely(options: Config) {
 
     next();
   });
+
+  applyZelyMiddlewares(server);
+
+  console.log(server);
 
   return server;
 }
