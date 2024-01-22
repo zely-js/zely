@@ -39,7 +39,5 @@ export async function zely(options: Config) {
 
   applyZelyMiddlewares(server);
 
-  console.log(server);
-
   return server;
 }
