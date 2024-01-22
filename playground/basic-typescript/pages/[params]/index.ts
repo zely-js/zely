@@ -1,9 +1,5 @@
-export default {
-  all(ctx) {
-    // console.log(ctx.params);
-    ctx.send('Hello World!');
-  },
-  post(ctx) {
-    ctx.send('Hello World! (post)');
-  },
-};
+import type { Context } from '@zely-js/core';
+
+export function get(ctx: Context) {
+  ctx.send({ hello: 'world' });
+}
