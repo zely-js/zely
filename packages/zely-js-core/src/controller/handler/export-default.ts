@@ -58,7 +58,7 @@ export async function handleExportDefault(ctx: Context, page: Page, next: () => 
     const response = await handler(ctx);
     await sender(ctx.request, ctx.response, response, 200);
   } else if (type === 'method') {
-    if (typeof handler === 'function') {
+    if (typeof handler.body === 'function') {
       const response = await handler.body(ctx);
       await sender(ctx.request, ctx.response, response, 200);
     } else {
