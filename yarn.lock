@@ -5042,7 +5042,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-node-externals@npm:^1.12.0":
+"esbuild-node-externals@npm:^1.12.0, esbuild-node-externals@npm:^1.9.0":
   version: 1.12.0
   resolution: "esbuild-node-externals@npm:1.12.0"
   dependencies:
@@ -5051,18 +5051,6 @@ __metadata:
   peerDependencies:
     esbuild: 0.12 - 0.19
   checksum: 9d96f90a0c90ad7d5ebec8bac4f0239dabc0d6d29618519ddd7329a2417d3fc211b850642c987cca64b59ec3e222da0ccf9a844f2e05886d71217c68be6449f3
-  languageName: node
-  linkType: hard
-
-"esbuild-node-externals@npm:^1.9.0":
-  version: 1.9.0
-  resolution: "esbuild-node-externals@npm:1.9.0"
-  dependencies:
-    find-up: "npm:^5.0.0"
-    tslib: "npm:^2.4.1"
-  peerDependencies:
-    esbuild: 0.12 - 0.19
-  checksum: 7c4bf69461b7ba607361e47ae473284b3ab1cde9ae34087cf55b8ff5bcf20163a153b6a4c880c68c9b2f4bdac44985e0bca20e2659afcac16f3c4768349448c8
   languageName: node
   linkType: hard
 
