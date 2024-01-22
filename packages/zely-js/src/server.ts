@@ -7,7 +7,7 @@ import { Config } from '../types/config';
 export async function zely(options: Config) {
   const zept = new ZeptServer(options.server?.options);
 
-  if (options.server) options.server = {};
+  if (!options.server) options.server = {};
 
   options.server.zept = zept;
 
