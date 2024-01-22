@@ -70,6 +70,6 @@ export async function handleExportDefault(ctx: Context, page: Page, next: () => 
 
   // $page.after
   if (pageData?.after) {
-    await pageData.before(ctx);
+    await pageData.after(ctx);
   }
 }

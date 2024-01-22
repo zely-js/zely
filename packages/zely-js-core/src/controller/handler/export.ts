@@ -37,6 +37,6 @@ export async function handleExport(ctx: Context, page: Page, next: () => void) {
 
   // $page.after
   if (pageData?.after) {
-    await pageData.before(ctx);
+    await pageData.after(ctx);
   }
 }
