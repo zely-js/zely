@@ -26,4 +26,9 @@ export interface UserConfig {
    * @default .zely
    */
   dist?: string;
+
+  /**
+   * Import methods automatically
+   */
+  globalImport?: boolean;
 }

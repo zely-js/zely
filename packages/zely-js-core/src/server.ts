@@ -100,6 +100,10 @@ export async function createZelyServer(options: UserConfig) {
     }
   }
 
+  if (options.globalImport) {
+    await import('./env');
+  }
+
   const middlewares = (await createMiddlewares(options)).map(
     (middleware) => async (req, res, next) => {
       await middleware(new Context(req, res), next);
