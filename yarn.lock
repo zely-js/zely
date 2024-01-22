@@ -3200,12 +3200,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zely-js/core@npm:3.0.0-alpha.4, @zely-js/core@workspace:*, @zely-js/core@workspace:packages/zely-js-core":
+"@zely-js/core@npm:3.0.0-alpha.5, @zely-js/core@workspace:*, @zely-js/core@workspace:packages/zely-js-core":
   version: 0.0.0-use.local
   resolution: "@zely-js/core@workspace:packages/zely-js-core"
   dependencies:
     "@types/mime-types": "npm:^2"
-    "@zely-js/loader": "npm:3.0.0-alpha.4"
+    "@zely-js/loader": "npm:3.0.0-alpha.5"
     "@zely-js/logger": "npm:3.0.0-alpha.4"
     "@zept/http": "npm:^0.0.1"
     "@zept/path-regexp": "npm:^0.0.1"
@@ -3213,7 +3213,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/loader-esbuild@npm:3.0.0-alpha.4, @zely-js/loader-esbuild@workspace:packages/zely-js-loader-esbuild":
+"@zely-js/loader-esbuild@npm:3.0.0-alpha.5, @zely-js/loader-esbuild@workspace:packages/zely-js-loader-esbuild":
   version: 0.0.0-use.local
   resolution: "@zely-js/loader-esbuild@workspace:packages/zely-js-loader-esbuild"
   dependencies:
@@ -3223,12 +3223,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/loader@npm:3.0.0-alpha.4, @zely-js/loader@workspace:*, @zely-js/loader@workspace:packages/zely-js-loader":
+"@zely-js/loader@npm:3.0.0-alpha.5, @zely-js/loader@workspace:*, @zely-js/loader@workspace:packages/zely-js-loader":
   version: 0.0.0-use.local
   resolution: "@zely-js/loader@workspace:packages/zely-js-loader"
   dependencies:
-    "@zely-js/core": "npm:3.0.0-alpha.4"
-    "@zely-js/loader-esbuild": "npm:3.0.0-alpha.4"
+    "@zely-js/core": "npm:3.0.0-alpha.5"
+    "@zely-js/loader-esbuild": "npm:3.0.0-alpha.5"
   languageName: unknown
   linkType: soft
 
@@ -3249,11 +3249,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/zely@npm:3.0.0-alpha.4, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
+"@zely-js/zely@npm:3.0.0-alpha.5, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
   version: 0.0.0-use.local
   resolution: "@zely-js/zely@workspace:packages/zely-js"
   dependencies:
-    "@zely-js/core": "npm:3.0.0-alpha.4"
+    "@zely-js/core": "npm:3.0.0-alpha.5"
     "@zely-js/logger": "npm:3.0.0-alpha.4"
     "@zept/http": "npm:^0.0.1"
   languageName: unknown
@@ -3264,7 +3264,7 @@ __metadata:
   resolution: "@zely/builder@workspace:packages/zely-builder"
   dependencies:
     esbuild: "npm:^0.19.5"
-    zely: "npm:3.0.0-alpha.4"
+    zely: "npm:3.0.0-alpha.5"
     zept: "npm:^0.0.4"
   languageName: unknown
   linkType: soft
@@ -11572,26 +11572,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zely-cli@npm:3.0.0-alpha.4, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
+"zely-cli@npm:3.0.0-alpha.5, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
   version: 0.0.0-use.local
   resolution: "zely-cli@workspace:packages/zely-js-cli"
   dependencies:
-    "@zely-js/loader": "npm:3.0.0-alpha.4"
+    "@zely-js/loader": "npm:3.0.0-alpha.5"
     "@zely-js/logger": "npm:3.0.0-alpha.4"
     "@zely-js/watch": "npm:3.0.0-alpha.4"
-    "@zely-js/zely": "npm:3.0.0-alpha.4"
+    "@zely-js/zely": "npm:3.0.0-alpha.5"
     animaux: "npm:^0.0.4"
   bin:
     zely-cli: ./dist/index.js
   languageName: unknown
   linkType: soft
 
-"zely@npm:3.0.0-alpha.4, zely@workspace:packages/zely":
+"zely@npm:3.0.0-alpha.5, zely@workspace:packages/zely":
   version: 0.0.0-use.local
   resolution: "zely@workspace:packages/zely"
   dependencies:
-    "@zely-js/zely": "npm:3.0.0-alpha.4"
-    zely-cli: "npm:3.0.0-alpha.4"
+    "@zely-js/zely": "npm:3.0.0-alpha.5"
+    zely-cli: "npm:3.0.0-alpha.5"
   bin:
     zely: ./cli.js
   languageName: unknown

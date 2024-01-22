@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.5](https://github.com/zely-js/zely/compare/v3.0.0-alpha.4...v3.0.0-alpha.5) (2024-01-22)
+
+
+### New Features
+
+* global import ([efa85d9](https://github.com/zely-js/zely/commit/efa85d98094bc7ef2b32920c777cae8f104a6117))
+
+
+
 ## 3.0.0-alpha.4 (2024-01-22)
 
 

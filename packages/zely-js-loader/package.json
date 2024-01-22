@@ -1,14 +1,14 @@
 {
   "name": "@zely-js/loader",
-  "version": "3.0.0-alpha.4",
+  "version": "3.0.0-alpha.5",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@zely-js/loader-esbuild": "3.0.0-alpha.4"
+    "@zely-js/loader-esbuild": "3.0.0-alpha.5"
   },
   "devDependencies": {
-    "@zely-js/core": "3.0.0-alpha.4"
+    "@zely-js/core": "3.0.0-alpha.5"
   },
   "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
   "description": "javascript/typescript loader for zely-js",
