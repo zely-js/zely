@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.6](https://github.com/zely-js/zely/compare/v3.0.0-alpha.5...v3.0.0-alpha.6) (2024-02-12)
+
+
+### New Features
+
+* `defineConfig()` ([6c79d9d](https://github.com/zely-js/zely/commit/6c79d9d387534fb4b6e1843ff10392b11b3bd222))
+
+
+### Bug Fix
+
+* fixed minor errors ([a8d4be0](https://github.com/zely-js/zely/commit/a8d4be09f788cbade054bb9e4dc4678c4cbf59e5))
+
+
+### Others
+
+* snatcher deprecation ([9d851fd](https://github.com/zely-js/zely/commit/9d851fd8852da169b2cb9efdae012fc4dbeb9063))
+
+
+
 ## [3.0.0-alpha.5](https://github.com/zely-js/zely/compare/v3.0.0-alpha.4...v3.0.0-alpha.5) (2024-01-22)
 
 **Note:** Version bump only for package @zely-js/zely

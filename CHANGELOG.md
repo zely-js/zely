@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.6](https://github.com/zely-js/zely/compare/v3.0.0-alpha.5...v3.0.0-alpha.6) (2024-02-12)
+
+
+### New Features
+
+* `defineConfig()` ([6c79d9d](https://github.com/zely-js/zely/commit/6c79d9d387534fb4b6e1843ff10392b11b3bd222))
+* **zely-cli:** app template ([f473fe0](https://github.com/zely-js/zely/commit/f473fe0ab3f804fc0d39e2c15da5705164d7e2c2))
+* **zely-cli:** init command ([869a346](https://github.com/zely-js/zely/commit/869a346393fa486270adc4b711a85dc5715bed76))
+
+
+### Bug Fix
+
+* fixed minor errors ([a8d4be0](https://github.com/zely-js/zely/commit/a8d4be09f788cbade054bb9e4dc4678c4cbf59e5))
+* fixed typo ([430c965](https://github.com/zely-js/zely/commit/430c96524d9a41f7e98086fbc0c846e07ce6d0ad))
+
+
+### Others
+
+* **deps:** bump esbuild-node-externals from 1.9.0 to 1.12.0 ([e51c45f](https://github.com/zely-js/zely/commit/e51c45f92b9bafcc77341a9d5413049ee724b05a))
+* **playground:** new playground ([a044c81](https://github.com/zely-js/zely/commit/a044c8133410f8d09d6a57468ce84fccebe5fc4e))
+* snatcher deprecation ([9d851fd](https://github.com/zely-js/zely/commit/9d851fd8852da169b2cb9efdae012fc4dbeb9063))
+* workspace ([5b07a07](https://github.com/zely-js/zely/commit/5b07a0702f9c1be8b1801afb7a5d88e26b0e0434))
+
+
+
 ## [3.0.0-alpha.5](https://github.com/zely-js/zely/compare/v3.0.0-alpha.4...v3.0.0-alpha.5) (2024-01-22)
 
 

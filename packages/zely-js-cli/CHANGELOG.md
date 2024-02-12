@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.6](https://github.com/zely-js/zely/compare/v3.0.0-alpha.5...v3.0.0-alpha.6) (2024-02-12)
+
+
+### New Features
+
+* **zely-cli:** app template ([f473fe0](https://github.com/zely-js/zely/commit/f473fe0ab3f804fc0d39e2c15da5705164d7e2c2))
+* **zely-cli:** init command ([869a346](https://github.com/zely-js/zely/commit/869a346393fa486270adc4b711a85dc5715bed76))
+
+
+
 ## [3.0.0-alpha.5](https://github.com/zely-js/zely/compare/v3.0.0-alpha.4...v3.0.0-alpha.5) (2024-01-22)
 
 **Note:** Version bump only for package zely-cli
