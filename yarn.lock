@@ -2201,9 +2201,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@playground/basic-typescript@workspace:playground/basic-typescript":
+"@playground/javascript@workspace:playground/javascript":
   version: 0.0.0-use.local
-  resolution: "@playground/basic-typescript@workspace:playground/basic-typescript"
+  resolution: "@playground/javascript@workspace:playground/javascript"
+  dependencies:
+    zely: "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@playground/typescript@workspace:playground/typescript":
+  version: 0.0.0-use.local
+  resolution: "@playground/typescript@workspace:playground/typescript"
   dependencies:
     "@zely-js/core": "workspace:*"
     "@zely-js/zely": "workspace:*"
@@ -3826,12 +3834,6 @@ __metadata:
   checksum: f23823513b63173a001030fae4f2dabe283b99a9d324ade3ad3d148e218134676f1ee8568c877cd79ec1c53158dcf2d2ba527a97c606618928ba99dd930102bf
   languageName: node
   linkType: hard
-
-"basic-javascript-90d9a2@workspace:playground/basic-javascript":
-  version: 0.0.0-use.local
-  resolution: "basic-javascript-90d9a2@workspace:playground/basic-javascript"
-  languageName: unknown
-  linkType: soft
 
 "before-after-hook@npm:^2.2.0":
   version: 2.2.3
@@ -8199,6 +8201,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"middlewares-8651f1@workspace:playground/javascript/middlewares":
+  version: 0.0.0-use.local
+  resolution: "middlewares-8651f1@workspace:playground/javascript/middlewares"
+  dependencies:
+    zely: "npm:latest"
+  languageName: unknown
+  linkType: soft
+
 "mime-db@npm:1.52.0":
   version: 1.52.0
   resolution: "mime-db@npm:1.52.0"
@@ -10910,6 +10920,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript-d1f09d@workspace:packages/zely-js-cli/assets/typescript":
+  version: 0.0.0-use.local
+  resolution: "typescript-d1f09d@workspace:packages/zely-js-cli/assets/typescript"
+  dependencies:
+    zely: "npm:latest"
+  languageName: unknown
+  linkType: soft
+
 "typescript@npm:>=3 < 6, typescript@npm:^5.2.2":
   version: 5.2.2
   resolution: "typescript@npm:5.2.2"
@@ -11586,7 +11604,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"zely@npm:3.0.0-alpha.5, zely@workspace:packages/zely":
+"zely@npm:3.0.0-alpha.5, zely@npm:latest":
+  version: 3.0.0-alpha.5
+  resolution: "zely@npm:3.0.0-alpha.5"
+  dependencies:
+    "@zely-js/zely": "npm:3.0.0-alpha.5"
+    zely-cli: "npm:3.0.0-alpha.5"
+  bin:
+    zely: cli.js
+  checksum: 2b8dac0cb2f3bbc053032cb0e604fc26369d2c2428d0b8ef589c58d6be94d6f0f711fcf2a6f5b90e42393764c9d3661317e400751d7df4e0f7bab2eb411fafe2
+  languageName: node
+  linkType: hard
+
+"zely@workspace:*, zely@workspace:packages/zely":
   version: 0.0.0-use.local
   resolution: "zely@workspace:packages/zely"
   dependencies:
