@@ -20,8 +20,8 @@ export class Context {
     this.request = req;
     this.response = res;
     this.body = req.body;
-    this.query = req.query;
-    this.params = req.params;
+    this.query = req.query || {};
+    this.params = req.params || {};
     this.props = req.props;
   }
 

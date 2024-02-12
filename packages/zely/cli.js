@@ -5,8 +5,12 @@
 // if you want to use zely@2 cli, you need to install zely@2.
 // npm install zely@2
 
-try {
-  require('zely-cli');
-} catch (e) {
-  await import('zely-cli');
+async function start() {
+  try {
+    await import('zely-cli');
+  } catch (e) {
+    require('zely-cli');
+  }
 }
+
+start();

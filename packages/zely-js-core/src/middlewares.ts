@@ -20,12 +20,12 @@ async function appendMiddlewareFiles(options: UserConfig) {
   const loader = createLoader(options);
 
   for await (const file of files) {
-    const middleware = await loader(join(base, file), {
+    const middleware = await loader(file, {
       type: 'middleware',
       buildOptions: {},
     });
 
-    middlewares.push(...(Object.values(middleware.module) as any));
+    middlewares.push(middleware.module as any);
   }
 
   return middlewares;
@@ -38,8 +38,12 @@ export async function createMiddlewares(options: UserConfig) {
   const middlewares: Middleware[] = options.middlewares || [];
 
   if (options.allowAutoMiddlewares) {
-    middlewares.push(...(await appendMiddlewareFiles(options)));
+    middlewares.push(
+      ...(await appendMiddlewareFiles(options)).map((a: any) => a?.default || a)
+    );
   }
+
+  console.log(middlewares);
 
   return middlewares;
 }
