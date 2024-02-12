@@ -9,7 +9,7 @@ import { readDirectory } from '~/zely-js-core/lib/read-directory';
 import type { UserConfig } from '~/zely-js-core';
 
 import { createMiddlewares } from './middlewares';
-import { Context } from './context';
+// import { Context } from './context';
 import { Page, PageCache, controll } from './controller';
 import { transformFilename } from '~/zely-js-core/lib/file-to-path';
 import { removeExtension } from '~/zely-js-core/lib/ext';
@@ -106,7 +106,7 @@ export async function createZelyServer(options: UserConfig) {
 
   const middlewares = (await createMiddlewares(options)).map(
     (middleware) => async (req, res, next) => {
-      await middleware(new Context(req, res), next);
+      await middleware(req, res, next);
     }
   );
 

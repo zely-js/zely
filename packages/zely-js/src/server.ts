@@ -37,7 +37,7 @@ export async function zely(options: Config) {
     next();
   });
 
-  applyZelyMiddlewares(server);
+  await applyZelyMiddlewares(server);
 
   return server;
 }
