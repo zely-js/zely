@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.7](https://github.com/zely-js/zely/compare/v3.0.0-alpha.6...v3.0.0-alpha.7) (2024-02-12)
+
+
+### Others
+
+* exclude typescript code ([16066a8](https://github.com/zely-js/zely/commit/16066a818532a7f6882fe18d78cf6ae552c0b20b))
+
+
+
 ## [3.0.0-alpha.6](https://github.com/zely-js/zely/compare/v3.0.0-alpha.5...v3.0.0-alpha.6) (2024-02-12)
 
 **Note:** Version bump only for package @zely-js/loader

@@ -1,6 +1,6 @@
 {
   "name": "@zely/builder",
-  "version": "3.0.0-alpha.6",
+  "version": "3.0.0-alpha.7",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
@@ -13,7 +13,7 @@
   "repository": "https://github.com/zely-js/zely",
   "description": "Builder for zely.js",
   "devDependencies": {
-    "zely": "3.0.0-alpha.6",
+    "zely": "3.0.0-alpha.7",
     "zept": "^0.0.4"
   },
   "dependencies": {

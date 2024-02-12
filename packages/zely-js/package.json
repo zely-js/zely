@@ -1,6 +1,6 @@
 {
   "name": "@zely-js/zely",
-  "version": "3.0.0-alpha.6",
+  "version": "3.0.0-alpha.7",
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "files": [
@@ -9,8 +9,8 @@
     "./env.d.ts"
   ],
   "dependencies": {
-    "@zely-js/core": "3.0.0-alpha.6",
-    "@zely-js/logger": "3.0.0-alpha.4",
+    "@zely-js/core": "3.0.0-alpha.7",
+    "@zely-js/logger": "3.0.0-alpha.7",
     "@zept/http": "^0.0.1"
   },
   "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
