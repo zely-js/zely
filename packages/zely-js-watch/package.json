@@ -8,6 +8,10 @@
     "@zely-js/logger": "3.0.0-alpha.4",
     "chokidar": "^3.5.3"
   },
+  "files": [
+    "./types",
+    "./dist"
+  ],
   "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
   "description": "watcher for zely-js",
   "repository": "https://github.com/zely-js/zely",

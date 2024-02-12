@@ -14,6 +14,10 @@
   "devDependencies": {
     "@types/mime-types": "^2"
   },
+  "files": [
+    "./types",
+    "./dist"
+  ],
   "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
   "description": "core server for zely-js",
   "repository": "https://github.com/zely-js/zely",

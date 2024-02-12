@@ -10,6 +10,10 @@
     "@zely-js/zely": "3.0.0-alpha.6",
     "animaux": "^0.0.4"
   },
+  "files": [
+    "./dist",
+    "./assets"
+  ],
   "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
   "description": "cli for zely-js",
   "repository": "https://github.com/zely-js/zely",

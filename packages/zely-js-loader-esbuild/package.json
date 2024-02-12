@@ -11,6 +11,10 @@
   "devDependencies": {
     "@zely-js/loader": "workspace:*"
   },
+  "files": [
+    "./types",
+    "./dist"
+  ],
   "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
   "description": "esbuild loader for zely-js",
   "repository": "https://github.com/zely-js/zely",

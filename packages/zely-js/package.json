@@ -5,7 +5,8 @@
   "types": "./types/index.d.ts",
   "files": [
     "./types",
-    "./dist"
+    "./dist",
+    "./env.d.ts"
   ],
   "dependencies": {
     "@zely-js/core": "3.0.0-alpha.6",
