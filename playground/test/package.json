@@ -1,9 +1,0 @@
-{
-  "private": true,
-  "scripts": {
-    "dev": "zely dev"
-  },
-  "dependencies": {
-    "zely": "latest"
-  }
-}
