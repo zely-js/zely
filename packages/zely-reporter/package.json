@@ -1,0 +1,20 @@
+{
+  "name": "@zely-js/reporter",
+  "version": "0.0.0",
+  "description": "error tracer for zely-js",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "repository": "https://github.com/zely-js/zely",
+  "bugs": "https://github.com/zely-js/zely/issues",
+  "homepage": "https://zely.vercel.app",
+  "files": [
+    "index.d.ts",
+    "index.js",
+    "index.mjs"
+  ],
+  "dependencies": {
+    "@zely-js/logger": "workspace:*",
+    "source-map": "^0.7.4"
+  }
+}

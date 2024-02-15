@@ -1,5 +1,6 @@
 import { createLoader } from '@zely-js/loader';
 import { success } from '@zely-js/logger';
+import reporter from '@zely-js/reporter';
 
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
@@ -240,20 +241,32 @@ export async function controll(
   userConfig: UserConfig,
   cache: PageCache
 ) {
-  const m: Page = await cache.getModule(req.url);
+  try {
+    const m: Page = await cache.getModule(req.url);
 
-  // if page not found in cache
-  if (!m) {
-    return next();
-  }
+    // if page not found in cache
+    if (!m) {
+      return next();
+    }
 
-  const ctx = new Context(req, res);
+    const ctx = new Context(req, res);
 
-  if (m.module.type === 'export-default') {
-    await handleExportDefault(ctx, m, next);
-  }
+    if (m.module.type === 'export-default') {
+      await handleExportDefault(ctx, m, next);
+    }
 
-  if (m.module.type === 'export') {
-    await handleExport(ctx, m, next);
+    if (m.module.type === 'export') {
+      await handleExport(ctx, m, next);
+    }
+  } catch (e) {
+    if (userConfig?.enableReporter !== false) {
+      await reporter(e);
+    }
+    if (userConfig?.onError) {
+      await userConfig?.onError(e);
+    }
+
+    res.status(500);
+    res.send('500 Server Error');
   }
 }

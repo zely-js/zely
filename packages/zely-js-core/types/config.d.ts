@@ -31,4 +31,16 @@ export interface UserConfig {
    * Import methods automatically
    */
   globalImport?: boolean;
+
+  /**
+   * @param err Error message
+   * @returns {void}
+   */
+  onError?: (err: Error) => void | Promise<void>;
+
+  /**
+   * enable or disable logging error messages.
+   * @default true
+   */
+  enableReporter?: boolean;
 }

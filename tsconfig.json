@@ -25,7 +25,6 @@
     "**/dist/**",
     "asto.*.js",
     "*.config.js",
-    "packages/**/*.js",
     "playground/**/*.js",
     "scripts/**/*.js"
   ]
