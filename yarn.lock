@@ -803,6 +803,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@commitlint/types@npm:^18.6.1":
+  version: 18.6.1
+  resolution: "@commitlint/types@npm:18.6.1"
+  dependencies:
+    chalk: "npm:^4.1.0"
+  checksum: 5728f5cb62bcaad5158dd8982ab5d44c1ea1aee9ac251026cd91b9a4795bb912505c904f75cbd3ae0d1bb7b4dd1e5d84990b76093230018166af8e111b658685
+  languageName: node
+  linkType: hard
+
 "@docsearch/css@npm:3.5.2, @docsearch/css@npm:^3.5.2":
   version: 3.5.2
   resolution: "@docsearch/css@npm:3.5.2"
