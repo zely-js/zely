@@ -43,7 +43,5 @@ export async function createMiddlewares(options: UserConfig) {
     );
   }
 
-  console.log(middlewares);
-
   return middlewares;
 }
