@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.9](https://github.com/zely-js/zely/compare/v3.0.0-alpha.8...v3.0.0-alpha.9) (2024-02-19)
+
+
+### New Features
+
+* **@zely-js/loader-esbuild:** only compile ts and js ([1128c76](https://github.com/zely-js/zely/commit/1128c76b0c821262e77288d31418426b19fab45e))
+* **@zely-js/loader:** multiple loaders ([#207](https://github.com/zely-js/zely/issues/207)) ([f8d3259](https://github.com/zely-js/zely/commit/f8d3259bcea6d0c8207343a8c1847393d65cf854))
+* **reporter:** error tracer ([4643f25](https://github.com/zely-js/zely/commit/4643f25f30f4e56599a8bdd13400ae8cb6ef2613))
+
+
+### Others
+
+* **deps-dev:** bump @commitlint/config-conventional ([b456a1a](https://github.com/zely-js/zely/commit/b456a1a66cff263676fa8a3d437d2a2d76e9ebf3))
+* **deps-dev:** bump @typescript-eslint/parser from 6.13.1 to 7.0.1 ([a7af5a9](https://github.com/zely-js/zely/commit/a7af5a959054e5f08d60430c377a3779a5dd016c))
+* **deps-dev:** bump eslint from 8.53.0 to 8.56.0 ([8366903](https://github.com/zely-js/zely/commit/8366903abc91a899d8bad40b5eb5e333dfe29a4f))
+* **deps-dev:** bump husky from 8.0.3 to 9.0.11 ([3d5a765](https://github.com/zely-js/zely/commit/3d5a7656ffe93fba24026b46f0c87217edbf98d9))
+* **playground:** javascript example ([11d4395](https://github.com/zely-js/zely/commit/11d43959b8f1ae88295820da25e0ec6e077556dc))
+* remove debugging code ([7118014](https://github.com/zely-js/zely/commit/71180145c0e284e7e93eacf9538b660a5ca47d54))
+* update yarn berry ([f04a579](https://github.com/zely-js/zely/commit/f04a579b45b7b21df0b30085a8dc36c3a601259b))
+
+
+
 ## [3.0.0-alpha.8](https://github.com/zely-js/zely/compare/v3.0.0-alpha.7...v3.0.0-alpha.8) (2024-02-13)
 
 

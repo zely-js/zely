@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.9](https://github.com/zely-js/zely/compare/v3.0.0-alpha.8...v3.0.0-alpha.9) (2024-02-19)
+
+
+### New Features
+
+* **@zely-js/loader:** multiple loaders ([#207](https://github.com/zely-js/zely/issues/207)) ([f8d3259](https://github.com/zely-js/zely/commit/f8d3259bcea6d0c8207343a8c1847393d65cf854))
+
+
+
 ## [3.0.0-alpha.8](https://github.com/zely-js/zely/compare/v3.0.0-alpha.7...v3.0.0-alpha.8) (2024-02-13)
 
 **Note:** Version bump only for package @zely-js/loader

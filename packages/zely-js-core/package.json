@@ -1,11 +1,11 @@
 {
   "name": "@zely-js/core",
-  "version": "3.0.0-alpha.8",
+  "version": "3.0.0-alpha.9",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@zely-js/loader": "3.0.0-alpha.8",
+    "@zely-js/loader": "3.0.0-alpha.9",
     "@zely-js/logger": "3.0.0-alpha.7",
     "@zely-js/reporter": "workspace:*",
     "@zept/http": "^0.0.1",

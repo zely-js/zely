@@ -1,6 +1,6 @@
 {
   "name": "@zely-js/reporter",
-  "version": "0.0.0",
+  "version": "3.0.0-alpha.9",
   "description": "error tracer for zely-js",
   "main": "./index.js",
   "module": "./index.mjs",

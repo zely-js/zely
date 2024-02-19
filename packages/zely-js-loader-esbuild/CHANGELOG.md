@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.9](https://github.com/zely-js/zely/compare/v3.0.0-alpha.8...v3.0.0-alpha.9) (2024-02-19)
+
+
+### New Features
+
+* **@zely-js/loader-esbuild:** only compile ts and js ([1128c76](https://github.com/zely-js/zely/commit/1128c76b0c821262e77288d31418426b19fab45e))
+
+
+
 ## [3.0.0-alpha.8](https://github.com/zely-js/zely/compare/v3.0.0-alpha.7...v3.0.0-alpha.8) (2024-02-13)
 
 **Note:** Version bump only for package @zely-js/loader-esbuild
