@@ -1,0 +1,9 @@
+{
+  "name": "@playground/javascript",
+  "scripts": {
+    "dev": "zely dev"
+  },
+  "dependencies": {
+    "zely": "workspace:*"
+  }
+}
