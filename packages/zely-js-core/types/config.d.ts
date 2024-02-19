@@ -19,7 +19,7 @@ export interface UserConfig {
   /**
    * Loader for Typescript/Javascript
    */
-  loader?: Loader;
+  loaders?: Loader[];
 
   /**
    * output directory

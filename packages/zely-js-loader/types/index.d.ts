@@ -28,7 +28,7 @@ export interface Loader<T = any> {
     id: string,
     source: string,
     options: TransformOptions<T>
-  ): Promise<TransformOutput>;
+  ): Promise<TransformOutput | null | void> | TransformOutput | null | void;
 }
 
 export function createLoader<T = any>(

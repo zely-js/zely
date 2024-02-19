@@ -22,21 +22,33 @@ async function load(id: string) {
 export function createLoader<T>(
   options: UserConfig
 ): (id: string, options?: TransformOptions<T>) => Promise<TransformOutput> {
-  if (!options.loader) {
-    options.loader = esbuildLoader(options);
+  if (!options.loaders) {
+    options.loaders = [];
   }
 
-  return async (id, buildOptions) => {
-    const output = await options.loader?.transform(
-      id,
-      readFileSync(id).toString(),
-      buildOptions || { type: 'cache', buildOptions: {} }
-    );
+  options.loaders.push(esbuildLoader(options));
 
-    return {
-      module: await load(output.filename),
-      filename: output.filename,
-      map: output.map,
-    };
+  return async (id, buildOptions) => {
+    for await (const loader of options.loaders) {
+      const output = await loader?.transform(
+        id,
+        readFileSync(id).toString(),
+        buildOptions || { type: 'cache', buildOptions: {} }
+      );
+
+      if (output) {
+        return {
+          module: await load(output.filename),
+          filename: output.filename,
+          map: output.map,
+        };
+      }
+    }
+
+    throw new Error(
+      `Cannot compile ${id}. (loaders : ${options.loaders
+        .map((loader) => loader.name || 'unknown-loader')
+        .join(', ')})`
+    );
   };
 }
