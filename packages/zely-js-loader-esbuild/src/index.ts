@@ -11,9 +11,13 @@ import { filenamePlugin } from './filename';
 
 export function esbuildLoader(options: UserConfig): Loader<esbuild.BuildOptions> {
   return {
-    name: 'esbuild',
+    name: '@zely-js/loader-esbuild',
 
     async transform(id, source, buildoptions) {
+      if (!id.endsWith('.ts') && !id.endsWith('.js')) {
+        return;
+      }
+
       let outdir = '';
 
       if (buildoptions.type === 'page') {
