@@ -4,7 +4,7 @@ import reporter from '@zely-js/reporter';
 
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
-import { join, relative } from 'node:path';
+import { join } from 'node:path';
 
 import { UserConfig, ZelyRequest, ZelyResponse } from '~/zely-js-core';
 import { Context } from '../context';
@@ -72,18 +72,6 @@ function findPageByFilename(filename: string, pages: Page[]) {
     }
   }
   return null;
-}
-
-async function load(id: string) {
-  const relativePath = relative(__dirname, id).replace(/\\/g, '/');
-  try {
-    if (__ESM__) {
-      return await import(relativePath);
-    }
-    return require(relativePath);
-  } catch (e) {
-    throw new Error(`Error occurred while importing ${id}, ${e.message}`);
-  }
 }
 
 export function getValue(m: any) {
