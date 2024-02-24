@@ -125,24 +125,51 @@ export class PageCache {
   constructor(page: Page[], config: UserConfig) {
     const loader = createLoader(config);
 
-    if (existsSync(join(config.cwd || process.cwd(), config.dist || '.zely'))) {
-      rmSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
+    if (config.keepDist !== true) {
+      if (existsSync(join(config.cwd || process.cwd(), config.dist || '.zely'))) {
+        rmSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
+          recursive: true,
+        });
+      }
+
+      mkdirSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
+        recursive: true,
+      });
+    } else if (!existsSync(join(config.cwd || process.cwd(), config.dist || '.zely'))) {
+      mkdirSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
         recursive: true,
       });
     }
-
-    mkdirSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
-      recursive: true,
-    });
-    mkdirSync(join(config.cwd || process.cwd(), config.dist || '.zely', '_pages'), {
-      recursive: true,
-    });
 
     writeFileSync(HASH_DIRECTORY(config), '{}');
 
     this.#modules = page;
     this.loader = loader;
     this.config = config;
+  }
+
+  async productionBuild() {
+    const base = join(this.config.cwd || process.cwd(), 'pages');
+
+    if (process.env.NODE_ENV === 'production') {
+      for await (const page of this.#modules) {
+        const output = await this.loader(join(base, page.filename), {
+          type: 'page',
+          buildOptions: {},
+        });
+
+        page.module.data = getValue(output.module);
+        page.module.builtPath = output.filename;
+        page.module.builtMapPath = output.map;
+        page.module.type = isExportDefault(output.module) ? 'export-default' : 'export';
+        page.module.isLoaded = true;
+        page.id = performance.now();
+
+        this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
+      }
+    } else {
+      throw new Error('production build is only available in production mode.');
+    }
   }
 
   // id map

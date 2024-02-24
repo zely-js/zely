@@ -8,6 +8,7 @@
     "zely-cli": "workspace:*"
   },
   "scripts": {
+    "start": "zely-cli start",
     "dev": "zely-cli dev"
   }
 }

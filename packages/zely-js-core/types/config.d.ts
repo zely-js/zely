@@ -43,4 +43,6 @@ export interface UserConfig {
    * @default true
    */
   enableReporter?: boolean;
+
+  keepDist?: boolean;
 }

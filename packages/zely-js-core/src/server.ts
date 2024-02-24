@@ -143,6 +143,10 @@ export async function createZelyServer(options: UserConfig) {
     options
   );
 
+  if (process.env.NODE_ENV === 'production') {
+    await pages.productionBuild();
+  }
+
   const applyZelyMiddlewares = (serverInstance: ZeptServer) => {
     // Request/Response => ZelyRequest/Response
     serverInstance.use(kitMiddleware);

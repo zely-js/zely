@@ -6,7 +6,7 @@ const { dirname, join, relative } = require('path');
 const errorHandler = async (e) => {
   if (!e) return;
   if (process.env.NODE_ENV === 'production') {
-    throw new Error(e);
+    console.error(e);
   }
 
   const stacks = parseError(e);
