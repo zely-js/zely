@@ -207,7 +207,7 @@ export class PageCache {
 
     // in production mode all pages are compiled
     if (process.env.NODE_ENV !== 'development') {
-      return await load(join(base, page.filename));
+      return page;
     }
 
     // compile code
