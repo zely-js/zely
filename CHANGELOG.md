@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.10](https://github.com/zely-js/zely/compare/v3.0.0-alpha.9...v3.0.0-alpha.10) (2024-02-24)
+
+
+### New Features
+
+* **@zely-js/core:** return to response ([#214](https://github.com/zely-js/zely/issues/214)) ([5436cef](https://github.com/zely-js/zely/commit/5436cef75c78f231603142a548e0e18dd2ec3d8b))
+* production mode ([#206](https://github.com/zely-js/zely/issues/206)) ([5ac1878](https://github.com/zely-js/zely/commit/5ac1878f0b9b227d545963d09fde58285b6a9b32))
+
+
+### Bug Fix
+
+* fixed production error ([#215](https://github.com/zely-js/zely/issues/215)) ([5c092c6](https://github.com/zely-js/zely/commit/5c092c6d1e8670bd102c11c043180513ba9ddf22))
+
+
+### Code Refactoring
+
+* remove unused code ([00bb727](https://github.com/zely-js/zely/commit/00bb727a566a2167c4527bc346abce828fc6c12d))
+
+
+### Others
+
+* **deps:** update typescript ([a35b51a](https://github.com/zely-js/zely/commit/a35b51a493103cb1b0363687731d7c9bd2876423))
+
+
+
 ## [3.0.0-alpha.9](https://github.com/zely-js/zely/compare/v3.0.0-alpha.8...v3.0.0-alpha.9) (2024-02-19)
 
 
