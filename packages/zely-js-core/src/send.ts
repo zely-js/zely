@@ -1,5 +1,6 @@
 import { error, warn } from '@zely-js/logger';
 import { ZelyRequest, ZelyResponse } from '~/zely-js-core';
+import { Response } from './response/response';
 
 /**
  * send response (object, number, string available as response.body)
@@ -11,6 +12,18 @@ export async function sender(
   status?: number
 ) {
   if (res.writableEnded) return;
+
+  // is response()
+  if (chunk instanceof Response) {
+    for (const header of Object.keys(chunk.headers)) {
+      res.setHeader(header, chunk.headers[header]);
+    }
+    res.status(chunk.status);
+
+    sender(req, res, chunk.body);
+
+    return;
+  }
 
   // console.log(chunk, res.prewrite);
 

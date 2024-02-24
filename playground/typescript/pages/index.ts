@@ -1,3 +1,11 @@
-import { ALL } from '@zely-js/core';
+import { ALL, response } from '@zely-js/core';
 
-export default [ALL({ hello: 'world' })];
+export default [
+  ALL(() => {
+    const res = response({ msg: '👋' }, {});
+    res.body = { msg: '🎉' };
+    res.headers = {};
+    res.status = 500;
+    return res;
+  }),
+];
