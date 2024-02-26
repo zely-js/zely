@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.11](https://github.com/zely-js/zely/compare/v3.0.0-alpha.10...v3.0.0-alpha.11) (2024-02-26)
+
+
+### New Features
+
+* **@zely-js/core:** virtual pages ([#218](https://github.com/zely-js/zely/issues/218)) ([7f56a59](https://github.com/zely-js/zely/commit/7f56a59ea8b8a76e7deb807a20be2b9ebf5ae947))
+
+
+
 ## [3.0.0-alpha.10](https://github.com/zely-js/zely/compare/v3.0.0-alpha.9...v3.0.0-alpha.10) (2024-02-24)
 
 
