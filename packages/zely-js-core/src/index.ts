@@ -4,3 +4,4 @@ export { methods } from './controller/methods';
 export * from './methods';
 export * from './production';
 export * from './response';
+export * from './virtual';

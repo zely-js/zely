@@ -4,3 +4,4 @@ export * from './server';
 export * from './functions';
 export * from './methods';
 export * from './response';
+export * from './virtuals';

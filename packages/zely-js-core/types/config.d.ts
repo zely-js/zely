@@ -45,4 +45,6 @@ export interface UserConfig {
   enableReporter?: boolean;
 
   keepDist?: boolean;
+
+  __virtuals__?: any[];
 }

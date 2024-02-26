@@ -131,15 +131,17 @@ export async function createZelyServer(options: UserConfig) {
           },
         };
       })
-    ).map((file) => {
-      const outregex = pathToRegexp(file.path);
+    )
+      .map((file) => {
+        const outregex = pathToRegexp(file.path);
 
-      return {
-        ...file,
-        regex: outregex.pattern,
-        params: outregex.params,
-      };
-    }),
+        return {
+          ...file,
+          regex: outregex.pattern,
+          params: outregex.params,
+        };
+      })
+      .concat(options.__virtuals__ || []),
     options
   );
 

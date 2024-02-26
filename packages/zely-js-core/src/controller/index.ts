@@ -1,5 +1,5 @@
 import { createLoader } from '@zely-js/loader';
-import { success } from '@zely-js/logger';
+import { errorWithStacks, success } from '@zely-js/logger';
 import reporter from '@zely-js/reporter';
 
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
@@ -53,6 +53,8 @@ export interface Page {
 
     builtPath?: string;
     builtMapPath?: string;
+
+    __isVirtual__?: boolean;
   };
 }
 
@@ -134,10 +136,34 @@ export class PageCache {
     this.#modules = page;
     this.loader = loader;
     this.config = config;
+
+    this.sort();
   }
 
+  // sort by count of ":"
+  sort() {
+    const files = {};
+
+    this.#modules.forEach((file) => {
+      const count = (file.path.match(/:/g) || []).length;
+
+      if (!files[count]) files[count] = [];
+      files[count].push(file);
+    });
+
+    const filesResult: any[] = [];
+
+    Object.keys(files).forEach((file) => {
+      filesResult.push(...files[file]);
+    });
+    this.#modules = filesResult;
+  }
+
+  // create production build
   async productionBuild() {
     const base = join(this.config.cwd || process.cwd(), 'pages');
+
+    // build all pages
 
     if (process.env.NODE_ENV === 'production') {
       for await (const page of this.#modules) {
@@ -195,6 +221,11 @@ export class PageCache {
 
     // in production mode all pages are compiled
     if (process.env.NODE_ENV !== 'development') {
+      return page;
+    }
+
+    // virtual page must not be edited
+    if (page.module.__isVirtual__) {
       return page;
     }
 
@@ -256,8 +287,9 @@ export async function controll(
   userConfig: UserConfig,
   cache: PageCache
 ) {
+  let m: Page = null;
   try {
-    const m: Page = await cache.getModule(req.url);
+    m = await cache.getModule(req.url);
 
     // if page not found in cache
     if (!m) {
@@ -275,7 +307,20 @@ export async function controll(
     }
   } catch (e) {
     if (userConfig?.enableReporter !== false) {
-      await reporter(e);
+      // if error happens in virtual page
+
+      if (m?.module.__isVirtual__) {
+        errorWithStacks(e.message, [
+          {
+            loc: `(virtual::${m?.filename})`,
+            at: `${m.module.type}[${req.method || 'ANY'}||ALL]`,
+          },
+        ]);
+      } else {
+        // error with js map
+
+        await reporter(e);
+      }
     }
     if (userConfig?.onError) {
       await userConfig?.onError(e);
