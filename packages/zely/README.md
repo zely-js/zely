@@ -1,48 +1,30 @@
-[![img](https://github.com/zely-js/core/blob/main/.github/assets/icon-v3.svg)](https://github.com/zely-js/core)
-
-# Zely
+# zely
 
 Build Productive, Convenient, Fast Backend
 
-[**github**](https://github.com/zely-js/core) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://zely.vercel.app/)
+[**github**](https://github.com/zely-js/zely) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://zely.vercel.app/)
 
-## Features
+---
 
-- **🚧 File-based routing.** Prext.js creates routes automatically with filenames.
-- **🚀 Server Reload.** You don't have to restart server to apply changes.
-- **✅ Typescript Supported.**
-- **⚡ Lightning fast.**
+- File-based routing. zely creates routes automatically with filenames.
+- Server Reload. You don't have to restart server to apply changes.
+- Typescript Supported.
+- Lightning fast. zely uses esbuild as javascript loader.
 
-## Installation
+✨ [**Zely Documentation ➞**](https://zely.vercel.app)
 
-> [Try it!](https://codesandbox.io/p/github/zely-js/zely-next-starter)
-
-- use create-zely
-
-```sh
-> npx create-zely
+```bash
+npm install --save-dev zely
 ```
 
-- Manual installation
+## Getting Started
 
-```sh
-> npm install --save-dev zely
+You can easily build a server by getting the template.
+
+```bash
+npx zely-cli init --dir my-app --template=typescript
 ```
-
-```ts
-// zely.config.ts
-import { defineConfig } from 'zely';
-
-export default defineConfig({
-  port: 3000,
-  routes: '/pages/',
-});
-```
-
-## Example
-
-Visit [playground](https://github.com/zely-js/core/tree/main/playground)!
 
 ## License
 
-MIT
+[MIT](https://github.com/zely-js/zely/blob/zely3/LICENSE)
