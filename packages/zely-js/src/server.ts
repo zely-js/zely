@@ -1,7 +1,7 @@
 import { ZeptServer } from '@zept/http';
 import { warn } from '@zely-js/logger';
 import { createZelyServer } from '@zely-js/core';
-import { applyPlugin } from './plugin';
+import { applyServer, applyConfig } from './plugin';
 import { Config } from '../types/config';
 
 export async function zely(options: Config) {
@@ -10,6 +10,8 @@ export async function zely(options: Config) {
   if (!options.server) options.server = {};
 
   options.server.zept = zept;
+
+  options = await applyConfig(options);
 
   const zely = await createZelyServer({
     ...options,
@@ -22,7 +24,7 @@ export async function zely(options: Config) {
 
   // apply plugins
 
-  options = await applyPlugin(server, options);
+  options = await applyServer(server, options);
 
   // additional features
   // snatcher, prewrite, etc...
