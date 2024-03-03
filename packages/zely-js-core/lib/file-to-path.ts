@@ -10,7 +10,7 @@ export function transformFilename(filename: string, brakets?: boolean): string {
     return sliced
       .map((part) => {
         if (part.startsWith('[...') && part.endsWith(']')) {
-          return `:${part.slice(4, part.length - 1)}*`;
+          return '*';
         }
         if (part.startsWith('[') && part.endsWith(']')) {
           return `:${part.slice(1, part.length - 1)}`;
