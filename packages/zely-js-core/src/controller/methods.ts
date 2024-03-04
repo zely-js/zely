@@ -6,6 +6,9 @@ export const METHODS = {
   post: Symbol('post'),
   delete: Symbol('delete'),
   put: Symbol('put'),
+
+  // **
+  middleware: Symbol('middleware'),
 };
 
 export const methods = {
@@ -51,6 +54,14 @@ export const methods = {
       __method: METHODS.put,
       body,
       headers,
+    };
+  },
+
+  middleware(body: any): ServerDataHandlerResponse {
+    return {
+      __typeof: Symbol.for('zely:handler'),
+      __method: METHODS.middleware,
+      body,
     };
   },
 };

@@ -29,6 +29,7 @@ export interface METHODS {
   post: symbol;
   delete: symbol;
   put: symbol;
+  middleware: symbol;
 }
 
 export type MethodBody = Record<any, any> | ContextHandler;
@@ -43,6 +44,8 @@ export const methods: {
   delete(body: MethodBody, headers?: Record<string, string>): PageHandlerResponse;
 
   put(body: MethodBody, headers?: Record<string, string>): PageHandlerResponse;
+
+  middleware(body: MethodBody): PageHandlerResponse;
 };
 
 export const ALL: typeof methods.all;
@@ -50,3 +53,6 @@ export const GET: typeof methods.get;
 export const PUT: typeof methods.put;
 export const POST: typeof methods.post;
 export const DELETE: typeof methods.delete;
+
+// **
+export const middleware: typeof methods.middleware;

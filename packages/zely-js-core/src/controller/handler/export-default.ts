@@ -32,13 +32,25 @@ export async function handleExportDefault(ctx: Context, page: Page, next: () => 
       m.__method?.description?.toLowerCase() === 'all' ||
       isFunction(m)
   )[0];
+  const middlewares = pageModule.filter(
+    (m) => m.__method?.description?.toLowerCase() === 'middleware'
+  );
   const type = getHandlerType(handler);
-
-  // if page not found
-  if (!handler) return next();
 
   // apply params to request
   ctx.params = applyParams(ctx.request, page.regex, page.params).params;
+
+  // execute middlewares
+  for await (const middleware of middlewares || []) {
+    if (typeof middleware.body !== 'function') {
+      throw new Error('middleware.body must be a function');
+    }
+
+    await middleware.body(ctx);
+  }
+
+  // if page not found
+  if (!handler) return next();
 
   if (pageData?.path) {
     // deprecated feature
