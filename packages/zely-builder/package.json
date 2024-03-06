@@ -17,7 +17,7 @@
     "zept": "^0.0.4"
   },
   "dependencies": {
-    "esbuild": "^0.19.5"
+    "esbuild": "^0.20.1"
   },
   "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6"
 }
