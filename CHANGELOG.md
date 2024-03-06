@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.12](https://github.com/zely-js/zely/compare/v3.0.0-alpha.11...v3.0.0-alpha.12) (2024-03-06)
+
+
+### New Features
+
+* middleware handler ([#227](https://github.com/zely-js/zely/issues/227)) ([cb51d07](https://github.com/zely-js/zely/commit/cb51d0755339d52c2419e763349886f66af05989))
+
+
+### Bug Fix
+
+* **@zely-js/zely:** fixed bug program not executing `plugin.config()` ([bf6ab78](https://github.com/zely-js/zely/commit/bf6ab7824d3e3b99721c3141c6b5d34ccb565b7a))
+* fixed `[...params]` bug ([e089c4e](https://github.com/zely-js/zely/commit/e089c4e8d42abfe9db80249d35adf355af7195c1))
+
+
+### Documentation
+
+* readme ([a7583c4](https://github.com/zely-js/zely/commit/a7583c4c5955c777ba52d263ba0cfe3d0b99f91b))
+* **zely:** update package readme ([51cbb4c](https://github.com/zely-js/zely/commit/51cbb4c2f86ba9d3a45fac112e6096600bbcff72))
+
+
+
 ## [3.0.0-alpha.11](https://github.com/zely-js/zely/compare/v3.0.0-alpha.10...v3.0.0-alpha.11) (2024-02-26)
 
 

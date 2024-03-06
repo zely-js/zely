@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.12](https://github.com/zely-js/zely/compare/v3.0.0-alpha.11...v3.0.0-alpha.12) (2024-03-06)
+
+
+### Documentation
+
+* **zely:** update package readme ([51cbb4c](https://github.com/zely-js/zely/commit/51cbb4c2f86ba9d3a45fac112e6096600bbcff72))
+
+
+
 ## [3.0.0-alpha.11](https://github.com/zely-js/zely/compare/v3.0.0-alpha.10...v3.0.0-alpha.11) (2024-02-26)
 
 **Note:** Version bump only for package zely

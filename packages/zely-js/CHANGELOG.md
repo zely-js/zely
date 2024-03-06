@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.12](https://github.com/zely-js/zely/compare/v3.0.0-alpha.11...v3.0.0-alpha.12) (2024-03-06)
+
+
+### Bug Fix
+
+* **@zely-js/zely:** fixed bug program not executing `plugin.config()` ([bf6ab78](https://github.com/zely-js/zely/commit/bf6ab7824d3e3b99721c3141c6b5d34ccb565b7a))
+
+
+
 ## [3.0.0-alpha.11](https://github.com/zely-js/zely/compare/v3.0.0-alpha.10...v3.0.0-alpha.11) (2024-02-26)
 
 **Note:** Version bump only for package @zely-js/zely
