@@ -32,8 +32,8 @@ export function esbuildLoader(options: UserConfig): Loader<esbuild.BuildOptions>
           buildoptions.type,
           outdir
         ),
-        assetNames: '[name].[hash]',
-        entryNames: '[name].[hash]',
+        assetNames: '[name]',
+        entryNames: '[name]',
 
         bundle: true,
         minify: true,
