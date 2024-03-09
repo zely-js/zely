@@ -23,5 +23,5 @@
   "description": "core server for zely-js",
   "repository": "https://github.com/zely-js/zely",
   "bugs": "https://github.com/zely-js/zely/issues",
-  "homepage": "https://zely.vercel.app"
+  "homepage": "https://zely.vercel.app/apis/zely-js-core"
 }

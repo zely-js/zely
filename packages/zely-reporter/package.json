@@ -7,7 +7,7 @@
   "types": "./index.d.ts",
   "repository": "https://github.com/zely-js/zely",
   "bugs": "https://github.com/zely-js/zely/issues",
-  "homepage": "https://zely.vercel.app",
+  "homepage": "https://zely.vercel.app/apis/zely-js-reporter",
   "files": [
     "index.d.ts",
     "index.js",
