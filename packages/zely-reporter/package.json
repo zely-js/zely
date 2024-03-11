@@ -2,16 +2,16 @@
   "name": "@zely-js/reporter",
   "version": "3.0.0-alpha.10",
   "description": "error tracer for zely-js",
-  "main": "./index.js",
-  "module": "./index.mjs",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./index.d.ts",
   "repository": "https://github.com/zely-js/zely",
   "bugs": "https://github.com/zely-js/zely/issues",
   "homepage": "https://zely.vercel.app/apis/zely-js-reporter",
   "files": [
     "index.d.ts",
-    "index.js",
-    "index.mjs"
+    "dist/index.js",
+    "dist/index.mjs"
   ],
   "dependencies": {
     "@zely-js/logger": "workspace:*",
