@@ -1,5 +1,4 @@
 import { Request, Response } from '@zept/http';
-// import { Context } from './server';
 
 export type Middleware = (
   req: Request,
