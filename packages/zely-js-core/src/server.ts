@@ -9,6 +9,7 @@ import { readDirectory } from '~/zely-js-core/lib/read-directory';
 import type { UserConfig } from '~/zely-js-core';
 
 import { createMiddlewares } from './middlewares';
+// import { Context } from './context';
 import { Page, PageCache, controll } from './controller';
 import { transformFilename } from '~/zely-js-core/lib/file-to-path';
 import { removeExtension } from '~/zely-js-core/lib/ext';
