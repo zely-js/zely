@@ -30,8 +30,6 @@ export interface Context {
 
   props: object;
 
-  // @zely/plugin-kit
-
   send(data: any): Promise<this>;
 
   header(headers: Record<string, any>): this;
