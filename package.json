@@ -33,8 +33,6 @@
     "tsconfig-paths-jest": "^0.0.1",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
     "typescript": "5.3.3",
-    "vitepress": "^1.0.0-rc.25",
-    "vue": "^3.3.8",
     "webpack": "^5.88.2",
     "zept": "^0.0.4"
   },
@@ -46,18 +44,8 @@
     "build:dev": "cross-env NODE_ENV=development asto",
     "build": "cross-env NODE_ENV=production asto",
     "test": "jest",
-    "lint-fix": "eslint --fix --ext .js,.ts .",
-    "docs:dev": "cd docs && yarn dev",
-    "docs:build": "cd docs && yarn build"
+    "lint-fix": "eslint --fix --ext .js,.ts ."
   },
   "version": "0.0.0",
-  "packageManager": "yarn@4.1.0",
-  "dependenciesMeta": {
-    "vitepress@1.0.0-rc.25": {
-      "unplugged": true
-    },
-    "vue@3.3.8": {
-      "unplugged": true
-    }
-  }
+  "packageManager": "yarn@4.1.0"
 }
