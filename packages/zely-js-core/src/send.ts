@@ -25,8 +25,6 @@ export async function sender(
     return;
   }
 
-  // console.log(chunk, res.prewrite);
-
   if (status) res.status(status);
 
   if (Array.isArray(chunk)) {
