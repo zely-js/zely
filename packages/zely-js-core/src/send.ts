@@ -1,4 +1,4 @@
-import { error, warn } from '@zely-js/logger';
+import { warn } from '@zely-js/logger';
 import { ZelyRequest, ZelyResponse } from '~/zely-js-core';
 import { Response } from './response/response';
 
@@ -44,7 +44,7 @@ export async function sender(
       chunk = chunk.toString();
       break;
     case 'undefined':
-      error("Server Error: 'undefined' is not a valid response body");
+      warn("Server Error: 'undefined' is not a valid response body");
       return;
     case 'bigint':
       chunk = chunk.toString();
