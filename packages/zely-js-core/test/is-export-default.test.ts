@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import { isExportDefault } from '../src/controller';
 
 it('is export default', () => {
