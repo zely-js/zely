@@ -3,9 +3,6 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   extends: ['airbnb-base', 'plugin:@typescript-eslint/eslint-recommended'],
   rules: {
-    // vue
-    'vue/no-multiple-template-root': 'off',
-
     // import
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
