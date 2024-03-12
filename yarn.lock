@@ -3202,9 +3202,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"asto@npm:^0.0.12":
-  version: 0.0.12
-  resolution: "asto@npm:0.0.12"
+"asto@npm:^0.0.14":
+  version: 0.0.14
+  resolution: "asto@npm:0.0.14"
   dependencies:
     animaux: "npm:^0.0.4"
     chokidar: "npm:^3.5.3"
@@ -3212,7 +3212,7 @@ __metadata:
     esbuild: "npm:^0.19.4"
   bin:
     asto: dist/bin.js
-  checksum: 10c0/114345717ae89d4057a5de84feb1576da412d4f967db5c16cf164ab17ab64465eeaf608a26f6f0da3d37af4e68d345155d2ea0f4615aa66e8c03727e1c658e26
+  checksum: 10c0/76b4076098086688048030a80d645dec6cd92cbc02153d12fefec49e63cd8728087cb2e1fd8494ecc8b0182d5268ebc2b223ee0a4321b9041918e76c4add2aa5
   languageName: node
   linkType: hard
 
@@ -9442,7 +9442,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:^7.0.1"
     "@typescript-eslint/parser": "npm:^7.0.1"
     "@yarnpkg/sdks": "npm:^3.1.0"
-    asto: "npm:^0.0.12"
+    asto: "npm:^0.0.14"
     conventional-changelog-conventionalcommits: "npm:^7.0.2"
     cross-env: "npm:^7.0.3"
     esbuild: "npm:^0.20.1"
