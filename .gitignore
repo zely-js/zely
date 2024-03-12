@@ -126,10 +126,4 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-# Prext cache
-.prext
-.prexty
-
-cache
-
 .zely
