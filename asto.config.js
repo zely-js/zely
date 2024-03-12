@@ -69,7 +69,7 @@ const repos = {
   logger: repo('zely-js-logger'),
   cli: repo('zely-js-cli'),
   watch: repo('zely-js-watch'),
-  reporter: repo('zely-reporter'),
+  reporter: repo('zely-js-reporter'),
 };
 
 const entryPoints = [
