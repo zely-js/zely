@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.14](https://github.com/zely-js/zely/compare/v3.0.0-alpha.12...v3.0.0-alpha.14) (2024-03-14)
+
+
+### New Features
+
+* **@zely-js/http:** repository moved ([#262](https://github.com/zely-js/zely/issues/262)) ([9612701](https://github.com/zely-js/zely/commit/9612701550fc894173bf32033bfebd97c8ab7e0f))
+
+
+### Code Refactoring
+
+* add dts comments ([ee0bfd2](https://github.com/zely-js/zely/commit/ee0bfd238927e575b4b55313e7e2ffc87d5093fd))
+* add dts comments ([#251](https://github.com/zely-js/zely/issues/251)) ([9147be5](https://github.com/zely-js/zely/commit/9147be56c834d41d83730e690b5f71ba52a0ce63))
+* remove comments ([646a84b](https://github.com/zely-js/zely/commit/646a84bc5b3d77ae584464e94f095c249d59ce4a))
+* remove comments ([73a63ac](https://github.com/zely-js/zely/commit/73a63ac3f135696321ea00eee51d8c279f8b68ca))
+* remove unused code ([f21ec28](https://github.com/zely-js/zely/commit/f21ec2890942669697e12209d93f78b344db4822))
+
+
+### Others
+
+* error to warn ([ffe6d12](https://github.com/zely-js/zely/commit/ffe6d1207f78321b147173b551061e109ec88537))
+* package docs ([ea30555](https://github.com/zely-js/zely/commit/ea305557f55c4dd74ebfa719688a61c9cb2109a1))
+* **release:** publish ([6f00bd7](https://github.com/zely-js/zely/commit/6f00bd713c4bcba20b1e519d183251cdfaf2f955))
+* remove comments ([aed2e6f](https://github.com/zely-js/zely/commit/aed2e6f7a60b253d0d5588b29aa137a67dfcd5a3))
+* remove comments ([14c6e7f](https://github.com/zely-js/zely/commit/14c6e7f10ad11acae7381e44b637de89f8d1ce00))
+* remove unused code ([5355ae7](https://github.com/zely-js/zely/commit/5355ae7f6e55ebf9ea214d940f2616c08b2bcceb))
+
+
+
 ## [3.0.0-alpha.13](https://github.com/zely-js/zely/compare/v3.0.0-alpha.12...v3.0.0-alpha.13) (2024-03-14)
 
 

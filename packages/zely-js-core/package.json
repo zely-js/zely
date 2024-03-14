@@ -1,13 +1,13 @@
 {
   "name": "@zely-js/core",
-  "version": "3.0.0-alpha.13",
+  "version": "3.0.0-alpha.14",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
   "dependencies": {
     "@zely-js/http": "workspace:*",
-    "@zely-js/loader": "3.0.0-alpha.13",
-    "@zely-js/logger": "3.0.0-alpha.13",
+    "@zely-js/loader": "3.0.0-alpha.14",
+    "@zely-js/logger": "3.0.0-alpha.14",
     "@zely-js/reporter": "workspace:*",
     "@zept/path-regexp": "^0.0.1",
     "mime-types": "^2.1.35"

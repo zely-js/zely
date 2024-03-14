@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.14](https://github.com/zely-js/zely/compare/v3.0.0-alpha.12...v3.0.0-alpha.14) (2024-03-14)
+
+
+### New Features
+
+* **@zely-js/http:** repository moved ([#262](https://github.com/zely-js/zely/issues/262)) ([9612701](https://github.com/zely-js/zely/commit/9612701550fc894173bf32033bfebd97c8ab7e0f))
+
+
+### Code Refactoring
+
+* add dts comments ([ee0bfd2](https://github.com/zely-js/zely/commit/ee0bfd238927e575b4b55313e7e2ffc87d5093fd))
+* add dts comments ([#251](https://github.com/zely-js/zely/issues/251)) ([9147be5](https://github.com/zely-js/zely/commit/9147be56c834d41d83730e690b5f71ba52a0ce63))
+* remove comments ([646a84b](https://github.com/zely-js/zely/commit/646a84bc5b3d77ae584464e94f095c249d59ce4a))
+* remove comments ([73a63ac](https://github.com/zely-js/zely/commit/73a63ac3f135696321ea00eee51d8c279f8b68ca))
+* remove refactor: remove deprecated code ([#253](https://github.com/zely-js/zely/issues/253)) ([8857c69](https://github.com/zely-js/zely/commit/8857c6993a339539d2b33de8e77fc808c505d723))
+* remove unused code ([f21ec28](https://github.com/zely-js/zely/commit/f21ec2890942669697e12209d93f78b344db4822))
+* rename package directory ([#254](https://github.com/zely-js/zely/issues/254)) ([0640c40](https://github.com/zely-js/zely/commit/0640c40916eccfa3083f6850ee77c5fc8b0f8607))
+
+
+### Build System
+
+* **@zely-js/reporter:** convert to typescript ([1d16c9f](https://github.com/zely-js/zely/commit/1d16c9f871d9406de1f5fe9dac33b9db3434209d))
+
+
+### Others
+
+* **@zely-js/reporter:** convert to typescript ([b56faf9](https://github.com/zely-js/zely/commit/b56faf9d2fc5f9455138ba2bcfdc986fbe3219c7))
+* build output ([16de0cb](https://github.com/zely-js/zely/commit/16de0cb5e2afc66001baf3f617905131e5c5a88a))
+* convert to typescript ([1c68c6f](https://github.com/zely-js/zely/commit/1c68c6fdc9668032dac3eec3ddb348bb999a4aec))
+* dependencies ([#250](https://github.com/zely-js/zely/issues/250)) ([bb80108](https://github.com/zely-js/zely/commit/bb80108d058c427d9a045887f073f1a34f2ac913))
+* **deps-dev:** bump @types/node from 20.11.17 to 20.11.25 ([81f44ed](https://github.com/zely-js/zely/commit/81f44ed3094944f4aff702f9e20d3e410b18d249))
+* **deps-dev:** bump @typescript-eslint/eslint-plugin ([5f95d67](https://github.com/zely-js/zely/commit/5f95d67fd45d3f5b29a64abf7fdc96febe1a8e69))
+* **deps:** bump esbuild from 0.19.12 to 0.20.1 ([5c1ab78](https://github.com/zely-js/zely/commit/5c1ab784ca9f31b02e23bf444f7c192ed6482e8e))
+* **deps:** update asto to 0.1 ([#255](https://github.com/zely-js/zely/issues/255)) ([d931cdc](https://github.com/zely-js/zely/commit/d931cdcfaac9823332ba1fe3392777f02a02ee4b))
+* error to warn ([ffe6d12](https://github.com/zely-js/zely/commit/ffe6d1207f78321b147173b551061e109ec88537))
+* include `@zely-js/http` ([#264](https://github.com/zely-js/zely/issues/264)) ([fc4333d](https://github.com/zely-js/zely/commit/fc4333dcaacfb67cd599d15958892d41c3f54dee))
+* **lint:** remove comment ([17a7397](https://github.com/zely-js/zely/commit/17a7397c9d4f607b50993cfa8d4cf7eec3ece1d3))
+* **lint:** remove vue rule ([ec9d4d1](https://github.com/zely-js/zely/commit/ec9d4d1610d30ebd9f7c5797c660470e24dd84f0))
+* package docs ([ea30555](https://github.com/zely-js/zely/commit/ea305557f55c4dd74ebfa719688a61c9cb2109a1))
+* **release:** publish ([6f00bd7](https://github.com/zely-js/zely/commit/6f00bd713c4bcba20b1e519d183251cdfaf2f955))
+* remove comments ([aed2e6f](https://github.com/zely-js/zely/commit/aed2e6f7a60b253d0d5588b29aa137a67dfcd5a3))
+* remove comments ([14c6e7f](https://github.com/zely-js/zely/commit/14c6e7f10ad11acae7381e44b637de89f8d1ce00))
+* remove comments ([#245](https://github.com/zely-js/zely/issues/245)) ([c3aca9e](https://github.com/zely-js/zely/commit/c3aca9e3a9951bf24a6b3bb17dc318294259f0e9))
+* remove unused code ([5355ae7](https://github.com/zely-js/zely/commit/5355ae7f6e55ebf9ea214d940f2616c08b2bcceb))
+* remove vitepress documentation ([44aca3b](https://github.com/zely-js/zely/commit/44aca3b5cbf508a17b00f1fc8ec03678a10fa050))
+* update dependencies ([#252](https://github.com/zely-js/zely/issues/252)) ([a80b332](https://github.com/zely-js/zely/commit/a80b332552ed04a2721bf7032634dd7ac3bdd345))
+
+
+
 ## [3.0.0-alpha.13](https://github.com/zely-js/zely/compare/v3.0.0-alpha.12...v3.0.0-alpha.13) (2024-03-14)
 
 
