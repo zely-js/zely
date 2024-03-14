@@ -5,7 +5,7 @@ const { parse, join } = require('path');
 
 const repo =
   (name) =>
-  (input, output, esm = false) => {
+  (input, output, esm = false, base = 'packages') => {
     /**
      * @type {import("asto").EntryPointOptions[]}
      */
@@ -25,7 +25,7 @@ const repo =
 
           plugins: [
             nodeExternalsPlugin({
-              packagePath: `packages/${name}/package.json`,
+              packagePath: `${base}/${name}/package.json`,
             }),
           ],
         },
@@ -33,7 +33,7 @@ const repo =
     ];
 
     if (esm) {
-      const parsed = parse(`packages/${name}/dist/${output}`);
+      const parsed = parse(`${base}/${name}/dist/${output}`);
 
       out.push({
         ...out[0],
@@ -70,6 +70,7 @@ const repos = {
   cli: repo('zely-js-cli'),
   watch: repo('zely-js-watch'),
   reporter: repo('zely-js-reporter'),
+  http: repo('http'),
 };
 
 const entryPoints = [
@@ -82,6 +83,7 @@ const entryPoints = [
   ...repos.cli('index.ts', 'index.js', true),
   ...repos.watch('index.ts', 'index.js', true),
   ...repos.reporter('index.ts', 'index.js', true),
+  ...repos.http('index.ts', 'index.js', true, '.'),
 ];
 
 module.exports = [

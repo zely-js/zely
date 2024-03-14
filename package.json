@@ -3,7 +3,8 @@
   "workspaces": [
     "packages/*",
     "playground/**/*",
-    "docs"
+    "docs",
+    "http"
   ],
   "devDependencies": {
     "@asto/esm": "^0.0.2",
