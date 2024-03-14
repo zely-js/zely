@@ -1,4 +1,4 @@
-import { Request, Response } from '@zept/http';
+import { Request, Response } from '@zely-js/http';
 
 export interface ZelyRequest extends Request {
   params: Record<string, any>;

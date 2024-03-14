@@ -2735,12 +2735,18 @@ __metadata:
   resolution: "@zely-js/core@workspace:packages/zely-js-core"
   dependencies:
     "@types/mime-types": "npm:^2"
+    "@zely-js/http": "workspace:*"
     "@zely-js/loader": "npm:3.0.0-alpha.12"
     "@zely-js/logger": "npm:3.0.0-alpha.7"
     "@zely-js/reporter": "workspace:*"
-    "@zept/http": "npm:^0.0.1"
     "@zept/path-regexp": "npm:^0.0.1"
     mime-types: "npm:^2.1.35"
+  languageName: unknown
+  linkType: soft
+
+"@zely-js/http@workspace:*, @zely-js/http@workspace:http":
+  version: 0.0.0-use.local
+  resolution: "@zely-js/http@workspace:http"
   languageName: unknown
   linkType: soft
 
@@ -2771,9 +2777,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/reporter@workspace:*, @zely-js/reporter@workspace:packages/zely-reporter":
+"@zely-js/reporter@workspace:*, @zely-js/reporter@workspace:packages/zely-js-reporter":
   version: 0.0.0-use.local
-  resolution: "@zely-js/reporter@workspace:packages/zely-reporter"
+  resolution: "@zely-js/reporter@workspace:packages/zely-js-reporter"
   dependencies:
     "@zely-js/logger": "workspace:*"
     source-map: "npm:^0.7.4"
@@ -2794,8 +2800,8 @@ __metadata:
   resolution: "@zely-js/zely@workspace:packages/zely-js"
   dependencies:
     "@zely-js/core": "npm:3.0.0-alpha.12"
+    "@zely-js/http": "workspace:*"
     "@zely-js/logger": "npm:3.0.0-alpha.7"
-    "@zept/http": "npm:^0.0.1"
   languageName: unknown
   linkType: soft
 
@@ -2809,7 +2815,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zept/http@npm:*, @zept/http@npm:^0.0.1":
+"@zept/http@npm:*":
   version: 0.0.1
   resolution: "@zept/http@npm:0.0.1"
   checksum: 10c0/e9ed69aba47a1e073e111e701cba32120bb15fe4f39475e0d39d075e102414ee0c25899f396add1eb0f466dc5b7e72694955bf86bd381d6fbbe8990bf804dc8c

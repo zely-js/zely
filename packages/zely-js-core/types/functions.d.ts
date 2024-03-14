@@ -1,4 +1,4 @@
-import { ZeptServer } from '@zept/http';
+import { ZeptServer } from '@zely-js/http';
 import { UserConfig } from './config';
 
 /**

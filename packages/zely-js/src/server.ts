@@ -1,4 +1,4 @@
-import { ZeptServer } from '@zept/http';
+import { ZeptServer } from '@zely-js/http';
 import { warn } from '@zely-js/logger';
 import { createZelyServer } from '@zely-js/core';
 import { applyServer, applyConfig } from './plugin';

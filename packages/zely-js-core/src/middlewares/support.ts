@@ -2,7 +2,7 @@ import url from 'node:url';
 import { createReadStream, existsSync } from 'node:fs';
 import { lookup } from 'mime-types';
 
-import { Request, Response } from '@zept/http';
+import type { Request, Response } from '@zely-js/http';
 
 export function apply(req: Request, res: Response) {
   // req.query

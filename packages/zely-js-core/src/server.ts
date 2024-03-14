@@ -1,4 +1,4 @@
-import { ZeptServer } from '@zept/http';
+import { ZeptServer } from '@zely-js/http';
 import { error, warn } from '@zely-js/logger';
 import { pathToRegexp } from '@zept/path-regexp';
 

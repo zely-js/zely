@@ -1,4 +1,4 @@
-import { Request, Response } from '@zept/http';
+import { Request, Response } from '@zely-js/http';
 
 export type Middleware = (
   req: Request,

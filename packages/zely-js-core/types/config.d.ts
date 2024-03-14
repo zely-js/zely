@@ -1,4 +1,4 @@
-import { ServerOptions, ZeptServer } from '@zept/http';
+import { ServerOptions, ZeptServer } from '@zely-js/http';
 import { Loader } from '@zely-js/loader';
 
 import { Middleware } from './middleware';
