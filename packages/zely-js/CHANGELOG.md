@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.13](https://github.com/zely-js/zely/compare/v3.0.0-alpha.12...v3.0.0-alpha.13) (2024-03-14)
+
+
+### New Features
+
+* **@zely-js/http:** repository moved ([b29a61b](https://github.com/zely-js/zely/commit/b29a61bc632982cc5ff632353d79121e5d3d00fa))
+
+
+
+
 ## [3.0.0-alpha.12](https://github.com/zely-js/zely/compare/v3.0.0-alpha.11...v3.0.0-alpha.12) (2024-03-06)
 
 

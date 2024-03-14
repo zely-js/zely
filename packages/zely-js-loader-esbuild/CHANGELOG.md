@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0-alpha.13](https://github.com/zely-js/zely/compare/v3.0.0-alpha.12...v3.0.0-alpha.13) (2024-03-14)
+
+
+### Others
+
+* build output ([16de0cb](https://github.com/zely-js/zely/commit/16de0cb5e2afc66001baf3f617905131e5c5a88a))
+* **deps:** bump esbuild from 0.19.12 to 0.20.1 ([5c1ab78](https://github.com/zely-js/zely/commit/5c1ab784ca9f31b02e23bf444f7c192ed6482e8e))
+
+
+
+
 ## [3.0.0-alpha.12](https://github.com/zely-js/zely/compare/v3.0.0-alpha.11...v3.0.0-alpha.12) (2024-03-06)
 
 **Note:** Version bump only for package @zely-js/loader-esbuild
