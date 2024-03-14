@@ -298,14 +298,19 @@ export async function controll(
 
     const ctx = new Context(req, res);
 
+    // export default handler
+    // export default []
     if (m.module.type === 'export-default') {
       await handleExportDefault(ctx, m, next);
     }
 
+    // export handler
+    // export function ~
     if (m.module.type === 'export') {
       await handleExport(ctx, m, next);
     }
   } catch (e) {
+    // error handling
     if (userConfig?.enableReporter !== false) {
       // if error happens in virtual page
 
