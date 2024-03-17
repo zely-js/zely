@@ -10,3 +10,4 @@ export function usePrewrite(
   res: ZelyResponse,
   callback: (data: string) => Promise<string>
 ): void;
+export * from './config';
