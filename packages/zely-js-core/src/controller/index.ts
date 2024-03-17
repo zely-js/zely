@@ -312,7 +312,7 @@ export async function controll(
       if (m?.module.__isVirtual__) {
         errorWithStacks(e.message, [
           {
-            loc: `(virtual::${m?.filename})`,
+            loc: `(virtual:${m?.filename})`,
             at: `${m.module.type}[${req.method || 'ANY'}||ALL]`,
           },
         ]);
