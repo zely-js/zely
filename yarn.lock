@@ -2220,11 +2220,11 @@ __metadata:
   linkType: hard
 
 "@types/node@npm:*, @types/node@npm:^20.8.10":
-  version: 20.11.26
-  resolution: "@types/node@npm:20.11.26"
+  version: 20.11.30
+  resolution: "@types/node@npm:20.11.30"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/2df81e4f109588c4c490f2c7d616a06d2b3b9298f217468134b80711af810c9a6017a59beb3e6b1c596eb9b6c5a39d33403b99179acb89006badfbc55f2468bb
+  checksum: 10c0/867cfaf969c6d8850d8d7304e7ab739898a50ecb1395b61ff2335644f5f48d7a46fbc4a14cee967aed65ec134b61a746edae70d1f32f11321ccf29165e3bc4e6
   languageName: node
   linkType: hard
 
@@ -2802,16 +2802,6 @@ __metadata:
     "@zely-js/core": "npm:3.0.0-alpha.14"
     "@zely-js/http": "workspace:*"
     "@zely-js/logger": "npm:3.0.0-alpha.14"
-  languageName: unknown
-  linkType: soft
-
-"@zely/builder@workspace:packages/zely-builder":
-  version: 0.0.0-use.local
-  resolution: "@zely/builder@workspace:packages/zely-builder"
-  dependencies:
-    esbuild: "npm:^0.20.1"
-    zely: "npm:3.0.0-alpha.14"
-    zept: "npm:^0.0.4"
   languageName: unknown
   linkType: soft
 
@@ -11119,7 +11109,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"zely@npm:3.0.0-alpha.14, zely@workspace:*, zely@workspace:packages/zely":
+"zely@workspace:*, zely@workspace:packages/zely":
   version: 0.0.0-use.local
   resolution: "zely@workspace:packages/zely"
   dependencies:
