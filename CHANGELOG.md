@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/zely-js/zely/compare/v3.0.0-alpha.14...v3.0.0) (2024-03-31)
+
+
+### Bug Fix
+
+* export config type declaration ([#266](https://github.com/zely-js/zely/issues/266)) ([3d80b36](https://github.com/zely-js/zely/commit/3d80b36abace9ab410cb1458ba9e225b8308c095))
+
+
+### Others
+
+* **@zely/builder:** deprecated ([#270](https://github.com/zely-js/zely/issues/270)) ([1d136d1](https://github.com/zely-js/zely/commit/1d136d1b410fba7f4a7dbe0723b6526f5e92ce2c))
+* change virtual error style ([#267](https://github.com/zely-js/zely/issues/267)) ([a9baffb](https://github.com/zely-js/zely/commit/a9baffbe721898aa8acfa6bafd16b157f55dcd02))
+
+
+
 ## [3.0.0-alpha.14](https://github.com/zely-js/zely/compare/v3.0.0-alpha.12...v3.0.0-alpha.14) (2024-03-14)
 
 

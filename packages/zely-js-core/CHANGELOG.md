@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/zely-js/zely/compare/v3.0.0-alpha.14...v3.0.0) (2024-03-31)
+
+
+### Others
+
+* change virtual error style ([#267](https://github.com/zely-js/zely/issues/267)) ([a9baffb](https://github.com/zely-js/zely/commit/a9baffbe721898aa8acfa6bafd16b157f55dcd02))
+
+
+
 ## [3.0.0-alpha.14](https://github.com/zely-js/zely/compare/v3.0.0-alpha.12...v3.0.0-alpha.14) (2024-03-14)
 
 

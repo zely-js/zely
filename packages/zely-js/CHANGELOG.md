@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.0](https://github.com/zely-js/zely/compare/v3.0.0-alpha.14...v3.0.0) (2024-03-31)
+
+
+### Bug Fix
+
+* export config type declaration ([#266](https://github.com/zely-js/zely/issues/266)) ([3d80b36](https://github.com/zely-js/zely/commit/3d80b36abace9ab410cb1458ba9e225b8308c095))
+
+
+
 ## [3.0.0-alpha.14](https://github.com/zely-js/zely/compare/v3.0.0-alpha.12...v3.0.0-alpha.14) (2024-03-14)
 
 
