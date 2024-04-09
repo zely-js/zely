@@ -12,51 +12,10 @@ import { isFunction, isObject } from '~/zely-js-core/lib/is';
 import { handleExportDefault } from './handler/export-default';
 import { handleExport } from './handler/export';
 import { removeExtension } from '~/zely-js-core/lib/ext';
+import type { Page } from '~/zely-js-core';
 
 const HASH_DIRECTORY = (config: any) =>
   join(config.cwd || process.cwd(), config.dist || '.zely', 'pages.hash.json');
-
-export interface Page {
-  filename: string;
-  path: string;
-  regex: RegExp;
-  id: number;
-  params: string[];
-
-  module: {
-    /**
-     * "export"
-     *
-     * ~~ctx available in 3~~
-     *
-     * ```diff
-     * - export function get(req, res) {}
-     * + export function get(ctx) {}
-     * ```
-     * "export default"
-     * ```ts
-     * export default [(ctx) => {}];
-     * ```
-     */
-    type: 'export' | 'export-default' | 'unknown';
-
-    /**
-     * zely@3 don't compile code before first request of specific page
-     */
-    isLoaded: boolean;
-
-    /**
-     * page module
-     * `{"get": () => {...}}`
-     */
-    data?: any;
-
-    builtPath?: string;
-    builtMapPath?: string;
-
-    __isVirtual__?: boolean;
-  };
-}
 
 function findPage(path: string, pages: Page[]) {
   for (const page of pages) {
@@ -157,6 +116,10 @@ export class PageCache {
       filesResult.push(...files[file]);
     });
     this.#modules = filesResult;
+  }
+
+  getPages(): Page[] {
+    return this.#modules;
   }
 
   // create production build
@@ -330,3 +293,6 @@ export async function controll(
     res.send('500 Server Error');
   }
 }
+
+// export type
+export { Page };

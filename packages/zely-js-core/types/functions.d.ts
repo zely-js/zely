@@ -1,5 +1,60 @@
 import { ZeptServer } from '@zely-js/http';
 import { UserConfig } from './config';
+import { createLoader } from '@zely-js/loader';
+
+export interface Page {
+  filename: string;
+  path: string;
+  regex: RegExp;
+  id: number;
+  params: string[];
+
+  module: {
+    /**
+     * "export"
+     *
+     * ~~ctx available in 3~~
+     *
+     * ```diff
+     * - export function get(req, res) {}
+     * + export function get(ctx) {}
+     * ```
+     * "export default"
+     * ```ts
+     * export default [(ctx) => {}];
+     * ```
+     */
+    type: 'export' | 'export-default' | 'unknown';
+
+    /**
+     * zely@3 don't compile code before first request of specific page
+     */
+    isLoaded: boolean;
+
+    /**
+     * page module
+     * `{"get": () => {...}}`
+     */
+    data?: any;
+
+    builtPath?: string;
+    builtMapPath?: string;
+
+    __isVirtual__?: boolean;
+  };
+}
+
+export class PageCache {
+  #modules: Page[];
+  config: UserConfig;
+  loader: ReturnType<typeof createLoader>;
+  constructor(page: Page[], config: UserConfig);
+  productionBuild(): Promise<void>;
+  writeIdMap(data: any): void;
+  getPages(): Page[];
+  readIdMap(): any;
+  getModule(path: string): Promise<any>;
+}
 
 /**
  * create server instance
@@ -13,5 +68,6 @@ import { UserConfig } from './config';
 export function createZelyServer(options: UserConfig): Promise<{
   server: ZeptServer;
   applyZelyMiddlewares: (serverInstance: ZeptServer) => void;
+  cache: PageCache;
 }>;
 export function productionBuild(options: UserConfig): Promise<void>;

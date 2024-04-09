@@ -162,5 +162,5 @@ export async function createZelyServer(options: UserConfig) {
     });
   };
 
-  return { server, applyZelyMiddlewares };
+  return { server, applyZelyMiddlewares, cache: pages };
 }
