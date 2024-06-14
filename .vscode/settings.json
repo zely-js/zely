@@ -1,4 +1,14 @@
 {
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml",
+    "editor.formatOnSave": true
+  },
+  "rust-analyzer.linkedProjects": [".\\crates\\node-bindings\\Cargo.toml"],
+  "rust-analyzer.showUnlinkedFileNotification": false,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 2,
