@@ -20,12 +20,5 @@
       "~/*": ["./packages/*"]
     }
   },
-  "exclude": [
-    "**/node_modules/**",
-    "**/dist/**",
-    "asto.*.js",
-    "*.config.js",
-    "playground/**/*.js",
-    "scripts/**/*.js"
-  ]
+  "include": ["**/*.ts"]
 }
