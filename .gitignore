@@ -127,3 +127,7 @@ dist
 .pnp.*
 
 .zely
+
+# rust
+target
+*.node
