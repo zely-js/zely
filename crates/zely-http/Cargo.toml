@@ -1,6 +1,0 @@
-[package]
-edition = "2021"
-name    = "zely_http"
-version = "0.0.0"
-
-[dependencies]

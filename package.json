@@ -42,7 +42,6 @@
     "zept": "^0.0.4"
   },
   "scripts": {
-    "artifacts": "yarn workspace @wopy/node-bindings artifacts",
     "version": "lerna version",
     "publish:alpha": "yarn lerna publish from-package --dist-tag=alpha --no-private",
     "publish": "yarn lerna publish from-package --no-private",
@@ -50,8 +49,6 @@
     "dev": "cross-env NODE_ENV=development asto --watch",
     "build:dev": "cross-env NODE_ENV=development asto",
     "build": "cross-env NODE_ENV=production asto",
-    "build:binding": "yarn workspace @zely-js/node-bindings build",
-    "build:binding:release": "yarn workspace @zely-js/node-bindings build:release",
     "test": "jest",
     "lint-fix": "eslint --fix --ext .js,.ts ."
   },

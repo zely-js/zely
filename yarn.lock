@@ -2957,6 +2957,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zely-js/native@workspace:packages/zely-native":
+  version: 0.0.0-use.local
+  resolution: "@zely-js/native@workspace:packages/zely-native"
+  dependencies:
+    "@zely-js/node-bindings": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
 "@zely-js/node-bindings-darwin-x64@workspace:*, @zely-js/node-bindings-darwin-x64@workspace:crates/node-bindings/npm/darwin-x64":
   version: 0.0.0-use.local
   resolution: "@zely-js/node-bindings-darwin-x64@workspace:crates/node-bindings/npm/darwin-x64"
@@ -2975,7 +2983,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/node-bindings@workspace:crates/node-bindings":
+"@zely-js/node-bindings@workspace:*, @zely-js/node-bindings@workspace:crates/node-bindings":
   version: 0.0.0-use.local
   resolution: "@zely-js/node-bindings@workspace:crates/node-bindings"
   dependencies:
