@@ -56,7 +56,17 @@ export async function sender(
   }
 
   if (res.prewrite) {
-    chunk = await res.prewrite(chunk);
+    const prewritten = await res.prewrite(chunk);
+
+    if (typeof prewritten === 'string') {
+      chunk = prewritten;
+    } else {
+      chunk = prewritten.content;
+
+      for (const header of Object.keys(prewritten.headers)) {
+        res.setHeader(header, prewritten.headers[header]);
+      }
+    }
   }
 
   res.end(chunk);

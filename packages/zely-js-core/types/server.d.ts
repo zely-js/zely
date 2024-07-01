@@ -10,7 +10,9 @@ export interface ZelyResponse extends Response {
   send: (chunk: string | Array<any> | object | number, status?: number) => this;
   status: (code: number) => this;
   sendFile: (filePath: string) => this;
-  prewrite: (data: string) => Promise<string>;
+  prewrite: (
+    data: string
+  ) => Promise<string | { content: string; headers: Record<string, string> }>;
 }
 
 export interface Context {
