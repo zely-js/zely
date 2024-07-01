@@ -2909,14 +2909,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zely-js/core@npm:3.0.0, @zely-js/core@workspace:*, @zely-js/core@workspace:packages/zely-js-core":
+"@zely-js/core@npm:3.0.1, @zely-js/core@workspace:*, @zely-js/core@workspace:packages/zely-js-core":
   version: 0.0.0-use.local
   resolution: "@zely-js/core@workspace:packages/zely-js-core"
   dependencies:
     "@types/mime-types": "npm:^2"
     "@zely-js/http": "workspace:*"
-    "@zely-js/loader": "npm:3.0.0"
-    "@zely-js/logger": "npm:3.0.0"
+    "@zely-js/loader": "npm:3.0.1"
+    "@zely-js/logger": "npm:3.0.1"
     "@zely-js/reporter": "workspace:*"
     "@zept/path-regexp": "npm:^0.0.1"
     mime-types: "npm:^2.1.35"
@@ -2929,7 +2929,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/loader-esbuild@npm:3.0.0, @zely-js/loader-esbuild@workspace:packages/zely-js-loader-esbuild":
+"@zely-js/loader-esbuild@npm:3.0.1, @zely-js/loader-esbuild@workspace:packages/zely-js-loader-esbuild":
   version: 0.0.0-use.local
   resolution: "@zely-js/loader-esbuild@workspace:packages/zely-js-loader-esbuild"
   dependencies:
@@ -2939,16 +2939,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/loader@npm:3.0.0, @zely-js/loader@npm:^3.0.0, @zely-js/loader@workspace:*, @zely-js/loader@workspace:packages/zely-js-loader":
+"@zely-js/loader@npm:3.0.1, @zely-js/loader@npm:^3.0.0, @zely-js/loader@workspace:*, @zely-js/loader@workspace:packages/zely-js-loader":
   version: 0.0.0-use.local
   resolution: "@zely-js/loader@workspace:packages/zely-js-loader"
   dependencies:
-    "@zely-js/core": "npm:3.0.0"
-    "@zely-js/loader-esbuild": "npm:3.0.0"
+    "@zely-js/core": "npm:3.0.1"
+    "@zely-js/loader-esbuild": "npm:3.0.1"
   languageName: unknown
   linkType: soft
 
-"@zely-js/logger@npm:3.0.0, @zely-js/logger@workspace:*, @zely-js/logger@workspace:packages/zely-js-logger":
+"@zely-js/logger@npm:3.0.1, @zely-js/logger@workspace:*, @zely-js/logger@workspace:packages/zely-js-logger":
   version: 0.0.0-use.local
   resolution: "@zely-js/logger@workspace:packages/zely-js-logger"
   dependencies:
@@ -2965,22 +2965,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/watch@npm:3.0.0, @zely-js/watch@workspace:packages/zely-js-watch":
+"@zely-js/watch@npm:3.0.1, @zely-js/watch@workspace:packages/zely-js-watch":
   version: 0.0.0-use.local
   resolution: "@zely-js/watch@workspace:packages/zely-js-watch"
   dependencies:
-    "@zely-js/logger": "npm:3.0.0"
+    "@zely-js/logger": "npm:3.0.1"
     chokidar: "npm:^3.5.3"
   languageName: unknown
   linkType: soft
 
-"@zely-js/zely@npm:3.0.0, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
+"@zely-js/zely@npm:3.0.1, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
   version: 0.0.0-use.local
   resolution: "@zely-js/zely@workspace:packages/zely-js"
   dependencies:
-    "@zely-js/core": "npm:3.0.0"
+    "@zely-js/core": "npm:3.0.1"
     "@zely-js/http": "workspace:*"
-    "@zely-js/logger": "npm:3.0.0"
+    "@zely-js/logger": "npm:3.0.1"
   languageName: unknown
   linkType: soft
 
@@ -11379,14 +11379,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zely-cli@npm:3.0.0, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
+"zely-cli@npm:3.0.1, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
   version: 0.0.0-use.local
   resolution: "zely-cli@workspace:packages/zely-js-cli"
   dependencies:
-    "@zely-js/loader": "npm:3.0.0"
-    "@zely-js/logger": "npm:3.0.0"
-    "@zely-js/watch": "npm:3.0.0"
-    "@zely-js/zely": "npm:3.0.0"
+    "@zely-js/loader": "npm:3.0.1"
+    "@zely-js/logger": "npm:3.0.1"
+    "@zely-js/watch": "npm:3.0.1"
+    "@zely-js/zely": "npm:3.0.1"
     animaux: "npm:^0.0.4"
   bin:
     zely-cli: ./dist/index.js
@@ -11406,8 +11406,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "zely@workspace:packages/zely"
   dependencies:
-    "@zely-js/zely": "npm:3.0.0"
-    zely-cli: "npm:3.0.0"
+    "@zely-js/zely": "npm:3.0.1"
+    zely-cli: "npm:3.0.1"
   bin:
     zely: ./cli.js
   languageName: unknown

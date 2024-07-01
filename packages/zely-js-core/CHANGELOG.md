@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/zely-js/zely/compare/v3.0.0...v3.0.1) (2024-07-01)
+
+
+### New Features
+
+* prewrite headers ([7a10035](https://github.com/zely-js/zely/commit/7a1003522e8c199f5c874d388414476fd76d855c))
+* return page cache ([2a9deef](https://github.com/zely-js/zely/commit/2a9deef40c14e3bbb8292afc712dfbf7f4af909f))
+
+
+
 ## [3.0.0](https://github.com/zely-js/zely/compare/v3.0.0-alpha.14...v3.0.0) (2024-03-31)
 
 

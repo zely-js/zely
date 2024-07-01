@@ -1,11 +1,11 @@
 {
   "name": "@zely-js/watch",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@zely-js/logger": "3.0.0",
+    "@zely-js/logger": "3.0.1",
     "chokidar": "^3.5.3"
   },
   "files": [

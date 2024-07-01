@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/zely-js/zely/compare/v3.0.0...v3.0.1) (2024-07-01)
+
+
+### New Features
+
+* **ci:** rust packages ([#315](https://github.com/zely-js/zely/issues/315)) ([e54402b](https://github.com/zely-js/zely/commit/e54402bce94c8ffabd7ec63b490f562d121434e1))
+* prewrite headers ([7a10035](https://github.com/zely-js/zely/commit/7a1003522e8c199f5c874d388414476fd76d855c))
+* return page cache ([2a9deef](https://github.com/zely-js/zely/commit/2a9deef40c14e3bbb8292afc712dfbf7f4af909f))
+* rust packages ([#315](https://github.com/zely-js/zely/issues/315)) ([6571d71](https://github.com/zely-js/zely/commit/6571d710670ac7c300c4f0698f975417c18737fb))
+* rust setup ([#315](https://github.com/zely-js/zely/issues/315)) ([d3d476e](https://github.com/zely-js/zely/commit/d3d476ef0ad7ab15bd0e1b8d6afff51aa2e8f0b4))
+* **zely-dev:** devtools ([65f51e9](https://github.com/zely-js/zely/commit/65f51e9a13f55ac2fd3a69edb26f7a6944a2823a))
+
+
+### Bug Fix
+
+* fixed tsconfig error ([f956483](https://github.com/zely-js/zely/commit/f956483bae051e58bd2f82b18d14382e506d3e63))
+
+
+### Documentation
+
+* introduce future plan ([5c9a418](https://github.com/zely-js/zely/commit/5c9a4182320a7a2a2ffb624777f709925feacb6d))
+* **zely-dev:** readme ([01230c3](https://github.com/zely-js/zely/commit/01230c37060fe6165c855acbc029874e9423f1e6))
+
+
+### Others
+
+* code minify ([079bfd6](https://github.com/zely-js/zely/commit/079bfd69c3868caba6bdf628fae445a8c353c7af))
+* ignore rust caches ([#315](https://github.com/zely-js/zely/issues/315)) ([f145faf](https://github.com/zely-js/zely/commit/f145faf19ef4c49c743c3e2d36086779f2f11224))
+* repository move ([6c2b968](https://github.com/zely-js/zely/commit/6c2b968fa25bc88786c95e442eb9e05dfe8104a1))
+* **rust:** remove rust ([#315](https://github.com/zely-js/zely/issues/315)) ([4bc87f2](https://github.com/zely-js/zely/commit/4bc87f2c7c2ecfb286c257d63913a7b4f5e2ef35))
+* vscode formatting ([#315](https://github.com/zely-js/zely/issues/315)) ([c663d07](https://github.com/zely-js/zely/commit/c663d07125b77959518b6eedeb98dfeb608cf909))
+
+
+
 ## [3.0.0](https://github.com/zely-js/zely/compare/v3.0.0-alpha.14...v3.0.0) (2024-03-31)
 
 

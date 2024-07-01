@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.1](https://github.com/zely-js/zely/compare/v3.0.0...v3.0.1) (2024-07-01)
+
+
+### New Features
+
+* **zely-dev:** devtools ([65f51e9](https://github.com/zely-js/zely/commit/65f51e9a13f55ac2fd3a69edb26f7a6944a2823a))
+
+
+
 ## [3.0.0](https://github.com/zely-js/zely/compare/v3.0.0-alpha.14...v3.0.0) (2024-03-31)
 
 **Note:** Version bump only for package @zely-js/loader
