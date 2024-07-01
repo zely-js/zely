@@ -2,11 +2,7 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "playground/**/*",
-    "docs",
-    "http",
-    "crates/node-bindings",
-    "crates/node-bindings/npm/*"
+    "playground/**/*"
   ],
   "devDependencies": {
     "@asto/esm": "^0.0.2",
@@ -53,8 +49,5 @@
     "lint-fix": "eslint --fix --ext .js,.ts ."
   },
   "version": "0.0.0",
-  "packageManager": "yarn@4.1.0",
-  "dependencies": {
-    "@napi-rs/cli": "^2.18.3"
-  }
+  "packageManager": "yarn@4.1.0"
 }

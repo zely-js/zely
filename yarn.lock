@@ -1601,15 +1601,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@napi-rs/cli@npm:^2.18.3":
-  version: 2.18.3
-  resolution: "@napi-rs/cli@npm:2.18.3"
-  bin:
-    napi: scripts/index.js
-  checksum: 10c0/4d91fe84551a3775cbf93f6340c8b6a87dc653248f90c459fb996ea689ff52ba698a7620ad08713b3b97baf0a675fe2d4cac83a9e842e56cdfbf204c7f5f01d5
-  languageName: node
-  linkType: hard
-
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -2029,6 +2020,7 @@ __metadata:
     "@zely-js/core": "workspace:*"
     "@zely-js/zely": "workspace:*"
     zely-cli: "workspace:*"
+    zely-dev: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -2039,6 +2031,13 @@ __metadata:
     colors: "npm:^1.4.0"
     fast-glob: "npm:^3.3.2"
   checksum: 10c0/75171cf69ca543b50cf70bd2e8826918cedf371fdcc874a211698cec9938bb1f95d9b06ac3acf7d4dd925d190ef16df230afc46aaaef5c3a8a32fb3b313009c4
+  languageName: node
+  linkType: hard
+
+"@shikijs/core@npm:1.10.0":
+  version: 1.10.0
+  resolution: "@shikijs/core@npm:1.10.0"
+  checksum: 10c0/5c964f58933a89a47e77d7512b3c536d8d2f6de55ea229e61ee0025b7db8af2b0233c59d9ce39331d4ccb082abdd5bce0724bca6434e2d7b9186d1f29f2194e4
   languageName: node
   linkType: hard
 
@@ -2924,9 +2923,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/http@workspace:*, @zely-js/http@workspace:http":
+"@zely-js/http@workspace:*, @zely-js/http@workspace:packages/http":
   version: 0.0.0-use.local
-  resolution: "@zely-js/http@workspace:http"
+  resolution: "@zely-js/http@workspace:packages/http"
   languageName: unknown
   linkType: soft
 
@@ -2954,49 +2953,6 @@ __metadata:
   resolution: "@zely-js/logger@workspace:packages/zely-js-logger"
   dependencies:
     colors: "npm:^1.4.0"
-  languageName: unknown
-  linkType: soft
-
-"@zely-js/native@workspace:packages/zely-native":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/native@workspace:packages/zely-native"
-  dependencies:
-    "@zely-js/node-bindings": "workspace:*"
-  languageName: unknown
-  linkType: soft
-
-"@zely-js/node-bindings-darwin-x64@workspace:*, @zely-js/node-bindings-darwin-x64@workspace:crates/node-bindings/npm/darwin-x64":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/node-bindings-darwin-x64@workspace:crates/node-bindings/npm/darwin-x64"
-  languageName: unknown
-  linkType: soft
-
-"@zely-js/node-bindings-linux-x64-gnu@workspace:*, @zely-js/node-bindings-linux-x64-gnu@workspace:crates/node-bindings/npm/linux-x64-gnu":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/node-bindings-linux-x64-gnu@workspace:crates/node-bindings/npm/linux-x64-gnu"
-  languageName: unknown
-  linkType: soft
-
-"@zely-js/node-bindings-win32-x64-msvc@workspace:*, @zely-js/node-bindings-win32-x64-msvc@workspace:crates/node-bindings/npm/win32-x64-msvc":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/node-bindings-win32-x64-msvc@workspace:crates/node-bindings/npm/win32-x64-msvc"
-  languageName: unknown
-  linkType: soft
-
-"@zely-js/node-bindings@workspace:*, @zely-js/node-bindings@workspace:crates/node-bindings":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/node-bindings@workspace:crates/node-bindings"
-  dependencies:
-    "@zely-js/node-bindings-darwin-x64": "workspace:*"
-    "@zely-js/node-bindings-linux-x64-gnu": "workspace:*"
-    "@zely-js/node-bindings-win32-x64-msvc": "workspace:*"
-  dependenciesMeta:
-    "@zely-js/node-bindings-darwin-x64":
-      optional: true
-    "@zely-js/node-bindings-linux-x64-gnu":
-      optional: true
-    "@zely-js/node-bindings-win32-x64-msvc":
-      optional: true
   languageName: unknown
   linkType: soft
 
@@ -9733,7 +9689,6 @@ __metadata:
     "@asto/webpack": "npm:^0.0.3"
     "@commitlint/cli": "npm:^18.4.2"
     "@commitlint/config-conventional": "npm:^18.4.2"
-    "@napi-rs/cli": "npm:^2.18.3"
     "@types/cors": "npm:^2.8.14"
     "@types/express": "npm:^4.17.19"
     "@types/jest": "npm:^29.5.5"
@@ -9963,6 +9918,15 @@ __metadata:
   version: 3.0.0
   resolution: "shebang-regex@npm:3.0.0"
   checksum: 10c0/1dbed0726dd0e1152a92696c76c7f06084eb32a90f0528d11acd764043aacf76994b2fb30aa1291a21bd019d6699164d048286309a278855ee7bec06cf6fb690
+  languageName: node
+  linkType: hard
+
+"shiki@npm:^1.10.0":
+  version: 1.10.0
+  resolution: "shiki@npm:1.10.0"
+  dependencies:
+    "@shikijs/core": "npm:1.10.0"
+  checksum: 10c0/1f2a004ac9add7ae58e964e107e35d36d52773cd167673133526851a1cd1a2eab0eed89f5790ed654b926b8747ef07c156a132035110787b1bb2a051bc9ffa90
   languageName: node
   linkType: hard
 
@@ -11426,6 +11390,15 @@ __metadata:
     animaux: "npm:^0.0.4"
   bin:
     zely-cli: ./dist/index.js
+  languageName: unknown
+  linkType: soft
+
+"zely-dev@workspace:*, zely-dev@workspace:packages/zely-js-dev":
+  version: 0.0.0-use.local
+  resolution: "zely-dev@workspace:packages/zely-js-dev"
+  dependencies:
+    shiki: "npm:^1.10.0"
+    zely: "workspace:*"
   languageName: unknown
   linkType: soft
 
