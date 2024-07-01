@@ -15,7 +15,7 @@ export function devtool(): Plugin {
           if (req.headers['user-agent']?.includes('Mozilla/5.0')) {
             // replace chunk with response
 
-            return await generatePage(data);
+            return (await generatePage(data)).split(/\r?\n/).join('');
           }
 
           return data;
