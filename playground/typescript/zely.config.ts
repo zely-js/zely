@@ -1,7 +1,9 @@
 import { createVirtualPage, GET } from '@zely-js/core';
 import { defineConfig } from '@zely-js/zely';
+import { devtool } from 'zely-dev';
 
 export default defineConfig({
+  server: { port: 3001 },
   allowAutoMiddlewares: true,
   __virtuals__: [
     createVirtualPage('main.ts', [
@@ -11,6 +13,7 @@ export default defineConfig({
     ]),
   ],
   plugins: [
+    devtool(),
     {
       name: 'error',
       server: async (server) => {

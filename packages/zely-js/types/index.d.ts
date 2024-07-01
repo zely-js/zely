@@ -8,6 +8,9 @@ export { Config };
 export function defineConfig(config: Config): Config;
 export function usePrewrite(
   res: ZelyResponse,
-  callback: (data: string) => Promise<string>
+  callback: (
+    data: string
+  ) => Promise<string | { content: string; headers: Record<string, string> }>
 ): void;
 export * from './config';
+export * from './plugin';

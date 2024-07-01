@@ -5,7 +5,8 @@
   "dependencies": {
     "@zely-js/core": "workspace:*",
     "@zely-js/zely": "workspace:*",
-    "zely-cli": "workspace:*"
+    "zely-cli": "workspace:*",
+    "zely-dev": "workspace:*"
   },
   "scripts": {
     "start": "zely-cli start",

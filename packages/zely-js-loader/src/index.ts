@@ -15,6 +15,7 @@ async function load(id: string) {
     }
     return require(relativePath);
   } catch (e) {
+    console.error(e);
     throw new Error(`Error occurred while importing ${relativePath}`);
   }
 }
