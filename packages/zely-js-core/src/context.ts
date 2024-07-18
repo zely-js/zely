@@ -50,19 +50,19 @@ export class Context {
   }
 
   async html(data: string): Promise<this> {
-    this.response.send(data);
+    this.send(data);
 
     return this;
   }
 
   async json(data: any): Promise<this> {
-    this.response.send(data);
+    this.send(data);
 
     return this;
   }
 
   async text(data: string): Promise<this> {
-    await this.response.send(data);
+    await this.send(data);
 
     return this;
   }
