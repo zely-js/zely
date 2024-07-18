@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/zely-js/zely/compare/v3.0.1...v3.0.2) (2024-07-18)
+
+
+### Bug Fix
+
+* ctx.send uses http.end instead of zely.send ([#325](https://github.com/zely-js/zely/issues/325)) ([ad5eaa7](https://github.com/zely-js/zely/commit/ad5eaa745be1c447b44f1be91999e8dbce304808))
+
+
+
 ## [3.0.1](https://github.com/zely-js/zely/compare/v3.0.0...v3.0.1) (2024-07-01)
 
 

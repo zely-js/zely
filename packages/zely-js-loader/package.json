@@ -1,14 +1,14 @@
 {
   "name": "@zely-js/loader",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@zely-js/loader-esbuild": "3.0.1"
+    "@zely-js/loader-esbuild": "3.0.2"
   },
   "devDependencies": {
-    "@zely-js/core": "3.0.1"
+    "@zely-js/core": "3.0.2"
   },
   "files": [
     "./types",
