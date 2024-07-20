@@ -92,6 +92,12 @@ export class PageCache {
 
     writeFileSync(HASH_DIRECTORY(config), '{}');
 
+    // support esm
+    writeFileSync(
+      join(config.cwd || process.cwd(), config.dist || '.zely', 'package.json'),
+      '{"type": "commonjs"}'
+    );
+
     this.#modules = page;
     this.loader = loader;
     this.config = config;
