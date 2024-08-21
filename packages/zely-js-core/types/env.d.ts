@@ -1,11 +1,11 @@
-import methods from './methods';
+import { methods } from './methods';
 
 declare global {
-  var GET: typeof methods.GET;
-  var POST: typeof methods.POST;
-  var DELETE: typeof methods.DELETE;
-  var PUT: typeof methods.PUT;
-  var ALL: typeof methods.ALL;
+  var GET: typeof methods.get;
+  var POST: typeof methods.post;
+  var DELETE: typeof methods.delete;
+  var PUT: typeof methods.put;
+  var ALL: typeof methods.all;
 }
 
 export {};
