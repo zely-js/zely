@@ -1,22 +1,18 @@
-import url from 'node:url';
 import { createReadStream, existsSync } from 'node:fs';
 import { lookup } from 'mime-types';
+import { Context } from 'senta';
 
-import type { Request, Response } from '@zely-js/http';
-
-export function apply(req: Request, res: Response) {
+export function apply(ctx: Context) {
   // req.query
   // ?foo=bar => {"foo":"bar"}
-  (req as any).query = Object.fromEntries(
-    new URLSearchParams(url.parse(req.url).query || '')
-  );
+  // provided by senta
 
   // res.html
-  // res.html("<p>ABCD</p>")
-  (res as any).html = (code: string) => {
-    res.setHeader('Content-Type', 'text/html');
-    res.end(code);
-    return res;
+  // ctx.html("<p>ABCD</p>")
+  (ctx as any).html = (code: string) => {
+    ctx.response.setHeader('Content-Type', 'text/html');
+    ctx.response.end(code);
+    return ctx;
   };
 
   // res.send
@@ -27,32 +23,29 @@ export function apply(req: Request, res: Response) {
 
   // res.status
   // res.status(404).send("not found")
-  (res as any).status = (code: number) => {
-    res.statusCode = code;
-    return res;
-  };
+  // provided by senta
 
-  // res.sendFile
+  // ctx.sendFile
 
-  (res as any).sendFile = (filePath: string) => {
+  (ctx as any).sendFile = (filePath: string) => {
     const mime = lookup(filePath) || 'text/plain';
 
     if (existsSync(filePath)) {
-      res.writeHead(200, {
+      ctx.response.writeHead(200, {
         'Content-Type': mime,
         'Content-Disposition': `attachment; filename=${filePath}`,
       });
 
-      createReadStream(filePath).pipe(res);
+      createReadStream(filePath).pipe(ctx.response);
     } else {
       throw new Error(`no such file or directory. ${filePath}`);
     }
 
-    return res;
+    return ctx;
   };
 }
-export function kitMiddleware(req: Request, res: Response, next: () => void) {
-  apply(req, res);
+export function kitMiddleware(ctx: Context, next: () => void) {
+  apply(ctx);
 
   next();
 }

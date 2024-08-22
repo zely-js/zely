@@ -1,4 +1,4 @@
-import { ServerOptions, ZeptServer } from '@zely-js/http';
+import { Config as ServerOptions } from 'senta';
 import { Loader } from '@zely-js/loader';
 
 import { Middleware } from './middleware';
@@ -21,11 +21,6 @@ export interface UserConfig {
      * [https://github.com/zely-js/zept/blob/main/packages/http/types/index.d.ts#L33](zept.ServerOptions)
      */
     options?: ServerOptions;
-
-    /**
-     * Server instance
-     */
-    zept?: ZeptServer;
   };
 
   /**

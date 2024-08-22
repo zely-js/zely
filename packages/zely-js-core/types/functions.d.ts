@@ -1,4 +1,4 @@
-import { ZeptServer } from '@zely-js/http';
+import { App } from 'senta';
 import { UserConfig } from './config';
 import { createLoader } from '@zely-js/loader';
 
@@ -66,8 +66,8 @@ export class PageCache {
  * @param options Config
  */
 export function createZelyServer(options: UserConfig): Promise<{
-  server: ZeptServer;
-  applyZelyMiddlewares: (serverInstance: ZeptServer) => void;
+  server: App;
+  applyZelyMiddlewares: (serverInstance: App) => void;
   cache: PageCache;
 }>;
 export function productionBuild(options: UserConfig): Promise<void>;

@@ -1,6 +1,6 @@
 import { warn } from '@zely-js/logger';
+import { Context } from 'senta';
 
-import { Context } from '~/zely-js-core/src/context';
 import { Page, getValue } from '..';
 import { applyParams } from './params';
 import { isFunction } from '~/zely-js-core/lib/is';
@@ -38,7 +38,7 @@ export async function handleExportDefault(ctx: Context, page: Page, next: () => 
   const type = getHandlerType(handler);
 
   // apply params to request
-  ctx.params = applyParams(ctx.request, page.regex, page.params).params;
+  ctx.params = (applyParams(ctx.request, page.regex, page.params) as any).params;
 
   // execute middlewares
   for await (const middleware of middlewares || []) {

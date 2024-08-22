@@ -1,7 +1,3 @@
-import { Request, Response } from '@zely-js/http';
+import { Context } from 'senta';
 
-export type Middleware = (
-  req: Request,
-  res: Response,
-  next: () => void
-) => Promise<void> | void;
+export type Middleware = (ctx: Context, next: () => void) => Promise<void> | void;

@@ -13,19 +13,22 @@ export async function sender(
 ) {
   if (res.writableEnded) return;
 
+  // eslint-disable-next-line no-return-assign
+  const setStatus = (s: number) => (res.statusCode = s);
+
   // is response()
   if (chunk instanceof Response) {
     for (const header of Object.keys(chunk.headers)) {
       res.setHeader(header, chunk.headers[header]);
     }
-    res.status(chunk.status);
+    setStatus(chunk.status);
 
     sender(req, res, chunk.body);
 
     return;
   }
 
-  if (status) res.status(status);
+  if (status) setStatus(status);
 
   if (Array.isArray(chunk)) {
     chunk = JSON.stringify(chunk as Array<any>);
@@ -55,8 +58,8 @@ export async function sender(
       break;
   }
 
-  if (res.prewrite) {
-    const prewritten = await res.prewrite(chunk);
+  if ((res as any).prewrite) {
+    const prewritten = await (res as any).prewrite(chunk);
 
     if (typeof prewritten === 'string') {
       chunk = prewritten;

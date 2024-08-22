@@ -1,4 +1,4 @@
-export default function hello(req, res, next) {
-  console.log(req.url);
+export default function hello(ctx, next) {
+  console.log();
   next();
 }

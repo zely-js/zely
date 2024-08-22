@@ -14,7 +14,7 @@ export async function dev() {
 
     watch({}, config);
 
-    server.listen(port, () => {
+    server.server.listen(port, () => {
       info(`Server is running on http://localhost:${port}`);
     });
   } catch (e) {

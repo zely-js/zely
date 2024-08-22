@@ -4,10 +4,10 @@ import reporter from '@zely-js/reporter';
 
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
+import { Context } from 'senta';
 import { join } from 'node:path';
 
 import { UserConfig, ZelyRequest, ZelyResponse } from '~/zely-js-core';
-import { Context } from '../context';
 import { isFunction, isObject } from '~/zely-js-core/lib/is';
 import { handleExportDefault } from './handler/export-default';
 import { handleExport } from './handler/export';
@@ -295,8 +295,8 @@ export async function controll(
       await userConfig?.onError(e);
     }
 
-    res.status(500);
-    res.send('500 Server Error');
+    res.statusCode = 500;
+    res.end('500 Server Error');
   }
 }
 

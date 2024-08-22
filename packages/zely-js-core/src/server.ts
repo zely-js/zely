@@ -1,4 +1,4 @@
-import { ZeptServer } from '@zely-js/http';
+import { App, senta } from 'senta';
 import { error, warn } from '@zely-js/logger';
 import { pathToRegexp } from '@zept/path-regexp';
 
@@ -104,12 +104,12 @@ export async function createZelyServer(options: UserConfig) {
   }
 
   const middlewares = (await createMiddlewares(options)).map(
-    (middleware) => async (req, res, next) => {
-      await middleware(req, res, next);
+    (middleware) => async (ctx, next) => {
+      await middleware(ctx, next);
     }
   );
 
-  const server = options.server?.zept || new ZeptServer(options.server?.options || {});
+  const server = senta(options.server?.options || {});
 
   const files = readDirectory(join(options.cwd || process.cwd(), 'pages'));
   const pages = new PageCache(
@@ -148,17 +148,16 @@ export async function createZelyServer(options: UserConfig) {
     await pages.productionBuild();
   }
 
-  const applyZelyMiddlewares = (serverInstance: ZeptServer) => {
+  const applyZelyMiddlewares = async (serverInstance: App) => {
     // Request/Response => ZelyRequest/Response
     serverInstance.use(kitMiddleware);
 
     // user middlewares
-    serverInstance.use(...middlewares);
+    serverInstance.use(middlewares);
 
     // core handler
-    serverInstance.use(async (req, res, next) => {
-      // @ts-expect-error
-      await controll(req, res, next, options, pages);
+    serverInstance.use(async (ctx, next) => {
+      await controll(ctx.request, ctx.response, next, options, pages);
     });
   };
 

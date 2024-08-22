@@ -5,12 +5,12 @@
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@zely-js/http": "workspace:*",
     "@zely-js/loader": "3.0.2",
     "@zely-js/logger": "3.0.1",
     "@zely-js/reporter": "workspace:*",
     "@zept/path-regexp": "^0.0.1",
-    "mime-types": "^2.1.35"
+    "mime-types": "^2.1.35",
+    "senta": "^0.0.0"
   },
   "devDependencies": {
     "@types/mime-types": "^2"

@@ -11,7 +11,8 @@
   "dependencies": {
     "@zely-js/core": "3.0.2",
     "@zely-js/http": "workspace:*",
-    "@zely-js/logger": "3.0.1"
+    "@zely-js/logger": "3.0.1",
+    "senta": "^0.0.0"
   },
   "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
   "description": "main module for zely-js",
