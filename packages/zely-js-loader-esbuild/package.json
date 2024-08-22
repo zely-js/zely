@@ -9,13 +9,13 @@
     "esbuild-node-externals": "^1.12.0"
   },
   "devDependencies": {
-    "@zely-js/loader": "workspace:*"
+    "@zely-js/loader": "3.1.0-beta.0"
   },
   "files": [
     "./types",
     "./dist"
   ],
-  "gitHead": "b0769ffaf7d5d37dc2be3fcd86ddafab7a349cd6",
+  "gitHead": "cef4a76801be1af898c35a5213f9902dee4a347f",
   "description": "esbuild loader for zely-js",
   "repository": "https://github.com/zely-js/zely",
   "bugs": "https://github.com/zely-js/zely/issues",
