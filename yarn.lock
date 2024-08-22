@@ -2909,12 +2909,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zely-js/core@npm:3.0.2, @zely-js/core@workspace:*, @zely-js/core@workspace:packages/zely-js-core":
+"@zely-js/core@npm:3.1.0-beta.0, @zely-js/core@workspace:*, @zely-js/core@workspace:packages/zely-js-core":
   version: 0.0.0-use.local
   resolution: "@zely-js/core@workspace:packages/zely-js-core"
   dependencies:
     "@types/mime-types": "npm:^2"
-    "@zely-js/loader": "npm:3.0.2"
+    "@zely-js/loader": "npm:3.1.0-beta.0"
     "@zely-js/logger": "npm:3.0.1"
     "@zely-js/reporter": "workspace:*"
     "@zept/path-regexp": "npm:^0.0.1"
@@ -2929,7 +2929,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/loader-esbuild@npm:3.0.2, @zely-js/loader-esbuild@workspace:packages/zely-js-loader-esbuild":
+"@zely-js/loader-esbuild@npm:3.0.2":
+  version: 3.0.2
+  resolution: "@zely-js/loader-esbuild@npm:3.0.2"
+  dependencies:
+    esbuild: "npm:^0.20.1"
+    esbuild-node-externals: "npm:^1.12.0"
+  checksum: 10c0/42cad7bb601ebfb492ab9c1a504ffcf2f4938b367a74530ea1c98c064724eee31835506b406e5c289037c9fd897874978666141c564be93a651f6b27339a6e7d
+  languageName: node
+  linkType: hard
+
+"@zely-js/loader-esbuild@npm:3.1.0-beta.0, @zely-js/loader-esbuild@workspace:packages/zely-js-loader-esbuild":
   version: 0.0.0-use.local
   resolution: "@zely-js/loader-esbuild@workspace:packages/zely-js-loader-esbuild"
   dependencies:
@@ -2939,14 +2949,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/loader@npm:3.0.2, @zely-js/loader@npm:^3.0.0, @zely-js/loader@workspace:*, @zely-js/loader@workspace:packages/zely-js-loader":
+"@zely-js/loader@npm:3.1.0-beta.0, @zely-js/loader@workspace:*, @zely-js/loader@workspace:packages/zely-js-loader":
   version: 0.0.0-use.local
   resolution: "@zely-js/loader@workspace:packages/zely-js-loader"
   dependencies:
-    "@zely-js/core": "npm:3.0.2"
-    "@zely-js/loader-esbuild": "npm:3.0.2"
+    "@zely-js/core": "npm:3.1.0-beta.0"
+    "@zely-js/loader-esbuild": "npm:3.1.0-beta.0"
   languageName: unknown
   linkType: soft
+
+"@zely-js/loader@npm:^3.0.0":
+  version: 3.0.2
+  resolution: "@zely-js/loader@npm:3.0.2"
+  dependencies:
+    "@zely-js/loader-esbuild": "npm:3.0.2"
+  checksum: 10c0/1ef05e8e95f199160ce02a92c785d804b65fdded8e1e759998a7dd465229084360707910e84f7f7ec20bdb9cb2a63c6e3205d0f7758b64806305d09c1c603df1
+  languageName: node
+  linkType: hard
 
 "@zely-js/logger@npm:3.0.1, @zely-js/logger@workspace:*, @zely-js/logger@workspace:packages/zely-js-logger":
   version: 0.0.0-use.local
@@ -2974,11 +2993,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/zely@npm:3.0.2, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
+"@zely-js/zely@npm:3.1.0-beta.0, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
   version: 0.0.0-use.local
   resolution: "@zely-js/zely@workspace:packages/zely-js"
   dependencies:
-    "@zely-js/core": "npm:3.0.2"
+    "@zely-js/core": "npm:3.1.0-beta.0"
     "@zely-js/http": "workspace:*"
     "@zely-js/logger": "npm:3.0.1"
     senta: "npm:^0.0.0"
@@ -11387,14 +11406,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zely-cli@npm:3.0.2, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
+"zely-cli@npm:3.1.0-beta.0, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
   version: 0.0.0-use.local
   resolution: "zely-cli@workspace:packages/zely-js-cli"
   dependencies:
-    "@zely-js/loader": "npm:3.0.2"
+    "@zely-js/loader": "npm:3.1.0-beta.0"
     "@zely-js/logger": "npm:3.0.1"
     "@zely-js/watch": "npm:3.0.1"
-    "@zely-js/zely": "npm:3.0.2"
+    "@zely-js/zely": "npm:3.1.0-beta.0"
     animaux: "npm:^0.0.4"
   bin:
     zely-cli: ./dist/index.js
@@ -11414,8 +11433,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "zely@workspace:packages/zely"
   dependencies:
-    "@zely-js/zely": "npm:3.0.2"
-    zely-cli: "npm:3.0.2"
+    "@zely-js/zely": "npm:3.1.0-beta.0"
+    zely-cli: "npm:3.1.0-beta.0"
   bin:
     zely: ./cli.js
   languageName: unknown

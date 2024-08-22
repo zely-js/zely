@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.0-beta.0](https://github.com/zely-js/zely/compare/v3.0.2...v3.1.0-beta.0) (2024-08-22)
+
+
+### New Features
+
+* **zely:** new base server ([#345](https://github.com/zely-js/zely/issues/345)) ([680bde7](https://github.com/zely-js/zely/commit/680bde7ee4c9dea2de257c1ea225af089960f2b1))
+
+
+### Bug Fix
+
+* fixed env.d.ts error ([#326](https://github.com/zely-js/zely/issues/326)) ([3334f3d](https://github.com/zely-js/zely/commit/3334f3d7802c3539b3940aba40ce117e8c4b6c4d))
+* support `{"type": "module"}` ([#327](https://github.com/zely-js/zely/issues/327)) ([eb23670](https://github.com/zely-js/zely/commit/eb23670454394acb80b1338bb91b9ae1b2c6e19c))
+
+
+
+
 ## [3.0.2](https://github.com/zely-js/zely/compare/v3.0.1...v3.0.2) (2024-07-18)
 
 

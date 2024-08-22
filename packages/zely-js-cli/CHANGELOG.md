@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.0-beta.0](https://github.com/zely-js/zely/compare/v3.0.2...v3.1.0-beta.0) (2024-08-22)
+
+
+### New Features
+
+* **zely:** new base server ([#345](https://github.com/zely-js/zely/issues/345)) ([680bde7](https://github.com/zely-js/zely/commit/680bde7ee4c9dea2de257c1ea225af089960f2b1))
+
+
+
+
 ## [3.0.2](https://github.com/zely-js/zely/compare/v3.0.1...v3.0.2) (2024-07-18)
 
 **Note:** Version bump only for package zely-cli
