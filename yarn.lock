@@ -10327,7 +10327,7 @@ __metadata:
     jest: "npm:^29.7.0"
     lerna: "npm:^7.4.2"
     sendary: "npm:^0.0.0-alpha.2"
-    serpack: "file:../desktop/packages/core"
+    serpack: "npm:^0.0.9"
     ts-jest: "npm:^29.0.3"
     ts-loader: "npm:^9.5.0"
     tsconfig-paths-jest: "npm:^0.0.1"
@@ -10489,16 +10489,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serpack@file:../desktop/packages/core::locator=root-workspace-0b6124%40workspace%3A.":
-  version: 0.0.8
-  resolution: "serpack@file:../desktop/packages/core#../desktop/packages/core::hash=3f0f8d&locator=root-workspace-0b6124%40workspace%3A."
+"serpack@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "serpack@npm:0.0.9"
   dependencies:
     colors: "npm:^1.4.0"
     esbuild: "npm:^0.23.1"
     oxc-parser: "npm:^0.25.0"
     oxc-resolver: "npm:^1.10.2"
     oxc-transform: "npm:^0.25.0"
-  checksum: 10c0/4475d6b107de166fed3f358c2512b06f5960ca939a09d1ec97ff1ec7d5f648b2007431288ed39f7648123b2128dfc393cb2125a79c0fc235c7d19511b437e46e
+  checksum: 10c0/34e5801ef51281b54cc6f90eae0ee3aafd0b99a26ae68624666187651666b43ce9237feac8eb98285eeb4c7321d833cb9601f5c554e742418a8c07839bede174
   languageName: node
   linkType: hard
 
