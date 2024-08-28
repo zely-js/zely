@@ -3351,7 +3351,7 @@ __metadata:
   resolution: "@zely-js/loader-esbuild@workspace:packages/zely-js-loader-esbuild"
   dependencies:
     "@zely-js/loader": "npm:3.1.0-beta.0"
-    esbuild: "npm:^0.20.1"
+    esbuild: "npm:^0.23.1"
     esbuild-node-externals: "npm:^1.12.0"
   languageName: unknown
   linkType: soft
@@ -10318,7 +10318,7 @@ __metadata:
     asto: "npm:^0.1.0"
     conventional-changelog-conventionalcommits: "npm:^7.0.2"
     cross-env: "npm:^7.0.3"
-    esbuild: "npm:^0.20.1"
+    esbuild: "npm:^0.23.1"
     esbuild-node-externals: "npm:^1.9.0"
     eslint: "npm:^8.53.0"
     eslint-config-airbnb-base: "npm:^15.0.0"
