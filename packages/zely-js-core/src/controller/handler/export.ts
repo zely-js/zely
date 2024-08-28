@@ -1,6 +1,6 @@
 import { warn } from '@zely-js/logger';
 
-import { Context } from '~/zely-js-core/src/context';
+import { Context } from 'senta';
 import { Page, getValue } from '..';
 import { applyParams } from './params';
 import { sender } from '../../send';
@@ -18,7 +18,7 @@ export async function handleExport(ctx: Context, page: Page, next: () => void) {
   if (!handler) return next();
 
   // apply params to request
-  ctx.params = applyParams(ctx.request, page.regex, page.params).params;
+  ctx.params = (applyParams(ctx.request, page.regex, page.params) as any).params;
 
   if (pageData?.path) {
     // deprecated feature

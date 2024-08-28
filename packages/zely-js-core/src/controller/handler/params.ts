@@ -7,10 +7,10 @@ export function applyParams(req: ZelyRequest, pattern: RegExp, params: string[])
 
   // assign parameters.
 
-  if (!req.params) req.params = {};
+  if (!(req as any).params) (req as any).params = {};
 
   params.forEach((param, index) => {
-    req.params[param] = execd[index + 1] || null;
+    (req as any).params[param] = execd[index + 1] || null;
   });
 
   return req;
