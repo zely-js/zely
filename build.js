@@ -6,7 +6,6 @@ const base = join(process.cwd(), './packages', 'zely-js-core', 'src');
 compile(
   {
     [join(base, './index.ts')]: 'index',
-    [join(base, './methods.ts')]: 'methods',
   },
   {
     outdir: join(base, '../dist'),

@@ -2,7 +2,15 @@ import { createLoader } from '@zely-js/loader';
 import { errorWithStacks, success } from '@zely-js/logger';
 import reporter from '@zely-js/reporter';
 
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import {
+  exists,
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  rmSync,
+  unlinkSync,
+  writeFileSync,
+} from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { Context } from 'senta';
 import { join } from 'node:path';
@@ -225,6 +233,19 @@ export class PageCache {
         type: 'page',
         buildOptions: {},
       });
+
+      if (
+        existsSync(page.module.builtPath) &&
+        output.filename !== page.module.builtPath
+      ) {
+        unlinkSync(page.module.builtPath);
+      }
+      if (
+        existsSync(page.module.builtMapPath) &&
+        output.map !== page.module.builtMapPath
+      ) {
+        unlinkSync(page.module.builtMapPath);
+      }
 
       page.module.data = getValue(output.module);
       page.module.builtPath = output.filename;

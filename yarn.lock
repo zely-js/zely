@@ -3382,6 +3382,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@zely-js/production@workspace:packages/zely-js-production":
+  version: 0.0.0-use.local
+  resolution: "@zely-js/production@workspace:packages/zely-js-production"
+  dependencies:
+    serpack: "npm:^0.0.9"
+  languageName: unknown
+  linkType: soft
+
 "@zely-js/reporter@npm:3.0.1, @zely-js/reporter@workspace:packages/zely-js-reporter":
   version: 0.0.0-use.local
   resolution: "@zely-js/reporter@workspace:packages/zely-js-reporter"
