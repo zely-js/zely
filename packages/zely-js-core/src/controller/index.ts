@@ -1,9 +1,8 @@
 import { createLoader } from '@zely-js/loader';
-import { errorWithStacks, success } from '@zely-js/logger';
+import { errorWithStacks, parseError, success } from '@zely-js/logger';
 import reporter from '@zely-js/reporter';
 
 import {
-  exists,
   existsSync,
   mkdirSync,
   readFileSync,
@@ -288,6 +287,13 @@ export async function controll(
 
     const ctx = new Context(req, res);
 
+    // DEV context
+    ctx.__DEV__ = {
+      path: m.filename,
+      params: m.params,
+      pattern: m.regex,
+    };
+
     if (m.module.type === 'export-default') {
       await handleExportDefault(ctx, m, next);
     }
@@ -300,11 +306,14 @@ export async function controll(
       // if error happens in virtual page
 
       if (m?.module.__isVirtual__) {
+        const err = parseError(e);
+
         errorWithStacks(e.message, [
           {
             loc: `(virtual:${m?.filename})`,
-            at: `${m.module.type}[${req.method || 'ANY'}||ALL]`,
+            at: `${m.module.type}[${req.method || 'ANY'}|ALL]`,
           },
+          ...err,
         ]);
       } else {
         // error with js map
