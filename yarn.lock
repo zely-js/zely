@@ -2805,12 +2805,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.8.10":
+"@types/node@npm:*":
   version: 20.11.26
   resolution: "@types/node@npm:20.11.26"
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10c0/2df81e4f109588c4c490f2c7d616a06d2b3b9298f217468134b80711af810c9a6017a59beb3e6b1c596eb9b6c5a39d33403b99179acb89006badfbc55f2468bb
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.8.5":
+  version: 22.8.5
+  resolution: "@types/node@npm:22.8.5"
+  dependencies:
+    undici-types: "npm:~6.19.8"
+  checksum: 10c0/5e43553026c83f18bfa381d35c8fd608e69d12d0f0fe4601e8bb98b651a3b240be9d66c1f2f4decdbebb41d55b18e89238b02f3992d820d89801b9b3625ba8ab
   languageName: node
   linkType: hard
 
@@ -3379,14 +3388,6 @@ __metadata:
   resolution: "@zely-js/logger@workspace:packages/zely-js-logger"
   dependencies:
     colors: "npm:^1.4.0"
-  languageName: unknown
-  linkType: soft
-
-"@zely-js/production@workspace:packages/zely-js-production":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/production@workspace:packages/zely-js-production"
-  dependencies:
-    serpack: "npm:^0.0.9"
   languageName: unknown
   linkType: soft
 
@@ -10319,7 +10320,7 @@ __metadata:
     "@types/express": "npm:^4.17.19"
     "@types/jest": "npm:^29.5.5"
     "@types/mime-types": "npm:^2.1.2"
-    "@types/node": "npm:^20.8.10"
+    "@types/node": "npm:^22.8.5"
     "@typescript-eslint/eslint-plugin": "npm:^7.0.1"
     "@typescript-eslint/parser": "npm:^7.0.1"
     "@yarnpkg/sdks": "npm:^3.1.0"
@@ -11528,6 +11529,13 @@ __metadata:
   version: 5.26.5
   resolution: "undici-types@npm:5.26.5"
   checksum: 10c0/bb673d7876c2d411b6eb6c560e0c571eef4a01c1c19925175d16e3a30c4c428181fb8d7ae802a261f283e4166a0ac435e2f505743aa9e45d893f9a3df017b501
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.19.8":
+  version: 6.19.8
+  resolution: "undici-types@npm:6.19.8"
+  checksum: 10c0/078afa5990fba110f6824823ace86073b4638f1d5112ee26e790155f481f2a868cc3e0615505b6f4282bdf74a3d8caad715fd809e870c2bb0704e3ea6082f344
   languageName: node
   linkType: hard
 
