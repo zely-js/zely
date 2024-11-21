@@ -4,8 +4,7 @@ import { nodeExternalsPlugin } from 'esbuild-node-externals';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 
-import type { Loader } from '~/zely-js-loader';
-import type { UserConfig } from '~/zely-js-core';
+import type { UserConfig, Loader } from '~/zely-js-core';
 
 import { filenamePlugin } from './filename';
 

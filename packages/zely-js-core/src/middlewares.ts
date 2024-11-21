@@ -1,6 +1,6 @@
 import { join } from 'node:path';
 
-import { createLoader } from '@zely-js/loader';
+import { createLoader } from './loader';
 
 import type { Middleware, UserConfig } from '~/zely-js-core';
 import { readDirectory } from '~/zely-js-core/lib/read-directory';

@@ -4,7 +4,6 @@
   "bin": "./dist/index.js",
   "main": "./dist/index.js",
   "dependencies": {
-    "@zely-js/loader": "3.1.0-beta.0",
     "@zely-js/logger": "3.0.1",
     "@zely-js/watch": "3.0.1",
     "@zely-js/zely": "3.1.0-beta.0",

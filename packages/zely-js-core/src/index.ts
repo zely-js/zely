@@ -6,3 +6,4 @@ export * from './production';
 export * from './response';
 export * from './virtual';
 export { PageCache } from './controller';
+export * from './loader';

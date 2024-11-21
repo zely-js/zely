@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-vars */
-import { esbuildLoader } from '@zely-js/loader-esbuild';
 
 import { relative } from 'node:path';
 import { readFileSync } from 'node:fs';
 
 import type { UserConfig } from '~/zely-js-core';
-import type { TransformOptions, TransformOutput } from '~/zely-js-loader';
+import type { TransformOptions, LoaderFunc } from '~/zely-js-core/types/loader';
+
+import { esbuildLoader } from './esbuild';
 
 async function load(id: string) {
   const relativePath = relative(__dirname, id).replace(/\\/g, '/');
@@ -22,7 +23,7 @@ async function load(id: string) {
 
 export function createLoader<T>(
   options: UserConfig
-): (id: string, options?: TransformOptions<T>) => Promise<TransformOutput> {
+): (id: string, options?: TransformOptions<T>) => Promise<LoaderFunc> {
   if (!options.loaders) {
     options.loaders = [];
   }
@@ -53,3 +54,5 @@ export function createLoader<T>(
     );
   };
 }
+
+export { esbuildLoader };

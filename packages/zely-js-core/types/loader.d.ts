@@ -1,4 +1,5 @@
 import { UserConfig } from '@zely-js/core';
+import esbuild from 'esbuild';
 
 export interface TransformOutput {
   /**
@@ -34,3 +35,6 @@ export interface Loader<T = any> {
 export function createLoader<T = any>(
   options: UserConfig
 ): (id: string, options?: TransformOptions<T>) => Promise<LoaderFunc>;
+// @ts-nocheck
+
+export function esbuildLoader(options: UserConfig): Loader<esbuild.BuildOptions>;
