@@ -1,6 +1,7 @@
-import { createLoader } from '@zely-js/loader';
 import { errorWithStacks, parseError, success } from '@zely-js/logger';
 import reporter from '@zely-js/reporter';
+
+import { Context } from 'senta';
 
 import {
   existsSync,
@@ -11,15 +12,16 @@ import {
   writeFileSync,
 } from 'node:fs';
 import { performance } from 'node:perf_hooks';
-import { Context } from 'senta';
 import { join } from 'node:path';
 
-import { UserConfig, ZelyRequest, ZelyResponse } from '~/zely-js-core';
+import type { UserConfig, ZelyRequest, ZelyResponse } from '~/zely-js-core';
 import { isFunction, isObject } from '~/zely-js-core/lib/is';
-import { handleExportDefault } from './handler/export-default';
-import { handleExport } from './handler/export';
 import { removeExtension } from '~/zely-js-core/lib/ext';
 import type { Page } from '~/zely-js-core';
+
+import { handleExportDefault } from './handler/export-default';
+import { handleExport } from './handler/export';
+import { createLoader } from '../loader';
 
 const HASH_DIRECTORY = (config: any) =>
   join(config.cwd || process.cwd(), config.dist || '.zely', 'pages.hash.json');

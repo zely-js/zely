@@ -1,5 +1,5 @@
 import { Config as ServerOptions } from 'senta';
-import { Loader } from '@zely-js/loader';
+import { Loader } from './loader';
 
 import { Middleware } from './middleware';
 

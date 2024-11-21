@@ -1,6 +1,6 @@
 import { App } from 'senta';
 import { UserConfig } from './config';
-import { createLoader } from '@zely-js/loader';
+import { createLoader } from './loader';
 
 export interface Page {
   filename: string;
