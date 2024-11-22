@@ -3504,12 +3504,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/jsx-compiler@workspace:jsx/island":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/jsx-compiler@workspace:jsx/island"
-  languageName: unknown
-  linkType: soft
-
 "@zely-js/loader-esbuild@npm:3.0.2":
   version: 3.0.2
   resolution: "@zely-js/loader-esbuild@npm:3.0.2"
@@ -10556,7 +10550,7 @@ __metadata:
     asto: "npm:^0.1.0"
     conventional-changelog-conventionalcommits: "npm:^7.0.2"
     cross-env: "npm:^7.0.3"
-    esbuild: "npm:^0.20.1"
+    esbuild: "npm:^0.24.0"
     esbuild-node-externals: "npm:^1.9.0"
     eslint: "npm:^8.53.0"
     eslint-config-airbnb-base: "npm:^15.0.0"
@@ -12275,14 +12269,6 @@ __metadata:
   dependencies:
     shiki: "npm:^1.10.0"
     zely: "npm:3.1.0-beta.0"
-  languageName: unknown
-  linkType: soft
-
-"zely-jsx@workspace:jsx/core":
-  version: 0.0.0-use.local
-  resolution: "zely-jsx@workspace:jsx/core"
-  dependencies:
-    zely: "workspace:*"
   languageName: unknown
   linkType: soft
 
