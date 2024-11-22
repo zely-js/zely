@@ -2973,12 +2973,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.8.10":
+"@types/node@npm:*":
   version: 20.11.26
   resolution: "@types/node@npm:20.11.26"
   dependencies:
     undici-types: "npm:~5.26.4"
   checksum: 10c0/2df81e4f109588c4c490f2c7d616a06d2b3b9298f217468134b80711af810c9a6017a59beb3e6b1c596eb9b6c5a39d33403b99179acb89006badfbc55f2468bb
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.9.1":
+  version: 22.9.1
+  resolution: "@types/node@npm:22.9.1"
+  dependencies:
+    undici-types: "npm:~6.19.8"
+  checksum: 10c0/ea489ae603aa8874e4e88980aab6f2dad09c755da779c88dd142983bfe9609803c89415ca7781f723072934066f63daf2b3339ef084a8ad1a8079cf3958be243
   languageName: node
   linkType: hard
 
@@ -3501,12 +3510,6 @@ __metadata:
 "@zely-js/http@npm:3.0.1, @zely-js/http@workspace:packages/http":
   version: 0.0.0-use.local
   resolution: "@zely-js/http@workspace:packages/http"
-  languageName: unknown
-  linkType: soft
-
-"@zely-js/jsx-compiler@workspace:jsx/island":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/jsx-compiler@workspace:jsx/island"
   languageName: unknown
   linkType: soft
 
@@ -10549,7 +10552,7 @@ __metadata:
     "@types/express": "npm:^4.17.19"
     "@types/jest": "npm:^29.5.5"
     "@types/mime-types": "npm:^2.1.2"
-    "@types/node": "npm:^20.8.10"
+    "@types/node": "npm:^22.9.1"
     "@typescript-eslint/eslint-plugin": "npm:^7.0.1"
     "@typescript-eslint/parser": "npm:^7.0.1"
     "@yarnpkg/sdks": "npm:^3.1.0"
@@ -11761,6 +11764,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici-types@npm:~6.19.8":
+  version: 6.19.8
+  resolution: "undici-types@npm:6.19.8"
+  checksum: 10c0/078afa5990fba110f6824823ace86073b4638f1d5112ee26e790155f481f2a868cc3e0615505b6f4282bdf74a3d8caad715fd809e870c2bb0704e3ea6082f344
+  languageName: node
+  linkType: hard
+
 "unique-filename@npm:^2.0.0":
   version: 2.0.1
   resolution: "unique-filename@npm:2.0.1"
@@ -12275,14 +12285,6 @@ __metadata:
   dependencies:
     shiki: "npm:^1.10.0"
     zely: "npm:3.1.0-beta.0"
-  languageName: unknown
-  linkType: soft
-
-"zely-jsx@workspace:jsx/core":
-  version: 0.0.0-use.local
-  resolution: "zely-jsx@workspace:jsx/core"
-  dependencies:
-    zely: "workspace:*"
   languageName: unknown
   linkType: soft
 
