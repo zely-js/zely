@@ -1,13 +1,13 @@
 {
   "name": "zely-dev",
-  "version": "3.1.0-beta.0",
+  "version": "4.0.0-next.0",
   "main": "./dist/index.js",
   "types": "./index.d.ts",
   "files": [
     "./index.d.ts"
   ],
   "devDependencies": {
-    "zely": "3.1.0-beta.0"
+    "zely": "4.0.0-next.0"
   },
   "dependencies": {
     "shiki": "^1.10.0"

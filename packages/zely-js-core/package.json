@@ -1,6 +1,6 @@
 {
   "name": "@zely-js/core",
-  "version": "3.1.0-beta.0",
+  "version": "4.0.0-next.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",

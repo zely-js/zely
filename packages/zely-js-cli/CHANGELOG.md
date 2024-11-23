@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.0](https://github.com/zely-js/zely/compare/v3.1.0-beta.0...v4.0.0-next.0) (2024-11-23)
+
+
+### New Features
+
+* publish ([e64bedf](https://github.com/zely-js/zely/commit/e64bedf2957958110e6122d49584c07595941598))
+* **zely-cli:** add tsconfig in typescript template ([a3144c7](https://github.com/zely-js/zely/commit/a3144c7f7122f83aeafc134f099770825dc46333))
+
+
+### Bug Fix
+
+* watcher loads outdated module ([a725c3a](https://github.com/zely-js/zely/commit/a725c3acb3e24f502cd70ce5c7e93522f3f6933d))
+
+
+### Code Refactoring
+
+* merge loader into core package ([#406](https://github.com/zely-js/zely/issues/406)) ([b979420](https://github.com/zely-js/zely/commit/b97942095b2b6aff38e6fcb207e129d0bbbd28b7))
+
+
+
 ## [3.1.0-beta.0](https://github.com/zely-js/zely/compare/v3.0.2...v3.1.0-beta.0) (2024-08-22)
 
 

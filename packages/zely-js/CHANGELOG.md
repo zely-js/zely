@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.0](https://github.com/zely-js/zely/compare/v3.1.0-beta.0...v4.0.0-next.0) (2024-11-23)
+
+
+### New Features
+
+* publish ([e64bedf](https://github.com/zely-js/zely/commit/e64bedf2957958110e6122d49584c07595941598))
+
+
+### Code Refactoring
+
+* remove unused package ([4dc2ca6](https://github.com/zely-js/zely/commit/4dc2ca61bea5afa681f6d5a8f89eddae24466c4b))
+
+
+
 ## [3.1.0-beta.0](https://github.com/zely-js/zely/compare/v3.0.2...v3.1.0-beta.0) (2024-08-22)
 
 

@@ -3,6 +3,37 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.0](https://github.com/zely-js/zely/compare/v3.1.0-beta.0...v4.0.0-next.0) (2024-11-23)
+
+
+### New Features
+
+* createFrontendPage ([#224](https://github.com/zely-js/zely/issues/224)) ([5ff13ba](https://github.com/zely-js/zely/commit/5ff13ba357d76d3e18d7e77e65bf2b5cd64a2602))
+* dev context ([#377](https://github.com/zely-js/zely/issues/377)) ([7cd19b2](https://github.com/zely-js/zely/commit/7cd19b2ff0e0a92746c93fdd526384b675c96001))
+* publish ([e64bedf](https://github.com/zely-js/zely/commit/e64bedf2957958110e6122d49584c07595941598))
+* **zely-cli:** add tsconfig in typescript template ([a3144c7](https://github.com/zely-js/zely/commit/a3144c7f7122f83aeafc134f099770825dc46333))
+
+
+### Bug Fix
+
+* watcher loads outdated module ([a725c3a](https://github.com/zely-js/zely/commit/a725c3acb3e24f502cd70ce5c7e93522f3f6933d))
+
+
+### Code Refactoring
+
+* merge loader into core package ([#406](https://github.com/zely-js/zely/issues/406)) ([b979420](https://github.com/zely-js/zely/commit/b97942095b2b6aff38e6fcb207e129d0bbbd28b7))
+* merge reporter into core package ([#406](https://github.com/zely-js/zely/issues/406)) ([be5a7b4](https://github.com/zely-js/zely/commit/be5a7b42ec8be77595cebef00f1a3877371812d5))
+* remove unused package ([4dc2ca6](https://github.com/zely-js/zely/commit/4dc2ca61bea5afa681f6d5a8f89eddae24466c4b))
+
+
+### Others
+
+* **build:** test new compiler ([4f312f4](https://github.com/zely-js/zely/commit/4f312f411f7f0359055d255397c7aaa9dae8be70))
+* **deps:** new compiler ([091aa0d](https://github.com/zely-js/zely/commit/091aa0d40f0fd9fe1dd74789bc7546cdbf0850d0))
+* ignore typescript error ([8540a38](https://github.com/zely-js/zely/commit/8540a38de564dae4866a4708011fe95f4e54a650))
+
+
+
 ## [3.1.0-beta.0](https://github.com/zely-js/zely/compare/v3.0.2...v3.1.0-beta.0) (2024-08-22)
 
 
