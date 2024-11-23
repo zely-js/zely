@@ -3490,7 +3490,6 @@ __metadata:
   dependencies:
     "@types/mime-types": "npm:^2"
     "@zely-js/logger": "npm:3.0.1"
-    "@zely-js/reporter": "npm:3.0.1"
     "@zept/path-regexp": "npm:^0.0.1"
     esbuild: "npm:^0.24.0"
     mime-types: "npm:^2.1.35"
@@ -3501,12 +3500,6 @@ __metadata:
 "@zely-js/http@npm:3.0.1, @zely-js/http@workspace:packages/http":
   version: 0.0.0-use.local
   resolution: "@zely-js/http@workspace:packages/http"
-  languageName: unknown
-  linkType: soft
-
-"@zely-js/jsx-compiler@workspace:jsx/island":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/jsx-compiler@workspace:jsx/island"
   languageName: unknown
   linkType: soft
 
@@ -3529,20 +3522,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zely-js/logger@npm:3.0.1, @zely-js/logger@workspace:*, @zely-js/logger@workspace:packages/zely-js-logger":
+"@zely-js/logger@npm:3.0.1, @zely-js/logger@workspace:packages/zely-js-logger":
   version: 0.0.0-use.local
   resolution: "@zely-js/logger@workspace:packages/zely-js-logger"
   dependencies:
     colors: "npm:^1.4.0"
-  languageName: unknown
-  linkType: soft
-
-"@zely-js/reporter@npm:3.0.1, @zely-js/reporter@workspace:packages/zely-js-reporter":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/reporter@workspace:packages/zely-js-reporter"
-  dependencies:
-    "@zely-js/logger": "workspace:*"
-    source-map: "npm:^0.7.4"
   languageName: unknown
   linkType: soft
 
@@ -12275,14 +12259,6 @@ __metadata:
   dependencies:
     shiki: "npm:^1.10.0"
     zely: "npm:3.1.0-beta.0"
-  languageName: unknown
-  linkType: soft
-
-"zely-jsx@workspace:jsx/core":
-  version: 0.0.0-use.local
-  resolution: "zely-jsx@workspace:jsx/core"
-  dependencies:
-    zely: "workspace:*"
   languageName: unknown
   linkType: soft
 
