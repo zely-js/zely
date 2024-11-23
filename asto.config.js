@@ -68,8 +68,6 @@ const repos = {
   cli: repo('zely-js-cli'),
   watch: repo('zely-js-watch'),
   dev: repo('zely-js-dev'),
-  reporter: repo('zely-js-reporter'),
-  http: repo('http'),
 };
 
 const entryPoints = [
@@ -79,9 +77,7 @@ const entryPoints = [
   ...repos.logger('index.ts', 'index.js', true),
   ...repos.cli('index.ts', 'index.js', true),
   ...repos.watch('index.ts', 'index.js', true),
-  ...repos.reporter('index.ts', 'index.js', true),
   ...repos.dev('index.ts', 'index.js', true),
-  ...repos.http('index.ts', 'index.js', true),
 ];
 
 module.exports = [

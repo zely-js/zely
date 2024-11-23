@@ -10,7 +10,6 @@
   ],
   "dependencies": {
     "@zely-js/core": "3.1.0-beta.0",
-    "@zely-js/http": "3.0.1",
     "@zely-js/logger": "3.0.1",
     "senta": "^0.0.0"
   },
