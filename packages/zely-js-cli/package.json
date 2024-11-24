@@ -13,7 +13,7 @@
     "./dist",
     "./assets"
   ],
-  "gitHead": "cef4a76801be1af898c35a5213f9902dee4a347f",
+  "gitHead": "313ceafe914a250c146d7726f5af775031fad28a",
   "description": "cli for zely-js",
   "repository": "https://github.com/zely-js/zely",
   "bugs": "https://github.com/zely-js/zely/issues",
