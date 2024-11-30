@@ -86,4 +86,22 @@ export interface UserConfig {
    * https://zely.vercel.app/apis/virtual-page
    */
   __virtuals__?: any[];
+
+  /**
+   * Experimental features
+   */
+  experimental?: ExperimentalFeatures;
+}
+
+export interface ExperimentalFeatures {
+  /**
+   * use enhanced html renderer.
+   *
+   * to use this feature, you need to install dependency.
+   *
+   * `npm i segify --save-dev`
+   *
+   * https://segify.vercel.app/
+   */
+  useHTML?: boolean;
 }

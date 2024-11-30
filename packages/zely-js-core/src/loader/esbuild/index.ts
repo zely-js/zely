@@ -42,7 +42,7 @@ export function esbuildLoader(options: UserConfig): Loader<esbuild.BuildOptions>
         platform: 'node',
         format: __ESM__ ? 'esm' : 'cjs',
 
-        // @ts-expect-error
+        // @ts-ignore
         plugins: [nodeExternalsPlugin(), filenamePlugin],
       });
 

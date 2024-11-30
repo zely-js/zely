@@ -1,4 +1,4 @@
-import { build } from 'esbuild';
+import { Plugin, build } from 'esbuild';
 import { mkdirSync, writeFileSync } from 'fs';
 import { join, relative } from 'path';
 import type { FeComponent, FePageData, FeScripts, UserConfig } from '~/zely-js-core';
@@ -51,18 +51,24 @@ function componentToString(components: Record<string, FeComponent>) {
   return elements.join('');
 }
 
-export async function compileBrowserCode(scripts: FeScripts, options: UserConfig) {
+export async function compileBrowserCode(
+  scripts: FeScripts,
+  options: UserConfig,
+  plugins?: Plugin[]
+) {
+  const random = (Math.random() + 1).toString(36).substring(7);
   const dist = join(options.cwd || process.cwd(), options.dist || '.zely', 'fe');
   const out: Record<string, string> = {};
   const builder = await build({
     entryPoints: scripts.map((script, index) => {
-      out[script.target] = join(dist, `${index}.js`);
+      out[script.target] = join(dist, `${random}${index}.js`);
       return {
         in: script.target,
-        out: join(dist, `${index}`),
+        out: join(dist, `${random}${index}`),
       };
     }),
     platform: 'browser',
+    plugins,
 
     bundle: true,
     minify: true,
@@ -81,10 +87,12 @@ export async function compileBrowserCode(scripts: FeScripts, options: UserConfig
 
   return { outputFiles: builder.outputFiles, out };
 }
+
 export async function createFrontendPage(
   page: FePageData,
   template?: string,
-  options?: UserConfig
+  options?: UserConfig,
+  plugins?: Plugin[]
 ) {
   const $ = {
     head: componentToString(page.head),
@@ -92,9 +100,12 @@ export async function createFrontendPage(
     script: [],
   };
 
+  if (!options) options = {};
+
   const { outputFiles: output, out } = await compileBrowserCode(
     page.scripts,
-    options || {}
+    options || {},
+    plugins
   );
 
   if (!options) options = {};
@@ -117,7 +128,7 @@ export async function createFrontendPage(
         `<script${attributeToString({
           ...scriptConfig.attributes,
           type: scriptConfig.module ? 'module' : 'text/javascript',
-          src: `/${relative(dist, compiled.path)}`,
+          src: `/__fe/${relative(dist, compiled.path)}`,
         })}></script>`
       );
     }
@@ -131,5 +142,6 @@ export async function createFrontendPage(
       .replace('%body%', $.body),
 
     $,
+    built: out,
   };
 }

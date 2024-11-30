@@ -3,16 +3,20 @@ import { error, warn } from '@zely-js/logger';
 import { pathToRegexp } from '@zept/path-regexp';
 
 import { performance } from 'node:perf_hooks';
+import { readFileSync } from 'node:fs';
 import { join, parse, relative } from 'node:path';
 
 import { readDirectory } from '~/zely-js-core/lib/read-directory';
-import type { UserConfig } from '~/zely-js-core';
+import type { Context, UserConfig } from '~/zely-js-core';
 
 import { createMiddlewares } from './middlewares';
 import { Page, PageCache, controll } from './controller';
 import { transformFilename } from '~/zely-js-core/lib/file-to-path';
 import { removeExtension } from '~/zely-js-core/lib/ext';
 import { kitMiddleware } from './middlewares/support';
+import { createVirtualPage } from './virtual';
+import { GET } from './methods';
+import { HTMLloader } from './fe/html/plugin';
 
 export function prettyURL(path: string): string {
   if (path === '.') {
@@ -101,6 +105,35 @@ export async function createZelyServer(options: UserConfig) {
 
   if (options.globalImport) {
     await import('./env');
+  }
+
+  if (!options.__virtuals__) {
+    options.__virtuals__ = [];
+  }
+
+  options.__virtuals__.push(
+    createVirtualPage('/__fe/[...params].ts', [
+      GET((ctx: Context) => {
+        const path = ctx.params['*'];
+
+        if (path.endsWith('.js')) {
+          ctx.headers({
+            'Content-Type': 'text/javascript',
+          });
+
+          ctx.send(
+            readFileSync(
+              join(options.cwd || process.cwd(), options.dist || '.zely', 'fe', path)
+            ).toString()
+          );
+        }
+      }),
+    ])
+  );
+  if (options.experimental?.useHTML) {
+    if (!options.loaders) options.loaders = [];
+
+    options.loaders.push(HTMLloader(options));
   }
 
   const middlewares = (await createMiddlewares(options)).map(
