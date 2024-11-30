@@ -153,6 +153,7 @@ export class PageCache {
         page.module.data = getValue(output.module);
         page.module.builtPath = output.filename;
         page.module.builtMapPath = output.map;
+        page.module.builtAssets = output.assets || [];
         page.module.type = isExportDefault(output.module) ? 'export-default' : 'export';
         page.module.isLoaded = true;
         page.id = performance.now();
@@ -220,6 +221,7 @@ export class PageCache {
       page.module.data = getValue(output.module);
       page.module.builtPath = output.filename;
       page.module.builtMapPath = output.map;
+      page.module.builtAssets = output.assets || [];
       page.module.type = isExportDefault(output.module) ? 'export-default' : 'export';
       page.module.isLoaded = true;
       page.id = performance.now();
@@ -248,9 +250,16 @@ export class PageCache {
         unlinkSync(page.module.builtMapPath);
       }
 
+      for (const asset of page.module.builtAssets) {
+        if (existsSync(asset)) {
+          unlinkSync(asset);
+        }
+      }
+
       page.module.data = getValue(output.module);
       page.module.builtPath = output.filename;
       page.module.builtMapPath = output.map;
+      page.module.builtAssets = output.assets || [];
       page.module.type = isExportDefault(output.module) ? 'export-default' : 'export';
 
       page.id = id[page.filename];

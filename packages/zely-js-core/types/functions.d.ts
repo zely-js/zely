@@ -39,6 +39,7 @@ export interface Page {
 
     builtPath?: string;
     builtMapPath?: string;
+    builtAssets?: string[];
 
     __isVirtual__?: boolean;
   };

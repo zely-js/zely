@@ -11,6 +11,11 @@ export interface TransformOutput {
    * out map file path
    */
   map: string;
+
+  /**
+   * assets will be removed when module is rebuilt.
+   */
+  assets?: string[];
 }
 
 export interface TransformOptions<T = any> {

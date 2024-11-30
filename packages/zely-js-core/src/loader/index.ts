@@ -43,6 +43,7 @@ export function createLoader<T>(
           module: await load(output.filename),
           filename: output.filename,
           map: output.map,
+          assets: output.assets,
         };
       }
     }
