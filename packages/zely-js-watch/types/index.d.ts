@@ -3,6 +3,7 @@ import chokidar from 'chokidar';
 export interface WatchOptions {
   chokidar?: chokidar.WatchOptions;
   includes?: string[];
+  target?: string[];
 }
 
 /**

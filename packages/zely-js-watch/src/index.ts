@@ -11,12 +11,20 @@ export function watch(options: WatchOptions, zely: UserConfig) {
   if (!options?.includes) {
     options.includes = [];
   }
+  if (!options?.target) {
+    options.target = [];
+  }
+
+  options.target.push('ts', 'tsx', 'js', 'jsx', 'html');
 
   const hash = join(zely.cwd || process.cwd(), '.zely', 'pages.hash.json');
   const base = join(zely.cwd || process.cwd(), 'pages');
 
   options.includes.push(
-    join(zely.cwd || process.cwd(), 'pages/**/*.{ts,js,tsx,jsx}').replace(/\\/g, '/'),
+    join(zely.cwd || process.cwd(), `pages/**/*.{${options.target.join(',')}}`).replace(
+      /\\/g,
+      '/'
+    ),
     'zely.config.*'
   );
 
