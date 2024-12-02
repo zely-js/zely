@@ -1,4 +1,4 @@
-import { UserConfig } from '@zely-js/core';
+import { Context, UserConfig } from '@zely-js/core';
 import esbuild from 'esbuild';
 
 export interface TransformOutput {
@@ -33,7 +33,8 @@ export interface Loader<T = any> {
   transform(
     id: string,
     source: string,
-    options: TransformOptions<T>
+    options: TransformOptions<T>,
+    ctx?: Context
   ): Promise<TransformOutput | null | void> | TransformOutput | null | void;
 }
 

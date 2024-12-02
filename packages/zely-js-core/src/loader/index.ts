@@ -3,7 +3,7 @@
 import { relative } from 'node:path';
 import { readFileSync } from 'node:fs';
 
-import type { UserConfig } from '~/zely-js-core';
+import type { Context, UserConfig } from '~/zely-js-core';
 import type { TransformOptions, LoaderFunc } from '~/zely-js-core/types/loader';
 
 import { esbuildLoader } from './esbuild';
@@ -22,7 +22,8 @@ async function load(id: string) {
 }
 
 export function createLoader<T>(
-  options: UserConfig
+  options: UserConfig,
+  ctx?: Context
 ): (id: string, options?: TransformOptions<T>) => Promise<LoaderFunc> {
   if (!options.loaders) {
     options.loaders = [];
@@ -35,7 +36,8 @@ export function createLoader<T>(
       const output = await loader?.transform(
         id,
         readFileSync(id).toString(),
-        buildOptions || { type: 'cache', buildOptions: {} }
+        buildOptions || { type: 'cache', buildOptions: {} },
+        ctx
       );
 
       if (output) {

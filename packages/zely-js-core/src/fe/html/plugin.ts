@@ -1,5 +1,9 @@
-import { mkdirSync, writeFileSync } from 'fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'fs';
+import { serverRender } from 'segify';
 import { join, parse } from 'path';
+
+import { warn } from '@zely-js/logger';
+
 import { Loader } from '~/zely-js/types';
 import { useEnhancedHTML } from './enhanced';
 
@@ -22,22 +26,31 @@ const HTMLloader = (options: any): Loader => ({
     );
     mkdirSync(dist, { recursive: true });
 
-    const code = `[core.GET((c) => c.html(\`${output.replace(
+    const code = `[core.GET(async(c) => c.html(\`${output.replace(
       /\\/g,
       '\\\\'
-    )}\`.replace("%props%", JSON.stringify({params: c.params}))))];`;
+    )}\`.replace("%ssr%", await $$ssrCompiler(c)).replace("%props%", JSON.stringify({params: c.params}))))];`;
 
-    if (__ESM__) {
-      writeFileSync(
-        outfile,
-        `import * as core from "@zely-js/core";export default ${code}`
-      );
-    } else {
-      writeFileSync(
-        outfile,
-        `const core=require("@zely-js/core");module.exports = ${code}`
-      );
-    }
+    const ssrCompiler = `
+var $$ssrCompiler=async (c) => {
+  let __ssr = '';
+  try {
+    var $$servercompiled = await $$serverRender(require("fs").readFileSync(${JSON.stringify(
+      id
+    )}).toString(), {params:c.params});
+    __ssr = $$servercompiled.output.map((a) => a.getText()).join('');
+  } catch (e) {
+    console.error(e);
+    $$logger.warn("Error occurred while compiling server-side rendered HTML");
+    __ssr = "";
+  }
+    return __ssr;
+  }`.replace(/\n/g, '');
+
+    writeFileSync(
+      outfile,
+      `const core=require("@zely-js/core");const {serverRender: $$serverRender}=require("segify");const $$logger=require("@zely-js/logger");${ssrCompiler};module.exports = ${code}`
+    );
 
     return { filename: outfile, map: null, assets: Object.values(built) };
   },

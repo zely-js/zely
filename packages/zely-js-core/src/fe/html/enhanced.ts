@@ -3,21 +3,12 @@
  */
 
 import { readFileSync } from 'fs';
-import { warn } from '@zely-js/logger';
-import { compile, serverRender } from 'segify';
+import { compile } from 'segify';
 import { UserConfig } from '~/zely-js-core/types';
 import { createFrontendPage } from '..';
 
 export async function useEnhancedHTML(target: string, options: UserConfig = {}) {
   const page = readFileSync(target, 'utf-8');
-  let ssr = '';
-
-  try {
-    const servercompiled = await serverRender(page);
-    ssr = servercompiled.output.map((a) => a.getText()).join('');
-  } catch (e) {
-    warn(`${e.toString()} -> server rendered html will not be applied`);
-  }
 
   let browserSource = await compile(page, { noExport: true });
 
@@ -31,7 +22,7 @@ export async function useEnhancedHTML(target: string, options: UserConfig = {}) 
           attributes: {
             id: '__fe',
           },
-          children: ssr,
+          children: '%ssr%',
         },
         script: {
           attributes: {

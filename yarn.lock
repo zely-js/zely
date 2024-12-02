@@ -3493,8 +3493,9 @@ __metadata:
     "@zept/path-regexp": "npm:^0.0.1"
     esbuild: "npm:^0.24.0"
     mime-types: "npm:^2.1.35"
-    segify: "npm:^0.0.0-beta.16"
+    segify: "npm:^0.0.0-beta.17"
     senta: "npm:^0.0.0"
+    source-map: "npm:^0.7.4"
   languageName: unknown
   linkType: soft
 
@@ -10668,14 +10669,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"segify@npm:^0.0.0-beta.16":
-  version: 0.0.0-beta.16
-  resolution: "segify@npm:0.0.0-beta.16"
+"segify@npm:^0.0.0-beta.17":
+  version: 0.0.0-beta.17
+  resolution: "segify@npm:0.0.0-beta.17"
   dependencies:
     acorn: "npm:^8.12.1"
     acorn-walk: "npm:^8.3.3"
     get-tsconfig: "npm:^4.7.6"
-  checksum: 10c0/15ae4289d2229d30fd036092b9b9ef56368945b58c16f72ec21282a318f6b8871ff2933532237e2304ca5a2bf855dac324c6f7ac35df6cd49fe4449ee8383a5f
+  checksum: 10c0/41b93f53523e2f67a69fdb7967287e726b0fca06554ea3b313beb04e2f3be50b9969964cafe4c3027fcd2b0985bf98213e33e8ce256239e2a9a8e15de682eb20
   languageName: node
   linkType: hard
 

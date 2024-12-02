@@ -1,1 +1,12 @@
-<div>Hello {{$.params.params}}</div>
+<script>
+  $.count = 0;
+
+  function increment() {
+    $.count += 1;
+  }
+</script>
+
+<div>
+  <h1>Hello, {{$.params.params}}: {{ $.count }}</h1>
+  <button $onclick="increment">Add</button>
+</div>
