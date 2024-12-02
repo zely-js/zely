@@ -1,4 +1,5 @@
 import 'colors';
+import { relative } from 'path';
 
 function transform(t: number): string {
   let time = String(t);
@@ -50,7 +51,11 @@ function error(err: Error | string) {
     );
 
     stacks?.forEach((stack) => {
-      console.log(`${tab}${'at'.gray} ${stack.at}${stack.loc.cyan}`);
+      console.log(
+        `${tab}${'at'.gray} ${stack.at}${
+          stack.loc.startsWith('(node:') ? stack.loc.gray : stack.loc.cyan
+        }`
+      );
     });
     console.log();
   }
