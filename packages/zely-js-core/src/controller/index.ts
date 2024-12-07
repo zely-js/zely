@@ -2,14 +2,7 @@ import { errorWithStacks, parseError, success } from '@zely-js/logger';
 
 import { Context } from 'senta';
 
-import {
-  existsSync,
-  mkdirSync,
-  readFileSync,
-  rmSync,
-  unlinkSync,
-  writeFileSync,
-} from 'node:fs';
+import { existsSync, mkdirSync, rmSync, unlinkSync, writeFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { join } from 'node:path';
 
@@ -22,9 +15,6 @@ import { handleExportDefault } from './handler/export-default';
 import { handleExport } from './handler/export';
 import { createLoader } from '../loader';
 import reporter from '../reporter';
-
-const HASH_DIRECTORY = (config: any) =>
-  join(config.cwd || process.cwd(), config.dist || '.zely', 'pages.hash.json');
 
 function findPage(path: string, pages: Page[]) {
   for (const page of pages) {
@@ -80,6 +70,8 @@ export class PageCache {
 
   loader: ReturnType<typeof createLoader>;
 
+  map: Record<string, number>;
+
   constructor(page: Page[], config: UserConfig) {
     const loader = createLoader(config);
 
@@ -98,8 +90,6 @@ export class PageCache {
         recursive: true,
       });
     }
-
-    writeFileSync(HASH_DIRECTORY(config), '{}');
 
     // support esm
     writeFileSync(
@@ -167,11 +157,11 @@ export class PageCache {
 
   // id map
   writeIdMap(data: any) {
-    writeFileSync(HASH_DIRECTORY(this.config), JSON.stringify(data));
+    this.map = data;
   }
 
   readIdMap() {
-    return JSON.parse(readFileSync(HASH_DIRECTORY(this.config)).toString());
+    return this.map;
   }
 
   // find module by path
