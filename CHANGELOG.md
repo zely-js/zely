@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.3](https://github.com/zely-js/zely/compare/v4.0.0-next.2...v4.0.0-next.3) (2024-12-07)
+
+
+### Others
+
+* remove unused imports ([fde2478](https://github.com/zely-js/zely/commit/fde2478f877b4b01a8b8280c0e83f84841ff1f95))
+
+
+
 ## [4.0.0-next.2](https://github.com/zely-js/zely/compare/v4.0.0-next.1...v4.0.0-next.2) (2024-12-07)
 
 
