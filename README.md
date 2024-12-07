@@ -19,6 +19,10 @@ Build Productive, Convenient, Fast Backend
 
 Visit [Getting Started](https://zely.vercel.app/docs/getting-started) to start new app.
 
+## Benchmark
+
+See [/zely-js/benchmark](https://github.com/zely-js/benchmark?tab=readme-ov-file#benchmarks) repository.
+
 ## License
 
 [MIT](/LICENSE)
