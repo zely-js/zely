@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.4](https://github.com/zely-js/zely/compare/v4.0.0-next.3...v4.0.0-next.4) (2024-12-07)
+
+
+### Others
+
+* remove watcher from cli ([#406](https://github.com/zely-js/zely/issues/406)) ([da2fb55](https://github.com/zely-js/zely/commit/da2fb55f244f67ee3f8137c50f0751d0b717e627))
+
+
+
 ## [4.0.0-next.3](https://github.com/zely-js/zely/compare/v4.0.0-next.2...v4.0.0-next.3) (2024-12-07)
 
 
