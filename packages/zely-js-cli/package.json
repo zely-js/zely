@@ -5,7 +5,6 @@
   "main": "./dist/index.js",
   "dependencies": {
     "@zely-js/logger": "4.0.0-next.1",
-    "@zely-js/watch": "4.0.0-next.1",
     "@zely-js/zely": "4.0.0-next.3",
     "animaux": "^0.0.4"
   },
