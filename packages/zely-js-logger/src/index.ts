@@ -1,5 +1,4 @@
 import 'colors';
-import { relative } from 'path';
 
 function transform(t: number): string {
   let time = String(t);

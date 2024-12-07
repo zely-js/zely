@@ -66,7 +66,6 @@ const repos = {
   core: repo('zely-js-core'),
   logger: repo('zely-js-logger'),
   cli: repo('zely-js-cli'),
-  watch: repo('zely-js-watch'),
   dev: repo('zely-js-dev'),
 };
 
@@ -76,7 +75,6 @@ const entryPoints = [
   ...repos.core('index.ts', 'index.js', true),
   ...repos.logger('index.ts', 'index.js', true),
   ...repos.cli('index.ts', 'index.js', true),
-  ...repos.watch('index.ts', 'index.js', true),
   ...repos.dev('index.ts', 'index.js', true),
 ];
 

@@ -3491,6 +3491,7 @@ __metadata:
     "@types/mime-types": "npm:^2"
     "@zely-js/logger": "npm:4.0.0-next.1"
     "@zept/path-regexp": "npm:^0.0.1"
+    chokidar: "npm:3.6.0"
     esbuild: "npm:^0.24.0"
     mime-types: "npm:^2.1.35"
     segify: "npm:^0.0.0-beta.17"
@@ -3526,14 +3527,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/watch@npm:4.0.0-next.1, @zely-js/watch@workspace:packages/zely-js-watch":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/watch@workspace:packages/zely-js-watch"
+"@zely-js/watch@npm:4.0.0-next.1":
+  version: 4.0.0-next.1
+  resolution: "@zely-js/watch@npm:4.0.0-next.1"
   dependencies:
     "@zely-js/logger": "npm:4.0.0-next.1"
     chokidar: "npm:^3.5.3"
-  languageName: unknown
-  linkType: soft
+  checksum: 10c0/fcf9ec8d124603ab0e59317c1b140369e640d72a3cc3aa35b7aeb70e1fe0ff59b01c713b6bb318326a80d9acda4ad565e19ca884a17fb9289c42e2083cb28573
+  languageName: node
+  linkType: hard
 
 "@zely-js/zely@npm:4.0.0-next.3, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
   version: 0.0.0-use.local
@@ -4428,7 +4430,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.5.3":
+"chokidar@npm:3.6.0, chokidar@npm:^3.5.3":
   version: 3.6.0
   resolution: "chokidar@npm:3.6.0"
   dependencies:

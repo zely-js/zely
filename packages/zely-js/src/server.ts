@@ -1,6 +1,5 @@
 import { warn } from '@zely-js/logger';
 import { createZelyServer } from '@zely-js/core';
-import { App } from 'senta';
 import { applyServer, applyConfig } from './plugin';
 import { Config } from '../types/config';
 

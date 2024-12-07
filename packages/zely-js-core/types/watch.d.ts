@@ -1,7 +1,7 @@
-import chokidar from 'chokidar';
+import { ChokidarOptions as ChokidarWatchOptions } from 'chokidar';
 
 export interface WatchOptions {
-  chokidar?: chokidar.WatchOptions;
+  chokidar?: ChokidarWatchOptions;
   includes?: string[];
   target?: string[];
 }

@@ -1,10 +1,11 @@
-import { errorWithStacks, parseError, success } from '@zely-js/logger';
+import { errorWithStacks, info, parseError, success } from '@zely-js/logger';
 
 import { Context } from 'senta';
+import chokidar from 'chokidar';
 
 import { existsSync, mkdirSync, rmSync, unlinkSync, writeFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
-import { join } from 'node:path';
+import { join, relative } from 'node:path';
 
 import type { UserConfig, ZelyRequest, ZelyResponse } from '~/zely-js-core';
 import { isFunction, isObject } from '~/zely-js-core/lib/is';
@@ -15,6 +16,7 @@ import { handleExportDefault } from './handler/export-default';
 import { handleExport } from './handler/export';
 import { createLoader } from '../loader';
 import reporter from '../reporter';
+import { WatchOptions } from '~/zely-js-core/types/watch';
 
 function findPage(path: string, pages: Page[]) {
   for (const page of pages) {
@@ -100,8 +102,13 @@ export class PageCache {
     this.#modules = page;
     this.loader = loader;
     this.config = config;
+    this.map = {};
 
     this.sort();
+
+    if (process.env.NODE_ENV === 'development') {
+      this.watch({}, this.config);
+    }
   }
 
   // sort by count of ":"
@@ -125,6 +132,42 @@ export class PageCache {
 
   getPages(): Page[] {
     return this.#modules;
+  }
+
+  watch(options: WatchOptions, zely: UserConfig) {
+    if (!options?.includes) {
+      options.includes = [];
+    }
+    if (!options?.target) {
+      options.target = [];
+    }
+
+    options.target.push('ts', 'tsx', 'js', 'jsx', 'html');
+
+    const base = join(zely.cwd || process.cwd(), 'pages');
+
+    options.includes.push(
+      join(zely.cwd || process.cwd(), `pages/**/*.{${options.target.join(',')}}`).replace(
+        /\\/g,
+        '/'
+      ),
+      'zely.config.*'
+    );
+
+    const watcher = chokidar.watch(options.includes, options.chokidar);
+
+    watcher.on('change', (path: string) => {
+      if (path.includes('zely.config')) {
+        info('zely.config edited. Please restart to reload server');
+        return;
+      }
+
+      const cache = this.readIdMap();
+
+      cache[relative(base, path).replace(/\\/g, '/')] = performance.now();
+
+      this.writeIdMap(cache);
+    });
   }
 
   // create production build
