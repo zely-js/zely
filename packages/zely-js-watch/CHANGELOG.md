@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.1](https://github.com/zely-js/zely/compare/v4.0.0-next.0...v4.0.0-next.1) (2024-12-07)
+
+
+### New Features
+
+* watcher extension target ([#421](https://github.com/zely-js/zely/issues/421)) ([ba50495](https://github.com/zely-js/zely/commit/ba50495747f5067d87f6ebe80f9c29c702e40f96))
+
+
+
+
 ## [3.0.1](https://github.com/zely-js/zely/compare/v3.0.0...v3.0.1) (2024-07-01)
 
 **Note:** Version bump only for package @zely-js/watch

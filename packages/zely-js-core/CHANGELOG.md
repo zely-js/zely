@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.1](https://github.com/zely-js/zely/compare/v4.0.0-next.0...v4.0.0-next.1) (2024-12-07)
+
+
+### New Features
+
+* **html:** props in server side rendering ([6510072](https://github.com/zely-js/zely/commit/65100728c323fb1080ee16263d61e5c4f2a7bd3e))
+* improve loader ([#420](https://github.com/zely-js/zely/issues/420)) ([9b206f4](https://github.com/zely-js/zely/commit/9b206f4aec12460814cf276e1fec47f6d580fd31))
+* support html ([#404](https://github.com/zely-js/zely/issues/404)) ([4fccc74](https://github.com/zely-js/zely/commit/4fccc74e560081257b2e37549f69a23a93688297))
+
+
+### Others
+
+* githead ([7e6c581](https://github.com/zely-js/zely/commit/7e6c581db82163551a4ab12b9fc9c982a6c2237f))
+
+
+
 ## [4.0.0-next.0](https://github.com/zely-js/zely/compare/v3.1.0-beta.0...v4.0.0-next.0) (2024-11-23)
 
 
