@@ -1,8 +1,5 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'fs';
-import { serverRender } from 'segify';
+import { mkdirSync, writeFileSync } from 'fs';
 import { join, parse } from 'path';
-
-import { warn } from '@zely-js/logger';
 
 import { Loader } from '~/zely-js/types';
 import { useEnhancedHTML } from './enhanced';
