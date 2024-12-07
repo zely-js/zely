@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.2](https://github.com/zely-js/zely/compare/v4.0.0-next.1...v4.0.0-next.2) (2024-12-07)
+
+
+### Code Refactoring
+
+* improve performance ([bc65bdd](https://github.com/zely-js/zely/commit/bc65bdd960d6f9ae9df22b42cf93a224b6fe5882))
+
+
+
 ## [4.0.0-next.1](https://github.com/zely-js/zely/compare/v4.0.0-next.0...v4.0.0-next.1) (2024-12-07)
 
 
