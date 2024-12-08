@@ -6,8 +6,6 @@ Build Productive, Convenient, Fast Backend
 
 ---
 
-> info: [zely’s future plans!](https://zely.vercel.app/blog/24-06-13)
-
 - File-based routing. zely creates routes automatically with filenames.
 - Server Reload. You don't have to restart server to apply changes.
 - Typescript Supported.
