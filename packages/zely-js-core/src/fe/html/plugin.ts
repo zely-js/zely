@@ -46,7 +46,7 @@ var $$ssrCompiler=async (c) => {
 
     writeFileSync(
       outfile,
-      `const core=require("@zely-js/core");const {serverRender: $$serverRender}=require("segify");const $$logger=require("@zely-js/logger");${ssrCompiler};module.exports = ${code}`
+      `const core=require("@zely-js/core");const {serverRender: $$serverRender}=require("segify");const $$logger=core.logger;${ssrCompiler};module.exports = ${code}`
     );
 
     return { filename: outfile, map: null, assets: Object.values(built) };

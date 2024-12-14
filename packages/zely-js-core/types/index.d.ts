@@ -7,3 +7,4 @@ export * from './response';
 export * from './virtuals';
 export * from './loader';
 export * from './fe';
+export * as logger from '@zely-js/logger';

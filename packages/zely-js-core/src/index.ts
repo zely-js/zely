@@ -8,3 +8,4 @@ export * from './virtual';
 export { PageCache } from './controller';
 export * from './loader';
 export * from './fe';
+export * as logger from '@zely-js/logger';
