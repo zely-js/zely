@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.5](https://github.com/zely-js/zely/compare/v4.0.0-next.4...v4.0.0-next.5) (2024-12-24)
+
+
+### Bug Fix
+
+* virtual page on production ([#433](https://github.com/zely-js/zely/issues/433)) ([93e1dc2](https://github.com/zely-js/zely/commit/93e1dc2f587ada8d40a4d7a321b47ce3e63e1338))
+
+
+### Code Refactoring
+
+* import order ([70ed9c2](https://github.com/zely-js/zely/commit/70ed9c2e16c0f0c2d876b4f6f1c70a40c5660b0b))
+* improve readability ([521f3c4](https://github.com/zely-js/zely/commit/521f3c45cc2fdd0147affc6bd304fadcaa4817a9))
+
+
+### Others
+
+* docker ([c5fd5a9](https://github.com/zely-js/zely/commit/c5fd5a91caeed193f88630ff363035bce6d344ff))
+
+
+
 ## [4.0.0-next.4](https://github.com/zely-js/zely/compare/v4.0.0-next.3...v4.0.0-next.4) (2024-12-07)
 
 **Note:** Version bump only for package @zely-js/core
