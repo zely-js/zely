@@ -7,12 +7,5 @@ export default defineConfig({
     useHTML: true,
   },
   allowAutoMiddlewares: true,
-  __virtuals__: [
-    createVirtualPage('main.ts', [
-      GET(() => {
-        throw new Error("I'm a error");
-        return 'Hello World~';
-      }),
-    ]),
-  ],
+  __virtuals__: [createVirtualPage('main.ts', [GET(() => {})])],
 });

@@ -135,20 +135,25 @@ export class PageCache {
 
     const base = join(this.config.cwd || process.cwd(), 'pages');
     for await (const page of this.#modules) {
-      const output = await this.loader(join(base, page.filename), {
-        type: 'page',
-        buildOptions: {},
-      });
+      if (page.module.__isVirtual__) {
+        page.id = performance.now();
+        this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
+      } else {
+        const output = await this.loader(join(base, page.filename), {
+          type: 'page',
+          buildOptions: {},
+        });
 
-      page.module.data = getValue(output.module);
-      page.module.builtPath = output.filename;
-      page.module.builtMapPath = output.map;
-      page.module.builtAssets = output.assets || [];
-      page.module.type = isExportDefault(output.module) ? 'export-default' : 'export';
-      page.module.isLoaded = true;
-      page.id = performance.now();
+        page.module.data = getValue(output.module);
+        page.module.builtPath = output.filename;
+        page.module.builtMapPath = output.map;
+        page.module.builtAssets = output.assets || [];
+        page.module.type = isExportDefault(output.module) ? 'export-default' : 'export';
+        page.module.isLoaded = true;
+        page.id = performance.now();
 
-      this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
+        this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
+      }
     }
   }
 
