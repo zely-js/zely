@@ -1,14 +1,12 @@
 import { App, senta } from 'senta';
 import { error, warn } from '@zely-js/logger';
 import { pathToRegexp } from '@zept/path-regexp';
-
 import { performance } from 'node:perf_hooks';
 import { readFileSync } from 'node:fs';
 import { join, parse, relative } from 'node:path';
 
 import { readDirectory } from '~/zely-js-core/lib/read-directory';
 import type { Context, UserConfig } from '~/zely-js-core';
-
 import { createMiddlewares } from './middlewares';
 import { Page, PageCache, controll } from './controller';
 import { transformFilename } from '~/zely-js-core/lib/file-to-path';

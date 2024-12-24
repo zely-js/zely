@@ -1,8 +1,6 @@
 import { errorWithStacks, info, parseError, success } from '@zely-js/logger';
-
 import { Context } from 'senta';
 import chokidar from 'chokidar';
-
 import { existsSync, mkdirSync, rmSync, unlinkSync, writeFileSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { join, relative } from 'node:path';
@@ -18,6 +16,7 @@ import { createLoader } from '../loader';
 import reporter from '../reporter';
 import { WatchOptions } from '~/zely-js-core/types/watch';
 
+// Utility functions
 function findPage(path: string, pages: Page[]) {
   for (const page of pages) {
     if (page.regex.test(path)) {
@@ -37,33 +36,19 @@ function findPageByFilename(filename: string, pages: Page[]) {
 }
 
 export function getValue(m: any) {
-  // console.log(m);
   return Object.hasOwnProperty.call(m, 'default') ? m.default : m;
 }
 
 export function isExportDefault(m: any): boolean {
-  /**
-   * export default {
-   *  get() {}
-   * }
-   */
-  if (isObject(getValue(m))) {
-    return false;
-  }
-
-  if (isFunction(getValue(m))) {
-    return true;
-  }
-  if (Array.isArray(getValue(m))) {
-    return true;
-  }
+  const value = getValue(m);
+  if (isObject(value)) return false;
+  if (isFunction(value)) return true;
+  if (Array.isArray(value)) return true;
   return false;
 }
 
 /**
- * When a file is modified (in development mode),
- * the page is not compiled immediately, but when the page is loaded.
- *
+ * PageCache class to manage page caching and watching
  */
 export class PageCache {
   #modules: Page[] = [];
@@ -76,28 +61,18 @@ export class PageCache {
 
   constructor(page: Page[], config: UserConfig) {
     const loader = createLoader(config);
+    const distPath = join(config.cwd || process.cwd(), config.dist || '.zely');
 
     if (config.keepDist !== true) {
-      if (existsSync(join(config.cwd || process.cwd(), config.dist || '.zely'))) {
-        rmSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
-          recursive: true,
-        });
+      if (existsSync(distPath)) {
+        rmSync(distPath, { recursive: true });
       }
-
-      mkdirSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
-        recursive: true,
-      });
-    } else if (!existsSync(join(config.cwd || process.cwd(), config.dist || '.zely'))) {
-      mkdirSync(join(config.cwd || process.cwd(), config.dist || '.zely'), {
-        recursive: true,
-      });
+      mkdirSync(distPath, { recursive: true });
+    } else if (!existsSync(distPath)) {
+      mkdirSync(distPath, { recursive: true });
     }
 
-    // support esm
-    writeFileSync(
-      join(config.cwd || process.cwd(), config.dist || '.zely', 'package.json'),
-      '{"type": "commonjs"}'
-    );
+    writeFileSync(join(distPath, 'package.json'), '{"type": "commonjs"}');
 
     this.#modules = page;
     this.loader = loader;
@@ -111,23 +86,17 @@ export class PageCache {
     }
   }
 
-  // sort by count of ":"
+  // Sort pages by count of ":"
   sort() {
-    const files = {};
+    const files: Record<number, Page[]> = {};
 
     this.#modules.forEach((file) => {
       const count = (file.path.match(/:/g) || []).length;
-
       if (!files[count]) files[count] = [];
       files[count].push(file);
     });
 
-    const filesResult: any[] = [];
-
-    Object.keys(files).forEach((file) => {
-      filesResult.push(...files[file]);
-    });
-    this.#modules = filesResult;
+    this.#modules = Object.values(files).flat();
   }
 
   getPages(): Page[] {
@@ -135,22 +104,12 @@ export class PageCache {
   }
 
   watch(options: WatchOptions, zely: UserConfig) {
-    if (!options?.includes) {
-      options.includes = [];
-    }
-    if (!options?.target) {
-      options.target = [];
-    }
-
-    options.target.push('ts', 'tsx', 'js', 'jsx', 'html');
+    options.includes = options.includes || [];
+    options.target = options.target || ['ts', 'tsx', 'js', 'jsx', 'html'];
 
     const base = join(zely.cwd || process.cwd(), 'pages');
-
     options.includes.push(
-      join(zely.cwd || process.cwd(), `pages/**/*.{${options.target.join(',')}}`).replace(
-        /\\/g,
-        '/'
-      ),
+      join(base, `**/*.{${options.target.join(',')}}`).replace(/\\/g, '/'),
       'zely.config.*'
     );
 
@@ -163,89 +122,19 @@ export class PageCache {
       }
 
       const cache = this.readIdMap();
-
       cache[relative(base, path).replace(/\\/g, '/')] = performance.now();
-
       this.writeIdMap(cache);
     });
   }
 
-  // create production build
+  // Create production build
   async productionBuild() {
-    const base = join(this.config.cwd || process.cwd(), 'pages');
-
-    // build all pages
-
-    if (process.env.NODE_ENV === 'production') {
-      for await (const page of this.#modules) {
-        const output = await this.loader(join(base, page.filename), {
-          type: 'page',
-          buildOptions: {},
-        });
-
-        page.module.data = getValue(output.module);
-        page.module.builtPath = output.filename;
-        page.module.builtMapPath = output.map;
-        page.module.builtAssets = output.assets || [];
-        page.module.type = isExportDefault(output.module) ? 'export-default' : 'export';
-        page.module.isLoaded = true;
-        page.id = performance.now();
-
-        this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
-      }
-    } else {
+    if (process.env.NODE_ENV !== 'production') {
       throw new Error('production build is only available in production mode.');
     }
-  }
 
-  // id map
-  writeIdMap(data: any) {
-    this.map = data;
-  }
-
-  readIdMap() {
-    return this.map;
-  }
-
-  // find module by path
-  async getModule(path: string) {
-    const id = this.readIdMap();
     const base = join(this.config.cwd || process.cwd(), 'pages');
-
-    let page = findPage(path, this.#modules);
-
-    // error handling (404)
-
-    if (!page) {
-      const page404 = findPageByFilename('_404', this.#modules);
-
-      page = {} as any;
-
-      if (page404) {
-        // set page
-
-        page = page404;
-        page.params = [];
-      } else {
-        return;
-      }
-    }
-
-    // in production mode all pages are compiled
-    if (process.env.NODE_ENV !== 'development') {
-      return page;
-    }
-
-    // virtual page must not be edited
-    if (page.module.__isVirtual__) {
-      return page;
-    }
-
-    // compile code
-
-    if (!page.module.isLoaded) {
-      // when page isn't loaded
-
+    for await (const page of this.#modules) {
       const output = await this.loader(join(base, page.filename), {
         type: 'page',
         buildOptions: {},
@@ -260,11 +149,59 @@ export class PageCache {
       page.id = performance.now();
 
       this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
+    }
+  }
 
-      success(`${`${page.path}/`} compiled successfully`, 'compiled');
+  // ID map management
+  writeIdMap(data: any) {
+    this.map = data;
+  }
+
+  readIdMap() {
+    return this.map;
+  }
+
+  // Find module by path
+  async getModule(path: string) {
+    const id = this.readIdMap();
+    const base = join(this.config.cwd || process.cwd(), 'pages');
+    let page = findPage(path, this.#modules);
+
+    if (!page) {
+      const page404 = findPageByFilename('_404', this.#modules);
+      if (page404) {
+        page = page404;
+        page.params = [];
+      } else {
+        return;
+      }
+    }
+
+    if (process.env.NODE_ENV !== 'development') {
+      return page;
+    }
+
+    if (page.module.__isVirtual__) {
+      return page;
+    }
+
+    if (!page.module.isLoaded) {
+      const output = await this.loader(join(base, page.filename), {
+        type: 'page',
+        buildOptions: {},
+      });
+
+      page.module.data = getValue(output.module);
+      page.module.builtPath = output.filename;
+      page.module.builtMapPath = output.map;
+      page.module.builtAssets = output.assets || [];
+      page.module.type = isExportDefault(output.module) ? 'export-default' : 'export';
+      page.module.isLoaded = true;
+      page.id = performance.now();
+
+      this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
+      success(`${page.path}/ compiled successfully`, 'compiled');
     } else if (page.id !== id[page.filename]) {
-      // when page was modified
-
       const output = await this.loader(join(base, page.filename), {
         type: 'page',
         buildOptions: {},
@@ -294,12 +231,10 @@ export class PageCache {
       page.module.builtMapPath = output.map;
       page.module.builtAssets = output.assets || [];
       page.module.type = isExportDefault(output.module) ? 'export-default' : 'export';
-
       page.id = id[page.filename];
 
       this.writeIdMap({ ...this.readIdMap(), [page.filename]: page.id });
-
-      success(`${`${page.path}/`} compiled successfully`, 'compiled');
+      success(`${page.path}/ compiled successfully`, 'compiled');
     }
 
     return page;
@@ -307,11 +242,7 @@ export class PageCache {
 }
 
 /**
- * handle request and send response
- *
- * @param req Zept Request
- * @param res Zept Response
- * @param next Next middleware
+ * Handle request and send response
  */
 export async function controll(
   req: ZelyRequest,
@@ -324,14 +255,11 @@ export async function controll(
   try {
     m = await cache.getModule(req.url);
 
-    // if page not found in cache
     if (!m) {
       return next();
     }
 
     const ctx = new Context(req, res);
-
-    // DEV context
     ctx.__DEV__ = {
       path: m.filename,
       params: m.params,
@@ -340,18 +268,13 @@ export async function controll(
 
     if (m.module.type === 'export-default') {
       await handleExportDefault(ctx, m, next);
-    }
-
-    if (m.module.type === 'export') {
+    } else if (m.module.type === 'export') {
       await handleExport(ctx, m, next);
     }
   } catch (e) {
     if (userConfig?.enableReporter !== false) {
-      // if error happens in virtual page
-
       if (m?.module.__isVirtual__) {
         const err = parseError(e);
-
         errorWithStacks(e.message, [
           {
             loc: `(virtual:${m?.filename})`,
@@ -360,8 +283,6 @@ export async function controll(
           ...err,
         ]);
       } else {
-        // error with js map
-
         await reporter(e);
       }
     }
@@ -374,5 +295,5 @@ export async function controll(
   }
 }
 
-// export type
+// Export type
 export { Page };
