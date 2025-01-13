@@ -2,6 +2,7 @@ import { Config as ServerOptions } from 'senta';
 import { Loader } from './loader';
 
 import { Middleware } from './middleware';
+import { CompilerOptions } from 'serpack';
 
 export interface UserConfig {
   /**
@@ -104,4 +105,9 @@ export interface ExperimentalFeatures {
    * https://segify.vercel.app/
    */
   useHTML?: boolean;
+
+  /** use serpack compiler instead of `@zely-js/esbuild-loader` */
+  useSerpack?: boolean;
+  /** https://github.com/do4ng/serpack#compile */
+  serpackOptions?: CompilerOptions;
 }
