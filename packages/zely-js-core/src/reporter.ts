@@ -30,6 +30,14 @@ const errorHandler = async (e) => {
 
   const tracer = JSON.parse(readFileSync(targetFile, 'utf-8'));
 
+  if (tracer.sections) {
+    // indexed map
+    // TODO
+
+    errorWithStacks(e.message, stacks);
+    return;
+  }
+
   const sourcemap = new SourceMapConsumer(tracer);
 
   const result = (await sourcemap).originalPositionFor(trace);

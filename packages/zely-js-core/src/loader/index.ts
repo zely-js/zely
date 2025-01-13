@@ -7,6 +7,7 @@ import type { Context, UserConfig } from '~/zely-js-core';
 import type { TransformOptions, LoaderFunc } from '~/zely-js-core/types/loader';
 
 import { esbuildLoader } from './esbuild';
+import { serpackLoader } from './serpack';
 
 async function load(id: string) {
   const relativePath = relative(__dirname, id).replace(/\\/g, '/');
@@ -29,9 +30,14 @@ export function createLoader<T>(
     options.loaders = [];
   }
 
-  options.loaders.push(esbuildLoader(options));
+  if (options?.experimental?.useSerpack) {
+    options.loaders.push(serpackLoader(options));
+  } else {
+    options.loaders.push(esbuildLoader(options));
+  }
 
   return async (id, buildOptions) => {
+    const now = performance.now();
     for await (const loader of options.loaders) {
       const output = await loader?.transform(
         id,
@@ -41,6 +47,11 @@ export function createLoader<T>(
       );
 
       if (output) {
+        if (process.argv.includes('--loader-performance')) {
+          console.log(
+            `[${loader.name}] compiled ${id} in ${(performance.now() - now).toFixed(2)}ms`
+          );
+        }
         return {
           module: await load(output.filename),
           filename: output.filename,
