@@ -49,7 +49,9 @@ export function createLoader<T>(
       if (output) {
         if (process.argv.includes('--loader-performance')) {
           console.log(
-            `[${loader.name}] compiled ${id} in ${(performance.now() - now).toFixed(2)}ms`
+            `[${loader.name}] compiled ${relative(process.cwd(), id)} in ${(
+              performance.now() - now
+            ).toFixed(2)}ms`
           );
         }
         return {

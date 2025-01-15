@@ -13,13 +13,20 @@ const app = animaux('zely-js');
 
 app.version(pkg.version);
 
-app.command('dev').action(async () => {
-  // development mode
-  process.env.NODE_ENV = 'development';
-  process.env.ZELY_WORKING_FRAMEWORK = 'zely-cli';
+app
+  .command('dev')
+  .option('--serpack', 'Use serpack-loader (experimental)')
+  .action(async (options) => {
+    // development mode
+    process.env.NODE_ENV = 'development';
+    process.env.ZELY_WORKING_FRAMEWORK = 'zely-cli';
 
-  await dev();
-});
+    if (options.serpack || process.argv.includes('--serpack')) {
+      process.env.SERPACK = 'true';
+    }
+
+    await dev();
+  });
 
 app.command('build').action(async () => {
   // production mode

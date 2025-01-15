@@ -7,6 +7,11 @@ export async function dev() {
   try {
     const config = await getConfig();
 
+    if (process.env.SERPACK === 'true') {
+      if (!config.experimental) config.experimental = {};
+      config.experimental.useSerpack = true;
+    }
+
     port = config?.server?.port || port;
 
     const server = await zely(config);
