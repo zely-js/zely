@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-import { relative } from 'node:path';
+import { isAbsolute, join, relative } from 'node:path';
 import { readFileSync } from 'node:fs';
 
 import type { Context, UserConfig } from '~/zely-js-core';
@@ -24,13 +24,14 @@ async function load(id: string) {
 
 export function createLoader<T>(
   options: UserConfig,
-  ctx?: Context
+  ctx?: Context,
+  serpack?: boolean
 ): (id: string, options?: TransformOptions<T>) => Promise<LoaderFunc> {
   if (!options.loaders) {
     options.loaders = [];
   }
 
-  if (options?.experimental?.useSerpack) {
+  if (serpack || options?.experimental?.useSerpack) {
     options.loaders.push(serpackLoader(options));
   } else {
     options.loaders.push(esbuildLoader(options));
@@ -38,6 +39,11 @@ export function createLoader<T>(
 
   return async (id, buildOptions) => {
     const now = performance.now();
+
+    if (!isAbsolute(id)) {
+      id = join(process.cwd(), id);
+    }
+
     for await (const loader of options.loaders) {
       const output = await loader?.transform(
         id,

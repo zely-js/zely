@@ -1,8 +1,9 @@
 import { App, senta } from 'senta';
-import { error, warn } from '@zely-js/logger';
+import { error, info, warn } from '@zely-js/logger';
 import { pathToRegexp } from '@zept/path-regexp';
 import { performance } from 'node:perf_hooks';
 import { readFileSync } from 'node:fs';
+import { version } from 'serpack/package.json';
 import { join, parse, relative } from 'node:path';
 
 import { readDirectory } from '~/zely-js-core/lib/read-directory';
@@ -99,6 +100,10 @@ export async function createZelyServer(options: UserConfig) {
         '"options.plugins" is not an available option in @zely-js/core. Please use @zely-js/zely to use plugins.'
       );
     }
+  }
+
+  if (options.experimental?.useSerpack) {
+    info(`use serpack (experimental-${version})`);
   }
 
   if (options.globalImport) {

@@ -5,8 +5,8 @@ import { existsSync, readFileSync } from 'node:fs';
 
 const CONFIG_FILE = ['zely.config.ts', 'zely.config.js', 'zely.config.json'];
 
-export async function getConfig(): Promise<UserConfig> {
-  const loader = await createLoader({});
+export async function getConfig(serpack: boolean = false): Promise<UserConfig> {
+  const loader = await createLoader({}, null, serpack);
 
   for (const file of CONFIG_FILE) {
     if (file.endsWith('.json')) {

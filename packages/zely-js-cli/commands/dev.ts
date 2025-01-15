@@ -5,7 +5,7 @@ import { getConfig } from '../lib/config';
 export async function dev() {
   let port = 8080;
   try {
-    const config = await getConfig();
+    const config = await getConfig(process.env.SERPACK === 'true');
 
     if (process.env.SERPACK === 'true') {
       if (!config.experimental) config.experimental = {};

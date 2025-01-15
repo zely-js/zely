@@ -39,7 +39,9 @@ export interface Loader<T = any> {
 }
 
 export function createLoader<T = any>(
-  options: UserConfig
+  options: UserConfig,
+  ctx?: Context,
+  serpack?: boolean
 ): (id: string, options?: TransformOptions<T>) => Promise<LoaderFunc>;
 // @ts-nocheck
 
