@@ -2529,6 +2529,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@swc/helpers@npm:^0.5.15":
+  version: 0.5.15
+  resolution: "@swc/helpers@npm:0.5.15"
+  dependencies:
+    tslib: "npm:^2.8.0"
+  checksum: 10c0/33002f74f6f885f04c132960835fdfc474186983ea567606db62e86acd0680ca82f34647e8e610f4e1e422d1c16fce729dde22cd3b797ab1fd9061a825dabca4
+  languageName: node
+  linkType: hard
+
 "@swc/types@npm:^0.1.17":
   version: 0.1.17
   resolution: "@swc/types@npm:0.1.17"
@@ -3358,7 +3367,7 @@ __metadata:
     mime-types: "npm:^2.1.35"
     segify: "npm:^0.0.0-beta.17"
     senta: "npm:^0.0.0"
-    serpack: "npm:^0.1.5"
+    serpack: "npm:^0.1.11"
     source-map: "npm:^0.7.4"
   languageName: unknown
   linkType: soft
@@ -10481,12 +10490,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serpack@npm:^0.1.5":
-  version: 0.1.5
-  resolution: "serpack@npm:0.1.5"
+"serpack@npm:^0.1.11":
+  version: 0.1.11
+  resolution: "serpack@npm:0.1.11"
   dependencies:
     "@serpack/logger": "npm:0.0.0"
     "@swc/core": "npm:^1.10.4"
+    "@swc/helpers": "npm:^0.5.15"
     acorn: "npm:^8.14.0"
     animaux: "npm:^0.0.4"
     escodegen: "npm:^2.1.0"
@@ -10494,7 +10504,7 @@ __metadata:
     oxc-resolver: "npm:^3.0.3"
   bin:
     serpack: dist/cli.js
-  checksum: 10c0/d15c37b47513366900ddf5b0ddac29fcb3259769bbad6aa93c0a0276f0fa0ddc49df693866de2f46d0dcf0b42eb520bd7c310da9048a85dd8d3bc8a543b797da
+  checksum: 10c0/ce74855f4e662d23b63044c00ddd71730086ad2804b7152c021b8dd8a6c821ee26551a07010ed5fe42fc131ba1398ac6554af04b2aa18cf736d9a206f88c0726
   languageName: node
   linkType: hard
 
@@ -11306,6 +11316,13 @@ __metadata:
   version: 2.6.2
   resolution: "tslib@npm:2.6.2"
   checksum: 10c0/e03a8a4271152c8b26604ed45535954c0a45296e32445b4b87f8a5abdb2421f40b59b4ca437c4346af0f28179780d604094eb64546bee2019d903d01c6c19bdb
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.8.0":
+  version: 2.8.1
+  resolution: "tslib@npm:2.8.1"
+  checksum: 10c0/9c4759110a19c53f992d9aae23aac5ced636e99887b51b9e61def52611732872ff7668757d4e4c61f19691e36f4da981cd9485e869b4a7408d689f6bf1f14e62
   languageName: node
   linkType: hard
 

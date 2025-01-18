@@ -13,6 +13,7 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
         return;
       }
 
+      const runtime = process.env.SERPACK_RUNTIME === 'true';
       let outfile = `index${Math.floor(Math.random() * 1000)}.js`;
 
       if (buildoptions.type === 'page') {
@@ -31,7 +32,8 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
 
       const output = await compile(id, {
         ...buildoptions.buildOptions,
-        forceExternal: ['@zely-js/core', '@zely-js/zely', 'zely'],
+        nodeExternal: true,
+        runtime,
       });
 
       mkdirSync(dirname(outpath), { recursive: true });

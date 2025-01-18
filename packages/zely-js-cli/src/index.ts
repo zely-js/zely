@@ -16,6 +16,7 @@ app.version(pkg.version);
 app
   .command('dev')
   .option('--serpack', 'Use serpack-loader (experimental)')
+  .option('--runtime', 'Use serpack runtime (experimental)')
   .action(async (options) => {
     // development mode
     process.env.NODE_ENV = 'development';
@@ -23,6 +24,10 @@ app
 
     if (options.serpack || process.argv.includes('--serpack')) {
       process.env.SERPACK = 'true';
+    }
+
+    if (options.runtime || process.argv.includes('--serpack-runtime')) {
+      process.env.SERPACK_RUNTIME = 'true';
     }
 
     await dev();
