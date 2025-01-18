@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.9](https://github.com/zely-js/zely/compare/v4.0.0-next.8...v4.0.0-next.9) (2025-01-18)
+
+
+### Others
+
+* **deps:** upgrade serpack version ([108d6cf](https://github.com/zely-js/zely/commit/108d6cf6d1123823abdee00e64d78825a67ca2ca))
+
+
+
 ## [4.0.0-next.8](https://github.com/zely-js/zely/compare/v4.0.0-next.7...v4.0.0-next.8) (2025-01-15)
 
 **Note:** Version bump only for package zely-cli
