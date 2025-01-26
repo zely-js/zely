@@ -1,16 +1,23 @@
 import { mkdirSync, writeFileSync } from 'fs';
 import { relative, join, dirname } from 'path';
-import { compile, CompilerOptions } from 'serpack';
+import { compile, CompilerOptions, loadConfig } from 'serpack';
 import { removeExtension } from '~/zely-js-core/lib/ext';
 import { Loader, UserConfig } from '~/zely-js-core/types';
 
 export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
+  let serpackConfig: CompilerOptions;
+
   return {
     name: '@zely-js/core:serpack-loader',
 
     async transform(id, source, buildoptions) {
       if (!id.endsWith('.ts') && !id.endsWith('.js')) {
         return;
+      }
+
+      if (!serpackConfig) {
+        serpackConfig =
+          (await loadConfig(options.cwd || process.cwd()))?.compilerOptions || {};
       }
 
       const runtime = process.env.SERPACK_RUNTIME === 'true';
@@ -34,11 +41,17 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
         ...buildoptions.buildOptions,
         nodeExternal: true,
         runtime,
+        sourcemap: true,
+        sourcemapOptions: {
+          sourcemapRoot: dirname(outpath),
+        },
+        ...serpackConfig,
       });
 
       mkdirSync(dirname(outpath), { recursive: true });
 
       writeFileSync(outpath, output.code);
+      writeFileSync(`${outpath}.map`, output.map || '{}');
 
       return { filename: outpath, map: null };
     },
