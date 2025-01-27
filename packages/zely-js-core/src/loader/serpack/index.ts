@@ -45,6 +45,7 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
         sourcemapOptions: {
           sourcemapRoot: dirname(outpath),
         },
+        type: 'script',
         ...serpackConfig,
       });
 

@@ -2,7 +2,7 @@ import { ALL, response } from '@zely-js/core';
 
 export default [
   ALL(() => {
-    throw new Error('Hello1111');
+    console.log(__dirname, __filename);
     const res = response({ msg: '👋' }, {});
     res.body = { msg: '🎉' };
     res.headers = {};
