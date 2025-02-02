@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.10](https://github.com/zely-js/zely/compare/v4.0.0-next.9...v4.0.0-next.10) (2025-02-02)
+
+
+### New Features
+
+* **serpack:** sourcemap generation ([7a96b37](https://github.com/zely-js/zely/commit/7a96b37c61a528f34f2b343ca0b3fed1f5ae324e))
+
+
+### Others
+
+* **serpack:** update compiler ([6ba3bc3](https://github.com/zely-js/zely/commit/6ba3bc359992c408aa2a92f31e8084b3464496c4))
+
+
+
 ## [4.0.0-next.9](https://github.com/zely-js/zely/compare/v4.0.0-next.8...v4.0.0-next.9) (2025-01-18)
 
 

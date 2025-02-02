@@ -1,11 +1,11 @@
 {
   "name": "zely-cli",
-  "version": "4.0.0-next.9",
+  "version": "4.0.0-next.10",
   "bin": "./dist/index.js",
   "main": "./dist/index.js",
   "dependencies": {
     "@zely-js/logger": "4.0.0-next.4",
-    "@zely-js/zely": "4.0.0-next.9",
+    "@zely-js/zely": "4.0.0-next.10",
     "animaux": "^0.0.4"
   },
   "files": [
