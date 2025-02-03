@@ -2860,6 +2860,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prompts@npm:^2":
+  version: 2.4.9
+  resolution: "@types/prompts@npm:2.4.9"
+  dependencies:
+    "@types/node": "npm:*"
+    kleur: "npm:^3.0.3"
+  checksum: 10c0/22fe0da6807681c85e88ba283184f4be4c8a95c744ea12a638865c98c4e0c22e7f733542f6b0f1fbca02245cdc3fe84feacf9c9adf4ddd8bc98a337fd679d8d2
+  languageName: node
+  linkType: hard
+
 "@types/qs@npm:*":
   version: 6.9.12
   resolution: "@types/qs@npm:6.9.12"
@@ -9902,7 +9912,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prompts@npm:^2.0.1":
+"prompts@npm:^2.0.1, prompts@npm:^2.4.2":
   version: 2.4.2
   resolution: "prompts@npm:2.4.2"
   dependencies:
@@ -12036,9 +12046,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "zely-cli@workspace:packages/zely-js-cli"
   dependencies:
+    "@types/prompts": "npm:^2"
     "@zely-js/logger": "npm:4.0.0-next.11"
     "@zely-js/zely": "npm:4.0.0-next.11"
     animaux: "npm:^0.0.4"
+    prompts: "npm:^2.4.2"
   bin:
     zely-cli: ./dist/index.js
   languageName: unknown

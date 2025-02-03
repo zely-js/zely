@@ -2,7 +2,6 @@
 
 import animaux from 'animaux';
 
-import { info } from '@zely-js/logger';
 import pkg from '../package.json';
 import { dev } from '../commands/dev';
 import { build } from '../commands/build';
@@ -52,11 +51,9 @@ app.command('start').action(async () => {
 app
   .command('init')
   .option('--dir, -d', 'Provide output directory.')
-  .option('--template, -t', 'Template (typescript/javascript)', 'typescript')
+  .option('--template, -t', 'Template (typescript/javascript)')
   .action(async (options) => {
-    // console.log(options);
-    info(`cloning template: ${options.template || 'typescript'}`);
-    await init(options.dir || '.', options.template || 'typescript');
+    await init(options.dir, options.template);
   });
 
 app.parse(process.argv);

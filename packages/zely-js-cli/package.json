@@ -6,7 +6,8 @@
   "dependencies": {
     "@zely-js/logger": "4.0.0-next.11",
     "@zely-js/zely": "4.0.0-next.11",
-    "animaux": "^0.0.4"
+    "animaux": "^0.0.4",
+    "prompts": "^2.4.2"
   },
   "files": [
     "./dist",
@@ -16,5 +17,8 @@
   "description": "cli for zely-js",
   "repository": "https://github.com/zely-js/zely",
   "bugs": "https://github.com/zely-js/zely/issues",
-  "homepage": "https://zely.vercel.app"
+  "homepage": "https://zely.vercel.app",
+  "devDependencies": {
+    "@types/prompts": "^2"
+  }
 }
