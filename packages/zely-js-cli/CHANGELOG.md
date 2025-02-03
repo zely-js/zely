@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.12](https://github.com/zely-js/zely/compare/v4.0.0-next.11...v4.0.0-next.12) (2025-02-03)
+
+
+### New Features
+
+* **zely-cli:** pretty template cloner ([2e3139a](https://github.com/zely-js/zely/commit/2e3139a35895f0e91a3e773c6056485762e1a851))
+
+
+
 ## [4.0.0-next.11](https://github.com/zely-js/zely/compare/v4.0.0-next.10...v4.0.0-next.11) (2025-02-03)
 
 **Note:** Version bump only for package zely-cli

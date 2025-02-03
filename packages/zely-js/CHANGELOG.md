@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.12](https://github.com/zely-js/zely/compare/v4.0.0-next.11...v4.0.0-next.12) (2025-02-03)
+
+
+### New Features
+
+* body parser middleware ([935a5d6](https://github.com/zely-js/zely/commit/935a5d6409e2719a648bc5df63ba3a701b1f2588))
+
+
+
 ## [4.0.0-next.11](https://github.com/zely-js/zely/compare/v4.0.0-next.10...v4.0.0-next.11) (2025-02-03)
 
 **Note:** Version bump only for package @zely-js/zely

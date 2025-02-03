@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.12](https://github.com/zely-js/zely/compare/v4.0.0-next.11...v4.0.0-next.12) (2025-02-03)
+
+
+### New Features
+
+* body parser middleware ([935a5d6](https://github.com/zely-js/zely/commit/935a5d6409e2719a648bc5df63ba3a701b1f2588))
+* **zely-cli:** pretty template cloner ([2e3139a](https://github.com/zely-js/zely/commit/2e3139a35895f0e91a3e773c6056485762e1a851))
+
+
+### Others
+
+* auto publish ([4300a08](https://github.com/zely-js/zely/commit/4300a086c6acf6e1772b0d6866795be8874fcabb))
+
+
+
 ## [4.0.0-next.11](https://github.com/zely-js/zely/compare/v4.0.0-next.10...v4.0.0-next.11) (2025-02-03)
 
 
