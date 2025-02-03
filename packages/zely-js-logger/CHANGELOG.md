@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.11](https://github.com/zely-js/zely/compare/v4.0.0-next.10...v4.0.0-next.11) (2025-02-03)
+
+
+### New Features
+
+* **@zely-js/logger:** debugging ([5a43e9f](https://github.com/zely-js/zely/commit/5a43e9fd28b201c33163ea772a4de8e3464b88a0))
+
+
+
 ## [4.0.0-next.4](https://github.com/zely-js/zely/compare/v4.0.0-next.3...v4.0.0-next.4) (2024-12-07)
 
 **Note:** Version bump only for package @zely-js/logger

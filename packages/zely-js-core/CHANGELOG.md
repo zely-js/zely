@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.11](https://github.com/zely-js/zely/compare/v4.0.0-next.10...v4.0.0-next.11) (2025-02-03)
+
+
+### New Features
+
+* **serpack:** update compiler ([12b41c4](https://github.com/zely-js/zely/commit/12b41c48c812116a62f56a724e59436a5fdb5a8d))
+
+
+### Others
+
+* use exist context ([07de053](https://github.com/zely-js/zely/commit/07de053725330b42abd2951c3a757bbc149219a3))
+
+
+
 ## [4.0.0-next.10](https://github.com/zely-js/zely/compare/v4.0.0-next.9...v4.0.0-next.10) (2025-02-02)
 
 
