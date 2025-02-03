@@ -87,4 +87,8 @@ function info(message: string) {
   console.log(`${getTime().gray} ${'info'.blue.bold} ${message.bold}`);
 }
 
-export { success, info, error, warn, parseError, errorWithStacks };
+function debug(message: string) {
+  console.log(`${getTime().gray} ${'debug'.gray.bold} ${message}`);
+}
+
+export { success, info, error, warn, parseError, errorWithStacks, debug };
