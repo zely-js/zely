@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 
 import { isAbsolute, join, relative } from 'node:path';
+import { debug } from '@zely-js/logger';
 import { readFileSync } from 'node:fs';
 
 import type { Context, UserConfig } from '~/zely-js-core';
@@ -54,7 +55,7 @@ export function createLoader<T>(
 
       if (output) {
         if (process.argv.includes('--loader-performance')) {
-          console.log(
+          debug(
             `[${loader.name}] compiled ${relative(process.cwd(), id)} in ${(
               performance.now() - now
             ).toFixed(2)}ms`

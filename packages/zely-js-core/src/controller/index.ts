@@ -5,7 +5,7 @@ import { join, relative } from 'node:path';
 import { errorWithStacks, info, parseError, success } from '@zely-js/logger';
 import { Context } from 'senta';
 import chokidar from 'chokidar';
-import type { UserConfig, ZelyRequest, ZelyResponse } from '~/zely-js-core';
+import type { UserConfig } from '~/zely-js-core';
 import { isFunction, isObject } from '~/zely-js-core/lib/is';
 import { removeExtension } from '~/zely-js-core/lib/ext';
 import { WatchOptions } from '~/zely-js-core/types/watch';
@@ -250,13 +250,14 @@ export class PageCache {
  * Handle request and send response
  */
 export async function controll(
-  req: ZelyRequest,
-  res: ZelyResponse,
+  ctx: Context,
   next: () => void,
   userConfig: UserConfig,
   cache: PageCache
 ) {
+  const { request: req, response: res } = ctx;
   let m: Page = null;
+
   try {
     m = await cache.getModule(req.url);
 
@@ -264,7 +265,6 @@ export async function controll(
       return next();
     }
 
-    const ctx = new Context(req, res);
     ctx.__DEV__ = {
       path: m.filename,
       params: m.params,

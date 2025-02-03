@@ -93,7 +93,7 @@ export async function createZelyServer(options: UserConfig) {
   }
 
   if (!process.env.ZELY_WORKING_FRAMEWORK) {
-    warn('Running app with @zely-js/zely is recommended.');
+    // warn('Running app with @zely-js/zely is recommended.');
 
     if ((options as any).plugins) {
       warn(
@@ -114,6 +114,7 @@ export async function createZelyServer(options: UserConfig) {
     options.__virtuals__ = [];
   }
 
+  // frontend support
   options.__virtuals__.push(
     createVirtualPage('/__fe/[...params].ts', [
       GET((ctx: Context) => {
@@ -133,6 +134,8 @@ export async function createZelyServer(options: UserConfig) {
       }),
     ])
   );
+
+  // html loader
   if (options.experimental?.useHTML) {
     if (!options.loaders) options.loaders = [];
 
@@ -193,7 +196,7 @@ export async function createZelyServer(options: UserConfig) {
 
     // core handler
     serverInstance.use(async (ctx, next) => {
-      await controll(ctx.request, ctx.response, next, options, pages);
+      await controll(ctx, next, options, pages);
     });
   };
 

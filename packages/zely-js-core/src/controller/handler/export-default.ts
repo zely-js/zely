@@ -47,6 +47,8 @@ export async function handleExportDefault(ctx: Context, page: Page, next: () => 
     }
 
     await middleware.body(ctx);
+
+    if (ctx.response.writableEnded) return;
   }
 
   // if page not found
