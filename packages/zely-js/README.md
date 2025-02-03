@@ -6,7 +6,7 @@ Build Productive, Convenient, Fast Backend
 
 ---
 
-> This package is a zely@3 core module.
+> This package is a zely@4 core module.
 
 - File-based routing. zely creates routes automatically with filenames.
 - Server Reload. You don't have to restart server to apply changes.

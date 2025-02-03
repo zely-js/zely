@@ -8,6 +8,19 @@
     "./dist",
     "./env.d.ts"
   ],
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
+    },
+    "./middlewares": {
+      "types": "./dist/middlewares/index.d.ts",
+      "import": "./dist/middlewares.mjs",
+      "default": "./dist/middlewares.js"
+    },
+    "./package.json": "./package.json"
+  },
   "dependencies": {
     "@zely-js/core": "4.0.0-next.11",
     "@zely-js/logger": "4.0.0-next.11",

@@ -72,6 +72,7 @@ const repos = {
 const entryPoints = [
   // zely
   ...repos.zely('index.ts', 'index.js', true),
+  ...repos.zely('../middlewares/index.ts', 'middlewares.js', true),
   ...repos.core('index.ts', 'index.js', true),
   ...repos.logger('index.ts', 'index.js', true),
   ...repos.cli('index.ts', 'index.js', true),
