@@ -41,6 +41,7 @@
     "version": "lerna version",
     "publish:beta": "yarn lerna publish from-package  --canary --preid next --tag-version-prefix next --yes --no-private",
     "publish": "yarn lerna publish from-package --no-private",
+    "publish:o": "yarn run version && yarn build && yarn run publish",
     "tag:release": "lerna publish from-package --yes --no-git-tag-version",
     "dev": "cross-env NODE_ENV=development asto --watch",
     "build:dev": "cross-env NODE_ENV=development asto",
