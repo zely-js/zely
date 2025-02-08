@@ -257,7 +257,6 @@ export async function controll(
 ) {
   const { request: req, response: res } = ctx;
   let m: Page = null;
-
   try {
     m = await cache.getModule(req.url);
 
@@ -265,6 +264,7 @@ export async function controll(
       return next();
     }
 
+    const ctx = new Context(req, res);
     ctx.__DEV__ = {
       path: m.filename,
       params: m.params,
