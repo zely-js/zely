@@ -1,9 +1,7 @@
 import { ALL, response } from '@zely-js/core';
 
 export default [
-  ALL((ctx) => {
-    console.log(ctx.body);
-    console.log(__dirname, __filename);
+  ALL(() => {
     const res = response({ msg: '👋' }, {});
     res.body = { msg: '🎉' };
     res.headers = {};
