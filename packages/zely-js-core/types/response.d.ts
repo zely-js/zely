@@ -1,11 +1,18 @@
-declare class Response {
-  body: any;
+import { NoStrict } from './methods';
+
+declare class Response<T> {
+  __isResponse: true;
+
+  body: NoStrict<T>;
 
   headers: Record<string, any>;
 
   status: number;
 
-  constructor(body: any, headers?: Record<string, any>);
+  constructor(body: NoStrict<T>, headers?: Record<string, any>);
 }
 
-export function response(body: any, headers?: Record<string, any>): Response;
+export function response<T = any>(
+  body: NoStrict<T>,
+  headers?: Record<string, any>
+): Response<T>;

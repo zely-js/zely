@@ -12,6 +12,7 @@ import { createMiddlewares } from './middlewares';
 import { Page, PageCache, controll } from './controller';
 import { transformFilename } from '~/zely-js-core/lib/file-to-path';
 import { removeExtension } from '~/zely-js-core/lib/ext';
+
 import { kitMiddleware } from './middlewares/support';
 import { createVirtualPage } from './virtual';
 import { GET } from './methods';
