@@ -1,27 +1,35 @@
-import { Context } from '.';
+import { Context, Response } from '.';
 
-export interface ServerDataHandlerResponse {
+export interface ServerDataHandlerResponse<T> {
   __typeof?: symbol;
   __method?: symbol;
   headers?: Record<string, string>;
-  body?: any;
+  body?: T;
 }
 
-export type ServerDataHandlerContextFunc = (
-  context: Context
-) =>
-  | Promise<Record<any, any> | PageHandlerResponse | void>
-  | Record<any, any>
-  | PageHandlerResponse
-  | void;
+export type NoStrict<T extends Record<string, any>> = {
+  [K in keyof T]: T[K];
+} & {
+  [K: string]: any;
+};
 
-export type ServerDataHandler = Record<any, any> | ServerDataHandlerContextFunc;
+type OmitPromiseMethods<T extends Promise<any>> = T extends Promise<infer R>
+  ? Promise<R>
+  : never;
+
+export type ServerDataHandlerContextFunc<T> = (
+  context: Context
+) => NoStrict<T> | OmitPromiseMethods<Promise<NoStrict<T>>>;
+
+export type ServerDataHandler<T = any> =
+  | Record<any, any>
+  | ServerDataHandlerContextFunc<T>;
 
 // alias
 
-export type ContextHandler = ServerDataHandlerContextFunc;
+export type ContextHandler<T = any> = ServerDataHandlerContextFunc<T>;
 export type PageHandler = ServerDataHandler;
-export type PageHandlerResponse = ServerDataHandlerResponse;
+export type PageHandlerResponse<T = any> = ServerDataHandlerResponse<T>;
 
 export interface METHODS {
   all: symbol;
@@ -32,27 +40,43 @@ export interface METHODS {
   middleware: symbol;
 }
 
-export type MethodBody = Record<any, any> | ContextHandler;
+export type MethodBody<T = any> = NoStrict<T> | ContextHandler<T>;
+
+type Handlers = 'all' | 'get' | 'post' | 'delete' | 'put' | 'middleware';
+
+type ArrayHandler<T = any> = (
+  body: MethodBody<T>,
+  headers?: Record<string, string>
+) => PageHandlerResponse<T>;
 
 export const methods: {
-  all(body: MethodBody, headers?: Record<string, string>): PageHandlerResponse;
-
-  get(body: MethodBody, headers?: Record<string, string>): PageHandlerResponse;
-
-  post(body: MethodBody, headers?: Record<string, string>): PageHandlerResponse;
-
-  delete(body: MethodBody, headers?: Record<string, string>): PageHandlerResponse;
-
-  put(body: MethodBody, headers?: Record<string, string>): PageHandlerResponse;
-
-  middleware(body: MethodBody): PageHandlerResponse;
+  [key in Handlers]: ArrayHandler;
 };
 
-export const ALL: typeof methods.all;
-export const GET: typeof methods.get;
-export const PUT: typeof methods.put;
-export const POST: typeof methods.post;
-export const DELETE: typeof methods.delete;
+export const ALL: <T = any>(
+  body: MethodBody<T>,
+  headers?: Record<string, string>
+) => PageHandlerResponse<T>;
+
+export const GET: <T = any>(
+  body: MethodBody<T>,
+  headers?: Record<string, string>
+) => PageHandlerResponse<T>;
+
+export const PUT: <T = any>(
+  body: MethodBody<T>,
+  headers?: Record<string, string>
+) => PageHandlerResponse<T>;
+
+export const POST: <T = any>(
+  body: MethodBody<T>,
+  headers?: Record<string, string>
+) => PageHandlerResponse<T>;
+
+export const DELETE: <T = any>(
+  body: MethodBody<T>,
+  headers?: Record<string, string>
+) => PageHandlerResponse<T>;
 
 // **
-export const middleware: typeof methods.middleware;
+export const middleware: ArrayHandler;
