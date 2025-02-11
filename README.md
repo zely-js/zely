@@ -1,3 +1,6 @@
+> This branch is for v3 development and is no longer being updated. [Check out the latest branch](https://github.com/zely-js/zely)
+
+
 # Zely
 
 Build Productive, Convenient, Fast Backend
