@@ -26,7 +26,7 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
       if (buildoptions.type === 'page') {
         outfile = relative(
           join(options.cwd || process.cwd(), 'pages'),
-          removeExtension(id)
+          `${removeExtension(id)}${Math.floor(Math.random() * 1000)}`
         );
       }
 
@@ -54,7 +54,7 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
       writeFileSync(outpath, output.code);
       writeFileSync(`${outpath}.map`, output.map || '{}');
 
-      return { filename: outpath, map: null };
+      return { filename: outpath, map: `${outpath}.map` };
     },
   };
 }
