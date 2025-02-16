@@ -4,6 +4,7 @@ import { getConfig } from '../lib/config';
 
 export async function dev() {
   let port = 8080;
+  const startTime = performance.now();
   try {
     const config = await getConfig(process.env.SERPACK === 'true');
 
@@ -17,7 +18,13 @@ export async function dev() {
     const server = await zely(config);
 
     server.server.listen(port, () => {
-      info(`Server is running on http://localhost:${port}`);
+      console.log();
+      info(
+        'Server is running on '.white +
+          `http://localhost:${port}`.cyan.underline.bold +
+          '.'.white +
+          ` (Ready in ${(performance.now() - startTime).toFixed(1)}ms)\n`.dim
+      );
     });
   } catch (e) {
     // if port already in use

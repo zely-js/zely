@@ -1,5 +1,5 @@
 import { App, senta } from 'senta';
-import { error, info, warn } from '@zely-js/logger';
+import { error, warn } from '@zely-js/logger';
 import { pathToRegexp } from '@zept/path-regexp';
 import { performance } from 'node:perf_hooks';
 import { readFileSync } from 'node:fs';
@@ -104,7 +104,10 @@ export async function createZelyServer(options: UserConfig) {
   }
 
   if (options.experimental?.useSerpack) {
-    info(`use serpack (experimental-${version})`);
+    warn(
+      `Serpack is not ready to be used for production yet. \nSee documentation - https://zely.vercel.app/serpack/introduction (experimental-${version})`
+        .gray
+    );
   }
 
   if (options.globalImport) {
