@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.14](https://github.com/zely-js/zely/compare/v4.0.0-next.13...v4.0.0-next.14) (2025-02-16)
+
+
+### New Features
+
+* improve logs ([a8418b2](https://github.com/zely-js/zely/commit/a8418b2342f8267ea42a625534b276bb72985a7d))
+
+
+### Bug Fix
+
+* fixed serpack loader ignoring changes ([#463](https://github.com/zely-js/zely/issues/463)) ([c691f80](https://github.com/zely-js/zely/commit/c691f8063051a319e95be5ee9df938d71a567fb0))
+* searchquery ([aae7a55](https://github.com/zely-js/zely/commit/aae7a550317c50847f3bbb527fe0151bb87e286f))
+
+
+
 ## [4.0.0-next.13](https://github.com/zely-js/zely/compare/v4.0.0-next.12...v4.0.0-next.13) (2025-02-16)
 
 
