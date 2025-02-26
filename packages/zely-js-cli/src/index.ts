@@ -16,7 +16,7 @@ app
   .command('dev')
   .option('--serpack', 'Use serpack-loader (experimental)')
   .option('--runtime', 'Use serpack runtime (experimental)')
-  .action(async (options) => {
+  .action(async ({ options }) => {
     // development mode
     process.env.NODE_ENV = 'development';
     process.env.ZELY_WORKING_FRAMEWORK = 'zely-cli';
@@ -52,8 +52,8 @@ app
   .command('init')
   .option('--dir, -d', 'Provide output directory.')
   .option('--template, -t', 'Template (typescript/javascript)')
-  .action(async (options) => {
+  .action(async ({ options }) => {
     await init(options.dir, options.template);
   });
 
-app.parse(process.argv);
+app.parse(process.argv.slice(2));

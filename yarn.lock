@@ -3601,6 +3601,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"animaux@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "animaux@npm:0.1.0"
+  dependencies:
+    colors: "npm:^1.4.0"
+  checksum: 10c0/761f07fe2cb6c308bf4cb427159ef9ac05e822e40e26fbd7868ac621285f61b6f4c2b045b4727cf8d9b8117e5ef776f6f2163c2552247041ca082a80d242bbe3
+  languageName: node
+  linkType: hard
+
 "ansi-colors@npm:^4.1.1":
   version: 4.1.3
   resolution: "ansi-colors@npm:4.1.3"
@@ -12049,7 +12058,7 @@ __metadata:
     "@types/prompts": "npm:^2"
     "@zely-js/logger": "npm:4.0.0-next.11"
     "@zely-js/zely": "npm:4.0.0-next.14"
-    animaux: "npm:^0.0.4"
+    animaux: "npm:^0.1.0"
     prompts: "npm:^2.4.2"
   bin:
     zely-cli: ./dist/index.js
