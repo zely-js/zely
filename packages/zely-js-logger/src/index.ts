@@ -45,9 +45,7 @@ function error(err: Error | string) {
   } else {
     const stacks = parseError(err);
 
-    console.log(
-      `\n${getTime().gray} ${' ERROR '.bgRed.black.bold} ${err.message.bold}\n`
-    );
+    console.log(`\n${getTime().gray} ${'error'.red.bold} ${err.message.bold}\n`);
 
     stacks?.forEach((stack) => {
       console.log(
@@ -67,7 +65,7 @@ function errorWithStacks(
     loc: string;
   }[]
 ) {
-  console.log(`\n${getTime().gray} ${' ERROR '.bgRed.black.bold} ${err.bold}\n`);
+  console.log(`\n${getTime().gray} ${'error'.red.bold} ${err.bold}\n`);
 
   stacks?.forEach((stack) => {
     console.log(`${tab}${'at'.gray} ${stack.at}${stack.loc.cyan}`);

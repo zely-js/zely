@@ -55,15 +55,15 @@ const errorHandler = async (e) => {
   const errorFile = readFileSync(target, 'utf-8').split('\n');
 
   lines.push(
-    `${relative(process.cwd(), target)}:${result.line}:${result.column}`.yellow.dim
+    `  • ${relative(process.cwd(), target)}:${result.line}:${result.column}`.yellow.dim
   );
 
   if (result.line - 1 > 0) {
-    lines.push(`${`${result.line - 1} | `.gray}${errorFile[result.line - 2]}`);
+    lines.push(`  ${`${result.line - 1} | `.gray}${errorFile[result.line - 2]}`);
   }
-  lines.push(`${`${result.line} | `.gray}${errorFile[result.line - 1].red.underline}`);
+  lines.push(`  ${`${result.line} | `.gray}${errorFile[result.line - 1].red.underline}`);
   if (errorFile[result.line]) {
-    lines.push(`${`${result.line + 1} | `.gray}${errorFile[result.line]}`);
+    lines.push(`  ${`${result.line + 1} | `.gray}${errorFile[result.line]}`);
   }
 
   errorWithStacks(`${e.message}\n${lines.join('\n')}`, stacks);

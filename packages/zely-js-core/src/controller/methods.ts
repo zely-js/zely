@@ -12,7 +12,7 @@ export const METHODS = {
 };
 
 export const methods = {
-  all(body: any, headers?: Record<string, string>): ServerDataHandlerResponse {
+  all(body: any, headers?: Record<string, string>): ServerDataHandlerResponse<any> {
     return {
       __typeof: Symbol.for('zely:handler'),
       __method: METHODS.all,
@@ -21,7 +21,7 @@ export const methods = {
     };
   },
 
-  get(body: any, headers?: Record<string, string>): ServerDataHandlerResponse {
+  get(body: any, headers?: Record<string, string>): ServerDataHandlerResponse<any> {
     return {
       __typeof: Symbol.for('zely:handler'),
       __method: METHODS.get,
@@ -30,7 +30,7 @@ export const methods = {
     };
   },
 
-  post(body: any, headers?: Record<string, string>): ServerDataHandlerResponse {
+  post(body: any, headers?: Record<string, string>): ServerDataHandlerResponse<any> {
     return {
       __typeof: Symbol.for('zely:handler'),
       __method: METHODS.post,
@@ -39,7 +39,7 @@ export const methods = {
     };
   },
 
-  delete(body: any, headers?: Record<string, string>): ServerDataHandlerResponse {
+  delete(body: any, headers?: Record<string, string>): ServerDataHandlerResponse<any> {
     return {
       __typeof: Symbol.for('zely:handler'),
       __method: METHODS.delete,
@@ -48,7 +48,7 @@ export const methods = {
     };
   },
 
-  put(body: any, headers?: Record<string, string>): ServerDataHandlerResponse {
+  put(body: any, headers?: Record<string, string>): ServerDataHandlerResponse<any> {
     return {
       __typeof: Symbol.for('zely:handler'),
       __method: METHODS.put,
@@ -57,7 +57,7 @@ export const methods = {
     };
   },
 
-  middleware(body: any): ServerDataHandlerResponse {
+  middleware(body: any): ServerDataHandlerResponse<any> {
     return {
       __typeof: Symbol.for('zely:handler'),
       __method: METHODS.middleware,
