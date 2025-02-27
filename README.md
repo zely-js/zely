@@ -1,15 +1,15 @@
 # Zely
 
-Build Productive, Convenient, Fast Backend
+👀✨ Fast backend framework
 
 [**github**](https://github.com/zely-js/zely) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://zely.vercel.app/)
 
 ---
 
-- File-based routing. zely creates routes automatically with filenames.
-- Server Reload. You don't have to restart server to apply changes.
-- Typescript Supported.
-- Lightning fast. zely uses esbuild as javascript loader.
+- **File-based routing**. Automatically generate routes based on file structure.
+- **Server Restarting**. No need to restart your server to apply changes.
+- **Typescript Supported**. Fully supports TypeScript.
+- **Blazing fast**. Built on esbuild for unparalleled speed and efficiency.
 
 ✨ [**Zely Documentation ➞**](https://zely.vercel.app)
 
