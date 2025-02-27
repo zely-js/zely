@@ -2,7 +2,7 @@
 
 import { isAbsolute, join, relative } from 'node:path';
 import { debug } from '@zely-js/logger';
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 
 import type { Context, UserConfig } from '~/zely-js-core';
 import type { TransformOptions, LoaderFunc } from '~/zely-js-core/types/loader';
@@ -37,6 +37,9 @@ export function createLoader<T>(
   } else {
     options.loaders.push(esbuildLoader(options));
   }
+  const distPath = join(options.cwd || process.cwd(), options.dist || '.zely');
+
+  writeFileSync(join(distPath, 'package.json'), '{"type": "commonjs"}');
 
   return async (id, buildOptions) => {
     const now = performance.now();

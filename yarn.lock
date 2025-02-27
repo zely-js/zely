@@ -2291,6 +2291,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@playground/esmodule@workspace:playground/esmodule":
+  version: 0.0.0-use.local
+  resolution: "@playground/esmodule@workspace:playground/esmodule"
+  dependencies:
+    zely: "npm:latest"
+  languageName: unknown
+  linkType: soft
+
 "@playground/javascript@workspace:playground/javascript":
   version: 0.0.0-use.local
   resolution: "@playground/javascript@workspace:playground/javascript"
@@ -12100,6 +12108,18 @@ __metadata:
     zely: ./cli.js
   languageName: unknown
   linkType: soft
+
+"zely@npm:latest":
+  version: 4.0.0-next.14
+  resolution: "zely@npm:4.0.0-next.14"
+  dependencies:
+    "@zely-js/zely": "npm:4.0.0-next.14"
+    zely-cli: "npm:4.0.0-next.14"
+  bin:
+    zely: cli.js
+  checksum: 10c0/3068a9e73e2c441075344f5e045093ed1ab842a6a390f57202477877eb10df5b3c8f1801f51256ed793cd4d53829f0329a45d479ffe9d399b3ccac99b5c8ca1b
+  languageName: node
+  linkType: hard
 
 "zept@npm:^0.0.4":
   version: 0.0.4

@@ -1,0 +1,11 @@
+{
+  "name": "@playground/esmodule",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "zely dev"
+  },
+  "dependencies": {
+    "zely": "latest"
+  }
+}
