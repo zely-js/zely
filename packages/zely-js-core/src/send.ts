@@ -5,7 +5,7 @@ import { Response } from './response/response';
 /**
  * send response (object, number, string available as response.body)
  */
-export async function sender(
+export async function defaultSender(
   req: ZelyRequest,
   res: ZelyResponse,
   chunk: any,
@@ -23,7 +23,7 @@ export async function sender(
     }
     setStatus(chunk.status);
 
-    sender(req, res, chunk.body);
+    defaultSender(req, res, chunk.body);
 
     return;
   }
@@ -73,4 +73,22 @@ export async function sender(
   }
 
   res.end(chunk);
+}
+
+let userSender: typeof defaultSender = defaultSender;
+
+/**
+ * send response (object, number, string available as response.body)
+ */
+export async function sender(
+  req: ZelyRequest,
+  res: ZelyResponse,
+  chunk: any,
+  status?: number
+) {
+  userSender(req, res, chunk, status);
+}
+
+export async function setSender(sd: typeof defaultSender) {
+  userSender = sd;
 }

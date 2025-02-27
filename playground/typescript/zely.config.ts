@@ -1,7 +1,12 @@
-import { createVirtualPage, GET } from '@zely-js/core';
+import { createVirtualPage, defaultSender, GET, setSender } from '@zely-js/core';
 import { defineConfig } from '@zely-js/zely';
 
 import { bodyMiddleware } from '@zely-js/zely/middlewares';
+
+setSender(async (req, res, chunk, status) => {
+  console.log(`response: ${JSON.stringify(chunk)} (request: ${req.url})`);
+  defaultSender(req, res, chunk, status);
+});
 
 export default defineConfig({
   server: { port: 3001 },
