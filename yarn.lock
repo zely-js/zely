@@ -10519,8 +10519,8 @@ __metadata:
   linkType: hard
 
 "serpack@npm:^0.1.15":
-  version: 0.1.15
-  resolution: "serpack@npm:0.1.15"
+  version: 0.1.16
+  resolution: "serpack@npm:0.1.16"
   dependencies:
     "@serpack/logger": "npm:0.0.0"
     "@swc/core": "npm:^1.10.4"
@@ -10533,7 +10533,7 @@ __metadata:
     source-map: "npm:^0.7.4"
   bin:
     serpack: dist/cli.js
-  checksum: 10c0/7df8ce3874c88b4e63062ffcad0b286836c919ec3ce3073d2dadcd1fe906f239788466b883bfd8aba84f1cf15b7e7863505ce13158131d46727b01ced8160e75
+  checksum: 10c0/54499b1f3d1e4d5206a83176cfed4075de1341c3edc31c3a72bbeec05722165d88d46f84944dd2832c407a24c2e88ab23bb2e106b0e425a28e87caf331709aca
   languageName: node
   linkType: hard
 
