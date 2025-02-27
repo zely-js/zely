@@ -15,11 +15,17 @@
 
 ## Getting Started
 
-Visit [Getting Started](https://zely.vercel.app/docs/getting-started) to start new app.
+Download the template using the zely-cli tool:
+
+```txt
+$ npx zely-cli init
+```
+
+> Visit [Getting Started](https://zely.vercel.app/docs/getting-started) to start new app.
 
 ## Benchmark
 
-See [/zely-js/benchmark](https://github.com/zely-js/benchmark?tab=readme-ov-file#benchmarks) repository.
+See [/zely-js/benchmark-history](https://github.com/zely-js/benchmark-history) repository.
 
 ## License
 
