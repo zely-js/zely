@@ -1,4 +1,4 @@
-import { isExportDefault } from '../src/controller';
+import { isExportDefault } from '../src/server/controller';
 
 it('is export default', () => {
   expect(isExportDefault([])).toBeTruthy();

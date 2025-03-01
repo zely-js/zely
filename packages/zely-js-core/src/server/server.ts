@@ -15,8 +15,8 @@ import { removeExtension } from '~/zely-js-core/lib/ext';
 
 import { kitMiddleware } from './middlewares/support';
 import { createVirtualPage } from './virtual';
-import { GET } from './methods';
-import { HTMLloader } from './fe/html/plugin';
+import { GET } from '../runtime/methods';
+import { HTMLloader } from '../fe/html/plugin';
 
 export function prettyURL(path: string): string {
   if (path === '.') {
@@ -111,7 +111,7 @@ export async function createZelyServer(options: UserConfig) {
   }
 
   if (options.globalImport) {
-    await import('./env');
+    await import('../runtime/env');
   }
 
   if (!options.__virtuals__) {

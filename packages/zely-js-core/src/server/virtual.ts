@@ -1,7 +1,7 @@
 import { pathToRegexp } from '@zept/path-regexp';
-import { removeExtension } from '../lib/ext';
-import { transformFilename } from '../lib/file-to-path';
-import { PageModule } from '../types/virtuals';
+import { removeExtension } from '../../lib/ext';
+import { transformFilename } from '../../lib/file-to-path';
+import { PageModule } from '../../types/virtuals';
 import { Page, isExportDefault } from './controller';
 
 export function createVirtualPage(filename: string, pageModule: PageModule): Page {

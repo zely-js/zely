@@ -1,4 +1,4 @@
-import { methods } from './controller/methods';
+import { methods } from '../server/controller/methods';
 
 global.ALL = methods.all;
 global.GET = methods.get;
