@@ -13,8 +13,8 @@ import type { Page } from '~/zely-js-core';
 
 import { handleExportDefault } from './handler/export-default';
 import { handleExport } from './handler/export';
-import { createLoader } from '../loader';
-import reporter from '../reporter';
+import { createLoader } from '../../node/loader';
+import reporter from '../../runtime/reporter';
 
 // Utility functions
 function findPage(path: string, pages: Page[]) {
