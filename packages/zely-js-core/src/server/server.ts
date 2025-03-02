@@ -2,7 +2,7 @@ import { App, senta } from 'senta';
 import { error, warn } from '@zely-js/logger';
 import { pathToRegexp } from '@zept/path-regexp';
 import { performance } from 'node:perf_hooks';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import { version } from 'serpack/package.json';
 import { join, parse, relative } from 'node:path';
 
@@ -16,7 +16,6 @@ import { removeExtension } from '~/zely-js-core/lib/ext';
 import { kitMiddleware } from './middlewares/support';
 import { createVirtualPage } from './virtual';
 import { GET } from '../runtime/methods';
-import { HTMLloader } from '../fe/html/plugin';
 
 export function prettyURL(path: string): string {
   if (path === '.') {
@@ -86,6 +85,37 @@ export function filenameToRoute(map: Array<Page>, useBrackets: boolean = false):
   return filesResult;
 }
 
+export function getFile(files: string[], options: UserConfig) {
+  return filenameToRoute(
+    files.map((file) => {
+      const relativePath = relative(join(options.cwd || process.cwd(), 'pages'), file);
+      const path = transformFilename(removeExtension(relativePath), true);
+
+      return {
+        filename: relativePath.replace(/\\/g, '/'),
+        regex: null,
+        params: null,
+        path,
+        id: performance.now(),
+        module: {
+          type: 'unknown',
+          isLoaded: false,
+        },
+      };
+    })
+  )
+    .map((file) => {
+      const outregex = pathToRegexp(file.path);
+
+      return {
+        ...file,
+        regex: outregex.pattern,
+        params: outregex.params,
+      };
+    })
+    .concat(options.__virtuals__ || []);
+}
+
 export async function createZelyServer(options: UserConfig) {
   // exit early if no options provided
   if (!options) {
@@ -129,22 +159,37 @@ export async function createZelyServer(options: UserConfig) {
             'Content-Type': 'text/javascript',
           });
 
-          ctx.send(
-            readFileSync(
-              join(options.cwd || process.cwd(), options.dist || '.zely', 'fe', path)
-            ).toString()
+          const target = join(
+            options.cwd || process.cwd(),
+            options.dist || '.zely',
+            'fe',
+            path
           );
+
+          if (!existsSync(target)) {
+            ctx.status(404);
+            return { code: 404, message: 'File not found' };
+          }
+
+          ctx.send(readFileSync(target).toString());
         }
       }),
     ])
   );
 
-  // html loader
-  if (options.experimental?.useHTML) {
-    if (!options.loaders) options.loaders = [];
+  options.__virtuals__ = filenameToRoute(options.__virtuals__)
+    .map((file) => {
+      const outregex = pathToRegexp(file.path);
 
-    options.loaders.push(HTMLloader(options));
-  }
+      return {
+        ...file,
+        regex: outregex.pattern,
+        params: outregex.params,
+      };
+    })
+    .concat(options.__virtuals__ || []);
+
+  if (!options.loaders) options.loaders = [];
 
   const middlewares = (await createMiddlewares(options)).map(
     (middleware) => async (ctx, next) => {
@@ -154,38 +199,10 @@ export async function createZelyServer(options: UserConfig) {
 
   const server = senta(options.server?.options || {});
 
-  const files = readDirectory(join(options.cwd || process.cwd(), 'pages'));
-  const pages = new PageCache(
-    filenameToRoute(
-      files.map((file) => {
-        const relativePath = relative(join(options.cwd || process.cwd(), 'pages'), file);
-        const path = transformFilename(removeExtension(relativePath), true);
-
-        return {
-          filename: relativePath.replace(/\\/g, '/'),
-          regex: null,
-          params: null,
-          path,
-          id: performance.now(),
-          module: {
-            type: 'unknown',
-            isLoaded: false,
-          },
-        };
-      })
-    )
-      .map((file) => {
-        const outregex = pathToRegexp(file.path);
-
-        return {
-          ...file,
-          regex: outregex.pattern,
-          params: outregex.params,
-        };
-      })
-      .concat(options.__virtuals__ || []),
-    options
-  );
+  const files = existsSync(join(options.cwd || process.cwd(), 'pages'))
+    ? readDirectory(join(options.cwd || process.cwd(), 'pages'))
+    : [];
+  const pages = new PageCache(getFile(files, options), options);
 
   if (process.env.NODE_ENV === 'production') {
     await pages.productionBuild();

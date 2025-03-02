@@ -92,6 +92,10 @@ export interface UserConfig {
    * Experimental features
    */
   experimental?: ExperimentalFeatures;
+
+  build?: {
+    dist?: string;
+  };
 }
 
 export interface ExperimentalFeatures {

@@ -33,10 +33,6 @@ app
   });
 
 app.command('build').action(async () => {
-  // production mode
-  process.env.NODE_ENV = 'production';
-  process.env.ZELY_WORKING_FRAMEWORK = 'zely-cli';
-
   await build();
 });
 

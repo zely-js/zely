@@ -116,12 +116,14 @@ export async function createFrontendPage(
     const compiled = output.find((v) => v.path === value);
     const scriptConfig = page.scripts.find((v) => v.target === key);
 
-    if (scriptConfig.type === 'insert') {
+    if (scriptConfig.type === 'insert' || process.env.node_env === 'production') {
       $.script.push(
         `<script${attributeToString({
           ...scriptConfig.attributes,
           type: scriptConfig.module ? 'module' : 'text/javascript',
-        })})}>/*${key}*/${compiled.text}</script>`
+        })}>/*${relative(join(options.cwd || process.cwd(), 'pages'), key)}*/${
+          compiled.text
+        }</script>`
       );
     } else {
       $.script.push(

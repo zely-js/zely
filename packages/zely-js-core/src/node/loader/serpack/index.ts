@@ -38,7 +38,6 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
       )}.js`;
 
       const output = await compile(id, {
-        ...buildoptions.buildOptions,
         nodeExternal: true,
         runtime,
         sourcemap: true,
@@ -47,6 +46,7 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
         },
         type: 'script',
         ...serpackConfig,
+        ...buildoptions.buildOptions,
       });
 
       mkdirSync(dirname(outpath), { recursive: true });

@@ -1,7 +1,7 @@
-import { warn } from '@zely-js/logger';
-// import { getConfig } from '../lib/config';
+import { build as coreBuild } from '@zely-js/zely';
+import { getConfig } from '../lib/config';
 
 export async function build() {
-  warn('Build is not supported yet.');
-  // const config = await getConfig();
+  const config = await getConfig();
+  await coreBuild(config);
 }
