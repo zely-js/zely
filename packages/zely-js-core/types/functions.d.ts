@@ -72,3 +72,5 @@ export function createZelyServer(options: UserConfig): Promise<{
   cache: PageCache;
 }>;
 export function productionBuild(options: UserConfig): Promise<void>;
+
+export function build(options: UserConfig): Promise<void>;

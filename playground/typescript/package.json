@@ -12,6 +12,6 @@
   "scripts": {
     "start": "zely-cli start",
     "dev": "zely-cli dev",
-    "zely": "zely-cli"
+    "build": "zely-cli build"
   }
 }
