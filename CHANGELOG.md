@@ -3,6 +3,38 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.15](https://github.com/zely-js/zely/compare/v4.0.0-next.14-2...v4.0.0-next.15) (2025-03-02)
+
+
+### New Features
+
+* **@zely-js/core:** server build ([#492](https://github.com/zely-js/zely/issues/492)) ([cd50ee1](https://github.com/zely-js/zely/commit/cd50ee1e6a0bb53b5619f211f4fbb17101af63e6))
+* customizing `res.send` ([#475](https://github.com/zely-js/zely/issues/475)) ([1eb4eb9](https://github.com/zely-js/zely/commit/1eb4eb92566eea7375dba580d05a3265dc8ae106))
+* support esmodule ([#490](https://github.com/zely-js/zely/issues/490)) ([25560e9](https://github.com/zely-js/zely/commit/25560e9f94ca1ac901557c583f0d05b7771ffe8d)), closes [#489](https://github.com/zely-js/zely/issues/489)
+
+
+### Documentation
+
+* additional description ([#488](https://github.com/zely-js/zely/issues/488)) ([1d7141a](https://github.com/zely-js/zely/commit/1d7141a2e304947049a5f0327c5f40168a39cf71))
+* rewrite features and description ([#487](https://github.com/zely-js/zely/issues/487)) ([3d538cb](https://github.com/zely-js/zely/commit/3d538cb6aabfa66baba0d814bf5ef2cc1cefd257))
+
+
+### Code Refactoring
+
+* restructure directories ([#491](https://github.com/zely-js/zely/issues/491)) ([b13b472](https://github.com/zely-js/zely/commit/b13b472860598d45d9943686d4f9701eae8b55b1))
+
+
+### Others
+
+* command line interface description ([b5dc655](https://github.com/zely-js/zely/commit/b5dc655018d9926fcfde7622741b2fc0259dde1a))
+* **deps-dev:** bump @types/node from 20.11.26 to 22.13.5 ([#478](https://github.com/zely-js/zely/issues/478)) ([c6bd793](https://github.com/zely-js/zely/commit/c6bd793f19c8427abb3534314b0bddc960a28b08))
+* **deps:** bump serpack from 0.1.15 to 0.1.16 ([#483](https://github.com/zely-js/zely/issues/483)) ([a8c3db4](https://github.com/zely-js/zely/commit/a8c3db48400e1bb4ee0a38aee09cf4b744c3cd49)), closes [do4ng/serpack#2](https://github.com/do4ng/serpack/issues/2) [do4ng/serpack#3](https://github.com/do4ng/serpack/issues/3) [do4ng/serpack#4](https://github.com/do4ng/serpack/issues/4) [do4ng/serpack#2](https://github.com/do4ng/serpack/issues/2) [do4ng/serpack#3](https://github.com/do4ng/serpack/issues/3) [#4](https://github.com/zely-js/zely/issues/4) [#3](https://github.com/zely-js/zely/issues/3) [#2](https://github.com/zely-js/zely/issues/2)
+* **deps:** update serpack version ([8435468](https://github.com/zely-js/zely/commit/8435468b5619a98d1e37e5bb6a5308d9716d59e0))
+* **deps:** upgrade cli tool ([c92afec](https://github.com/zely-js/zely/commit/c92afecc5f56dac76b944069f2c6ee7ed0a7d25a))
+
+
+
+
 ## [4.0.0-next.14](https://github.com/zely-js/zely/compare/v4.0.0-next.13...v4.0.0-next.14) (2025-02-16)
 
 

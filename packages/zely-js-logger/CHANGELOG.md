@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.15](https://github.com/zely-js/zely/compare/v4.0.0-next.14-2...v4.0.0-next.15) (2025-03-02)
+
+
+### Others
+
+* **deps:** upgrade cli tool ([c92afec](https://github.com/zely-js/zely/commit/c92afecc5f56dac76b944069f2c6ee7ed0a7d25a))
+
+
+
+
 ## [4.0.0-next.11](https://github.com/zely-js/zely/compare/v4.0.0-next.10...v4.0.0-next.11) (2025-02-03)
 
 
