@@ -51,7 +51,11 @@ export async function build(config: UserConfig, silent: boolean = false) {
     if (!silent) loggerInfo(msg);
   };
 
-  rmSync(outputDirectory, { recursive: true });
+  const rm = (directory: string, options: { recursive?: boolean }) => {
+    if (existsSync(directory)) rmSync(directory, options);
+  };
+
+  rm(outputDirectory, { recursive: true });
   mkdirSync(outputDirectory, { recursive: true });
 
   const loader = createLoader(config, null, true, true);
@@ -111,11 +115,11 @@ export async function build(config: UserConfig, silent: boolean = false) {
   mkdirSync(join(outputDirectory, './.zely'));
 
   // remove unused pages
-  rmSync(join(outputDirectory, 'cache'), { recursive: true });
-  rmSync(join(outputDirectory, 'fe'), { recursive: true });
-  rmSync(join(outputDirectory, 'page'), { recursive: true });
-  rmSync(outFiles.config, { recursive: true });
-  rmSync(outFiles.pages, { recursive: true });
+  rm(join(outputDirectory, 'cache'), { recursive: true });
+  rm(join(outputDirectory, 'fe'), { recursive: true });
+  rm(join(outputDirectory, 'page'), { recursive: true });
+  rm(outFiles.config, { recursive: true });
+  rm(outFiles.pages, { recursive: true });
 
   console.log();
   info(`Done in ${((performance.now() - startTime) / 1000).toFixed(2)}s`);
