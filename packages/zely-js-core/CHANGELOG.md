@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.16](https://github.com/zely-js/zely/compare/v4.0.0-next.15...v4.0.0-next.16) (2025-03-03)
+
+
+### Bug Fix
+
+* avoid error when removing non-existent directory ([ccb3a62](https://github.com/zely-js/zely/commit/ccb3a6259b09ac8ad0ce73165bbe798071b90505))
+
+
+
 ## [4.0.0-next.15](https://github.com/zely-js/zely/compare/v4.0.0-next.14-2...v4.0.0-next.15) (2025-03-02)
 
 

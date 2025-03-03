@@ -3399,7 +3399,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zely-js/core@npm:4.0.0-next.15, @zely-js/core@workspace:*, @zely-js/core@workspace:packages/zely-js-core":
+"@zely-js/core@npm:4.0.0-next.16, @zely-js/core@workspace:*, @zely-js/core@workspace:packages/zely-js-core":
   version: 0.0.0-use.local
   resolution: "@zely-js/core@workspace:packages/zely-js-core"
   dependencies:
@@ -3463,11 +3463,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zely-js/zely@npm:4.0.0-next.15, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
+"@zely-js/zely@npm:4.0.0-next.16, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
   version: 0.0.0-use.local
   resolution: "@zely-js/zely@workspace:packages/zely-js"
   dependencies:
-    "@zely-js/core": "npm:4.0.0-next.15"
+    "@zely-js/core": "npm:4.0.0-next.16"
     "@zely-js/logger": "npm:4.0.0-next.15"
     senta: "npm:^0.0.0"
   languageName: unknown
@@ -12132,13 +12132,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zely-cli@npm:4.0.0-next.15, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
+"zely-cli@npm:4.0.0-next.16, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
   version: 0.0.0-use.local
   resolution: "zely-cli@workspace:packages/zely-js-cli"
   dependencies:
     "@types/prompts": "npm:^2"
     "@zely-js/logger": "npm:4.0.0-next.15"
-    "@zely-js/zely": "npm:4.0.0-next.15"
+    "@zely-js/zely": "npm:4.0.0-next.16"
     animaux: "npm:^0.1.0"
     prompts: "npm:^2.4.2"
   bin:
@@ -12151,16 +12151,16 @@ __metadata:
   resolution: "zely-dev@workspace:packages/zely-js-dev"
   dependencies:
     shiki: "npm:^1.10.0"
-    zely: "npm:4.0.0-next.15"
+    zely: "npm:4.0.0-next.16"
   languageName: unknown
   linkType: soft
 
-"zely@npm:4.0.0-next.15, zely@workspace:*, zely@workspace:packages/zely":
+"zely@npm:4.0.0-next.16, zely@workspace:*, zely@workspace:packages/zely":
   version: 0.0.0-use.local
   resolution: "zely@workspace:packages/zely"
   dependencies:
-    "@zely-js/zely": "npm:4.0.0-next.15"
-    zely-cli: "npm:4.0.0-next.15"
+    "@zely-js/zely": "npm:4.0.0-next.16"
+    zely-cli: "npm:4.0.0-next.16"
   bin:
     zely: ./cli.js
   languageName: unknown
