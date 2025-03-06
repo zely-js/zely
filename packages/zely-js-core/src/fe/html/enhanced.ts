@@ -8,13 +8,6 @@ import { UserConfig } from '~/zely-js-core/types';
 import { createFrontendPage } from '..';
 
 export async function useEnhancedHTML(target: string, options: UserConfig = {}) {
-  const page = readFileSync(target, 'utf-8');
-
-  let browserSource = await compile(page, { noExport: true });
-
-  // TODO : hydration
-  browserSource = `${browserSource};const __props = JSON.parse(document.getElementById("__fe_props").innerText);document.getElementById("__fe").innerHTML = "";var __c=new Component(__props);__c.render(document.getElementById("__fe"));`;
-
   const output = await createFrontendPage(
     {
       body: {
@@ -48,10 +41,21 @@ export async function useEnhancedHTML(target: string, options: UserConfig = {}) 
       {
         name: '@zely-js/core:html',
         setup(build) {
-          build.onLoad({ filter: /\.html$/ }, () => ({
-            contents: browserSource,
-            loader: 'js',
-          }));
+          build.onLoad({ filter: /\.html$/ }, async (args) => {
+            const isEntry = target === args.path;
+            const page = readFileSync(args.path, 'utf-8');
+
+            const compiledCode = await compile(page, { noExport: false });
+
+            return {
+              contents: `${compiledCode};const __props = JSON.parse(document.getElementById("__fe_props").innerText);document.getElementById("__fe").innerHTML = "";${
+                isEntry
+                  ? ';var __c=new Component(__props);__c.render(document.getElementById("__fe"));'
+                  : ''
+              }`,
+              loader: 'js',
+            };
+          });
         },
       },
     ]

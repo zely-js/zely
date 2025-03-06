@@ -37,8 +37,8 @@ var $$ssrCompiler=async (c) => {
     )}).toString(), {params:c.params});
     __ssr = $$servercompiled.output.map((a) => a.getText()).join('');
   } catch (e) {
-    console.error(e);
-    $$logger.warn("Error occurred while compiling server-side rendered HTML");
+    /*console.error(e);*/
+    $$logger.warn("Error occurred while compiling server-side rendered HTML. " + e.message);
     __ssr = "";
   }
     return __ssr;
