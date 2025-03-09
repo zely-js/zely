@@ -35,7 +35,7 @@ export async function build(config: UserConfig, silent: boolean = false) {
     warn('config.allowAutoMiddlewares does not work in the current build mode.');
   }
 
-  process.env.node_env = 'production';
+  process.env.NODE_ENV = 'production';
 
   const outputDirectory = join(config.cwd || process.cwd(), config.dist);
   const pagesDirectory = join(config.cwd || process.cwd(), 'pages');
