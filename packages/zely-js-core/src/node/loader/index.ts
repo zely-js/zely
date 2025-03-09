@@ -29,9 +29,12 @@ async function load(id: string, serpack: boolean = false) {
   const modRaw = await loadFile(id);
   const mod = modRaw.default ?? modRaw;
 
-  if (serpack && mod.__serpack_module__ !== undefined) {
+  if (
+    serpack &&
+    process.env.NODE_ENV !== 'production' &&
+    mod.__serpack_module__ !== undefined
+  ) {
     const runtime = new Runtime(mod);
-    console.log(runtime.__modules__, id);
 
     const m = runtime.loadModule('sp:0');
 

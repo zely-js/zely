@@ -116,7 +116,7 @@ export async function createFrontendPage(
     const compiled = output.find((v) => v.path === value);
     const scriptConfig = page.scripts.find((v) => v.target === key);
 
-    if (scriptConfig.type === 'insert' || process.env.node_env === 'production') {
+    if (scriptConfig.type === 'insert' || process.env.NODE_ENV === 'production') {
       $.script.push(
         `<script${attributeToString({
           ...scriptConfig.attributes,

@@ -38,7 +38,7 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
 
       const compilerConfig: CompilerOptions = {
         nodeExternal: true,
-        runtime: true,
+        runtime: process.env.NODE_ENV !== 'production',
         sourcemap: true,
         sourcemapOptions: {
           sourcemapRoot: dirname(outpath),
