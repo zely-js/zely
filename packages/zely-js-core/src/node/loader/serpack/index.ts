@@ -20,7 +20,6 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
           (await loadConfig(options.cwd || process.cwd()))?.compilerOptions || {};
       }
 
-      const runtime = process.env.SERPACK_RUNTIME === 'true';
       let outfile = `index${Math.floor(Math.random() * 1000)}.js`;
 
       if (buildoptions.type === 'page') {
@@ -37,9 +36,9 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
         outfile
       )}.js`;
 
-      const output = await compile(id, {
+      const compilerConfig: CompilerOptions = {
         nodeExternal: true,
-        runtime,
+        runtime: true,
         sourcemap: true,
         sourcemapOptions: {
           sourcemapRoot: dirname(outpath),
@@ -47,7 +46,15 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
         type: 'script',
         ...serpackConfig,
         ...buildoptions.buildOptions,
-      });
+      };
+
+      if (!compilerConfig.footer) {
+        compilerConfig.footer = '';
+      }
+
+      compilerConfig.footer = `Object.defineProperty(module.exports, "__serpack_module__", {value:true, enumerable: false});${compilerConfig.banner}`;
+
+      const output = await compile(id, compilerConfig);
 
       mkdirSync(dirname(outpath), { recursive: true });
 

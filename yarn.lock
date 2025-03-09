@@ -3487,7 +3487,7 @@ __metadata:
     mime-types: "npm:^2.1.35"
     segify: "npm:^0.0.0-beta.17"
     senta: "npm:^0.0.0"
-    serpack: "npm:^0.1.16"
+    serpack: "npm:^0.1.18"
     source-map: "npm:^0.7.4"
   languageName: unknown
   linkType: soft
@@ -11233,7 +11233,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serpack@npm:^0.1.15, serpack@npm:^0.1.16":
+"serpack@npm:^0.1.15":
   version: 0.1.16
   resolution: "serpack@npm:0.1.16"
   dependencies:
@@ -11249,6 +11249,25 @@ __metadata:
   bin:
     serpack: dist/cli.js
   checksum: 10c0/54499b1f3d1e4d5206a83176cfed4075de1341c3edc31c3a72bbeec05722165d88d46f84944dd2832c407a24c2e88ab23bb2e106b0e425a28e87caf331709aca
+  languageName: node
+  linkType: hard
+
+"serpack@npm:^0.1.18":
+  version: 0.1.18
+  resolution: "serpack@npm:0.1.18"
+  dependencies:
+    "@serpack/logger": "npm:0.0.0"
+    "@swc/core": "npm:^1.10.4"
+    "@swc/helpers": "npm:^0.5.15"
+    acorn: "npm:^8.14.0"
+    animaux: "npm:^0.1.0"
+    escodegen: "npm:^2.1.0"
+    estree-walker: "npm:2.0.2"
+    oxc-resolver: "npm:^3.0.3"
+    source-map: "npm:^0.7.4"
+  bin:
+    serpack: dist/cli.js
+  checksum: 10c0/2a0cd6eb7cab0e5ec6e9a55cea5636df9be81102a3bd475244e9a5e09c6c5503c5199e07136d205910b1ebceec39b9990d30dbdcf1e3983cb63c818234b06280
   languageName: node
   linkType: hard
 

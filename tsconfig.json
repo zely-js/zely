@@ -4,7 +4,7 @@
     "module": "esnext",
     "target": "es2015",
 
-    "moduleResolution": "Node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "allowJs": true,
