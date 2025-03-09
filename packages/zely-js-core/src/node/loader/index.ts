@@ -2,7 +2,8 @@
 
 import { isAbsolute, join, relative } from 'node:path';
 import { debug } from '@zely-js/logger';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { Runtime } from 'serpack/runtime';
 
 import type { Context, UserConfig } from '~/zely-js-core';
 import type { TransformOptions, LoaderFunc } from '~/zely-js-core/types/loader';
@@ -11,7 +12,7 @@ import { esbuildLoader } from './esbuild';
 import { serpackLoader } from './serpack';
 import { HTMLloader } from '../../fe/html/plugin';
 
-async function load(id: string) {
+async function loadFile(id: string) {
   const relativePath = relative(__dirname, id).replace(/\\/g, '/');
   try {
     if (__ESM__) {
@@ -24,6 +25,22 @@ async function load(id: string) {
   }
 }
 
+async function load(id: string, serpack: boolean = false) {
+  const modRaw = await loadFile(id);
+  const mod = modRaw.default ?? modRaw;
+
+  if (serpack && mod.__serpack_module__ !== undefined) {
+    const runtime = new Runtime(mod);
+    console.log(runtime.__modules__, id);
+
+    const m = runtime.loadModule('sp:0');
+
+    return m;
+  }
+
+  return mod;
+}
+
 export function createLoader<T>(
   options: UserConfig,
   ctx?: Context,
@@ -34,7 +51,9 @@ export function createLoader<T>(
     options.loaders = [];
   }
 
-  if (serpack || options?.experimental?.useSerpack) {
+  const enableSerpack = serpack || options?.experimental?.useSerpack;
+
+  if (enableSerpack) {
     // serpack loader
     options.loaders.push(serpackLoader(options));
   } else {
@@ -48,6 +67,8 @@ export function createLoader<T>(
   }
 
   const distPath = join(options.cwd || process.cwd(), options.dist || '.zely');
+
+  if (!existsSync(distPath)) mkdirSync(distPath);
 
   writeFileSync(join(distPath, 'package.json'), '{"type": "commonjs"}');
 
@@ -75,7 +96,7 @@ export function createLoader<T>(
           );
         }
         return {
-          module: !noRun ? await load(output.filename) : undefined,
+          module: !noRun ? await load(output.filename, enableSerpack) : undefined,
           filename: output.filename,
           map: output.map,
           assets: output.assets,
