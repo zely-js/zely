@@ -241,26 +241,32 @@
         var l,
           u,
           p =
-            ((l = i(function* (t) {
-              let r = '';
+            ((l = i(function* (e) {
+              let t = '',
+                r = `<script>
+  $.count = 0;
+
+  function increment() {
+    $.count += 1;
+  }
+</script>
+
+<div>
+  <h1>Hello, {{$.params.params}}: {{ $.count }}</h1>
+  <button $onclick="increment">Add</button>
+</div>
+`;
               try {
-                r = (yield c(
-                  e('fs')
-                    .readFileSync(
-                      'D:\\zelx\\playground\\typescript\\pages\\[params]\\index.html'
-                    )
-                    .toString(),
-                  { params: t.params }
-                )).output
+                t = (yield c(r, { params: e.params })).output
                   .map((e) => e.getText())
                   .join('');
               } catch (e) {
                 a.warn(
                   'Error occurred while compiling server-side rendered HTML. ' + e.message
                 ),
-                  (r = '');
+                  (t = '');
               }
-              return r;
+              return t;
             })),
             function (e) {
               return l.apply(this, arguments);
@@ -384,3 +390,4 @@ Object.defineProperty(module.exports, '__serpack_module__', {
   value: true,
   enumerable: false,
 });
+undefined;

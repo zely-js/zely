@@ -6,7 +6,7 @@ import { useEnhancedHTML } from './enhanced';
 
 const HTMLloader = (options: any): Loader => ({
   name: '@zely-js/core:html',
-  async transform(id) {
+  async transform(id, source) {
     if (!id.endsWith('.html')) return;
     const { template: output, built } = await useEnhancedHTML(id, options);
 
@@ -28,13 +28,18 @@ const HTMLloader = (options: any): Loader => ({
       '\\\\'
     )}\`.replace("%ssr%", await $$ssrCompiler(c)).replace("%props%", JSON.stringify({params: c.params}))))];`;
 
+    const readFile = `require("fs").readFileSync(${JSON.stringify(id)}).toString()`;
+
     const ssrCompiler = `
 var $$ssrCompiler=async (c) => {
   let __ssr = '';
+  let __code = ${
+    process.env.NODE_ENV === 'production'
+      ? `\`${source.replace(/\`/g, '\\`')}\``
+      : readFile
+  };
   try {
-    var $$servercompiled = await $$serverRender(require("fs").readFileSync(${JSON.stringify(
-      id
-    )}).toString(), {params:c.params});
+    var $$servercompiled = await $$serverRender(__code, {params:c.params});
     __ssr = $$servercompiled.output.map((a) => a.getText()).join('');
   } catch (e) {
     /*console.error(e);*/

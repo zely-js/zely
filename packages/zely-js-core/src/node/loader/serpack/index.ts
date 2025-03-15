@@ -52,7 +52,9 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
         compilerConfig.footer = '';
       }
 
-      compilerConfig.footer = `Object.defineProperty(module.exports, "__serpack_module__", {value:true, enumerable: false});${compilerConfig.banner}`;
+      compilerConfig.footer = `Object.defineProperty(module.exports, "__serpack_module__", {value:true, enumerable: false});${
+        compilerConfig.banner || ''
+      }`;
 
       const output = await compile(id, compilerConfig);
 
