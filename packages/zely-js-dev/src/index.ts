@@ -5,14 +5,14 @@ export function devtool(): Plugin {
   return {
     name: 'zely:devtool',
     server(server) {
-      server.use((req, res, next) => {
+      server.use((ctx, next) => {
         // @ts-ignore
 
-        usePrewrite(res, async (data) => {
-          res.statusCode = 500;
+        usePrewrite(ctx.response, async (data) => {
+          ctx.response.statusCode = 500;
           // check is client browser
 
-          if (req.headers['user-agent']?.includes('Mozilla/5.0')) {
+          if (ctx.request.headers['user-agent']?.includes('Mozilla/5.0')) {
             // replace chunk with response
 
             return (await generatePage(data)).split(/\r?\n/).join('');
