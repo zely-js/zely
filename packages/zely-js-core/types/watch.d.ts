@@ -1,3 +1,4 @@
+// @ts-ignore
 import { ChokidarOptions as ChokidarWatchOptions } from 'chokidar';
 
 export interface WatchOptions {

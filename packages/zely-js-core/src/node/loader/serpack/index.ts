@@ -3,6 +3,7 @@ import { relative, join, dirname } from 'path';
 import { compile, CompilerOptions, loadConfig } from 'serpack';
 import { removeExtension } from '~/zely-js-core/lib/ext';
 import { Loader, UserConfig } from '~/zely-js-core/types';
+import { serpackPlugin } from './preset';
 
 export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
   let serpackConfig: CompilerOptions;
@@ -48,13 +49,11 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
         ...buildoptions.buildOptions,
       };
 
-      if (!compilerConfig.footer) {
-        compilerConfig.footer = '';
+      if (!compilerConfig.plugins) {
+        compilerConfig.plugins = [];
       }
 
-      compilerConfig.footer = `Object.defineProperty(module.exports, "__serpack_module__", {value:true, enumerable: false});${
-        compilerConfig.banner || ''
-      }`;
+      compilerConfig.plugins.push(serpackPlugin());
 
       const output = await compile(id, compilerConfig);
 

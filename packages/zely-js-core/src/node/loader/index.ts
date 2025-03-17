@@ -1,4 +1,5 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
+/* eslint-disable @typescript-eslint/no-require-imports */
 
 import { isAbsolute, join, relative } from 'node:path';
 import { debug } from '@zely-js/logger';
@@ -35,6 +36,10 @@ async function load(id: string, serpack: boolean = false) {
     mod.__serpack_module__ !== undefined
   ) {
     const runtime = new Runtime(mod);
+
+    runtime.__modules__ = {
+      ...runtime.__modules__,
+    };
 
     const m = runtime.loadModule('sp:0');
 
