@@ -1,7 +1,8 @@
-const { esmLoader } = require('@asto/esm');
 const { nodeExternalsPlugin } = require('esbuild-node-externals');
-const esbuild = require('./asto.esbuild');
 const { parse, join } = require('path');
+const { esbuildLoader } = require('asto');
+
+const esbuild = esbuildLoader();
 
 const repo =
   (name) =>
