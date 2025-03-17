@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
 import { includeIgnoreFile } from '@eslint/compat';
+import tseslint from 'typescript-eslint';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,7 +16,7 @@ const compat = new FlatCompat({
 });
 const gitignorePath = path.resolve(__dirname, '.gitignore');
 
-export default [
+export default tseslint.config(tseslint.configs.recommended, [
   {
     ignores: [
       '**/node_modules',
@@ -29,12 +30,8 @@ export default [
     ],
   },
   includeIgnoreFile(gitignorePath),
-  ...compat.extends('airbnb-base', 'plugin:@typescript-eslint/eslint-recommended'),
+  ...compat.extends('airbnb-base'),
   {
-    plugins: {
-      '@typescript-eslint': typescriptEslint,
-    },
-
     languageOptions: {
       parser: tsParser,
     },
@@ -53,13 +50,9 @@ export default [
       'no-multi-spaces': 'warn',
       'no-self-compare': 'warn',
       'no-useless-return': 'warn',
+      camelcase: 'off',
       'no-undef-init': 'warn',
-      'no-unused-vars': [
-        'warn',
-        {
-          caughtErrors: 'none',
-        },
-      ],
+      'no-unused-vars': 'off',
       'no-use-before-define': 'warn',
       'no-plusplus': 'warn',
       'no-trailing-spaces': 'warn',
@@ -89,6 +82,9 @@ export default [
       'no-restricted-syntax': 'off',
       'no-extra-boolean-cast': 'off',
       'implicit-arrow-linebreak': 'off',
+
+      '@typescript-eslint/no-unused-vars': 'error',
+      '@typescript-eslint/no-explicit-any': 'off',
     },
   },
-];
+]);

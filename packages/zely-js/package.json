@@ -19,6 +19,7 @@
       "import": "./dist/middlewares.mjs",
       "default": "./dist/middlewares.js"
     },
+    "./env": "./env.d.ts",
     "./package.json": "./package.json"
   },
   "dependencies": {
