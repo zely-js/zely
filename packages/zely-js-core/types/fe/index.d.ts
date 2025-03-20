@@ -49,5 +49,6 @@ export interface FrontendPageOutput {
 export function createFrontendPage(
   page: FePageData,
   template?: string,
-  options?: UserConfig
+  options?: UserConfig,
+  plugins?: any[]
 ): Promise<FrontendPageOutput>;
