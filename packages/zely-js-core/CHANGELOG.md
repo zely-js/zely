@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.17](https://github.com/zely-js/zely/compare/v4.0.0-next.16...v4.0.0-next.17) (2025-03-20)
+
+
+### New Features
+
+* external runtime ([ee64eaa](https://github.com/zely-js/zely/commit/ee64eaa7ecbb1f6e49cb637ebdc74b35b10b0d53))
+
+
+### Bug Fix
+
+* **html-loader:** load outside module ([#496](https://github.com/zely-js/zely/issues/496)) ([f9ee2c7](https://github.com/zely-js/zely/commit/f9ee2c7d7eb7656d4fcfea1a7a622bf65dc5cf39))
+* include raw html source in prod ([#508](https://github.com/zely-js/zely/issues/508)) ([c506bf3](https://github.com/zely-js/zely/commit/c506bf3047af7f76dc98a24d6f002b2fb6deb7e2))
+* prevent production build from compiling in runtime mode ([#499](https://github.com/zely-js/zely/issues/499)) ([ed0405a](https://github.com/zely-js/zely/commit/ed0405aaf260c1b104e44b8fc8d9da74c66fc247))
+
+
+### Others
+
+* add missing type definitions ([9561c87](https://github.com/zely-js/zely/commit/9561c870f765f50e02bbe08e64a6396152e53e62))
+* **deps:** upgrade serpack to 0.1.19 ([#507](https://github.com/zely-js/zely/issues/507)) ([505f2af](https://github.com/zely-js/zely/commit/505f2afcb62613039bb29a300d020c7c34e75289))
+* serpack plugin ([#509](https://github.com/zely-js/zely/issues/509)) ([646db56](https://github.com/zely-js/zely/commit/646db56b7603ff94337a9807057efc975ddff778))
+* upgrade eslint to 9 ([e4b51fd](https://github.com/zely-js/zely/commit/e4b51fd091982759dbe4046a6248870e63c1c3f0))
+
+
+
 ## [4.0.0-next.16](https://github.com/zely-js/zely/compare/v4.0.0-next.15...v4.0.0-next.16) (2025-03-03)
 
 

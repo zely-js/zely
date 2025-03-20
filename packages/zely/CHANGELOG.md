@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.17](https://github.com/zely-js/zely/compare/v4.0.0-next.16...v4.0.0-next.17) (2025-03-20)
+
+
+### Others
+
+* CRLF to LF ([cc1b50d](https://github.com/zely-js/zely/commit/cc1b50d84738dab0d8af80b4216c8c6e6d753fb1))
+
+
+
 ## [4.0.0-next.16](https://github.com/zely-js/zely/compare/v4.0.0-next.15...v4.0.0-next.16) (2025-03-03)
 
 **Note:** Version bump only for package zely

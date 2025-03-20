@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.17](https://github.com/zely-js/zely/compare/v4.0.0-next.16...v4.0.0-next.17) (2025-03-20)
+
+
+### Others
+
+* serpack plugin ([#509](https://github.com/zely-js/zely/issues/509)) ([646db56](https://github.com/zely-js/zely/commit/646db56b7603ff94337a9807057efc975ddff778))
+
+
+
 ## [4.0.0-next.16](https://github.com/zely-js/zely/compare/v4.0.0-next.15...v4.0.0-next.16) (2025-03-03)
 
 **Note:** Version bump only for package @zely-js/zely
