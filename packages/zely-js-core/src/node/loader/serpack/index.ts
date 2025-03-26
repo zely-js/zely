@@ -42,7 +42,7 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
         runtime: process.env.NODE_ENV !== 'production',
         sourcemap: true,
         sourcemapOptions: {
-          sourcemapRoot: dirname(outpath),
+          sourcemapRoot: join(options.cwd || process.cwd()),
         },
         type: 'script',
         ...serpackConfig,
