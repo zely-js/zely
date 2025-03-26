@@ -68,7 +68,7 @@ function errorWithStacks(
   console.log(`\n${getTime().gray} ${'error'.red.bold} ${err.bold}\n`);
 
   stacks?.forEach((stack) => {
-    console.log(`${tab}${'at'.gray} ${stack.at}${stack.loc.cyan}`);
+    console.log(`${tab}${'at'.gray} ${stack.at}${stack.loc.dim}`);
   });
   console.log();
 }
