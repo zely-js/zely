@@ -7,6 +7,7 @@ import { dev } from '../commands/dev';
 import { build } from '../commands/build';
 import { init } from '../commands/init';
 import { start } from '../commands/start';
+import { request } from '../commands/request';
 
 const app = animaux('zely');
 
@@ -60,4 +61,11 @@ app
     await init(options.dir, options.template);
   });
 
+app
+  .command('request')
+  .describe('Request Tool')
+  .option('--base, -b', 'Base URL')
+  .action(async ({ options }) => {
+    await request(options.base);
+  });
 app.parse(process.argv.slice(2));

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "jsx": "react",
     "module": "esnext",
-    "target": "es2015",
+    "target": "esnext",
 
     "moduleResolution": "bundler",
     "esModuleInterop": true,
@@ -16,6 +16,8 @@
 
     "baseUrl": ".",
 
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "paths": {
       "~/*": ["./packages/*"]
     }
