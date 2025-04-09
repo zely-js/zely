@@ -6,8 +6,6 @@ export function devtool(): Plugin {
     name: 'zely:devtool',
     server(server) {
       server.use((ctx, next) => {
-        // @ts-ignore
-
         usePrewrite(ctx.response, async (data) => {
           ctx.response.statusCode = 500;
           // check is client browser

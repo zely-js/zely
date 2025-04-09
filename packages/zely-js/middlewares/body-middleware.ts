@@ -10,6 +10,7 @@ export const bodyMiddleware: Middleware = (context, next) => {
   context.request.on('end', () => {
     try {
       context.body = JSON.parse(body || '{}');
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (e) {
       context.body = {};
     }
