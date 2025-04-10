@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.18](https://github.com/zely-js/zely/compare/v4.0.0-next.17...v4.0.0-next.18) (2025-04-10)
+
+
+### New Features
+
+* requesting tool command ([#520](https://github.com/zely-js/zely/issues/520)) ([05c8fbe](https://github.com/zely-js/zely/commit/05c8fbef22da9d4e14e383b8c4373a793d72e64b))
+
+
+### Others
+
+* **deps:** update serpack to 0.1.22 ([b71bf8d](https://github.com/zely-js/zely/commit/b71bf8dec48c3e1f74c6c7001f6172fbb543550d))
+
+
+
+
 ## [4.0.0-next.17](https://github.com/zely-js/zely/compare/v4.0.0-next.16...v4.0.0-next.17) (2025-03-20)
 
 

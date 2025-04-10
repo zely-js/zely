@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.18](https://github.com/zely-js/zely/compare/v4.0.0-next.17...v4.0.0-next.18) (2025-04-10)
+
+**Note:** Version bump only for package zely
+
+
+
+
+
+
 ## [4.0.0-next.17](https://github.com/zely-js/zely/compare/v4.0.0-next.16...v4.0.0-next.17) (2025-03-20)
 
 

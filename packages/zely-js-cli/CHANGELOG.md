@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.18](https://github.com/zely-js/zely/compare/v4.0.0-next.17...v4.0.0-next.18) (2025-04-10)
+
+
+### New Features
+
+* requesting tool command ([#520](https://github.com/zely-js/zely/issues/520)) ([05c8fbe](https://github.com/zely-js/zely/commit/05c8fbef22da9d4e14e383b8c4373a793d72e64b))
+
+
+
+
 ## [4.0.0-next.17](https://github.com/zely-js/zely/compare/v4.0.0-next.16...v4.0.0-next.17) (2025-03-20)
 
 **Note:** Version bump only for package zely-cli
