@@ -1,11 +1,11 @@
 {
   "name": "@zely-js/core",
-  "version": "4.0.0-next.18",
+  "version": "4.0.0-next.19",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./types/index.d.ts",
   "dependencies": {
-    "@zely-js/logger": "4.0.0-next.18",
+    "@zely-js/logger": "4.0.0-next.19",
     "@zept/path-regexp": "^0.0.1",
     "chokidar": "3.6.0",
     "esbuild": "^0.24.0",

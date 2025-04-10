@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.19](https://github.com/zely-js/zely/compare/v4.0.0-next.17...v4.0.0-next.19) (2025-04-10)
+
+
+### Others
+
+* logger output style ([826d901](https://github.com/zely-js/zely/commit/826d90151bdb72cf9ecbf6efb4f741c74fb85587))
+* **release:** publish ([c7fb5b6](https://github.com/zely-js/zely/commit/c7fb5b6140dcacf5751c85d805bacdddfb69d788))
+
+
+
 ## [4.0.0-next.18](https://github.com/zely-js/zely/compare/v4.0.0-next.17...v4.0.0-next.18) (2025-04-10)
 
 
