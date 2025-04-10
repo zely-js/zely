@@ -3,7 +3,8 @@
 
 import { isAbsolute, join, relative } from 'node:path';
 import { debug } from '@zely-js/logger';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { access } from 'node:fs/promises';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { Runtime } from 'serpack/runtime';
 
 import type { Context, UserConfig } from '~/zely-js-core';
@@ -49,6 +50,15 @@ async function load(id: string, serpack: boolean = false) {
   return mod;
 }
 
+async function exists(path) {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export function createLoader<T>(
   options: UserConfig,
   ctx?: Context,
@@ -74,17 +84,18 @@ export function createLoader<T>(
     options.loaders.push(HTMLloader(options));
   }
 
-  const distPath = join(options.cwd || process.cwd(), options.dist || '.zely');
-
-  if (!existsSync(distPath)) mkdirSync(distPath);
-
-  writeFileSync(join(distPath, 'package.json'), '{"type": "commonjs"}');
-
   return async (id, buildOptions) => {
     const now = performance.now();
 
     if (!isAbsolute(id)) {
       id = join(process.cwd(), id);
+    }
+
+    const distPath = join(options.cwd || process.cwd(), options.dist || '.zely');
+
+    if (!(await exists(distPath))) mkdirSync(distPath);
+    if (!(await exists(join(distPath, 'package.json')))) {
+      writeFileSync(join(distPath, 'package.json'), '{"type": "commonjs"}');
     }
 
     for await (const loader of options.loaders) {

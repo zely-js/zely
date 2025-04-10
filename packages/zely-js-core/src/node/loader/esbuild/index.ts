@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import esbuild from 'esbuild';
 import { nodeExternalsPlugin } from 'esbuild-node-externals';
 
@@ -35,14 +36,15 @@ export function esbuildLoader(options: UserConfig): Loader<esbuild.BuildOptions>
         entryNames: '[name].[hash]',
 
         bundle: true,
-        minify: true,
+        // minify: true,
         sourcemap: true,
         write: false,
 
         platform: 'node',
+        // eslint-disable-next-line no-undef
         format: __ESM__ ? 'esm' : 'cjs',
 
-        // @ts-ignore
+        // @ts-expect-error
         plugins: [nodeExternalsPlugin(), filenamePlugin],
       });
 

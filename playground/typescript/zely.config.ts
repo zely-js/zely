@@ -4,7 +4,6 @@ import { defineConfig } from '@zely-js/zely';
 import { bodyMiddleware } from '@zely-js/zely/middlewares';
 
 setSender(async (req, res, chunk, status) => {
-  console.log(`response: ${JSON.stringify(chunk)} (request: ${req.url})`);
   defaultSender(req, res, chunk, status);
 });
 

@@ -61,18 +61,6 @@ export class PageCache {
 
   constructor(page: Page[], config: UserConfig) {
     const loader = createLoader(config);
-    const distPath = join(config.cwd || process.cwd(), config.dist || '.zely');
-
-    if (config.keepDist !== true) {
-      if (existsSync(distPath)) {
-        rmSync(distPath, { recursive: true });
-      }
-      mkdirSync(distPath, { recursive: true });
-    } else if (!existsSync(distPath)) {
-      mkdirSync(distPath, { recursive: true });
-    }
-
-    writeFileSync(join(distPath, 'package.json'), '{"type": "commonjs"}');
 
     this.#modules = page;
     this.loader = loader;
@@ -264,7 +252,6 @@ export async function controll(
       return next();
     }
 
-    const ctx = new Context(req, res);
     ctx.__DEV__ = {
       path: m.filename,
       params: m.params,
