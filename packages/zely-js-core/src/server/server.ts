@@ -2,7 +2,7 @@ import { App, senta } from 'senta';
 import { error, warn } from '@zely-js/logger';
 import { pathToRegexp } from '@zept/path-regexp';
 import { performance } from 'node:perf_hooks';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, rmSync } from 'node:fs';
 import { version } from 'serpack/package.json';
 import { join, parse, relative } from 'node:path';
 
@@ -138,6 +138,10 @@ export async function createZelyServer(options: UserConfig) {
       `Serpack is not ready to be used for production yet. \nSee documentation - https://zely.vercel.app/serpack/introduction (experimental-${version})`
         .gray
     );
+  }
+
+  if (existsSync(join(options.cwd || process.cwd(), '.zely'))) {
+    rmSync(join(options.cwd || process.cwd(), '.zely'), { recursive: true, force: true });
   }
 
   if (options.globalImport) {
