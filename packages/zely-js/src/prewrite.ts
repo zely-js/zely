@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import type { ZelyResponse } from '@zely-js/core';
 
 export function usePrewrite(
