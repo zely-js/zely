@@ -4,7 +4,13 @@ import prompts, { PromptObject } from 'prompts';
 
 const ASSETS = {
   javascript: ['package.json', 'zely.config.js', 'pages/index.js'],
-  typescript: ['package.json', 'zely.config.ts', 'pages/index.ts'],
+  typescript: [
+    'package.json',
+    'zely.config.ts',
+    'pages/index.ts',
+    'tsconfig.json',
+    'env.d.ts',
+  ],
 };
 
 export async function init(directory?: string, template?: 'javascript' | 'typescript') {

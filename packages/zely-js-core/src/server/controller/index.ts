@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync, rmSync, unlinkSync, writeFileSync } from 'node:fs';
+import { existsSync, unlinkSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { join, relative } from 'node:path';
 
