@@ -68,6 +68,7 @@ const repos = {
   logger: repo('zely-js-logger'),
   cli: repo('zely-js-cli'),
   dev: repo('zely-js-dev'),
+  optimizer: repo('zely-js-optimizer'),
 };
 
 const entryPoints = [
@@ -78,6 +79,7 @@ const entryPoints = [
   ...repos.logger('index.ts', 'index.js', true),
   ...repos.cli('index.ts', 'index.js', true),
   ...repos.dev('index.ts', 'index.js', true),
+  ...repos.optimizer('index.ts', 'index.js', true),
 ];
 
 module.exports = [

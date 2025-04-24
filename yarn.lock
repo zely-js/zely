@@ -2381,6 +2381,7 @@ __metadata:
   resolution: "@playground/typescript@workspace:playground/typescript"
   dependencies:
     "@zely-js/core": "workspace:*"
+    "@zely-js/optimizer": "workspace:*"
     "@zely-js/zely": "workspace:*"
     segify: "npm:^0.0.0-beta.17"
     zely-cli: "workspace:*"
@@ -3599,7 +3600,7 @@ __metadata:
     mime-types: "npm:^2.1.35"
     segify: "npm:^0.0.0-beta.17"
     senta: "npm:^0.0.0"
-    serpack: "npm:^0.1.23"
+    serpack: "npm:^0.1.26"
     source-map: "npm:^0.7.4"
   languageName: unknown
   linkType: soft
@@ -3637,6 +3638,14 @@ __metadata:
   resolution: "@zely-js/logger@workspace:packages/zely-js-logger"
   dependencies:
     colors: "npm:^1.4.0"
+  languageName: unknown
+  linkType: soft
+
+"@zely-js/optimizer@workspace:*, @zely-js/optimizer@workspace:packages/zely-js-optimizer":
+  version: 0.0.0-use.local
+  resolution: "@zely-js/optimizer@workspace:packages/zely-js-optimizer"
+  dependencies:
+    serpack: "npm:^0.1.26"
   languageName: unknown
   linkType: soft
 
@@ -11398,27 +11407,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serpack@npm:^0.1.23":
-  version: 0.1.23
-  resolution: "serpack@npm:0.1.23"
-  dependencies:
-    "@serpack/logger": "npm:0.0.0"
-    "@swc/core": "npm:^1.10.4"
-    "@swc/helpers": "npm:^0.5.15"
-    acorn: "npm:^8.14.0"
-    animaux: "npm:^0.1.0"
-    deepmerge-ts: "npm:^7.1.5"
-    escodegen: "npm:^2.1.0"
-    estree-walker: "npm:2.0.2"
-    oxc-resolver: "npm:^3.0.3"
-    source-map: "npm:^0.7.4"
-    vlq: "npm:^2.0.4"
-  bin:
-    serpack: dist/cli.js
-  checksum: 10c0/7c1d07b4a197048101cd10dc0a7c9572cd941d1080dbe522da88b443cd0f0dd6d68c90a10b660b7283a38c570edf6c2d8c3b4ee53e4f282d38ad6a1f3af01ce1
-  languageName: node
-  linkType: hard
-
 "serpack@npm:^0.1.24":
   version: 0.1.24
   resolution: "serpack@npm:0.1.24"
@@ -11437,6 +11425,27 @@ __metadata:
   bin:
     serpack: dist/cli.js
   checksum: 10c0/66cc54b044e1d3f44bc28a967b5b758492ef6402bb64a1f461f1bf761b44ea90cfe37310734810f121bf285ab669a221e421fabdf6b7f257f35fbfca2b757cdb
+  languageName: node
+  linkType: hard
+
+"serpack@npm:^0.1.26":
+  version: 0.1.26
+  resolution: "serpack@npm:0.1.26"
+  dependencies:
+    "@serpack/logger": "npm:0.0.0"
+    "@swc/core": "npm:^1.10.4"
+    "@swc/helpers": "npm:^0.5.15"
+    acorn: "npm:^8.14.0"
+    animaux: "npm:^0.1.0"
+    deepmerge-ts: "npm:^7.1.5"
+    escodegen: "npm:^2.1.0"
+    estree-walker: "npm:2.0.2"
+    oxc-resolver: "npm:^3.0.3"
+    source-map: "npm:^0.7.4"
+    vlq: "npm:^2.0.4"
+  bin:
+    serpack: dist/cli.js
+  checksum: 10c0/50e2199ba4ced5aa4c461d324654aaabaf2f4bf71448182d79011d9477d0de40e44ec01616f2fdf1dccda8a0d2b3d6ae435e70f7819b129ef455409dbae371cd
   languageName: node
   linkType: hard
 
