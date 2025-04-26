@@ -9,7 +9,7 @@ export function serpackPlugin(): Plugin {
       }
 
       compilerOptions.footer = `Object.defineProperty(module.exports, "__serpack_module__", {value:!0, enumerable: !!0});${
-        compilerOptions.banner || ''
+        compilerOptions.footer || ''
       }`;
     },
   };
