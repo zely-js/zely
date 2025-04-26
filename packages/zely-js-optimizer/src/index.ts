@@ -1,6 +1,4 @@
-import type { CompilerOptions, Plugin } from 'serpack';
-
-export interface OptimizerOptions {}
+import type { Plugin } from 'serpack';
 
 function getCallerName(node: any): string | null {
   if (!node) return null;
@@ -16,9 +14,10 @@ function getCallerName(node: any): string | null {
   return null;
 }
 
-export function optimizer(options?: OptimizerOptions): Plugin {
+export function optimizer(): Plugin {
   return {
     name: '@zely-js/optimizer',
+
     onSetup(compilerOptions) {
       if (compilerOptions.modifier?.caller) {
         throw new Error(
