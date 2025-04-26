@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.20](https://github.com/zely-js/zely/compare/v4.0.0-next.19...v4.0.0-next.20) (2025-04-26)
+
+
+### New Features
+
+* cached server data ([3bbe5ce](https://github.com/zely-js/zely/commit/3bbe5ce1976002e1871aedf94434c8a720402936))
+
+
+
 ## [4.0.0-next.19](https://github.com/zely-js/zely/compare/v4.0.0-next.17...v4.0.0-next.19) (2025-04-10)
 
 
