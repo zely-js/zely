@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@zely-js/core": "workspace:*",
+    "@zely-js/optimizer": "workspace:*",
     "@zely-js/zely": "workspace:*",
     "segify": "^0.0.0-beta.17",
     "zely-cli": "workspace:*",

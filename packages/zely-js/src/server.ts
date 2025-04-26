@@ -20,7 +20,7 @@ export async function zely(options: Config) {
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     (ctx.response as any).snatch = (..._params: any) => {
-      warn('snatcher has been deprecated until 3.0');
+      warn('snatcher has been deprecated');
     };
 
     next();

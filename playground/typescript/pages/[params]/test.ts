@@ -1,7 +1,15 @@
-import { POST } from '@zely-js/zely';
+import { GET } from '@zely-js/core';
+import { setTimeout } from 'timers/promises';
+
+async function $greeting(name: string) {
+  await setTimeout(1000);
+  return `Hello, ${name}!`;
+}
 
 export default [
-  POST((ctx) => {
-    ctx.send(`Hello, ${ctx.request.body.name}!`);
+  GET(async (ctx) => {
+    const message = await $greeting(ctx.params.params);
+
+    ctx.send(message);
   }),
 ];
