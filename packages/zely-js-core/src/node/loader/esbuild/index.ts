@@ -44,7 +44,7 @@ export function esbuildLoader(options: UserConfig): Loader<esbuild.BuildOptions>
         // eslint-disable-next-line no-undef
         format: __ESM__ ? 'esm' : 'cjs',
 
-        // @ts-expect-error
+        // @ts-ignore
         plugins: [nodeExternalsPlugin(), filenamePlugin],
       });
 

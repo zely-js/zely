@@ -3,7 +3,7 @@ import { relative, join, dirname } from 'path';
 import { compile, CompilerOptions, loadConfig } from 'serpack';
 import { removeExtension } from '~/zely-js-core/lib/ext';
 import { Loader, UserConfig } from '~/zely-js-core/types';
-import { serpackPlugin } from './preset';
+import { serpackPlugin } from './plugins/preset';
 
 export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
   let serpackConfig: CompilerOptions;
