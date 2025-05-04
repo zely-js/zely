@@ -4,6 +4,7 @@
     "dev": "zely dev"
   },
   "dependencies": {
+    "@zely-js/optimizer": "latest",
     "zely": "latest"
   }
 }

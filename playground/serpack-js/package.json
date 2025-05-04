@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "zely dev --serpack"
+  },
+  "dependencies": {
+    "@zely-js/optimizer": "workspace:*",
+    "zely": "workspace:*"
+  }
+}
