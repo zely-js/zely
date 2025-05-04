@@ -37,7 +37,7 @@
     "ts-loader": "^9.5.0",
     "tsconfig-paths-jest": "^0.0.1",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
-    "typescript": "5.3.3",
+    "typescript": "^5.8.3",
     "typescript-eslint": "^8.26.1",
     "webpack": "^5.88.2",
     "zept": "^0.0.4"
@@ -57,5 +57,5 @@
     "execute": "serpack"
   },
   "version": "0.0.0",
-  "packageManager": "yarn@4.1.0"
+  "packageManager": "yarn@4.9.1"
 }
