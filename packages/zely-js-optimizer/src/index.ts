@@ -1,4 +1,5 @@
 import type { Plugin } from 'serpack';
+import type { Plugin as ZelyPlugin } from '~/zely';
 
 function getCallerName(node: any): string | null {
   if (!node) return null;
@@ -77,3 +78,22 @@ export function optimizer(): Plugin {
 }
 
 export * from './cache';
+
+export function zelyOptimizer(): ZelyPlugin {
+  return {
+    name: '@zely-js/optimizer:zely-plugin',
+    config(config) {
+      if (!config.experimental?.useSerpack && !process.argv.includes('--serpack')) {
+        throw new Error(
+          'To use @zely-js/optimizer, you have to enable serpack compiler. - See https://zely.vercel.app/serpack/introduction#getting-started'
+        );
+      }
+      config.experimental ??= {};
+      config.experimental.serpackOptions ??= {};
+      config.experimental.serpackOptions.plugins ??= [];
+      config.experimental.serpackOptions.plugins.push(optimizer());
+
+      return config;
+    },
+  };
+}
