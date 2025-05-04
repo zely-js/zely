@@ -13,6 +13,11 @@ const ASSETS = {
   ],
 };
 
+const ASSETS_SERPACK = {
+  javascript: ['pages/[name].js'],
+  typescript: ['pages/[name].ts'],
+};
+
 export async function init(directory?: string, template?: 'javascript' | 'typescript') {
   const questions: PromptObject<string>[] = [];
 
@@ -82,6 +87,13 @@ export async function init(directory?: string, template?: 'javascript' | 'typesc
       join(process.cwd(), directory, 'package.json'),
       JSON.stringify(pkgjson, null, 2)
     );
+
+    for (const asset of ASSETS_SERPACK[template]) {
+      copyFileSync(
+        join(__dirname, '../assets', template, asset),
+        join(process.cwd(), directory, asset)
+      );
+    }
   }
 
   console.log('\n Template Cloned!!\n'.cyan);
