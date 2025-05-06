@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.21](https://github.com/zely-js/zely/compare/v4.0.0-next.20...v4.0.0-next.21) (2025-05-06)
+
+
+### New Features
+
+* optimizer plugin for zely ([2826792](https://github.com/zely-js/zely/commit/2826792dba4cfac8f97c497aa6704fb59de31c20))
+
+
+### Others
+
+* **types:** export cache function ([102b63c](https://github.com/zely-js/zely/commit/102b63c6c9d3b0da48226bd84b3a4d3303d93135))
+
+
+
 ## [4.0.0-next.20](https://github.com/zely-js/zely/compare/v4.0.0-next.19...v4.0.0-next.20) (2025-04-26)
 
 

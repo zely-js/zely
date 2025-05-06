@@ -3,6 +3,34 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.21](https://github.com/zely-js/zely/compare/v4.0.0-next.20...v4.0.0-next.21) (2025-05-06)
+
+
+### New Features
+
+* add some files to template ([#532](https://github.com/zely-js/zely/issues/532)) ([caa98db](https://github.com/zely-js/zely/commit/caa98dbe93f04b6642a4224925804a4b1e9e77a4))
+* optimizer plugin for zely ([2826792](https://github.com/zely-js/zely/commit/2826792dba4cfac8f97c497aa6704fb59de31c20))
+
+
+### Bug Fix
+
+* fixed minor bugs ([df6762d](https://github.com/zely-js/zely/commit/df6762d18206c70c3ad9c3254ab49a3c3da3e5b9))
+
+
+### Code Refactoring
+
+* structure ([fcb3685](https://github.com/zely-js/zely/commit/fcb3685a1fb5e356bec68ee32cb8585e95cf5d97))
+
+
+### Others
+
+* remove build ([4c9d6d0](https://github.com/zely-js/zely/commit/4c9d6d053b82f384f622ff99ef219fe0f9ab326a))
+* scripts from template ([191279a](https://github.com/zely-js/zely/commit/191279aa631a2ff7f88aa66138bc5b895fe7868e))
+* **types:** export cache function ([102b63c](https://github.com/zely-js/zely/commit/102b63c6c9d3b0da48226bd84b3a4d3303d93135))
+* **yarn:** upgrade yarn ([#531](https://github.com/zely-js/zely/issues/531)) ([2a5b425](https://github.com/zely-js/zely/commit/2a5b42574d16350149c964d4bf596b5858231697))
+
+
+
 ## [4.0.0-next.20](https://github.com/zely-js/zely/compare/v4.0.0-next.19...v4.0.0-next.20) (2025-04-26)
 
 

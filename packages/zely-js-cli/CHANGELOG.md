@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.21](https://github.com/zely-js/zely/compare/v4.0.0-next.20...v4.0.0-next.21) (2025-05-06)
+
+
+### New Features
+
+* add some files to template ([#532](https://github.com/zely-js/zely/issues/532)) ([caa98db](https://github.com/zely-js/zely/commit/caa98dbe93f04b6642a4224925804a4b1e9e77a4))
+
+
+### Bug Fix
+
+* fixed minor bugs ([df6762d](https://github.com/zely-js/zely/commit/df6762d18206c70c3ad9c3254ab49a3c3da3e5b9))
+
+
+### Others
+
+* scripts from template ([191279a](https://github.com/zely-js/zely/commit/191279aa631a2ff7f88aa66138bc5b895fe7868e))
+
+
+
 ## [4.0.0-next.20](https://github.com/zely-js/zely/compare/v4.0.0-next.19...v4.0.0-next.20) (2025-04-26)
 
 
