@@ -11388,6 +11388,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"serpack-js-2c57f3@workspace:playground/serpack-js":
+  version: 0.0.0-use.local
+  resolution: "serpack-js-2c57f3@workspace:playground/serpack-js"
+  dependencies:
+    "@zely-js/optimizer": "workspace:*"
+    zely: "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"serpack-ts-eef19b@workspace:playground/serpack-ts":
+  version: 0.0.0-use.local
+  resolution: "serpack-ts-eef19b@workspace:playground/serpack-ts"
+  dependencies:
+    zely: "workspace:*"
+  languageName: unknown
+  linkType: soft
+
 "serpack@npm:^0.1.15":
   version: 0.1.16
   resolution: "serpack@npm:0.1.16"

@@ -40,7 +40,7 @@ export async function request(base?: string) {
   let port = 8080;
   const config = await getConfig(process.argv.includes('--serpack'));
 
-  port = config.server.port || port;
+  port = config.server?.port || port;
 
   const baseURL = base || `http://localhost:${port}`;
 
