@@ -1,7 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "dev": "zely dev"
+    "dev": "zely dev",
+    "build": "zely build",
+    "request": "zely request"
   },
   "dependencies": {
     "@zely-js/optimizer": "latest",
