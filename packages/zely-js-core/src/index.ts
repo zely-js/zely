@@ -11,3 +11,4 @@ export * from './fe';
 export * as logger from '@zely-js/logger';
 export * from './server/send';
 export * from './node/build';
+export * from './runtime/store';
