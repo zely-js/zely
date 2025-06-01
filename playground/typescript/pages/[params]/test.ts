@@ -1,15 +1,13 @@
-import { GET } from '@zely-js/core';
+import { ALL, response } from '@zely-js/core';
 import { setTimeout } from 'timers/promises';
 
-async function $greeting(name: string) {
-  await setTimeout(1000);
-  return `Hello, ${name}!`;
-}
-
 export default [
-  GET(async (ctx) => {
-    const message = await $greeting(ctx.params.params);
+  ALL<string>(async (ctx) => {
+    const { data } = await $store(async () => {
+      await setTimeout(1000);
+      return `Hello ${ctx.params.params}!`;
+    }, [ctx.params.params]);
 
-    ctx.send(message);
+    return data || 'null';
   }),
 ];

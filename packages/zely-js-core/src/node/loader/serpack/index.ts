@@ -4,6 +4,7 @@ import { compile, CompilerOptions, loadConfig } from 'serpack';
 import { removeExtension } from '~/zely-js-core/lib/ext';
 import { Loader, UserConfig } from '~/zely-js-core/types';
 import { serpackPlugin } from './plugins/preset';
+import { storePlugin } from '~/zely-js-core/src/runtime/store/compiler';
 
 export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
   let serpackConfig: CompilerOptions;
@@ -54,6 +55,7 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
       }
 
       compilerConfig.plugins.push(serpackPlugin());
+      compilerConfig.plugins.push(storePlugin());
 
       const output = await compile(id, compilerConfig);
 

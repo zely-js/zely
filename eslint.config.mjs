@@ -51,6 +51,7 @@ export default tseslint.config(tseslint.configs.recommended, [
       'no-self-compare': 'warn',
       'no-useless-return': 'warn',
       camelcase: 'off',
+      'no-undef': 'off',
       'no-undef-init': 'warn',
       'no-unused-vars': 'off',
       'no-use-before-define': 'warn',

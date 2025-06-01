@@ -3600,7 +3600,7 @@ __metadata:
     mime-types: "npm:^2.1.35"
     segify: "npm:^0.0.0-beta.17"
     senta: "npm:^0.0.0"
-    serpack: "npm:^0.1.26"
+    serpack: "npm:^0.1.30"
     source-map: "npm:^0.7.4"
   languageName: unknown
   linkType: soft
@@ -11463,6 +11463,27 @@ __metadata:
   bin:
     serpack: dist/cli.js
   checksum: 10c0/50e2199ba4ced5aa4c461d324654aaabaf2f4bf71448182d79011d9477d0de40e44ec01616f2fdf1dccda8a0d2b3d6ae435e70f7819b129ef455409dbae371cd
+  languageName: node
+  linkType: hard
+
+"serpack@npm:^0.1.30":
+  version: 0.1.30
+  resolution: "serpack@npm:0.1.30"
+  dependencies:
+    "@serpack/logger": "npm:0.0.0"
+    "@swc/core": "npm:^1.10.4"
+    "@swc/helpers": "npm:^0.5.15"
+    acorn: "npm:^8.14.0"
+    animaux: "npm:^0.1.0"
+    deepmerge-ts: "npm:^7.1.5"
+    escodegen: "npm:^2.1.0"
+    estree-walker: "npm:2.0.2"
+    oxc-resolver: "npm:^3.0.3"
+    source-map: "npm:^0.7.4"
+    vlq: "npm:^2.0.4"
+  bin:
+    serpack: dist/cli.js
+  checksum: 10c0/0d18aafd11cd501579340922e2894b0ec5e96cba9d8a9174b82355f3f3d6746947e4c1b31c908dbfab66553ccb4da465e934a68097e9790d123d55c0fcd0d4a8
   languageName: node
   linkType: hard
 
