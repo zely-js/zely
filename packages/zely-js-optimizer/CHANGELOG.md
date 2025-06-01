@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.22](https://github.com/zely-js/zely/compare/v4.0.0-next.21...v4.0.0-next.22) (2025-06-01)
+
+
+### New Features
+
+* `$store` for server data ([#548](https://github.com/zely-js/zely/issues/548)) ([fc7fd61](https://github.com/zely-js/zely/commit/fc7fd61ca33c3368a2a755a19079bf1f1e1c53b5))
+
+
+
 ## [4.0.0-next.21](https://github.com/zely-js/zely/compare/v4.0.0-next.20...v4.0.0-next.21) (2025-05-06)
 
 
