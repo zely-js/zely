@@ -1,6 +1,7 @@
 import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import prompts, { PromptObject } from 'prompts';
+import { warn } from '@zely-js/logger';
 
 const ASSETS = {
   javascript: ['package.json', 'zely.config.js', 'pages/index.js'],
@@ -49,8 +50,8 @@ export async function init(directory?: string, template?: 'javascript' | 'typesc
     {
       type: 'toggle',
       name: 'serpack',
-      message: 'Enable Serpack (experimental)?',
-      initial: false,
+      message: 'Enable Serpack (recommended)?',
+      initial: true,
       active: 'yes',
       inactive: 'no',
     },
@@ -94,6 +95,14 @@ export async function init(directory?: string, template?: 'javascript' | 'typesc
         join(process.cwd(), directory, asset)
       );
     }
+    console.log();
+
+    warn(
+      // eslint-disable-next-line no-multi-str
+      'serpack is enabled. This compiler is an experimental feature. \
+      \nIf you experience compiler errors, you can workaround it by removing the `--serpack` flag.\
+      \nDocumentation - https://zely.vercel.app/serpack'
+    );
   }
 
   console.log('\n Template Cloned!!\n'.cyan);
