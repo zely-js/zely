@@ -6,7 +6,9 @@
     "request": "zely request"
   },
   "dependencies": {
-    "@zely-js/optimizer": "latest",
     "zely": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest"
   }
 }

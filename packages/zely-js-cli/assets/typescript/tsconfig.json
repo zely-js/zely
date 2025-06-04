@@ -1,3 +1,5 @@
 {
-  "include": ["./env.d.ts"]
+  "compilerOptions": {
+    "types": ["./env.d.ts", "@types/node"]
+  }
 }
