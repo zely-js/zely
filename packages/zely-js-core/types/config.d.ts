@@ -95,6 +95,7 @@ export interface UserConfig {
 
   build?: {
     dist?: string;
+    bundle?: boolean;
   };
 }
 

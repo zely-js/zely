@@ -46,6 +46,7 @@ export async function build(config: UserConfig, silent: boolean = false) {
   };
   const configPath = getConfig();
   const startTime = performance.now();
+  const isBundleMode = config.build?.bundle;
 
   const info = (msg: string) => {
     if (!silent) loggerInfo(msg);
@@ -92,8 +93,11 @@ export async function build(config: UserConfig, silent: boolean = false) {
   pageCode.push(']');
 
   writeFileSync(outFiles.pages, pageCode.join('\n'));
-  const compiledPage = await loader(outFiles.pages, { buildOptions, type: 'cache' });
-  writeFileSync(outFiles.pages, readFileSync(compiledPage.filename));
+
+  if (isBundleMode) {
+    const compiledPage = await loader(outFiles.pages, { buildOptions, type: 'cache' });
+    writeFileSync(outFiles.pages, readFileSync(compiledPage.filename));
+  }
 
   // compile server, config
 
@@ -109,17 +113,22 @@ export async function build(config: UserConfig, silent: boolean = false) {
     'var __opt__=require("./_config.js");var __pages__=require("./_pages.js");\
     if(!__opt__.__virtuals__){__opt__.__virtuals__=[]};__opt__.__virtuals__.push(...(__pages__.default || __pages__));__opt__.cwd=__dirname;require("@zely-js/zely").zely(__opt__).then((server) => {server.server.listen(__opt__.port || 8080);console.log(`server is running on http://localhost:${__opt__.port || 8080}`);})'
   );
-  const compiledServer = await loader(outFiles.server, { buildOptions, type: 'cache' });
-  writeFileSync(outFiles.server, readFileSync(compiledServer.filename));
 
   mkdirSync(join(outputDirectory, './.zely'));
 
-  // remove unused pages
+  if (isBundleMode) {
+    const compiledServer = await loader(outFiles.server, { buildOptions, type: 'cache' });
+    writeFileSync(outFiles.server, readFileSync(compiledServer.filename));
+
+    // remove unused pages
+    rm(join(outputDirectory, 'fe'), { recursive: true });
+    rm(join(outputDirectory, 'page'), { recursive: true });
+    rm(outFiles.config, { recursive: true });
+    rm(outFiles.pages, { recursive: true });
+  }
+
+  // remove cache directory
   rm(join(outputDirectory, 'cache'), { recursive: true });
-  rm(join(outputDirectory, 'fe'), { recursive: true });
-  rm(join(outputDirectory, 'page'), { recursive: true });
-  rm(outFiles.config, { recursive: true });
-  rm(outFiles.pages, { recursive: true });
 
   console.log();
   info(`Done in ${((performance.now() - startTime) / 1000).toFixed(2)}s`);
