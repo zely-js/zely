@@ -12,6 +12,6 @@
   "repository": "https://github.com/zely-js/zely",
   "bugs": "https://github.com/zely-js/zely/issues",
   "devDependencies": {
-    "serpack": "^0.1.26"
+    "serpack": "^0.1.31"
   }
 }

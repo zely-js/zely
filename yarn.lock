@@ -3791,7 +3791,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zely-js/optimizer@workspace:packages/zely-js-optimizer"
   dependencies:
-    serpack: "npm:^0.1.26"
+    serpack: "npm:^0.1.31"
   languageName: unknown
   linkType: soft
 
@@ -11649,27 +11649,6 @@ __metadata:
   bin:
     serpack: dist/cli.js
   checksum: 10c0/66cc54b044e1d3f44bc28a967b5b758492ef6402bb64a1f461f1bf761b44ea90cfe37310734810f121bf285ab669a221e421fabdf6b7f257f35fbfca2b757cdb
-  languageName: node
-  linkType: hard
-
-"serpack@npm:^0.1.26":
-  version: 0.1.26
-  resolution: "serpack@npm:0.1.26"
-  dependencies:
-    "@serpack/logger": "npm:0.0.0"
-    "@swc/core": "npm:^1.10.4"
-    "@swc/helpers": "npm:^0.5.15"
-    acorn: "npm:^8.14.0"
-    animaux: "npm:^0.1.0"
-    deepmerge-ts: "npm:^7.1.5"
-    escodegen: "npm:^2.1.0"
-    estree-walker: "npm:2.0.2"
-    oxc-resolver: "npm:^3.0.3"
-    source-map: "npm:^0.7.4"
-    vlq: "npm:^2.0.4"
-  bin:
-    serpack: dist/cli.js
-  checksum: 10c0/50e2199ba4ced5aa4c461d324654aaabaf2f4bf71448182d79011d9477d0de40e44ec01616f2fdf1dccda8a0d2b3d6ae435e70f7819b129ef455409dbae371cd
   languageName: node
   linkType: hard
 
