@@ -8,6 +8,7 @@ import { UserConfig } from '~/zely-js-core';
 import { createLoader } from '~/zely-js-core/src';
 import { readDirectory } from '~/zely-js-core/lib/read-directory';
 import { removeExtension } from '~/zely-js-core/lib/ext';
+import { middlewareFilenames } from '../../server/middlewares';
 
 const CONFIG_FILE = ['zely.config.ts', 'zely.config.js', 'zely.config.json'];
 const buildOptions: CompilerOptions = {
@@ -43,6 +44,7 @@ export async function build(config: UserConfig, silent: boolean = false) {
     server: join(outputDirectory, 'server.js'),
     config: join(outputDirectory, '_config.js'),
     pages: join(outputDirectory, '_pages.js'),
+    middlewares: join(outputDirectory, '_middlewares.js'),
   };
   const configPath = getConfig();
   const startTime = performance.now();
@@ -83,7 +85,7 @@ export async function build(config: UserConfig, silent: boolean = false) {
     $[relativePath] = relativeOutputPath;
 
     pageCode.push(
-      `__zely__.createVirtualPage("${removeExtension(relativePath).replace(
+      `/*  */__zely__.createVirtualPage("${removeExtension(relativePath).replace(
         /\\/g,
         '/'
       )}", __exports__(require("./${relativeOutputPath.replace(/\\/g, '/')}"))),`
@@ -94,10 +96,26 @@ export async function build(config: UserConfig, silent: boolean = false) {
 
   writeFileSync(outFiles.pages, pageCode.join('\n'));
 
-  if (isBundleMode) {
-    const compiledPage = await loader(outFiles.pages, { buildOptions, type: 'cache' });
-    writeFileSync(outFiles.pages, readFileSync(compiledPage.filename));
+  // compile middlewares
+
+  info('Compiling middlewares...');
+
+  const middlewaresFiles = await middlewareFilenames(config, buildOptions);
+  const middlewarePageCode = [];
+
+  middlewarePageCode.push('var __exports__=(m)=>m.default||m;');
+  middlewarePageCode.push('module.exports=[');
+
+  for (const middlewareFile of middlewaresFiles) {
+    const relativeOutputPath = relative(outputDirectory, middlewareFile);
+    middlewarePageCode.push(
+      `/*  */__exports__(require("./${relativeOutputPath.replace(/\\/g, '/')}")),`
+    );
   }
+
+  middlewarePageCode.push(']');
+
+  writeFileSync(outFiles.middlewares, middlewarePageCode.join('\n'));
 
   // compile server, config
 
@@ -110,8 +128,11 @@ export async function build(config: UserConfig, silent: boolean = false) {
   writeFileSync(
     outFiles.server,
     // eslint-disable-next-line no-template-curly-in-string
-    'var __opt__=require("./_config.js");var __pages__=require("./_pages.js");\
-    if(!__opt__.__virtuals__){__opt__.__virtuals__=[]};__opt__.__virtuals__.push(...(__pages__.default || __pages__));__opt__.cwd=__dirname;require("@zely-js/zely").zely(__opt__).then((server) => {server.server.listen(__opt__.port || 8080);console.log(`server is running on http://localhost:${__opt__.port || 8080}`);})'
+    'var __opt__=require("./_config.js");var __pages__=require("./_pages.js");var __middlewares__=require("./_middlewares.js");\
+    if(!__opt__.__virtuals__){__opt__.__virtuals__=[]};if(!__opt__.middlewares){__opt__.middlewares=[]};\
+    __opt__.__virtuals__.push(...(__pages__.default || __pages__));\
+    __opt__.middlewares.push(...(__middlewares__.default || __middlewares__));\
+    __opt__.cwd=__dirname;require("@zely-js/zely").zely(__opt__).then((server) => {server.server.listen(__opt__.port || 8080);console.log(`server is running on http://localhost:${__opt__.port || 8080}`);})'
   );
 
   mkdirSync(join(outputDirectory, './.zely'));
@@ -125,6 +146,7 @@ export async function build(config: UserConfig, silent: boolean = false) {
     rm(join(outputDirectory, 'page'), { recursive: true });
     rm(outFiles.config, { recursive: true });
     rm(outFiles.pages, { recursive: true });
+    rm(outFiles.middlewares, { recursive: true });
   }
 
   // remove cache directory

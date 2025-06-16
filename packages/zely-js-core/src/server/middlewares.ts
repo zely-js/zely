@@ -30,6 +30,31 @@ async function appendMiddlewareFiles(options: UserConfig) {
 
   return middlewares;
 }
+/**
+ * append auto middlewares (filename)
+ * @param options user config
+ */
+export async function middlewareFilenames(options: UserConfig, buildOptions: any) {
+  const middlewares: string[] = [];
+  const base = join(
+    options.cwd || process.cwd(),
+    options.middlewareDirectory || 'middlewares'
+  );
+  const files = readDirectory(base);
+
+  const loader = createLoader(options);
+
+  for await (const file of files) {
+    const middleware = await loader(file, {
+      type: 'middleware',
+      buildOptions,
+    });
+
+    middlewares.push(middleware.filename as any);
+  }
+
+  return middlewares;
+}
 
 /**
  * @returns middlewares
