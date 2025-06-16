@@ -8,6 +8,8 @@ export default [
       return 'Hello!';
     });
 
+    ctx.debug('Meeessage');
+
     return data;
   }),
 ];
