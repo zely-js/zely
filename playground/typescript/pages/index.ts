@@ -3,13 +3,6 @@ import { setTimeout } from 'timers/promises';
 
 export default [
   ALL<string>(async (ctx) => {
-    const { data } = await $store(async () => {
-      await setTimeout(1000);
-      return 'Hello!';
-    });
-
     ctx.debug('Meeessage');
-
-    return data;
   }),
 ];

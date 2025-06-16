@@ -37,8 +37,9 @@ app
 app
   .command('build')
   .describe('Server Build')
-  .action(async () => {
-    await build();
+  .option('--bundle, -b')
+  .action(async ({ options }) => {
+    await build(options.bundle);
   });
 
 app
