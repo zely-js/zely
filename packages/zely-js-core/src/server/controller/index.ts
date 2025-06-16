@@ -3,9 +3,8 @@ import { performance } from 'node:perf_hooks';
 import { join, relative } from 'node:path';
 
 import { errorWithStacks, info, parseError, success } from '@zely-js/logger';
-import { Context } from 'senta';
 import chokidar from 'chokidar';
-import type { UserConfig } from '~/zely-js-core';
+import type { Context, UserConfig } from '~/zely-js-core';
 import { isFunction, isObject } from '~/zely-js-core/lib/is';
 import { removeExtension } from '~/zely-js-core/lib/ext';
 import { WatchOptions } from '~/zely-js-core/types/watch';
@@ -256,6 +255,13 @@ export async function controll(
       path: m.filename,
       params: m.params,
       pattern: m.regex,
+    };
+
+    ctx.debug = (message) => {
+      const parsed = parseError(new Error())[1];
+      console.log(
+        `${'($)'.gray} ${`[${ctx.__DEV__.path}]`.cyan} ${message} ${parsed.loc.dim}`
+      );
     };
 
     if (m.module.type === 'export-default') {

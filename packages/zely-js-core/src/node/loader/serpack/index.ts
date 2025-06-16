@@ -31,6 +31,7 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
         );
       }
 
+      const isDev = process.env.NODE_ENV !== 'production';
       const outpath = `${join(
         options.cwd || process.cwd(),
         options.dist || '.zely',
@@ -40,12 +41,17 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
 
       const compilerConfig: CompilerOptions = {
         nodeExternal: true,
-        runtime: process.env.NODE_ENV !== 'production',
+        runtime: isDev,
         sourcemap: true,
         sourcemapOptions: {
           sourcemapRoot: join(options.cwd || process.cwd()),
         },
         type: 'script',
+        globals: {
+          vars: {
+            __DEV__: String(isDev),
+          },
+        },
         ...serpackConfig,
         ...buildoptions.buildOptions,
       };
