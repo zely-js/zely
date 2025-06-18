@@ -3,10 +3,12 @@ import { getConfig } from '../lib/config';
 
 export async function build(bundle = false) {
   const config = await getConfig();
-  await coreBuild({
+  const { message } = await coreBuild({
     ...config,
     build: {
       bundle,
     },
   });
+
+  console.log(message);
 }

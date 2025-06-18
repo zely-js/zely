@@ -32,10 +32,6 @@ export async function build(config: UserConfig, silent: boolean = false) {
   if (config.build?.dist) config.dist = config.build.dist;
   else config.dist = './build';
 
-  if (config.allowAutoMiddlewares) {
-    warn('config.allowAutoMiddlewares does not work in the current build mode.');
-  }
-
   process.env.NODE_ENV = 'production';
 
   const outputDirectory = join(config.cwd || process.cwd(), config.dist);
@@ -144,6 +140,7 @@ export async function build(config: UserConfig, silent: boolean = false) {
     // remove unused pages
     rm(join(outputDirectory, 'fe'), { recursive: true });
     rm(join(outputDirectory, 'page'), { recursive: true });
+    rm(join(outputDirectory, 'middlewares'), { recursive: true });
     rm(outFiles.config, { recursive: true });
     rm(outFiles.pages, { recursive: true });
     rm(outFiles.middlewares, { recursive: true });
@@ -155,5 +152,8 @@ export async function build(config: UserConfig, silent: boolean = false) {
   console.log();
   info(`Done in ${((performance.now() - startTime) / 1000).toFixed(2)}s`);
 
-  console.log(`\n${'$ |'.gray} ${'node'.yellow} ${outFiles.server}\n`);
+  return {
+    message: `\n${'$ |'.gray} ${'node'.yellow} ${outFiles.server}\n`,
+    filename: outFiles.server,
+  };
 }
