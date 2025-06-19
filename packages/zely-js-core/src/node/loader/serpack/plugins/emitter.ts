@@ -3,6 +3,7 @@ import { Plugin } from 'serpack';
 let mods: string[] = [];
 
 export function emitterPlugin(): Plugin {
+  return {
     name: '@zely-js/core/serpack-plugin-module-emitter',
     onSetup() {
       mods = [];
