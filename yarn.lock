@@ -3746,7 +3746,7 @@ __metadata:
     mime-types: "npm:^2.1.35"
     segify: "npm:^0.0.0-beta.17"
     senta: "npm:^0.0.0"
-    serpack: "npm:^0.1.32"
+    serpack: "npm:^0.1.34"
     source-map: "npm:^0.7.4"
   languageName: unknown
   linkType: soft
@@ -11673,9 +11673,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serpack@npm:^0.1.32":
-  version: 0.1.32
-  resolution: "serpack@npm:0.1.32"
+"serpack@npm:^0.1.34":
+  version: 0.1.34
+  resolution: "serpack@npm:0.1.34"
   dependencies:
     "@serpack/logger": "npm:0.0.0"
     "@swc/core": "npm:^1.10.4"
@@ -11690,7 +11690,7 @@ __metadata:
     vlq: "npm:^2.0.4"
   bin:
     serpack: dist/cli.js
-  checksum: 10c0/ff2e352db6693a245903fddd49b7542770b4bfda455283e24c0edf3af0707b03c7124b3af77eb35066bd23bb5174861c1b3d0a93b67d9500d85b8b77d2c9d5cb
+  checksum: 10c0/c91cb528cb49335bebb9d56915fb796eacdf985d5d3fe69f1c49d03f2ac0183493ae2b6ead2b893ff05ff7a80ad0d8c4b5c69470eb40414a383d40b8854807f0
   languageName: node
   linkType: hard
 
