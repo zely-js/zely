@@ -221,7 +221,7 @@ export async function createZelyServer(options: UserConfig) {
 
     // core handler
     serverInstance.use(async (ctx, next) => {
-      await controll(ctx, next, options, pages);
+      await controll(ctx as Context, next, options, pages);
     });
   };
 
