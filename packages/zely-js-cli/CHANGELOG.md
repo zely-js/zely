@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.23](https://github.com/zely-js/zely/compare/v4.0.0-next.22...v4.0.0-next.23) (2025-06-21)
+
+
+### New Features
+
+* **builder:** `--bundle` option ([f15af18](https://github.com/zely-js/zely/commit/f15af18d648e47e3f4be5badbd23c26e0f9cb981))
+* **builder:** support middleware directory ([e53fc05](https://github.com/zely-js/zely/commit/e53fc05488f2b571e44ec79b2037e6c491b7fe00))
+* example of `$store` ([4554674](https://github.com/zely-js/zely/commit/4554674bf17c18babf4eb215059f1b453f21cc87))
+
+
+### Others
+
+* `build()` returns string ([33afd29](https://github.com/zely-js/zely/commit/33afd294a25e615bf76c1a68cb9ccc201b7f3451))
+* change default of `enableSerpack` to true ([9bc6e54](https://github.com/zely-js/zely/commit/9bc6e543b49011cde73d1f148952b9cf21f319f2))
+
+
+
 ## [4.0.0-next.22](https://github.com/zely-js/zely/compare/v4.0.0-next.21...v4.0.0-next.22) (2025-06-01)
 
 **Note:** Version bump only for package zely-cli

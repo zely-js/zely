@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.23](https://github.com/zely-js/zely/compare/v4.0.0-next.22...v4.0.0-next.23) (2025-06-21)
+
+
+### Others
+
+* **deps:** update serpack for compatibility ([6dfe206](https://github.com/zely-js/zely/commit/6dfe206e4e085ba323d3578724eb6a7514bf8fcd))
+
+
+
 ## [4.0.0-next.22](https://github.com/zely-js/zely/compare/v4.0.0-next.21...v4.0.0-next.22) (2025-06-01)
 
 

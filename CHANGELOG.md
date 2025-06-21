@@ -3,6 +3,32 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.23](https://github.com/zely-js/zely/compare/v4.0.0-next.22...v4.0.0-next.23) (2025-06-21)
+
+
+### New Features
+
+* **builder:** `--bundle` option ([f15af18](https://github.com/zely-js/zely/commit/f15af18d648e47e3f4be5badbd23c26e0f9cb981))
+* **builder:** `--bundle` option ([4f56960](https://github.com/zely-js/zely/commit/4f569603032cc74507dfd93e5043cc7bd0d098fc))
+* **builder:** `--emit-modules` flag ([60ebb69](https://github.com/zely-js/zely/commit/60ebb69de9b0c76f9ab1b7011faa8a8bb46eea75))
+* **builder:** support middleware directory ([e53fc05](https://github.com/zely-js/zely/commit/e53fc05488f2b571e44ec79b2037e6c491b7fe00))
+* debugger ([ea7dece](https://github.com/zely-js/zely/commit/ea7decebc05cdf8ff784297b4291d57a2b09710a))
+* example of `$store` ([4554674](https://github.com/zely-js/zely/commit/4554674bf17c18babf4eb215059f1b453f21cc87))
+
+
+### Others
+
+* `build()` returns string ([33afd29](https://github.com/zely-js/zely/commit/33afd294a25e615bf76c1a68cb9ccc201b7f3451))
+* change default of `enableSerpack` to true ([9bc6e54](https://github.com/zely-js/zely/commit/9bc6e543b49011cde73d1f148952b9cf21f319f2))
+* crlf ([d518a54](https://github.com/zely-js/zely/commit/d518a5496293e2f7207049b14ac0ebc50a862d9e))
+* **deps:** update node version ([ad7017d](https://github.com/zely-js/zely/commit/ad7017dba650d036645486d8d44d72e70546aa22))
+* **deps:** update serpack for compatibility ([6dfe206](https://github.com/zely-js/zely/commit/6dfe206e4e085ba323d3578724eb6a7514bf8fcd))
+* **deps:** update serpack to 0.1.31 ([27bdb8f](https://github.com/zely-js/zely/commit/27bdb8f41ffe2007c219da2a976aaed165d80049))
+* ignore build ([61aeda1](https://github.com/zely-js/zely/commit/61aeda15ee5edf2f94103d2efa00ef6f8577cad6))
+* **playground:** remove builds ([0fd68d3](https://github.com/zely-js/zely/commit/0fd68d3f82d68acf90181589c56340b4162f1ddd))
+
+
+
 ## [4.0.0-next.22](https://github.com/zely-js/zely/compare/v4.0.0-next.21...v4.0.0-next.22) (2025-06-01)
 
 
