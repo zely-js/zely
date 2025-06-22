@@ -4,6 +4,8 @@
 
 [**github**](https://github.com/zely-js/zely) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://zely.vercel.app/)
 
+> [🚀 zely4 has been published!](https://zely.vercel.app/blog/25-06-22)
+
 ---
 
 - **File-based routing**. Automatically generate routes based on file structure.
