@@ -1,13 +1,13 @@
 {
   "private": true,
   "scripts": {
-    "dev": "zely dev",
+    "dev": "zely dev --serpack",
     "build": "zely build",
     "request": "zely request"
   },
   "dependencies": {
-    "@zely-js/static": "latest",
-    "zely": "latest"
+    "@zely-js/static": "workspace:*",
+    "zely": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "latest"

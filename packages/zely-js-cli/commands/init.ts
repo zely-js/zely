@@ -11,6 +11,7 @@ const ASSETS = {
     'pages/index.ts',
     'tsconfig.json',
     'env.d.ts',
+    'static/static.txt',
   ],
 };
 
@@ -64,6 +65,7 @@ export async function init(directory?: string, template?: 'javascript' | 'typesc
 
   mkdirSync(join(process.cwd(), directory), { recursive: true });
   mkdirSync(join(process.cwd(), directory, 'pages'), { recursive: true });
+  mkdirSync(join(process.cwd(), directory, 'static'), { recursive: true });
 
   for (const asset of assets) {
     copyFileSync(

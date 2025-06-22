@@ -6,6 +6,7 @@
     "request": "zely request"
   },
   "dependencies": {
+    "@zely-js/static": "latest",
     "zely": "latest"
   },
   "devDependencies": {
