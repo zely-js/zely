@@ -11,10 +11,10 @@ npm install @zely-js/static
 ## Usage
 
 ```ts
-import { static } from '@zely-js/static';
+import { staticPlugin } from '@zely-js/static';
 
 export default defineConfig({
-  plugins: [static('/static', './public')],
+  plugins: [staticPlugin('/static', './public')],
 });
 ```
 
