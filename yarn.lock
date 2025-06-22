@@ -13463,7 +13463,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zely-cli@npm:4.0.0-next.23, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
+"zely-cli@npm:4.0.0-next.24, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
   version: 0.0.0-use.local
   resolution: "zely-cli@workspace:packages/zely-js-cli"
   dependencies:
@@ -13495,7 +13495,7 @@ __metadata:
   resolution: "zely@workspace:packages/zely"
   dependencies:
     "@zely-js/zely": "npm:4.0.0-next.23"
-    zely-cli: "npm:4.0.0-next.23"
+    zely-cli: "npm:4.0.0-next.24"
   bin:
     zely: ./cli.js
   languageName: unknown

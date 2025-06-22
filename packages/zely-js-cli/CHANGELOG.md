@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.24](https://github.com/zely-js/zely/compare/v4.0.0-next.23...v4.0.0-next.24) (2025-06-22)
+
+
+### New Features
+
+* **zely-cli:** template for @zely-js/static ([b869899](https://github.com/zely-js/zely/commit/b86989935b27d917ca546eac2b3e74fea070bc0e))
+
+
+
 ## [4.0.0-next.23](https://github.com/zely-js/zely/compare/v4.0.0-next.22...v4.0.0-next.23) (2025-06-21)
 
 

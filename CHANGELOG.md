@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.0-next.24](https://github.com/zely-js/zely/compare/v4.0.0-next.23...v4.0.0-next.24) (2025-06-22)
+
+
+### New Features
+
+* **static:** @zely-js/static plugin ([cdb1f61](https://github.com/zely-js/zely/commit/cdb1f61362cd9c23e09abe58089d2c7f1ab46d63))
+* **zely-cli:** template for @zely-js/static ([b869899](https://github.com/zely-js/zely/commit/b86989935b27d917ca546eac2b3e74fea070bc0e))
+
+
+### Documentation
+
+* **@zely-js/static:** edit plugin name ([33cf1fa](https://github.com/zely-js/zely/commit/33cf1fa14de5024d1acb0312480426da0e2062e0))
+
+
+### Others
+
+* remove unused packages ([5e5655f](https://github.com/zely-js/zely/commit/5e5655ff358393d24b18197e60ddf5bd5987ba66))
+
+
+
 ## [4.0.0-next.23](https://github.com/zely-js/zely/compare/v4.0.0-next.22...v4.0.0-next.23) (2025-06-21)
 
 

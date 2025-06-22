@@ -1,6 +1,6 @@
 {
   "name": "zely-cli",
-  "version": "4.0.0-next.23",
+  "version": "4.0.0-next.24",
   "bin": "./dist/index.js",
   "main": "./dist/index.js",
   "dependencies": {
