@@ -1,6 +1,6 @@
 {
   "name": "@zely-js/logger",
-  "version": "4.0.0-next.19",
+  "version": "4.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./index.d.ts",
