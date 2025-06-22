@@ -2527,11 +2527,10 @@ __metadata:
   resolution: "@playground/typescript@workspace:playground/typescript"
   dependencies:
     "@zely-js/core": "workspace:*"
-    "@zely-js/optimizer": "workspace:*"
+    "@zely-js/static": "workspace:*"
     "@zely-js/zely": "workspace:*"
     segify: "npm:^0.0.0-beta.17"
     zely-cli: "workspace:*"
-    zely-dev: "workspace:*"
   languageName: unknown
   linkType: soft
 
@@ -2558,13 +2557,6 @@ __metadata:
   dependencies:
     colors: "npm:^1.4.0"
   checksum: 10c0/6b9900b9a4bbffd8d3404ae88baf27571024d1c01ce2d3edf754b06bab3e64350fc39786a09847bff15f8c6566d54441156aa8937592af6fd7e4cf695357a8ad
-  languageName: node
-  linkType: hard
-
-"@shikijs/core@npm:1.10.0":
-  version: 1.10.0
-  resolution: "@shikijs/core@npm:1.10.0"
-  checksum: 10c0/5c964f58933a89a47e77d7512b3c536d8d2f6de55ea229e61ee0025b7db8af2b0233c59d9ce39331d4ccb082abdd5bce0724bca6434e2d7b9186d1f29f2194e4
   languageName: node
   linkType: hard
 
@@ -3787,11 +3779,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@zely-js/optimizer@workspace:*, @zely-js/optimizer@workspace:packages/zely-js-optimizer":
+"@zely-js/static@workspace:*, @zely-js/static@workspace:packages/zely-plugin-static":
   version: 0.0.0-use.local
-  resolution: "@zely-js/optimizer@workspace:packages/zely-js-optimizer"
+  resolution: "@zely-js/static@workspace:packages/zely-plugin-static"
   dependencies:
-    serpack: "npm:^0.1.31"
+    mime-types: "npm:^2.1.35"
   languageName: unknown
   linkType: soft
 
@@ -11599,7 +11591,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "serpack-js-2c57f3@workspace:playground/serpack-js"
   dependencies:
-    "@zely-js/optimizer": "workspace:*"
     zely: "workspace:*"
   languageName: unknown
   linkType: soft
@@ -11649,27 +11640,6 @@ __metadata:
   bin:
     serpack: dist/cli.js
   checksum: 10c0/66cc54b044e1d3f44bc28a967b5b758492ef6402bb64a1f461f1bf761b44ea90cfe37310734810f121bf285ab669a221e421fabdf6b7f257f35fbfca2b757cdb
-  languageName: node
-  linkType: hard
-
-"serpack@npm:^0.1.31":
-  version: 0.1.31
-  resolution: "serpack@npm:0.1.31"
-  dependencies:
-    "@serpack/logger": "npm:0.0.0"
-    "@swc/core": "npm:^1.10.4"
-    "@swc/helpers": "npm:^0.5.15"
-    animaux: "npm:^0.1.0"
-    astring: "npm:^1.9.0"
-    deepmerge-ts: "npm:^7.1.5"
-    estree-walker: "npm:2.0.2"
-    oxc-parser: "npm:^0.72.3"
-    oxc-resolver: "npm:^3.0.3"
-    source-map: "npm:^0.7.4"
-    vlq: "npm:^2.0.4"
-  bin:
-    serpack: dist/cli.js
-  checksum: 10c0/d7b73467a2399ada47a84b756d635477faac514b255fdd72d24a3143ed62c0e1c542c305d78a4f4aadc85ce97f91a6bc01ba4aaec54e1308b23094ad3323281a
   languageName: node
   linkType: hard
 
@@ -11760,15 +11730,6 @@ __metadata:
   version: 3.0.0
   resolution: "shebang-regex@npm:3.0.0"
   checksum: 10c0/1dbed0726dd0e1152a92696c76c7f06084eb32a90f0528d11acd764043aacf76994b2fb30aa1291a21bd019d6699164d048286309a278855ee7bec06cf6fb690
-  languageName: node
-  linkType: hard
-
-"shiki@npm:^1.10.0":
-  version: 1.10.0
-  resolution: "shiki@npm:1.10.0"
-  dependencies:
-    "@shikijs/core": "npm:1.10.0"
-  checksum: 10c0/1f2a004ac9add7ae58e964e107e35d36d52773cd167673133526851a1cd1a2eab0eed89f5790ed654b926b8747ef07c156a132035110787b1bb2a051bc9ffa90
   languageName: node
   linkType: hard
 
@@ -13491,26 +13452,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"zely-dev@workspace:*, zely-dev@workspace:packages/zely-js-dev":
-  version: 0.0.0-use.local
-  resolution: "zely-dev@workspace:packages/zely-js-dev"
-  dependencies:
-    shiki: "npm:^1.10.0"
-    zely: "npm:4.0.0-next.23"
-  languageName: unknown
-  linkType: soft
-
-"zely@npm:4.0.0-next.23, zely@workspace:*, zely@workspace:packages/zely":
-  version: 0.0.0-use.local
-  resolution: "zely@workspace:packages/zely"
-  dependencies:
-    "@zely-js/zely": "npm:4.0.0-next.23"
-    zely-cli: "npm:4.0.0-next.23"
-  bin:
-    zely: ./cli.js
-  languageName: unknown
-  linkType: soft
-
 "zely@npm:latest":
   version: 4.0.0-next.14
   resolution: "zely@npm:4.0.0-next.14"
@@ -13522,6 +13463,17 @@ __metadata:
   checksum: 10c0/3068a9e73e2c441075344f5e045093ed1ab842a6a390f57202477877eb10df5b3c8f1801f51256ed793cd4d53829f0329a45d479ffe9d399b3ccac99b5c8ca1b
   languageName: node
   linkType: hard
+
+"zely@workspace:*, zely@workspace:packages/zely":
+  version: 0.0.0-use.local
+  resolution: "zely@workspace:packages/zely"
+  dependencies:
+    "@zely-js/zely": "npm:4.0.0-next.23"
+    zely-cli: "npm:4.0.0-next.23"
+  bin:
+    zely: ./cli.js
+  languageName: unknown
+  linkType: soft
 
 "zept@npm:^0.0.4":
   version: 0.0.4

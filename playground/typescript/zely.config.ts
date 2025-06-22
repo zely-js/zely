@@ -1,5 +1,6 @@
 import { createVirtualPage, defaultSender, GET, setSender } from '@zely-js/core';
 import { defineConfig } from '@zely-js/zely';
+import { staticPlugin } from '@zely-js/static';
 
 import { bodyMiddleware } from '@zely-js/zely/middlewares';
 
@@ -13,6 +14,7 @@ export default defineConfig({
     useHTML: true,
   },
   allowAutoMiddlewares: true,
+  plugins: [staticPlugin('/static', './pages')],
   middlewares: [bodyMiddleware],
   __virtuals__: [createVirtualPage('main.ts', [GET(() => {})])],
 });

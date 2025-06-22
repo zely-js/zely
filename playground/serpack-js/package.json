@@ -4,7 +4,6 @@
     "dev": "zely dev"
   },
   "dependencies": {
-    "@zely-js/optimizer": "workspace:*",
     "zely": "workspace:*"
   }
 }
