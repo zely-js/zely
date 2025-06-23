@@ -1,14 +1,46 @@
 import mime from 'mime-types';
+import { mkdirSync } from 'fs';
 import path from 'path';
 import fs from 'fs/promises';
-import type { Plugin } from '~/zely-js/types';
+import type { Config, Plugin } from '~/zely-js/types';
+import { clone } from './lib';
 
-export function staticPlugin(prefix: string, directory: string): Plugin {
+interface StaticOptions {
+  disableCopyDirectory?: boolean;
+}
+
+let globalConfig: Config = {};
+
+export function staticPlugin(
+  prefix: string,
+  directory: string,
+  options?: StaticOptions
+): Plugin {
   return {
     name: '@zely-js/static',
 
+    config(config) {
+      globalConfig = config as any;
+      return config;
+    },
+
+    async afterBuild(out) {
+      if (options?.disableCopyDirectory) return;
+      const cwd = globalConfig?.cwd || process.cwd();
+
+      const absDirectory = path.resolve(cwd, directory);
+      const relativeToCwd = path.relative(cwd, absDirectory);
+
+      const targetDir = path.resolve(out, relativeToCwd);
+
+      mkdirSync(targetDir, { recursive: true });
+
+      clone(absDirectory, targetDir);
+    },
+
     async server(server) {
       server.use(async (ctx, next) => {
+        console.log(ctx.pathname);
         if (!ctx.pathname.startsWith(prefix)) {
           return next();
         }
