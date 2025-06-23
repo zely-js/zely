@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/zely-js/zely/compare/v4.0.0...v4.0.1) (2025-06-23)
+
+
+### New Features
+
+* **core:** add build support for plugins ([b602a66](https://github.com/zely-js/zely/commit/b602a66cb0af8adadaf8765e2125aa9ba207e2fc))
+
+
+
 ## [4.0.0](https://github.com/zely-js/zely/compare/v4.0.0-next.24...v4.0.0) (2025-06-22)
 
 **Note:** Version bump only for package @zely-js/zely

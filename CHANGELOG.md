@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.1](https://github.com/zely-js/zely/compare/v4.0.0...v4.0.1) (2025-06-23)
+
+
+### New Features
+
+* **core:** add build support for plugins ([b602a66](https://github.com/zely-js/zely/commit/b602a66cb0af8adadaf8765e2125aa9ba207e2fc))
+* **core:** import handler automatically ([bbb5592](https://github.com/zely-js/zely/commit/bbb559249ca161dde32457e2975812c6d65182b7))
+* **static:** copy directory when build ([e3982d0](https://github.com/zely-js/zely/commit/e3982d06f588d0ab92222908aecb438b3b2fd968))
+
+
+### Bug Fix
+
+* error caused by empty middleware directory ([e42ac80](https://github.com/zely-js/zely/commit/e42ac8076fea77cf7d51ae24c707b81099a86d1f))
+* fixed grammar ([6cd0027](https://github.com/zely-js/zely/commit/6cd00278a701fe2205c5f881bb10faaed922a082))
+
+
+
 ## [4.0.0](https://github.com/zely-js/zely/compare/v4.0.0-next.24...v4.0.0) (2025-06-22)
 
 
