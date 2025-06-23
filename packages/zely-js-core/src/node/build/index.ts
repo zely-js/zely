@@ -28,7 +28,7 @@ export function getConfig(): string {
   return null;
 }
 
-export async function build(config: UserConfig, silent: boolean = false) {
+export async function buildDev(config: UserConfig, silent: boolean = false) {
   if (config.build?.dist) config.dist = config.build.dist;
   else config.dist = './build';
 
@@ -124,7 +124,7 @@ export async function build(config: UserConfig, silent: boolean = false) {
   writeFileSync(
     outFiles.server,
     // eslint-disable-next-line no-template-curly-in-string
-    'var __opt__=require("./_config.js");var __pages__=require("./_pages.js");var __middlewares__=require("./_middlewares.js");\
+    'var __exports__=(m)=>m.default||m;process.env.NODE_ENV="production";var __opt__=__exports__(require("./_config.js"));var __pages__=require("./_pages.js");var __middlewares__=require("./_middlewares.js");\
     if(!__opt__.__virtuals__){__opt__.__virtuals__=[]};if(!__opt__.middlewares){__opt__.middlewares=[]};\
     __opt__.__virtuals__.push(...(__pages__.default || __pages__));\
     __opt__.middlewares.push(...(__middlewares__.default || __middlewares__));\

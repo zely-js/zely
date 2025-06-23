@@ -61,6 +61,7 @@ export interface UserConfig {
 
   /**
    * Import methods automatically
+   * @deprecated Imported by default
    */
   globalImport?: boolean;
 

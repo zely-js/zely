@@ -7,6 +7,13 @@ export function serpackPlugin(): Plugin {
       if (!compilerOptions.footer) {
         compilerOptions.footer = '';
       }
+      if (!compilerOptions.banner) {
+        compilerOptions.banner = '';
+      }
+
+      compilerOptions.banner = `var {GET,ALL,POST,DELETE,PUT}=require("@zely-js/core");${
+        compilerOptions.banner || ''
+      }`;
 
       compilerOptions.footer = `Object.defineProperty(module.exports, "__serpack_module__", {value:!0, enumerable: !1});${
         compilerOptions.footer || ''
