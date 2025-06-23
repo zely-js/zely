@@ -40,7 +40,6 @@ export function staticPlugin(
 
     async server(server) {
       server.use(async (ctx, next) => {
-        console.log(ctx.pathname);
         if (!ctx.pathname.startsWith(prefix)) {
           return next();
         }
