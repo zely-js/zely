@@ -73,6 +73,6 @@ export function createZelyServer(options: UserConfig): Promise<{
 }>;
 export function productionBuild(options: UserConfig): Promise<void>;
 
-export function build(
+export function buildDev(
   options: UserConfig
 ): Promise<{ message: string; filename: string }>;

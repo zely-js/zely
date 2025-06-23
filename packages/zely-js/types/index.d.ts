@@ -14,3 +14,4 @@ export function usePrewrite(
 ): void;
 export * from './config';
 export * from './plugin';
+export function build(options: Config): Promise<{ message: string; filename: string }>;
