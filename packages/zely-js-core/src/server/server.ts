@@ -144,8 +144,7 @@ export async function createZelyServer(options: UserConfig) {
     rmSync(join(options.cwd || process.cwd(), '.zely'), { recursive: true, force: true });
   }
 
-     await import('../runtime/env');
-  }
+  await import('../runtime/env');
   if (!options.__virtuals__) {
     options.__virtuals__ = [];
   }
