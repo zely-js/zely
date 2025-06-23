@@ -1,4 +1,5 @@
 import { join } from 'node:path';
+import { existsSync } from 'node:fs';
 
 import { createLoader } from '../node/loader';
 
@@ -40,6 +41,9 @@ export async function middlewareFilenames(options: UserConfig, buildOptions: any
     options.cwd || process.cwd(),
     options.middlewareDirectory || 'middlewares'
   );
+
+  if (!existsSync(base)) return [];
+
   const files = readDirectory(base);
 
   const loader = createLoader(options);
