@@ -1,6 +1,6 @@
 import '@zely-js/core';
 import 'http';
-declare module '@zely-js/core' {
+declare module 'senta' {
   interface Context {
     body: any;
   }
