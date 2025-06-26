@@ -1,3 +1,7 @@
+> This branch is for v2 development and is no longer being updated. Check out the latest branch
+
+
+
 <section align="center">
   <h1>Zely</h1>
   Build Productive, Convenient, Fast Backend
