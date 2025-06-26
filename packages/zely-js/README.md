@@ -19,6 +19,16 @@ Build Productive, Convenient, Fast Backend
 npm install --save-dev @zely-js/zely
 ```
 
+## Getting Started
+
+Download the template using the zely-cli tool:
+
+```txt
+$ npx zely-cli init
+```
+
+> Visit [Getting Started](https://zely.vercel.app/docs/getting-started) to start new app.
+
 ## License
 
-[MIT](/LICENSE)
+[MIT](https://github.com/zely-js/zely/blob/main/LICENSE)

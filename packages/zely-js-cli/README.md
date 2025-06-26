@@ -21,4 +21,4 @@ Visit [Getting Started](https://zely.vercel.app/docs/getting-started) to start n
 
 ## License
 
-[MIT](#)
+[MIT](https://github.com/zely-js/zely/blob/main/LICENSE)
