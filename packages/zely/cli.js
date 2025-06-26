@@ -8,7 +8,9 @@
 async function start() {
   try {
     await import('zely-cli');
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (e) {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
     require('zely-cli');
   }
 }
