@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.3-beta.0](https://github.com/zely-js/zely/compare/v4.0.2...v4.0.3-beta.0) (2025-07-14)
+
+
+### Documentation
+
+* license ([05f6aea](https://github.com/zely-js/zely/commit/05f6aea55b2d0df15af2c77ec747349c414613b1))
+
+
+### Others
+
+* typescript error ([fa1ee04](https://github.com/zely-js/zely/commit/fa1ee04791275013cdf369c5b1098af6c5c6ec8f))
+
+
+
 ## [4.0.1](https://github.com/zely-js/zely/compare/v4.0.0...v4.0.1) (2025-06-23)
 
 

@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.3-beta.0](https://github.com/zely-js/zely/compare/v4.0.2...v4.0.3-beta.0) (2025-07-14)
+
+
+### New Features
+
+* adopt hybrid filesystem ([#549](https://github.com/zely-js/zely/issues/549)) ([3ecc5e3](https://github.com/zely-js/zely/commit/3ecc5e323dff897f873e0691b95acc79a1cff603))
+
+
+### Documentation
+
+* license ([05f6aea](https://github.com/zely-js/zely/commit/05f6aea55b2d0df15af2c77ec747349c414613b1))
+
+
+
 ## [4.0.1](https://github.com/zely-js/zely/compare/v4.0.0...v4.0.1) (2025-06-23)
 
 **Note:** Version bump only for package zely-cli

@@ -3735,7 +3735,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zely-js/core@npm:4.0.1, @zely-js/core@workspace:*, @zely-js/core@workspace:packages/zely-js-core":
+"@zely-js/core@npm:4.0.3-beta.0, @zely-js/core@workspace:*, @zely-js/core@workspace:packages/zely-js-core":
   version: 0.0.0-use.local
   resolution: "@zely-js/core@workspace:packages/zely-js-core"
   dependencies:
@@ -3788,14 +3788,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zely-js/serpack-support@workspace:packages/serpack-support":
-  version: 0.0.0-use.local
-  resolution: "@zely-js/serpack-support@workspace:packages/serpack-support"
-  dependencies:
-    serpack: "npm:^0.1.34"
-  languageName: unknown
-  linkType: soft
-
 "@zely-js/static@workspace:*, @zely-js/static@workspace:packages/zely-plugin-static":
   version: 0.0.0-use.local
   resolution: "@zely-js/static@workspace:packages/zely-plugin-static"
@@ -3815,11 +3807,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@zely-js/zely@npm:4.0.1, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
+"@zely-js/zely@npm:4.0.3-beta.0, @zely-js/zely@workspace:*, @zely-js/zely@workspace:packages/zely-js":
   version: 0.0.0-use.local
   resolution: "@zely-js/zely@workspace:packages/zely-js"
   dependencies:
-    "@zely-js/core": "npm:4.0.1"
+    "@zely-js/core": "npm:4.0.3-beta.0"
     "@zely-js/logger": "npm:4.0.0"
     senta: "npm:^0.0.0"
   languageName: unknown
@@ -13471,13 +13463,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zely-cli@npm:4.0.1, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
+"zely-cli@npm:4.0.3-beta.0, zely-cli@workspace:*, zely-cli@workspace:packages/zely-js-cli":
   version: 0.0.0-use.local
   resolution: "zely-cli@workspace:packages/zely-js-cli"
   dependencies:
     "@types/prompts": "npm:^2"
     "@zely-js/logger": "npm:4.0.0"
-    "@zely-js/zely": "npm:4.0.1"
+    "@zely-js/zely": "npm:4.0.3-beta.0"
     animaux: "npm:^0.1.0"
     colors: "npm:^1.4.0"
     prompts: "npm:^2.4.2"
@@ -13502,8 +13494,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "zely@workspace:packages/zely"
   dependencies:
-    "@zely-js/zely": "npm:4.0.1"
-    zely-cli: "npm:4.0.1"
+    "@zely-js/zely": "npm:4.0.3-beta.0"
+    zely-cli: "npm:4.0.3-beta.0"
   bin:
     zely: ./cli.js
   languageName: unknown
