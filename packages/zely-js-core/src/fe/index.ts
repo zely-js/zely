@@ -1,6 +1,8 @@
 import { Plugin, build } from 'esbuild';
-import { mkdirSync, writeFileSync } from 'fs';
 import { join, relative } from 'path';
+
+import { mkdirSync, writeFileSync } from '$fs';
+
 import type { FeComponent, FePageData, FeScripts, UserConfig } from '~/zely-js-core';
 
 const DEFAULT_TEMPLATE = `
@@ -82,7 +84,7 @@ export async function compileBrowserCode(
 
   for (const output of builder.outputFiles) {
     mkdirSync(join(output.path, '..'), { recursive: true });
-    writeFileSync(output.path, output.contents);
+    writeFileSync(output.path, Buffer.from(output.contents).toString('utf-8'));
   }
 
   return { outputFiles: builder.outputFiles, out };

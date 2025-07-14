@@ -1,4 +1,5 @@
 import { join } from 'node:path';
+
 import { existsSync } from 'node:fs';
 
 import { createLoader } from '../node/loader';
@@ -16,8 +17,10 @@ async function appendMiddlewareFiles(options: UserConfig) {
     options.cwd || process.cwd(),
     options.middlewareDirectory || 'middlewares'
   );
-  const files = readDirectory(base);
 
+  if (!existsSync(base)) return [];
+
+  const files = readDirectory(base);
   const loader = createLoader(options);
 
   for await (const file of files) {

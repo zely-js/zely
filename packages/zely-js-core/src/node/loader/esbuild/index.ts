@@ -2,8 +2,9 @@
 import esbuild from 'esbuild';
 import { nodeExternalsPlugin } from 'esbuild-node-externals';
 
-import { mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
+import { writeFileSync as diskWrite } from 'node:fs';
+import { mkdirSync, writeFileSync as memoryWrite } from '$fs';
 
 import type { Loader, UserConfig } from '~/zely-js-core';
 
@@ -23,6 +24,8 @@ export function esbuildLoader(options: UserConfig): Loader<esbuild.BuildOptions>
       if (buildoptions.type === 'page') {
         outdir = relative(join(options.cwd || process.cwd(), 'pages'), dirname(id));
       }
+      const isDev = process.env.NODE_ENV !== 'production';
+      const writeFileSync = isDev ? memoryWrite : diskWrite;
 
       const out = await esbuild.build({
         entryPoints: [id],

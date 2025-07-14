@@ -14,7 +14,6 @@ export default defineConfig({
     useHTML: true,
   },
   allowAutoMiddlewares: true,
-  plugins: [staticPlugin('/static', './pages')],
   middlewares: [bodyMiddleware],
   __virtuals__: [createVirtualPage('main.ts', [GET(() => {})])],
 });

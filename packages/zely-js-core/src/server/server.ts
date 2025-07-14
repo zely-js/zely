@@ -2,9 +2,10 @@ import { App, senta } from 'senta';
 import { error, warn } from '@zely-js/logger';
 import { pathToRegexp } from '@zept/path-regexp';
 import { performance } from 'node:perf_hooks';
-import { existsSync, readFileSync, rmSync } from 'node:fs';
 import { version } from 'serpack/package.json';
 import { join, parse, relative } from 'node:path';
+
+import { existsSync, readFileSync, rmSync } from '$fs';
 
 import { readDirectory } from '~/zely-js-core/lib/read-directory';
 import type { Context, UserConfig } from '~/zely-js-core';
@@ -172,7 +173,8 @@ export async function createZelyServer(options: UserConfig) {
             return { code: 404, message: 'File not found' };
           }
 
-          ctx.send(readFileSync(target).toString());
+          const content = readFileSync(target).toString();
+          ctx.send(content);
         }
       }),
     ])
