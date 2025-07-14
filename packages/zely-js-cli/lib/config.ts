@@ -1,7 +1,7 @@
 /* eslint-disable no-await-in-loop */
 import type { UserConfig } from '@zely-js/core';
 import { createLoader } from '@zely-js/zely';
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from '$fs';
 
 const CONFIG_FILE = ['zely.config.ts', 'zely.config.js', 'zely.config.json'];
 

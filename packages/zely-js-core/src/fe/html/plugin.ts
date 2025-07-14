@@ -1,5 +1,7 @@
-import { mkdirSync, writeFileSync } from 'fs';
 import { join, parse } from 'path';
+import { writeFileSync as diskWrite, mkdirSync as diskMk } from 'fs';
+
+import { mkdirSync as memoryMk, writeFileSync as memoryWrite } from '$fs';
 
 import { Loader } from '~/zely-js/types';
 import { useEnhancedHTML } from './enhanced';
@@ -10,6 +12,9 @@ const HTMLloader = (options: any): Loader => ({
     if (!id.endsWith('.html')) return;
     const { template: output, built } = await useEnhancedHTML(id, options);
 
+    const isDev = process.env.NODE_ENV !== 'production';
+    const writeFileSync = isDev ? memoryWrite : diskWrite;
+    const mkdirSync = isDev ? memoryMk : diskMk;
     const dist = join(
       options.cwd || process.cwd(),
       options.dist || '.zely',

@@ -1,6 +1,8 @@
-import { mkdirSync, writeFileSync } from 'fs';
 import { relative, join, dirname } from 'path';
 import { compile, CompilerOptions, loadConfig } from 'serpack';
+import { writeFileSync as diskWrite, mkdirSync as diskMkdir } from 'fs';
+import { mkdirSync, writeFileSync as memoryWrite } from '$fs';
+
 import { removeExtension } from '~/zely-js-core/lib/ext';
 import { Loader, UserConfig } from '~/zely-js-core/types';
 import { serpackPlugin } from './plugins/preset';
@@ -33,6 +35,7 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
       }
 
       const isDev = process.env.NODE_ENV !== 'production';
+      const writeFileSync = isDev ? memoryWrite : diskWrite;
       const outpath = `${join(
         options.cwd || process.cwd(),
         options.dist || '.zely',
@@ -59,6 +62,10 @@ export function serpackLoader(options: UserConfig): Loader<CompilerOptions> {
 
       if (!compilerConfig.plugins) {
         compilerConfig.plugins = [];
+      }
+
+      if (!isDev) {
+        diskMkdir(join(outpath, '../'), { recursive: true });
       }
 
       compilerConfig.plugins.push(serpackPlugin());

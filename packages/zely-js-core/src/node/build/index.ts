@@ -1,9 +1,11 @@
 /* eslint-disable no-multi-str */
 /* eslint-disable no-await-in-loop */
-import { writeFileSync, existsSync, readFileSync, mkdirSync, rmSync } from 'fs';
 import { join, relative } from 'path';
 import { CompilerOptions } from 'serpack';
-import { info as loggerInfo, warn } from '@zely-js/logger';
+import { info as loggerInfo } from '@zely-js/logger';
+
+import { writeFileSync, existsSync, readFileSync, mkdirSync, rmSync } from 'fs';
+
 import { UserConfig } from '~/zely-js-core';
 import { createLoader } from '~/zely-js-core/src';
 import { readDirectory } from '~/zely-js-core/lib/read-directory';
@@ -51,13 +53,14 @@ export async function buildDev(config: UserConfig, silent: boolean = false) {
   };
 
   const rm = (directory: string, options: { recursive?: boolean }) => {
+    // console.log(directory, existsSync(directory));
     if (existsSync(directory)) rmSync(directory, options);
   };
 
   rm(outputDirectory, { recursive: true });
   mkdirSync(outputDirectory, { recursive: true });
 
-  const loader = createLoader(config, null, true, true);
+  const loader = createLoader(config, null, true, true, false);
 
   // build pages
 
@@ -147,6 +150,7 @@ export async function buildDev(config: UserConfig, silent: boolean = false) {
   }
 
   // remove cache directory
+  rm(join(outputDirectory, 'pages'), { recursive: true });
   rm(join(outputDirectory, 'cache'), { recursive: true });
 
   console.log();

@@ -1,7 +1,8 @@
 import { parseError, errorWithStacks, error } from '@zely-js/logger';
 import { SourceMapConsumer } from 'source-map';
-import { readFileSync, existsSync } from 'fs';
 import { dirname, join, relative } from 'path';
+
+import { readFileSync, existsSync } from '$fs';
 
 const errorHandler = async (e) => {
   try {
@@ -29,7 +30,7 @@ const errorHandler = async (e) => {
       return;
     }
 
-    const tracer = JSON.parse(readFileSync(targetFile, 'utf-8'));
+    const tracer = JSON.parse(readFileSync(targetFile, 'utf-8') as string);
 
     if (tracer.sections) {
       // indexed map
@@ -53,7 +54,7 @@ const errorHandler = async (e) => {
 
     const lines = [];
 
-    const errorFile = readFileSync(target, 'utf-8').split('\n');
+    const errorFile = (readFileSync(target, 'utf-8') as string).split('\n');
 
     lines.push(
       `  • ${relative(process.cwd(), target)}:${result.line}:${result.column}`.yellow.dim

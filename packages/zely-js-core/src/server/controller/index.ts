@@ -1,9 +1,11 @@
-import { existsSync, unlinkSync } from 'node:fs';
 import { performance } from 'node:perf_hooks';
 import { join, relative } from 'node:path';
 
 import { errorWithStacks, info, parseError, success } from '@zely-js/logger';
 import chokidar from 'chokidar';
+
+import { existsSync, unlinkSync } from '$fs';
+
 import type { Context, UserConfig } from '~/zely-js-core';
 import { isFunction, isObject } from '~/zely-js-core/lib/is';
 import { removeExtension } from '~/zely-js-core/lib/ext';

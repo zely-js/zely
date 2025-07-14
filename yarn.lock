@@ -3788,6 +3788,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@zely-js/serpack-support@workspace:packages/serpack-support":
+  version: 0.0.0-use.local
+  resolution: "@zely-js/serpack-support@workspace:packages/serpack-support"
+  dependencies:
+    serpack: "npm:^0.1.34"
+  languageName: unknown
+  linkType: soft
+
 "@zely-js/static@workspace:*, @zely-js/static@workspace:packages/zely-plugin-static":
   version: 0.0.0-use.local
   resolution: "@zely-js/static@workspace:packages/zely-plugin-static"

@@ -19,7 +19,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "paths": {
-      "~/*": ["./packages/*"]
+      "~/*": ["./packages/*"],
+      "$fs": ["./packages/fs/fs.ts"]
     }
   },
   "include": ["**/*.ts"]
