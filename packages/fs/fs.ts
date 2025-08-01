@@ -289,12 +289,22 @@ export const {
   mkdirSync,
   rmSync,
   readdirSync,
-} = {
-  writeFileSync: fs.writeFileSync.bind(fs),
-  readFileSync: fs.readFileSync.bind(fs),
-  existsSync: fs.existsSync.bind(fs),
-  unlinkSync: fs.unlinkSync.bind(fs),
-  mkdirSync: fs.mkdirSync.bind(fs),
-  rmSync: fs.rmSync.bind(fs),
-  readdirSync: fs.readdirSync.bind(fs),
-};
+} = process.argv.includes('--use-experimental-fs')
+  ? {
+      writeFileSync: fs.writeFileSync.bind(fs),
+      readFileSync: fs.readFileSync.bind(fs),
+      existsSync: fs.existsSync.bind(fs),
+      unlinkSync: fs.unlinkSync.bind(fs),
+      mkdirSync: fs.mkdirSync.bind(fs),
+      rmSync: fs.rmSync.bind(fs),
+      readdirSync: fs.readdirSync.bind(fs),
+    }
+  : {
+      writeFileSync: nativeWrite,
+      readFileSync: nativeRead,
+      existsSync: nativeExists,
+      unlinkSync: nativeUnlink,
+      mkdirSync: nativeMkdir,
+      rmSync: nativeRm,
+      readdirSync: nativeReadDir,
+    };

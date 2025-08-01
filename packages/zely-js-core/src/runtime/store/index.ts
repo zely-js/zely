@@ -40,7 +40,7 @@ class Cache {
   }
 }
 
-const cache = new Cache(1000 * 60 * 6); // 6m TODO
+export const cache = new Cache(1000 * 60 * 6); // 6m TODO
 
 async function $store(createData: CreateData, key?: any[], symbol?: string) {
   symbol = `${symbol}-${key.length}-${key.join('-')}`;
@@ -65,7 +65,7 @@ function $access(key: string) {
   const store = cache.get(key);
 
   return {
-    store,
+    value: store,
     set(value: any) {
       cache.set(key, value);
     },
@@ -78,4 +78,4 @@ function $access(key: string) {
   };
 }
 
-export { $store, $access };
+export { $store, $access, cache as $cache };

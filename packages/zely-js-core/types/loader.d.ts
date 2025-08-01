@@ -41,7 +41,9 @@ export interface Loader<T = any> {
 export function createLoader<T = any>(
   options: UserConfig,
   ctx?: Context,
-  serpack?: boolean
+  serpack?: boolean,
+  noRun?: boolean,
+  useMemoryFS?: boolean
 ): (id: string, options?: TransformOptions<T>) => Promise<LoaderFunc>;
 // @ts-nocheck
 

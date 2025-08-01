@@ -216,7 +216,7 @@ export async function createZelyServer(options: UserConfig) {
     serverInstance.use(kitMiddleware);
 
     // user middlewares
-    serverInstance.use(middlewares);
+    if (middlewares.length > 0) serverInstance.use(middlewares);
 
     // core handler
     serverInstance.use(async (ctx, next) => {

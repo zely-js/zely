@@ -22,7 +22,7 @@
     "./types",
     "./dist"
   ],
-  "gitHead": "313ceafe914a250c146d7726f5af775031fad28a",
+  "gitHead": "670238c86d4371782461d43d5326435713c2f4ba",
   "description": "core server for zely-js",
   "repository": "https://github.com/zely-js/zely",
   "bugs": "https://github.com/zely-js/zely/issues",

@@ -31,7 +31,7 @@ export function storePlugin(): Plugin {
 
       compilerOptions.banner = `${
         compilerOptions.banner || ''
-      };/*store_helpers*/var {$store,$access}=require("@zely-js/core");`;
+      };/*store_helpers*/var {$store,$access,$cache}=require("@zely-js/core");`;
 
       compilerOptions.modifier.caller = (node, parent, ctx) => {
         const name = getCallerName(node.callee);

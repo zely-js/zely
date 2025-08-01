@@ -247,7 +247,9 @@ export async function controll(
   const { request: req, response: res } = ctx;
   let m: Page = null;
   try {
-    m = await cache.getModule(new URL(req.url, `http://${req.headers.host}`).pathname);
+    m = await cache.getModule(
+      new URL(req.url, `http://${req.headers.host || (req as any).header.host}`).pathname
+    );
 
     if (!m) {
       return next();

@@ -1,5 +1,5 @@
 import { methods } from './methods';
-import { $store as $$store, $access as $$access } from './store';
+import { $store as $$store, $access as $$access, $cache as $$cache } from './store';
 
 declare global {
   var GET: typeof methods.get;
@@ -10,6 +10,7 @@ declare global {
 
   var $store: typeof $$store;
   var $access: typeof $$access;
+  var $cache: typeof $$cache;
 }
 
 export {};

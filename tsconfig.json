@@ -23,5 +23,5 @@
       "$fs": ["./packages/fs/fs.ts"]
     }
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "playground/with-koa/zely.config.js"]
 }
