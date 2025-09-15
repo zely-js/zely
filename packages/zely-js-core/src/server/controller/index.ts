@@ -16,6 +16,7 @@ import { handleExportDefault } from './handler/export-default';
 import { handleExport } from './handler/export';
 import { createLoader } from '../../node/loader';
 import reporter from '../../runtime/reporter';
+import { ERROR } from './error';
 
 // Utility functions
 function findPage(path: string, pages: Page[]) {
@@ -294,6 +295,12 @@ export async function controll(
 
     res.statusCode = 500;
     res.end('500 Server Error');
+
+    if (ERROR[(e.message || '').trim()]) {
+      for (const element of ERROR[(e.message || '').trim()]) {
+        console.log(element.red);
+      }
+    }
   }
 }
 
