@@ -6,7 +6,7 @@
   "dependencies": {
     "@zely-js/logger": "4.0.0",
     "@zely-js/zely": "4.0.3-beta.0",
-    "animaux": "^0.1.0",
+    "animaux": "^0.1.1",
     "colors": "^1.4.0",
     "prompts": "^2.4.2"
   },
