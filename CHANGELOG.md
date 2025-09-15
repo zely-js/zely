@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.0](https://github.com/zely-js/zely/compare/v4.0.3...v4.1.0) (2025-09-15)
+
+
+### New Features
+
+* auto register context in $store ([12166a9](https://github.com/zely-js/zely/commit/12166a9ec84db7d2538748bdeb49001af3d309b5))
+
+
+### Others
+
+* **deps:** upgrade CLI tool to 0.1.2 ([d0ef323](https://github.com/zely-js/zely/commit/d0ef3230aea9295351956fb1834d501d6ecb2597))
+* **release:** v4.1.0 ([9d0f5ab](https://github.com/zely-js/zely/commit/9d0f5ab3aa679faad5fdbfd17d0f3ee902c0fb35))
+
+
+
 ## [4.0.3](https://github.com/zely-js/zely/compare/v4.0.3-beta.0...v4.0.3) (2025-09-15)
 
 

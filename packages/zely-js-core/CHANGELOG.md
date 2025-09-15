@@ -11,6 +11,20 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * auto register context in $store ([12166a9](https://github.com/zely-js/zely/commit/12166a9ec84db7d2538748bdeb49001af3d309b5))
 
 
+### Others
+
+* **release:** v4.1.0 ([9d0f5ab](https://github.com/zely-js/zely/commit/9d0f5ab3aa679faad5fdbfd17d0f3ee902c0fb35))
+
+
+
+## [4.1.0](https://github.com/zely-js/zely/compare/v4.0.3...v4.1.0) (2025-09-15)
+
+
+### New Features
+
+* auto register context in $store ([12166a9](https://github.com/zely-js/zely/commit/12166a9ec84db7d2538748bdeb49001af3d309b5))
+
+
 
 ## [4.0.3](https://github.com/zely-js/zely/compare/v4.0.3-beta.0...v4.0.3) (2025-09-15)
 
