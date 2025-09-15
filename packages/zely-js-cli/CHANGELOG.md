@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.0.3](https://github.com/zely-js/zely/compare/v4.0.3-beta.0...v4.0.3) (2025-09-15)
+
+
+### Others
+
+* **deps:** upgrade CLI tool ([6ab83ad](https://github.com/zely-js/zely/commit/6ab83ad5bef783a4841e55adfbde607d9156d2f0))
+* **fs:** hybrid fs default mode: `false` ([d04fa6f](https://github.com/zely-js/zely/commit/d04fa6fc0c1229643e8c03c8a0c3d77114f69885))
+
+
+
 ## [4.0.3-beta.0](https://github.com/zely-js/zely/compare/v4.0.2...v4.0.3-beta.0) (2025-07-14)
 
 

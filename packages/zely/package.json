@@ -1,6 +1,6 @@
 {
   "name": "zely",
-  "version": "4.0.3-beta.0",
+  "version": "4.0.3",
   "types": "./types/index.d.ts",
   "main": "./index.js",
   "module": "./index.mjs",
@@ -23,8 +23,8 @@
     "routing"
   ],
   "dependencies": {
-    "@zely-js/zely": "4.0.3-beta.0",
-    "zely-cli": "4.0.3-beta.0"
+    "@zely-js/zely": "4.0.3",
+    "zely-cli": "4.0.3"
   },
   "gitHead": "670238c86d4371782461d43d5326435713c2f4ba"
 }
