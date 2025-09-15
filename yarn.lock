@@ -4008,12 +4008,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"animaux@npm:^0.1.1":
-  version: 0.1.1
-  resolution: "animaux@npm:0.1.1"
+"animaux@npm:^0.1.2":
+  version: 0.1.2
+  resolution: "animaux@npm:0.1.2"
   dependencies:
     colors: "npm:^1.4.0"
-  checksum: 10c0/41073679884d134e01d77862322285d49855180a37251b8abe94b58ee571baf9ebcd7353eb01bda08c8a6cc07bfa977be0ba9cb9995c85d208c476463ad7d815
+  checksum: 10c0/0bde7e55ab348db614359e486def883e1259fcb612713a7154b78930dade4d4c70aca551f9aa90cd81a3ea99bc7050715a2f0f835b0e7a1dd703e6957b2c7fa7
   languageName: node
   linkType: hard
 
@@ -13479,7 +13479,7 @@ __metadata:
     "@types/prompts": "npm:^2"
     "@zely-js/logger": "npm:4.0.0"
     "@zely-js/zely": "npm:4.0.3"
-    animaux: "npm:^0.1.1"
+    animaux: "npm:^0.1.2"
     colors: "npm:^1.4.0"
     prompts: "npm:^2.4.2"
   bin:
