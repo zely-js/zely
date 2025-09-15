@@ -6,7 +6,7 @@ export default [
     const { data } = await $store(async () => {
       await setTimeout(1000);
       return `Hello ${ctx.params.params}!`;
-    }, [ctx.params.params]);
+    });
 
     return data || 'null';
   }),

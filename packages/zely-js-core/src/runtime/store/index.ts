@@ -1,3 +1,4 @@
+import { Context } from '~/zely-js-core/types';
 import { CreateData } from '~/zely-js-core/types/store';
 
 class Cache {
@@ -42,8 +43,22 @@ class Cache {
 
 export const cache = new Cache(1000 * 60 * 6); // 6m TODO
 
-async function $store(createData: CreateData, key?: any[], symbol?: string) {
-  symbol = `${symbol}-${key.length}-${key.join('-')}`;
+async function $store(
+  createData: CreateData,
+  key?: any[],
+  symbol?: string,
+  context?: Context
+) {
+  if (!context) {
+    // if context not existing
+    symbol = `${symbol}-${key.length}-${key.join('-')}`;
+  } else {
+    // if context existing, auto key setting
+    symbol = `${symbol}-${key.length}-${key.join('-')}-${Object.values(
+      context.params || {}
+    )}`;
+  }
+
   if (cache.get(symbol)) {
     return {
       data: cache.get(symbol),
