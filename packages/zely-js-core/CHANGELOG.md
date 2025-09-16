@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/zely-js/zely/compare/v4.0.3...v4.1.1) (2025-09-16)
+
+
+### New Features
+
+* auto register context in $store ([#550](https://github.com/zely-js/zely/issues/550)) ([cff8910](https://github.com/zely-js/zely/commit/cff8910cc1f2d7e26b14ba60b8663865b1279007))
+* context as dependencies ([68e6a90](https://github.com/zely-js/zely/commit/68e6a90549e851c14dabcb6a637c55f2ad601149))
+
+
+### Others
+
+* **release:** publish ([4b0bbf6](https://github.com/zely-js/zely/commit/4b0bbf6a5b2aa121ac0c64ca2824969edc5167ba))
+
+
+
 ## [4.1.0](https://github.com/zely-js/zely/compare/v4.0.3...v4.1.0) (2025-09-15)
 
 

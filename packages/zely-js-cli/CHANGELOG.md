@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/zely-js/zely/compare/v4.0.3...v4.1.1) (2025-09-16)
+
+
+### Others
+
+* **deps:** upgrade CLI tool to 0.1.2 ([d0ef323](https://github.com/zely-js/zely/commit/d0ef3230aea9295351956fb1834d501d6ecb2597))
+* **release:** publish ([4b0bbf6](https://github.com/zely-js/zely/commit/4b0bbf6a5b2aa121ac0c64ca2824969edc5167ba))
+* update template for caching ([3decd0d](https://github.com/zely-js/zely/commit/3decd0d7ed5c254f2f353b9f61eca78236405672))
+
+
+
 ## [4.1.0](https://github.com/zely-js/zely/compare/v4.0.3...v4.1.0) (2025-09-15)
 
 
