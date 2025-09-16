@@ -1,4 +1,5 @@
-import { Context } from '~/zely-js-core/types';
+import { Context } from 'senta';
+import { Context as ContextType } from '~/zely-js-core/types';
 import { CreateData } from '~/zely-js-core/types/store';
 
 class Cache {
@@ -45,18 +46,14 @@ export const cache = new Cache(1000 * 60 * 6); // 6m TODO
 
 async function $store(
   createData: CreateData,
-  key?: any[],
-  symbol?: string,
-  context?: Context
+  key?: string[] | ContextType,
+  symbol?: string
 ) {
-  if (!context) {
-    // if context not existing
-    symbol = `${symbol}-${key.length}-${key.join('-')}`;
+  if (key instanceof Context) {
+    const params = Object.values(key.params || {});
+    symbol = `${symbol}-${params.length}-${params.join('-')}`;
   } else {
-    // if context existing, auto key setting
-    symbol = `${symbol}-${key.length}-${key.join('-')}-${Object.values(
-      context.params || {}
-    )}`;
+    symbol = `${symbol}-${key.length}-${key.join('-')}`;
   }
 
   if (cache.get(symbol)) {

@@ -1,3 +1,5 @@
+import { Context } from './server';
+
 export interface StoreContext {
   $id: string;
 }
@@ -5,7 +7,7 @@ export interface StoreContext {
 export type CreateData<T = any> = (ctx: StoreContext) => Promise<T> | T;
 export function $store<T>(
   createData: CreateData<T>,
-  key?: any[]
+  dependencies?: string[] | Context
 ): Promise<{ data: T; id: string }>;
 
 export function $access(key: string): {

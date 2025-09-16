@@ -67,21 +67,6 @@ export function storePlugin(): Plugin {
           ],
         } as any);
 
-        node.arguments.push({
-          type: 'MemberExpression',
-          computed: true,
-          object: {
-            type: 'Identifier',
-            name: 'arguments',
-          },
-
-          property: {
-            type: 'Literal',
-            value: 0,
-            raw: '0',
-          },
-        } as any);
-
         return node as any;
       };
     },
