@@ -7,7 +7,7 @@
   "devDependencies": {
     "@asto/esm": "^0.0.2",
     "@asto/webpack": "^0.0.3",
-    "@commitlint/cli": "^18.4.2",
+    "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^18.4.2",
     "@eslint/compat": "^1.2.7",
     "@eslint/eslintrc": "^3.3.0",
