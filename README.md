@@ -4,6 +4,8 @@
 
 [**github**](https://github.com/zely-js/zely) • [**npm**](https://npmjs.com/package/zely) • [**website**](https://zely.vercel.app/)
 
+> This project has been deprecated. Use [dobs](https://github.com/zely-js/dobs/) instead. - [See blog](https://zely.vercel.app/blog/25-10-30)
+
 > [🚀 zely4 has been published!](https://zely.vercel.app/blog/25-06-22)
 
 ---
